@@ -1,12 +1,14 @@
 @font-face {
-  font-family: "sui-generis-regular";
-  src: url(../../Fonts/SUIGENER.TTF) format("truetype");
+  font-family: "sui";
+  src: url(../src/fonts/SUIGENER.TTF) format("truetype");
 }
 
 body {
   margin: 0;
   height: 100vh;
   background-color: #000000;
+  color: white;
+  font-family: "sui";
 }
 
 * {
