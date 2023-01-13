@@ -1,16 +1,16 @@
 @font-face {
-    font-family: 'sui-generis-regular';
-    src: url(../../Fonts/SUIGENER.TTF) format('truetype');
-  }
+  font-family: "sui-generis-regular";
+  src: url(../../Fonts/SUIGENER.TTF) format("truetype");
+}
 
 body {
-    margin: 0;
-    height: 100vh;
-    background-color: #000000;
+  margin: 0;
+  height: 100vh;
+  background-color: #000000;
 }
 
 * {
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }

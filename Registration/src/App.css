@@ -1,35 +1,35 @@
 .registration-app {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .background {
-    width: 98vw;
-    height: 95vh;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background-size: 100%;
+  width: 98vw;
+  height: 95vh;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-size: 100%;
 }
 
 .heading {
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 10vh; 
-    font-size: 2.8rem;
-    font-family: 'sui-generis-regular';
-    font-weight: 400;
-    color: rgba(153, 204, 255, 0.9);                                                
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 10vh;
+  font-size: 2.8rem;
+  font-family: "sui-generis-regular";
+  font-weight: 400;
+  color: rgba(153, 204, 255, 0.9);
 }
 
 .form-container {
-    position: absolute;
-    width: 80vw;
-    height: 70vh;
-    margin: auto;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 20vh;
+  position: absolute;
+  width: 80vw;
+  height: 70vh;
+  margin: auto;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 20vh;
 }
