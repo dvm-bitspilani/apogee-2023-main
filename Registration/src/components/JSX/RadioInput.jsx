@@ -4,7 +4,7 @@ import "../CSS/Input.css";
 
 const RadioInput = props => {
   return (
-    <div className="text-input">
+    <div className="input">
       <label htmlFor={props.field}>{props.name}</label>
       <RadioButtonGroup hide={false} values={["Male", "Female", "Others"]} />
     </div>

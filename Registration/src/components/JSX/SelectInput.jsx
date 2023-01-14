@@ -4,7 +4,7 @@ import "../CSS/Input.css";
 
 const SelectInput = props => {
   return (
-    <div className="text-input">
+    <div className="input">
       <label htmlFor={props.field}>{props.name}</label>
       <Select
         options={props.options}
