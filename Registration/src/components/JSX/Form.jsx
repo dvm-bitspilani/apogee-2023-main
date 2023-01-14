@@ -24,21 +24,30 @@ const Form = () => {
     { value: "vanilla", label: "Vanilla" },
   ];
 
-  const cities = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
-
   return (
     <div className="reg-form">
       <form className="form">
         <div className="form-inputs-container">
           <div className="form-inputs" id="inputs-left">
-            <TextInput type="text" field="name" name="name" />
-            <TextInput type="email" field="email" name="email id" />
-            <TextInput type="number" field="phone" name="phone number" />
-            <RadioInput field="gender" name="gender" />
+            <TextInput 
+              type="text" 
+              field="name" 
+              name="name" 
+            />
+            <TextInput 
+              type="email" 
+              field="email" 
+              name="email id" 
+            />
+            <TextInput 
+              type="number" 
+              field="phone" 
+              name="phone number" 
+            />
+            <RadioInput 
+              field="gender" 
+              name="gender" 
+            />
           </div>
 
           <div className="form-inputs" id="inputs-right">
@@ -60,11 +69,10 @@ const Form = () => {
               name="year of study"
               isMulti={false}
             />
-            <SelectInput
-              options={cities}
-              field="city"
-              name="city"
-              isMulti={false}
+            <TextInput 
+              type="text" 
+              field="city" 
+              name="city" 
             />
           </div>
         </div>

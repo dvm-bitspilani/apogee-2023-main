@@ -1,12 +1,12 @@
 /* general inputs */
-.text-input {
+.input {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
 }
 
-.text-input > * {
+.input > * {
   width: 100%;
   font-size: 1.1rem;
   color: #bfdfff;
@@ -40,7 +40,7 @@ input {
   padding-left: .6rem;
 }
 
-input:focus-visible {
+.text-input:focus-visible {
   outline: none;
   box-shadow: 0 0 10px #51718d;
 }
@@ -49,6 +49,11 @@ input:focus-visible {
 .react-select__value-container,
 .react-select__indicators {
   height: 100% !important;
+}
+
+.react-select-container:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 10px #51718d !important;
 }
 
 .react-select__control {
@@ -67,6 +72,7 @@ input:focus-visible {
 
 .react-select__control:focus-visible {
   outline: none !important;
+  box-shadow: 0 0 10px #51718d !important;
 }
 
 .react-select__input-container {
@@ -81,6 +87,16 @@ input:focus-visible {
 .react-select__menu {
   background: #1b2025 !important;
   z-index: 10000 !important;
+}
+
+#react-select-3-live-region {
+  z-index: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.text-input div:focus-visible {
+  outline: none !important;
 }
 
 /* radio button */
