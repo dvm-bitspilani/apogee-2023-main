@@ -1,10 +1,11 @@
 @font-face {
   font-family: "sui";
-  src: url(../src/fonts/SUIGENER.TTF) format("truetype");
+  src: url("fonts/sui_generis_rg-webfont.woff2"),
+    url("fonts/sui_generis_rg-webfont.woff");
 }
 
 @font-face {
-  font-family: 'monospac';
+  font-family: "monospac";
   src: url(../src/fonts/Monospace.ttf) format("truetype");
 }
 
