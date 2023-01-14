@@ -10,7 +10,7 @@
   width: 100%;
   font-size: var(--inputFont);
   color: #bfdfff;
-  font-family: 'monospac';
+  font-family: "monospac";
   font-style: normal;
   font-weight: 100;
   opacity: 0.9;
@@ -37,7 +37,7 @@ input {
   background: rgba(30, 53, 75, 0.9);
   border: 1px solid #51718d;
   height: var(--inputHeight);
-  padding-left: .6rem;
+  padding-left: 0.6rem;
 }
 
 .text-input:focus-visible {
@@ -55,7 +55,6 @@ input {
   outline: none !important;
   box-shadow: 0 0 10px #51718d !important;
 }
-
 
 div:has(> .react-select__control) {
   height: var(--inputHeight) !important;
@@ -85,8 +84,6 @@ div:has(> .react-select__control) {
   margin: 0 !important;
   padding: 0 !important;
   cursor: text !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .react-select__single-value {
@@ -94,8 +91,11 @@ div:has(> .react-select__control) {
 }
 
 .react-select__menu {
-  background: #1b2025 !important;
-  z-index: 10000 !important;
+  background-color: #1b2025 !important;
+}
+
+.react-select__menu > div > div:hover {
+  background: #51718d !important;
 }
 
 .text-input div:focus-visible {
@@ -122,8 +122,9 @@ div:has(> .react-select__control) {
   text-transform: none;
 }
 
-.active, .radio-button:hover {
-  background: #51718D !important;
+.active,
+.radio-button:hover {
+  background: #51718d !important;
 }
 
 .dot {
@@ -141,13 +142,13 @@ div:has(> .react-select__control) {
 
 @media screen and (max-width: 1150px) {
   .radio-button {
-    padding: 0 .8rem !important;
+    padding: 0 0.8rem !important;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .radio-button {
-    padding: 0 .5rem !important;
+    padding: 0 0.5rem !important;
   }
 
   .react-select__control {
@@ -157,19 +158,19 @@ div:has(> .react-select__control) {
 
 @media screen and (max-width: 900px) {
   .input {
-    margin: .8rem 0;
+    margin: 0.8rem 0;
   }
 
   .radio-button {
-    padding: 0 .3rem !important;
+    padding: 0 0.3rem !important;
   }
 
   .dot {
     width: 9px;
     height: 9px;
-    margin-right: .3rem;
+    margin-right: 0.3rem;
   }
-  
+
   .dot::before {
     top: 0.5px;
     left: 0.5px;

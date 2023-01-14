@@ -28,20 +28,20 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-:root {
-  --inputHeight: 2.2rem !important;
-}
+  :root {
+    --inputHeight: 2.2rem !important;
+  }
 }
 
 @media screen and (max-width: 900px) {
-:root {
-  --inputFont: 1rem;
-}
+  :root {
+    --inputFont: 1rem;
+  }
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 850px) {
   :root {
-      --inputHeight: 2rem !important;
-      --inputFont: .9rem;
+    --inputHeight: 2rem !important;
+    --inputFont: 0.9rem;
   }
 }
