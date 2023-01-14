@@ -1,19 +1,18 @@
 @font-face {
-    font-family: "sui";
-    src: url(../src/fonts/SUIGENER.TTF) format("truetype");
-  }
-  
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color: #000000;
-    color: white;
-    font-family: "sui";
-  }
-  
-  * {
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-  }
-  
+  font-family: "sui";
+  src: url(../src/fonts/SUIGENER.TTF) format("truetype");
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #000000;
+  color: white;
+  font-family: "sui";
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
