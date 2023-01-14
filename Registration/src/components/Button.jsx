@@ -6,8 +6,8 @@ const Button = (props) => {
         <div className='button'>
             <button type={props.type} className="btn">
                 <svg viewBox="0 0 300 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g style={{'mix-blend-mode':'difference', 'opacity':'0.4'}}>
-                    <g style={{'mix-blend-mode':'difference'}}>
+                    <g style={{'mixBlendmode':'difference', 'opacity':'0.4'}}>
+                    <g style={{'mixBlendMOde':'difference'}}>
                     <path className="btn-inside" d="M14.8763 81.1417L10.5879 76.84V11.1635L14.8763 6.875H223.448L246.809 30.2232H288.41L294.577 36.3911V76.84L290.289 81.1417H14.8763Z" fill="#4DACFF"/>
                     </g>
                     <path d="M290.422 81.4721H14.7448L10.2578 76.9851V10.9776L14.7448 6.50391H223.594L246.942 29.8521H288.543L294.909 36.2185V76.9454L290.422 81.4721ZM15.0227 80.8103H290.144L294.247 76.7072V36.5362L288.265 30.5536H246.678L223.316 7.20541H15.0227L10.9196 11.2953V76.7072L15.0227 80.8103Z" fill="#4DACFF"/>

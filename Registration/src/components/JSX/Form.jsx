@@ -25,7 +25,6 @@ const Form = () => {
   ];
 
   return (
-    <div className="reg-form">
       <form className="form">
         <div className="form-inputs-container">
           <div className="form-inputs" id="inputs-left">
@@ -81,7 +80,6 @@ const Form = () => {
           <Button type="submit" />
         </div>
       </form>
-    </div>
   );
 };
 

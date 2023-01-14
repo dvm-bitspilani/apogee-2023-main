@@ -1,6 +1,6 @@
 .registration-app {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 .background {
   position: relative;
   width: 98vw;
-  height: 95vh;
+  min-height: 97vh;
   background: url(../src/assets/background.png) center no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -28,5 +28,17 @@
 
 .form-container {
   width: 80vw;
-  /* height: 70%; */
+}
+
+@media screen and (max-width: 1000px) {
+  .heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .heading {
+    font-size: 2rem;
+    margin-top: 4.4rem;
+  }
 }
