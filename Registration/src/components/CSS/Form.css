@@ -27,33 +27,3 @@
   display: flex;
   justify-content: center;
 }
-
-.btn {
-  position: relative;
-  width: 15%;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.btn img {
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* position: absolute; */
-}
-
-.btn span {
-  left: 45%;
-  top: 45%;
-  width: 100%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: "Monospac821 BT";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #b3dbff;
-  opacity: 0.95;
-}

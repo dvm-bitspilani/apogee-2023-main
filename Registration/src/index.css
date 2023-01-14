@@ -3,12 +3,17 @@
   src: url(../src/fonts/SUIGENER.TTF) format("truetype");
 }
 
+@font-face {
+  font-family: 'monospac';
+  src: url(../src/fonts/Monospace.ttf) format("truetype");
+}
+
 body {
   margin: 0;
   height: 100vh;
   background-color: #000000;
   color: white;
-  font-family: "sui";
+  font-family: "monospac";
 }
 
 * {

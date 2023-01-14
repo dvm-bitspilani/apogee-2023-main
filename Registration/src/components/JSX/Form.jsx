@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import Button from "../Button";
 import "../CSS/Form.css";
 import RadioInput from "./RadioInput";
 import SelectInput from "./SelectInput";
 import TextInput from "./TextInput";
-import button from "../../assets/button.png";
 
 const Form = () => {
   const events = [
@@ -70,10 +70,7 @@ const Form = () => {
         </div>
 
         <div className="btn-container">
-          <button type="submit" className="btn">
-            <img src={button} />
-            <span>REGISTER</span>
-          </button>
+          <Button type="submit" />
         </div>
       </form>
     </div>
