@@ -1,17 +1,14 @@
-.reg-form {
-  width: 100%;
-  height: 70vh;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
 }
 
 .form-inputs-container {
   width: 100%;
+  /* padding: 1rem 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -26,4 +23,52 @@
 .btn-container {
   display: flex;
   justify-content: center;
+  margin: 5% 0 1% 0;
+}
+
+@media screen and (max-width: 1150px) {
+  .form-inputs {
+    width: 45%;
+  }
+
+  .form-inputs-container {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .form-inputs {
+    width: 43%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .form {
+    margin-top: 5%;
+  }
+
+  .form-inputs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-inputs {
+    width: 60%;
+  }
+
+  .btn-container {
+    margin: 6% 0 8% 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .form-inputs {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .form-inputs {
+    width: 80%;
+  }
 }

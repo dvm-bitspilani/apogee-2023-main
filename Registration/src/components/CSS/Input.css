@@ -8,9 +8,9 @@
 
 .input > * {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: var(--inputFont);
   color: #bfdfff;
-  font-family: 'monospac';
+  font-family: "monospac";
   font-style: normal;
   font-weight: 100;
   opacity: 0.9;
@@ -36,8 +36,8 @@ input {
   box-sizing: border-box;
   background: rgba(30, 53, 75, 0.9);
   border: 1px solid #51718d;
-  height: 2.4rem;
-  padding-left: .6rem;
+  height: var(--inputHeight);
+  padding-left: 0.6rem;
 }
 
 .text-input:focus-visible {
@@ -56,18 +56,23 @@ input {
   box-shadow: 0 0 10px #51718d !important;
 }
 
+div:has(> .react-select__control) {
+  height: var(--inputHeight) !important;
+}
+
 .react-select__control {
   cursor: text;
   background: rgba(30, 53, 75, 0.9) !important;
   border: 1px solid #51718d !important;
   border-radius: 0 !important;
-  height: 2.4rem !important;
+  height: var(--inputHeight) !important;
   box-sizing: border-box !important;
-  font-size: 1.1rem;
+  font-size: var(--inputFont);
   color: #bfdfff;
   font-style: normal;
   font-weight: 400;
   opacity: 0.9;
+  min-height: 0 !important;
 }
 
 .react-select__control:focus-visible {
@@ -78,6 +83,7 @@ input {
 .react-select__input-container {
   margin: 0 !important;
   padding: 0 !important;
+  cursor: text !important;
 }
 
 .react-select__single-value {
@@ -85,14 +91,11 @@ input {
 }
 
 .react-select__menu {
-  background: #1b2025 !important;
-  z-index: 10000 !important;
+  background-color: #1b2025 !important;
 }
 
-#react-select-3-live-region {
-  z-index: 0 !important;
-  border: none !important;
-  outline: none !important;
+.react-select__menu > div > div:hover {
+  background: #51718d !important;
 }
 
 .text-input div:focus-visible {
@@ -102,7 +105,7 @@ input {
 /* radio button */
 .radio-button {
   padding: 0 1rem !important;
-  font-size: 1.1rem !important;
+  font-size: var(--inputFont) !important;
   color: #bfdfff !important;
   font-family: "monospac" !important;
   font-style: normal !important;
@@ -111,7 +114,7 @@ input {
   box-sizing: border-box !important;
   background: rgba(30, 53, 75, 0.9) !important;
   border: 1px solid #51718d !important;
-  height: 2.4rem;
+  height: var(--inputHeight);
   display: inline-flex !important;
   flex-direction: row;
   align-items: center;
@@ -119,8 +122,9 @@ input {
   text-transform: none;
 }
 
-.active, .radio-button:hover {
-  background: #51718D !important;
+.active,
+.radio-button:hover {
+  background: #51718d !important;
 }
 
 .dot {
@@ -134,4 +138,51 @@ input {
   width: 11px;
   height: 11px;
   background: rgba(30, 53, 75, 0.9) !important;
+}
+
+@media screen and (max-width: 1150px) {
+  .radio-button {
+    padding: 0 0.8rem !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .radio-button {
+    padding: 0 0.5rem !important;
+  }
+
+  .react-select__control {
+    height: var(--inputHeight) !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .input {
+    margin: 0.8rem 0;
+  }
+
+  .radio-button {
+    padding: 0 0.3rem !important;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    margin-right: 0.3rem;
+  }
+
+  .dot::before {
+    top: 0.5px;
+    left: 0.5px;
+    width: 8px;
+    height: 8px;
+    background: rgba(30, 53, 75, 0.9) !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .radio-button {
+    padding: 0 1rem !important;
+    margin-right: 1rem !important;
+  }
 }

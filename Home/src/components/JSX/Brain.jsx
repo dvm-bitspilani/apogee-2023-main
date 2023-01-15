@@ -1,95 +1,73 @@
+import React from "react";
 import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  useGLTF,
 } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import gsap from "gsap";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import { degToRad } from "three/src/math/MathUtils";
 
-export default function Three() {
+const Brain = props => {
   // Code to move the camera around
-  const orbitControlsRef = useRef(null);
-  useFrame(state => {
-    if (!!orbitControlsRef.current) {
-      const { x, y } = state.mouse;
-      orbitControlsRef.current.setAzimuthalAngle(-x * degToRad(45));
-      orbitControlsRef.current.setPolarAngle((y + 1) * degToRad(90 - 30));
-      orbitControlsRef.current.update();
-    }
-  });
+  // const OCR = useRef(null);
+  // useFrame(state => {
+  //   if (!!OCR.current) {
+  //     const { x, y } = state.mouse;
+  //     OCR.current.setAzimuthalAngle(-x * degToRad(180));
+  //     OCR.current.setPolarAngle((2 + y) * degToRad(45));
+  //     OCR.current.update();
+  //   }
+  // });
 
-  // Animation
-  const ballRef = useRef(null);
-  useEffect(() => {
-    if (!!ballRef.current) {
-      // Timeline
-      const timeline = gsap.timeline({ paused: true });
-
-      // x-axis motion
-      timeline.to(ballRef.current.position, {
-        x: 1,
-        duration: 2,
-        ease: "power2.out",
-      });
-
-      // y-axis motion
-      timeline.to(
-        ballRef.current.position,
-        {
-          y: 0.5,
-          duration: 1,
-          ease: "bounce.out",
-        },
-        "<"
-      );
-
-      // Play
-      timeline.play();
-    }
-  }, [ballRef.current]);
+  const { nodes, materials } = useGLTF("/models/brain-transformed.glb");
 
   return (
     <>
       {/* Camera */}
-      <PerspectiveCamera makeDefault position={[0, 1, 5]} />
+      <PerspectiveCamera makeDefault position={[-0.75, 0.75, -0.75]} />
       <OrbitControls
-        ref={orbitControlsRef}
-        minPolarAngle={degToRad(60)}
-        maxPolarAngle={degToRad(80)}
+        // ref={OCR}
+        autoRotate
+        keys={{
+          LEFT: "ArrowLeft",
+          UP: "ArrowUp",
+          RIGHT: "ArrowRight",
+          BOTTOM: "ArrowDown",
+        }}
+        autoRotateSpeed={1}
+        rotateSpeed={0.06}
+        zoomSpeed={10}
+        target={[0, 0, 0]}
+        maxPolarAngle={degToRad(110)}
+        minPolarAngle={degToRad(70)}
+        maxDistance={1.4}
+        minDistance={0.6}
       />
 
-      {/* Ball */}
-      <mesh position={[-2, 1.5, 0]} castShadow ref={ballRef}>
-        <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial color="#ffffff" metalness={0.6} roughness={0.2} />
-      </mesh>
+      <pointLight args={["#B5F8FA", 0.1]} />
 
-      {/* Floor */}
-      <mesh rotation={[-degToRad(90), 0, 0]} receiveShadow>
-        <planeGeometry args={[20, 20]} />
-        <meshStandardMaterial color="#1ea3d8" />
-      </mesh>
-
-      {/* Ambient light */}
-      <ambientLight args={["#ffffff", 0.25]} />
-
-      {/* Spotlight light */}
-      <spotLight
-        args={["#ffffff", 1.5, 7, degToRad(45), 0.4]}
-        position={[-3, 1, 0]}
-        castShadow
-      />
+      <group {...props} dispose={null}>
+        <mesh
+          geometry={nodes.Brain_Model001.geometry}
+          material={materials.Material}
+          position={[0, -0.6, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+        />
+      </group>
 
       {/* Environmnet */}
-      <Environment background>
+      {/* <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
-          <meshBasicMaterial color="#2266cc" side={THREE.BackSide} />
+          <meshBasicMaterial color="darkblue" side={THREE.BackSide} />
         </mesh>
-      </Environment>
+      </Environment> */}
     </>
   );
-}
+};
+
+export default Brain;
+useGLTF.preload("/models/brain-transformed.glb");
