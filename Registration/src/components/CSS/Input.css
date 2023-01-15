@@ -51,13 +51,13 @@ input {
   height: 100% !important;
 }
 
-.react-select-container:focus-visible {
-  outline: none !important;
-  box-shadow: 0 0 10px #51718d !important;
-}
-
 div:has(> .react-select__control) {
   height: var(--inputHeight) !important;
+}
+
+div:has(> .react-select__control):focus-within {
+  outline: none !important;
+  box-shadow: 0 0 10px #51718d !important;
 }
 
 .react-select__control {
@@ -75,15 +75,11 @@ div:has(> .react-select__control) {
   min-height: 0 !important;
 }
 
-.react-select__control:focus-visible {
-  outline: none !important;
-  box-shadow: 0 0 10px #51718d !important;
-}
-
 .react-select__input-container {
   margin: 0 !important;
   padding: 0 !important;
   cursor: text !important;
+  color: #bfdfff !important
 }
 
 .react-select__single-value {
@@ -92,6 +88,7 @@ div:has(> .react-select__control) {
 
 .react-select__menu {
   background-color: #1b2025 !important;
+  font-size: var(--inputFont);
 }
 
 .react-select__menu > div > div:hover {
@@ -184,5 +181,44 @@ div:has(> .react-select__control) {
   .radio-button {
     padding: 0 1rem !important;
     margin-right: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .radio-button {
+      padding: 0 0.7rem !important;
+      margin-right: 0.7rem !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .input {
+    margin: .6rem 0;
+  }
+  
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .dot::before {
+    width: 6px;
+    height: 6px;
+  }
+
+  .radio-button {
+    padding: 0 0.5rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .radio-button {
+    margin-right: 0.3rem !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .radio-button {
+    padding: 0 0.3rem !important;
   }
 }

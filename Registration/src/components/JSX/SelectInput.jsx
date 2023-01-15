@@ -3,7 +3,7 @@ import Select from "react-select";
 import "../CSS/Input.css";
 
 const SelectInput = props => {
-  const colourStyles = {
+ const colourStyles = {
     control: base => ({ ...base, border: 0, boxShadow: "none" }),
     option: (styles, { isSelected }) => {
       return {
@@ -38,13 +38,14 @@ const SelectInput = props => {
         color: "#BFDFFFCC",
       },
     }),
-    menuPortal: base => ({ ...base, zIndex: 3, border: "none" }),
+    menuPortal: base => ({ ...base, zIndex: 300, border: "none" }),
     dropdownIndicator: base => ({
       ...base,
       color: "#BFDFFFCC",
     }),
     indicatorSeparator: () => {},
   };
+
 
   return (
     <div className="input">

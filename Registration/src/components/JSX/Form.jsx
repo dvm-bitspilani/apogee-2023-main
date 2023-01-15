@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../Button";
+import Button from "./Button";
 import "../CSS/Form.css";
 import RadioInput from "./RadioInput";
 import SelectInput from "./SelectInput";

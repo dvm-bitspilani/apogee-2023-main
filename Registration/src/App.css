@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  overflow: scroll;
+  /* overflow: scroll; */
   z-index: 20;
 }
 
@@ -42,5 +42,17 @@
   .heading {
     font-size: 2rem;
     margin-top: 4.4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .heading {
+    font-size: 1.3rem;
   }
 }

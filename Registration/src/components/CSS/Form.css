@@ -72,3 +72,13 @@
     width: 80%;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .form-inputs {
+    width: 90%;
+  }
+
+  .btn-container {
+    margin: 8% 0 15% 0;
+  }
+}

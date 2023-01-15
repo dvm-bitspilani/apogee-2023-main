@@ -29,7 +29,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   :root {
-    --inputHeight: 2.2rem !important;
+    --inputHeight: 2.2rem;
   }
 }
 
@@ -41,7 +41,14 @@ body {
 
 @media screen and (max-width: 850px) {
   :root {
-    --inputHeight: 2rem !important;
+    --inputHeight: 2rem;
     --inputFont: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  :root {
+    --inputHeight: 1.6rem;
+    --inputFont: 0.7rem;
   }
 }

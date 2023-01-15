@@ -69,3 +69,21 @@
     width: 25vw;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .button {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .button {
+    width: 40vw;
+  }
+}
