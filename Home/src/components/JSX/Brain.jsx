@@ -23,7 +23,6 @@ const Brain = props => {
   // });
 
   const { nodes, materials } = useGLTF("/models/brain-transformed.glb");
-
   return (
     <>
       {/* Camera */}
@@ -40,6 +39,7 @@ const Brain = props => {
         autoRotateSpeed={1}
         rotateSpeed={0.06}
         zoomSpeed={10}
+        enableZoom={false}
         target={[0, 0, 0]}
         maxPolarAngle={degToRad(110)}
         minPolarAngle={degToRad(70)}

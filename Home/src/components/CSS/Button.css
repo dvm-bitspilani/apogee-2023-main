@@ -1,0 +1,94 @@
+
+@font-face {
+  font-family: 'Monospace';
+  src: url(../../fonts/Monospace.ttf);
+}
+.button {
+  width: 13vw;
+}
+
+.btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn svg {
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn span {
+  left: 45%;
+  top: 45%;
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Monospace";
+  letter-spacing: 1px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--inputFont);
+  color: #b3dbff;
+  opacity: 0.95;
+}
+
+.btn-inside {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.8;
+}
+
+.btn:hover .btn-inside {
+  opacity: 0;
+}
+
+@media screen and (max-width: 1300px) {
+  .button {
+    width: 14vw;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .button {
+    width: 15vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .button {
+    width: 17vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    width: 19vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .button {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .button {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .button {
+    width: 40vw;
+  }
+}
