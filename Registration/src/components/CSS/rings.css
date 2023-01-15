@@ -1,0 +1,38 @@
+.rings-cont {
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.rings {
+  animation: ring-rotate var(--speed) linear var(--delay)
+    infinite var(--dir);
+  filter: drop-shadow(0 0 5px #4dacff)
+    drop-shadow(0 0 50px #83c4fd)
+    drop-shadow(0 0 500px #83c4fd);
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.abs-ring {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  scale: var(--scale);
+  transform-origin: var(--tro);
+  filter: none;
+}
+
+@keyframes ring-rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 359deg;
+  }
+}
