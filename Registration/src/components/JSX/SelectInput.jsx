@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import "../CSS/Input.css";
 
 const SelectInput = props => {
- const colourStyles = {
+  const [value, setValue] = useState(null);
+
+  useEffect(() => {
+    if (value !== null) {
+      if (props.isMulti) {
+        props.valueSet(value.map(val => val.value));
+      } else {
+        props.valueSet(value.value);
+      }
+    }
+    console.log("CHANING");
+  }, [value]);
+
+  const colourStyles = {
     control: base => ({ ...base, border: 0, boxShadow: "none" }),
     option: (styles, { isSelected }) => {
       return {
@@ -46,7 +59,6 @@ const SelectInput = props => {
     indicatorSeparator: () => {},
   };
 
-
   return (
     <div className="input">
       <label htmlFor={props.field}>{props.name}</label>
@@ -59,8 +71,12 @@ const SelectInput = props => {
         classNamePrefix="react-select"
         placeholder=""
         isClearable
+        required
         menuPortalTarget={document.body}
         styles={colourStyles}
+        onChange={choice => {
+          setValue(choice);
+        }}
       ></Select>
     </div>
   );
