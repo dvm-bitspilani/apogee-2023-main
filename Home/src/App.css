@@ -1,4 +1,5 @@
 #canvas-wrapper {
-  height: 100vh !important;
+  height: 85vh !important;
+  margin-top: -5rem;
   width: 100vw !important;
 }

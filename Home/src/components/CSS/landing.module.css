@@ -1,0 +1,36 @@
+body {
+    overflow-x: hidden;
+}
+
+.apogeeLogo {
+    width: 20rem;
+}
+
+.wrapper {
+    padding-inline: 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroFoot {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    justify-content: flex-start;
+}
+
+.heroFoot>img {
+    width: 2rem;
+    cursor: pointer;
+    margin-top: -7rem;
+}
+
+.blue {
+    width: 6rem !important;
+    padding-bottom: 0.5rem;
+}
