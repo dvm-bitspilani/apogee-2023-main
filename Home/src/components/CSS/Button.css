@@ -30,7 +30,7 @@
   letter-spacing: 1px;
   font-style: normal;
   font-weight: 700;
-  font-size: var(--inputFont);
+  font-size: 1rem;
   color: #b3dbff;
   opacity: 0.95;
 }
@@ -80,14 +80,16 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .button {
-    width: 35vw;
+    width: 60vw;
+    margin-left: 6rem;
   }
 }
 
 @media screen and (max-width: 300px) {
   .button {
-    width: 40vw;
+    width: 60vw;
+    margin-left: 4  rem;
   }
 }
