@@ -1,8 +1,7 @@
-import React from 'react'
-import "../CSS/Timer.css"
+import React from "react";
+import "../CSS/Timer.css";
 
 function Countdown() {
-
   const bosm = new Date("March 30, 2023 23:59:59").getTime();
   let prev_day, prev_hr, prev_min, prev_sec;
   let days, hrs, min, sec;
@@ -20,7 +19,9 @@ function Countdown() {
 
     // updating number of minutes left (in that hour)
     min =
-      Math.floor((bosm - current_time) / (1000 * 60)) - days * 24 * 60 - hrs * 60;
+      Math.floor((bosm - current_time) / (1000 * 60)) -
+      days * 24 * 60 -
+      hrs * 60;
     min = min < 10 ? `0${min}` : min;
 
     // // updating number of seconds left (in that min)
@@ -60,7 +61,6 @@ function Countdown() {
     // document.getElementById("sec").innerText = sec;
   }, 1000);
 
-
   return (
     <div>
       <div class="time">
@@ -79,7 +79,7 @@ function Countdown() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Countdown
+export default Countdown;

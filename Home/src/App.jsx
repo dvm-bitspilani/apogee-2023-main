@@ -4,7 +4,7 @@ import Landing from "./components/JSX/Landing";
 function App() {
   return (
     <div className="App">
-      <Landing/>
+      <Landing />
     </div>
   );
 }
