@@ -14,14 +14,25 @@ const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb");
   const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
-  const { height, width } = useWindowDimension(),
-    [target, setTarget] = useState([0, 0.7, 0]),
+  const [scale, setScale] = useState(1),
+    { height, width } = useWindowDimension(),
+    [target, setTarget] = useState([0, 0.67, 0]),
     [position, setPosition] = useState([1, 1, 1]);
 
   useEffect(() => {
     if (width < 850) {
-      setTarget([0, 0.65, 0]);
+      setScale(0.87);
       setPosition([2, 2, 2]);
+    }
+
+    if (width < 500) {
+      setScale(0.8);
+      setTarget([0, 0.6, 0]);
+    }
+
+    if (width < 400) {
+      setScale(0.7);
+      setTarget([0, 0.5, 0]);
     }
   }, [width]);
 
@@ -38,10 +49,11 @@ const Brain = props => {
         target={target}
         maxPolarAngle={degToRad(85)}
         maxDistance={2}
-        minDistance={0.9}
+        minDistance={1}
+        enablePan={false}
       />
 
-      <group {...props} dispose={null}>
+      <group scale={scale} {...props} dispose={null}>
         <mesh
           geometry={nodes.Brain_Model001.geometry}
           material={materials["Material.001"]}
