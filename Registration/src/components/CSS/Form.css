@@ -26,6 +26,12 @@
   margin: 5% 0 1% 0;
 }
 
+@media screen and (min-width: 1650px) {
+  .btn-container {
+    margin: 4% 0 2% 0;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .form-inputs {
     width: 45%;
