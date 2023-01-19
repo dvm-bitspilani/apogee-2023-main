@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: "monospac";
+  font-family: "mono";
   src: url(../src/fonts/Monospace.ttf) format("truetype");
 }
 
@@ -18,7 +18,7 @@ body {
   margin: 0;
   background-color: #000000;
   color: white;
-  font-family: "monospac";
+  font-family: "mono";
 }
 
 * {

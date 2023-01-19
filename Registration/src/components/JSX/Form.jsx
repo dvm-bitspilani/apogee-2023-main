@@ -46,9 +46,7 @@ const Form = () => {
         });
       });
     } catch (err) {
-      alert(
-        "Error in fetching data. Please check your network connection"
-      );
+      alert("Error in fetching data. Please check your network connection");
     }
   };
 
@@ -64,9 +62,7 @@ const Form = () => {
         })
       );
     } catch (err) {
-      alert(
-        "Error in fetching data. Please check your network connection"
-      );
+      alert("Error in fetching data. Please check your network connection");
     }
   };
 
@@ -111,19 +107,10 @@ const Form = () => {
   }, []);
 
   return (
-    <form
-      className="form"
-      onSubmit={handleSubmit}
-      key={`form-${submitCount}`}
-    >
+    <form className="form" onSubmit={handleSubmit} key={`form-${submitCount}`}>
       <div className="form-inputs-container">
         <div className="form-inputs" id="inputs-left">
-          <TextInput
-            type="text"
-            field="name"
-            name="name"
-            valueSet={setName}
-          />
+          <TextInput type="text" field="name" name="name" valueSet={setName} />
           <TextInput
             type="email"
             field="email"
@@ -136,11 +123,7 @@ const Form = () => {
             name="phone number"
             valueSet={setPhone}
           />
-          <RadioInput
-            field="gender"
-            name="gender"
-            valueSet={setGen}
-          />
+          <RadioInput field="gender" name="gender" valueSet={setGen} />
         </div>
 
         <div className="form-inputs" id="inputs-right">
@@ -165,12 +148,7 @@ const Form = () => {
             isMulti={false}
             valueSet={setSelYrs}
           />
-          <TextInput
-            type="text"
-            field="city"
-            name="city"
-            valueSet={setCity}
-          />
+          <TextInput type="text" field="city" name="city" valueSet={setCity} />
         </div>
       </div>
 

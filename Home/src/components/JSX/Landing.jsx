@@ -4,21 +4,21 @@ import Button from "./Button";
 import Countdown from "./Countdown";
 import styles from "../CSS/landing.module.css";
 import { Canvas } from "@react-three/fiber";
-import FbIcon from "./FbIcon"
-import InstaIcon from "./InstaIcon"
-import YtIcon from "./YtIcon"
+import FbIcon from "./FbIcon";
+import InstaIcon from "./InstaIcon";
+import YtIcon from "./YtIcon";
 import apogeelogo from "../../assets/apogeelogo.png";
 import Switch from "./Switch";
 
 function Landing() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
-  )
+  );
 
   useEffect(() => {
     window
       .matchMedia("(min-width: 450px)")
-      .addEventListener('change', e => setMatches(e.matches));
+      .addEventListener("change", e => setMatches(e.matches));
   }, []);
 
   return (
@@ -34,7 +34,7 @@ function Landing() {
       </div>
 
       <div className={styles.countDown}>
-      {!matches && <Button />}
+        {!matches && <Button />}
         {/* <Countdown /> */}
       </div>
 
