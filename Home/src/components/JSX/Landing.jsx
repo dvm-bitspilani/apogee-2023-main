@@ -35,7 +35,7 @@ function Landing() {
 
       <div className={styles.countDown}>
         {!matches && <Button />}
-        {/* <Countdown /> */}
+        <Countdown />
       </div>
 
       <div className={styles.heroFoot}>
