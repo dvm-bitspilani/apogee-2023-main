@@ -23,7 +23,7 @@ function Landing() {
 
   return (
     <div className={styles.wrapper}>
-      <Canvas id="canvas-wrapper">
+      <Canvas onContextMenu={e => e.preventDefault()} id="canvas-wrapper">
         <Brain />
       </Canvas>
 

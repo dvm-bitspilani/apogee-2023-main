@@ -12,7 +12,6 @@ import useWindowDimension from "../../hooks/useWindowDimensions";
 
 const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb");
-
   const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
   const { height, width } = useWindowDimension(),
@@ -35,7 +34,7 @@ const Brain = props => {
       <OrbitControls
         autoRotate
         autoRotateSpeed={1}
-        rotateSpeed={0.06}
+        rotateSpeed={0.1}
         target={target}
         maxPolarAngle={degToRad(85)}
         maxDistance={2}

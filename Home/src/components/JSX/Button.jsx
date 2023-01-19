@@ -4,11 +4,7 @@ import "../CSS/Button.css";
 const Button = props => {
   return (
     <div className="button">
-      <a
-        target="_blank"
-        rel="norefferor"
-        href="https://apogee-2023-regist.vercel.app/"
-      >
+      <a href="https://apogee-2023-regist.vercel.app/">
         <button type={props.type} className="btn">
           <svg
             viewBox="0 0 300 97"
