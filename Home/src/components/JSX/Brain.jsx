@@ -5,10 +5,14 @@ import {
   PerspectiveCamera,
   useGLTF,
 } from "@react-three/drei";
-import * as THREE from "three";
+import { useLoader } from "@react-three/fiber";
+import { BackSide, TextureLoader } from "three";
+import { degToRad } from "three/src/math/MathUtils";
 
 const Brain = props => {
   const { nodes, materials } = useGLTF("/models/scene-transformed.glb");
+
+  const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
   return (
     <>
@@ -21,8 +25,7 @@ const Brain = props => {
         autoRotateSpeed={1}
         rotateSpeed={0.06}
         target={[0, 0.7, 0]}
-        // maxPolarAngle={degToRad(110)}
-        // minPolarAngle={degToRad(70)}
+        maxPolarAngle={degToRad(85)}
         maxDistance={1.4}
         minDistance={0.8}
       />
@@ -46,7 +49,7 @@ const Brain = props => {
       <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
-          <meshBasicMaterial color="black" side={THREE.BackSide} />
+          <meshBasicMaterial map={colorMap} side={BackSide} />
         </mesh>
       </Environment>
     </>
