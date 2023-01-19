@@ -29,13 +29,13 @@ function Landing() {
 
       <div className={styles.navbar}>
         <img src={apogeelogo} className={styles.apogeeLogo} />
-        <Switch/>
+        {/* <Switch/> */}
         {matches && <Button />}
       </div>
 
       <div className={styles.countDown}>
       {!matches && <Button />}
-        <Countdown />
+        {/* <Countdown /> */}
       </div>
 
       <div className={styles.heroFoot}>

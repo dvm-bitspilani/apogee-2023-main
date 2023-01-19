@@ -1,33 +1,45 @@
-import React from "react";
 import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
   useGLTF,
 } from "@react-three/drei";
+import React, { useState, useEffect } from "react";
 import { useLoader } from "@react-three/fiber";
 import { BackSide, TextureLoader } from "three";
 import { degToRad } from "three/src/math/MathUtils";
+import useWindowDimension from "../../hooks/useWindowDimensions";
 
 const Brain = props => {
-  const { nodes, materials } = useGLTF("/models/scene-transformed.glb");
+  const { nodes, materials } = useGLTF("/models/brain.glb");
 
   const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
+
+  const { height, width } = useWindowDimension(),
+    [target, setTarget] = useState([0, 0.7, 0]),
+    [position, setPosition] = useState([1, 1, 1]);
+
+  useEffect(() => {
+    if (width < 850) {
+      setTarget([0, 0.65, 0]);
+      setPosition([2, 2, 2]);
+    }
+  }, [width]);
 
   return (
     <>
       {/* Camera */}
-      <PerspectiveCamera makeDefault position={[1, 1, 1]} />
+      <PerspectiveCamera makeDefault position={position} />
 
       {/* Orbit Controls */}
       <OrbitControls
         autoRotate
         autoRotateSpeed={1}
         rotateSpeed={0.06}
-        target={[0, 0.7, 0]}
+        target={target}
         maxPolarAngle={degToRad(85)}
-        maxDistance={1.4}
-        minDistance={0.8}
+        maxDistance={2}
+        minDistance={0.9}
       />
 
       <group {...props} dispose={null}>
@@ -57,4 +69,4 @@ const Brain = props => {
 };
 
 export default Brain;
-useGLTF.preload("/models/scene-transformed.glb");
+useGLTF.preload("/models/brain.glb");
