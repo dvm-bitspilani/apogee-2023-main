@@ -72,15 +72,15 @@
     transform: rotateX(360deg);
   }
 }
-@media (max-width:430px) {
-  .time{
+@media (max-width: 430px) {
+  .time {
     margin-left: 4rem;
     width: 90%;
   }
-  .numbers > div{
+  .numbers > div {
     font-size: 0.9rem;
   }
-  .labels{
+  .labels {
     font-size: 0.7rem;
   }
 }

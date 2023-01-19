@@ -1,28 +1,27 @@
 .switchContainer {
-    background: rgba(0, 60, 72, 0.6);
-    border-radius: 25px;
-    display: flex;
-    padding: 0.6rem 0.6rem;
+  background: rgba(0, 60, 72, 0.6);
+  border-radius: 25px;
+  display: flex;
+  padding: 0.6rem 0.6rem;
 }
 
 .switch {
-    padding-inline: 1.2rem;
-    cursor: pointer;
-    padding-block: 1.2rem;
-    color: #1A93FF;
-
+  padding-inline: 1.2rem;
+  cursor: pointer;
+  padding-block: 1.2rem;
+  color: #1a93ff;
 }
 
 .switch.active {
-    background: #1E4952;
-    border-radius: 17.5px;
+  background: #1e4952;
+  border-radius: 17.5px;
 }
 
-@media (max-width:450px) {
-    .switchContainer{
-        padding: 0.4rem;
-    }
-    .switch{
-        padding: 0.8rem;
-    }
+@media (max-width: 450px) {
+  .switchContainer {
+    padding: 0.4rem;
+  }
+  .switch {
+    padding: 0.8rem;
+  }
 }

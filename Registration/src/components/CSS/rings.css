@@ -4,13 +4,11 @@
 }
 
 .rings {
-  animation: ring-rotate var(--speed) linear var(--delay)
-    infinite var(--dir);
+  animation: ring-rotate var(--speed) linear var(--delay) infinite var(--dir);
 }
 
 .ring-glow {
-  filter: drop-shadow(0 0 5px #4dacff)
-    drop-shadow(0 0 50px #83c4fd)
+  filter: drop-shadow(0 0 5px #4dacff) drop-shadow(0 0 50px #83c4fd)
     drop-shadow(0 0 500px #83c4fd);
 }
 
@@ -49,8 +47,7 @@
 
 .ring-line {
   position: absolute;
-  filter: drop-shadow(0 0 5px #4dacff)
-    drop-shadow(0 0 50px #83c4fd);
+  filter: drop-shadow(0 0 5px #4dacff) drop-shadow(0 0 50px #83c4fd);
 }
 
 @keyframes ring-rotate {

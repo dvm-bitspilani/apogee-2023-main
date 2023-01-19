@@ -45,24 +45,23 @@ body {
   margin-inline: 0.6rem;
 }
 
-.heroFoot svg:hover path{
-  fill: #54AEFF;
+.heroFoot svg:hover path {
+  fill: #54aeff;
 }
 
-@media (max-width:430px) {
-  .apogeeLogo{
+@media (max-width: 430px) {
+  .apogeeLogo {
     width: 15rem;
   }
-  .countDown{
+  .countDown {
     right: 0;
     bottom: 0;
     top: auto !important;
   }
-  .heroFoot{
+  .heroFoot {
     padding-left: 0;
   }
-  .navbar{
+  .navbar {
     flex-direction: column;
   }
-  
 }
