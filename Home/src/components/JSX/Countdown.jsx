@@ -2,65 +2,50 @@ import React, { useEffect, useState } from "react";
 import "../CSS/Timer.css";
 
 function Countdown() {
-  const [bosm, setBosm] = useState(new Date("March 30, 2023 23:59:59").getTime());
-  const [prevDay, setPrevDay] = useState(null);
-  const [prevHr, setPrevHr] = useState(null);
-  const [prevMin, setPrevMin] = useState(null);
-  const [days, setDays] = useState(null);
-  const [mins, setMins] = useState(null);
-  const [hrs, setHrs] = useState(null);
-  const [current_time, setCurrentTime] = useState(new Date().getTime())
+  const [APOGEE, setAPOGEE] = useState(
+    new Date("March 30, 2023 23:59:59").getTime()
+  );
+
+  const [current_time, setCurrentTime] = useState(new Date().getTime());
+
+  const [prevDay, setPrevDay] = useState(null),
+    [prevHr, setPrevHr] = useState(null),
+    [prevMin, setPrevMin] = useState(null),
+    [days, setDays] = useState(null),
+    [mins, setMins] = useState(null),
+    [hrs, setHrs] = useState(null);
 
   useEffect(() => {
     setInterval(() => {
       setCurrentTime(new Date().getTime());
     }, 1000);
   });
+
   useEffect(() => {
     setInterval(() => {
       // updating number of days left
-      setDays(Math.floor((bosm - current_time) / (1000 * 60 * 60 * 24)));
-      // days = days < 10 ? `0${days}` : days;
-      // updating number of hours left (in that day)
+      setDays(Math.floor((APOGEE - current_time) / (1000 * 60 * 60 * 24)));
 
-      // hrs = hrs < 10 ? `0${hrs}` : hrs;
-      console.log(current_time);
-
-      // updating number of minutes left (in that hour)
-      // setMins(Math.floor((bosm - current_time) / (1000 * 60)) - days * 24 * 60 - hrs * 60);
-      // min = min < 10 ? `0${min}` : min;
-
-      // // updating number of seconds left (in that min)
-      // sec =
-      //   Math.floor((bosm - current_time) / 1000) -
-      //   days * 24 * 60 * 60 -
-      //   hrs * 60 * 60 -
-      //   min * 60;
-      // sec = sec < 10 ? `0${sec}` : sec;
-
-      // when timer is completed (BOSM arrives)
+      // when timer is completed (APOGEE arrives)
       if (days < 0) {
         setDays("00");
         setHrs("00");
         setMin("00");
-        // sec = "00";
       }
-
-      // adding animation to timer cards
-
-
-      // updating the temporary variables
-
-
-      // updating the divs
     }, 1000);
-  }, [])
-  useEffect(() => {
-    setHrs(Math.floor((bosm - current_time) / (1000 * 60 * 60)) - days * 24);
-  })
+  }, []);
 
   useEffect(() => {
-    setMins(Math.floor((bosm - current_time) / (1000 * 60)) - days * 24 * 60 - hrs * 60);
+    setHrs(Math.floor((APOGEE - current_time) / (1000 * 60 * 60)) - days * 24);
+  });
+
+  useEffect(() => {
+    setMins(
+      Math.floor((APOGEE - current_time) / (1000 * 60)) -
+        days * 24 * 60 -
+        hrs * 60
+    );
+
     document.getElementById("days").style.animation =
       prevDay != days ? "card-flip 0.6s" : "none";
     document.getElementById("hours").style.animation =
@@ -70,7 +55,7 @@ function Countdown() {
     setPrevDay(days);
     setPrevHr(hrs);
     setPrevMin(mins);
-  })
+  });
 
   return (
     <div>

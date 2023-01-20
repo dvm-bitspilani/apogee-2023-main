@@ -48,7 +48,7 @@ const Brain = props => {
         rotateSpeed={0.1}
         target={target}
         maxPolarAngle={degToRad(85)}
-        maxDistance={2}
+        maxDistance={1.6}
         minDistance={1}
         enablePan={false}
       />
