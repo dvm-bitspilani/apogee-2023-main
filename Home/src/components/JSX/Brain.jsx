@@ -11,8 +11,8 @@ import { degToRad } from "three/src/math/MathUtils";
 import useWindowDimension from "../../hooks/useWindowDimensions";
 
 const Brain = props => {
-  const { nodes, materials } = useGLTF("/models/brain.glb");
-  const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
+  const { nodes, materials } = useGLTF("/models/brain.glb"),
+    colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
   const [scale, setScale] = useState(1),
     { height, width } = useWindowDimension(),

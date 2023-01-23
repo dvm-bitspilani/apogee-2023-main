@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
 import "../CSS/Timer.css";
+import React, { useEffect, useState } from "react";
 
 function Countdown() {
-  const [APOGEE, setAPOGEE] = useState(
-    new Date("March 30, 2023 23:59:59").getTime()
-  );
-
-  const [current_time, setCurrentTime] = useState(new Date().getTime());
+  const [current_time, setCurrentTime] = useState(new Date().getTime()),
+    [APOGEE, setAPOGEE] = useState(
+      new Date("March 30, 2023 23:59:59").getTime()
+    );
 
   const [prevDay, setPrevDay] = useState(null),
     [prevHr, setPrevHr] = useState(null),
@@ -30,7 +29,7 @@ function Countdown() {
       if (days < 0) {
         setDays("00");
         setHrs("00");
-        setMin("00");
+        setMins("00");
       }
     }, 1000);
   }, []);
@@ -52,6 +51,7 @@ function Countdown() {
       prevHr != hrs ? "card-flip 0.6s" : "none";
     document.getElementById("min").style.animation =
       prevMin != mins ? "card-flip 0.6s" : "none";
+
     setPrevDay(days);
     setPrevHr(hrs);
     setPrevMin(mins);
