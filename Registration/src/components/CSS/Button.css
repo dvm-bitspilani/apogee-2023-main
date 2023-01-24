@@ -22,7 +22,7 @@
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: "monospac";
+  font-family: "mono";
   letter-spacing: 1px;
   font-style: normal;
   font-weight: 700;
@@ -33,11 +33,11 @@
 
 .btn-inside {
   transition: opacity 0.3s ease-in-out;
-  opacity: 0.8;
+  opacity: 0;
 }
 
 .btn:hover .btn-inside {
-  opacity: 0;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1300px) {

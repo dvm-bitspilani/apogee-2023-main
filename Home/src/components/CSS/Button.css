@@ -1,6 +1,5 @@
-
 @font-face {
-  font-family: 'Monospace';
+  font-family: "Monospace";
   src: url(../../fonts/Monospace.ttf);
 }
 .button {
@@ -31,18 +30,18 @@
   letter-spacing: 1px;
   font-style: normal;
   font-weight: 700;
-  font-size: var(--inputFont);
+  font-size: 1rem;
   color: #b3dbff;
   opacity: 0.95;
 }
 
 .btn-inside {
   transition: opacity 0.3s ease-in-out;
-  opacity: 0.8;
+  opacity: 0;
 }
 
 .btn:hover .btn-inside {
-  opacity: 0;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1300px) {
@@ -81,14 +80,16 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .button {
-    width: 35vw;
+    width: 60vw;
+    margin-left: 6rem;
   }
 }
 
 @media screen and (max-width: 300px) {
   .button {
-    width: 40vw;
+    width: 60vw;
+    margin-left: 4 rem;
   }
 }

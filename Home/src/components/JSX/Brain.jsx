@@ -1,73 +1,83 @@
-import React from "react";
 import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
   useGLTF,
 } from "@react-three/drei";
-import * as THREE from "three";
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import React, { useState, useEffect } from "react";
+import { useLoader } from "@react-three/fiber";
+import { BackSide, TextureLoader } from "three";
 import { degToRad } from "three/src/math/MathUtils";
+import useWindowDimension from "../../hooks/useWindowDimensions";
 
 const Brain = props => {
-  // Code to move the camera around
-  // const OCR = useRef(null);
-  // useFrame(state => {
-  //   if (!!OCR.current) {
-  //     const { x, y } = state.mouse;
-  //     OCR.current.setAzimuthalAngle(-x * degToRad(180));
-  //     OCR.current.setPolarAngle((2 + y) * degToRad(45));
-  //     OCR.current.update();
-  //   }
-  // });
+  const { nodes, materials } = useGLTF("/models/brain.glb"),
+    colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
-  const { nodes, materials } = useGLTF("/models/brain-transformed.glb");
+  const [scale, setScale] = useState(1),
+    { height, width } = useWindowDimension(),
+    [target, setTarget] = useState([0, 0.67, 0]),
+    [position, setPosition] = useState([1, 1, 1]);
+
+  useEffect(() => {
+    if (width < 850) {
+      setScale(0.87);
+      setPosition([2, 2, 2]);
+    }
+
+    if (width < 500) {
+      setScale(0.8);
+      setTarget([0, 0.6, 0]);
+    }
+
+    if (width < 400) {
+      setScale(0.7);
+      setTarget([0, 0.5, 0]);
+    }
+  }, [width]);
+
   return (
     <>
       {/* Camera */}
-      <PerspectiveCamera makeDefault position={[-0.75, 0.75, -0.75]} />
+      <PerspectiveCamera makeDefault position={position} />
+
+      {/* Orbit Controls */}
       <OrbitControls
-        // ref={OCR}
         autoRotate
-        keys={{
-          LEFT: "ArrowLeft",
-          UP: "ArrowUp",
-          RIGHT: "ArrowRight",
-          BOTTOM: "ArrowDown",
-        }}
         autoRotateSpeed={1}
-        rotateSpeed={0.06}
-        zoomSpeed={10}
-        enableZoom={false}
-        target={[0, 0, 0]}
-        maxPolarAngle={degToRad(110)}
-        minPolarAngle={degToRad(70)}
-        maxDistance={1.4}
-        minDistance={0.6}
+        rotateSpeed={0.1}
+        target={target}
+        maxPolarAngle={degToRad(85)}
+        maxDistance={1.6}
+        minDistance={1}
+        enablePan={false}
       />
 
-      <pointLight args={["#B5F8FA", 0.1]} />
-
-      <group {...props} dispose={null}>
+      <group scale={scale} {...props} dispose={null}>
         <mesh
           geometry={nodes.Brain_Model001.geometry}
-          material={materials.Material}
-          position={[0, -0.6, 0]}
+          material={materials["Material.001"]}
           rotation={[Math.PI / 2, 0, 0]}
+        />
+        <mesh
+          geometry={nodes.Brain_Model.geometry}
+          material={materials["Material.002"]}
+          position={[0, 0.1, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.86}
         />
       </group>
 
       {/* Environmnet */}
-      {/* <Environment background>
+      <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
-          <meshBasicMaterial color="darkblue" side={THREE.BackSide} />
+          <meshBasicMaterial map={colorMap} side={BackSide} />
         </mesh>
-      </Environment> */}
+      </Environment>
     </>
   );
 };
 
 export default Brain;
-useGLTF.preload("/models/brain-transformed.glb");
+useGLTF.preload("/models/brain.glb");

@@ -63,6 +63,7 @@ const SelectInput = props => {
     <div className="input">
       <label htmlFor={props.field}>{props.name}</label>
       <Select
+        required
         id={props.field}
         closeMenuOnSelect={!props.isMulti}
         options={props.options}
@@ -71,7 +72,6 @@ const SelectInput = props => {
         classNamePrefix="react-select"
         placeholder=""
         isClearable
-        required
         menuPortalTarget={document.body}
         styles={colourStyles}
         onChange={choice => {

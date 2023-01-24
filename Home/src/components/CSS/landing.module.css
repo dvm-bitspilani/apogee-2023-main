@@ -1,36 +1,67 @@
 body {
-    overflow-x: hidden;
+  overflow: hidden;
 }
 
 .apogeeLogo {
-    width: 20rem;
-}
-
-.wrapper {
-    padding-inline: 2rem;
+  width: 20rem;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 4rem);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.countDown {
+  position: fixed;
+  left: 0;
+  padding: 1rem;
+  top: 10rem;
+  scale: 0.8;
 }
 
 .heroFoot {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  padding-bottom: 4rem;
+  padding-left: 3rem;
+  left: 0;
+  bottom: 0;
+  transform: scale(0.8) translate(-1rem, 2rem);
 }
 
-.heroFoot>img {
-    width: 2rem;
-    cursor: pointer;
-    margin-top: -7rem;
+.heroFoot svg {
+  width: 1.8rem;
+  cursor: pointer;
+  margin-top: -7rem;
+  margin-inline: 0.6rem;
 }
 
-.blue {
-    width: 6rem !important;
-    padding-bottom: 0.5rem;
+.heroFoot svg:hover path {
+  fill: #54aeff;
+}
+
+@media (max-width: 430px) {
+  .apogeeLogo {
+    width: 15rem;
+  }
+  .countDown {
+    right: 0;
+    bottom: 0;
+    top: auto !important;
+  }
+  .heroFoot {
+    padding-left: 0;
+  }
+  .navbar {
+    flex-direction: column;
+  }
 }
