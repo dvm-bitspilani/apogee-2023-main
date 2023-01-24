@@ -6,7 +6,7 @@ const TextInput = props => {
 
   useEffect(() => {
     props.valueSet(value);
-  });
+  }, [value]);
 
   return (
     <div className="input">

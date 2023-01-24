@@ -37,18 +37,15 @@ const Form = () => {
       setEvents(() => {
         let evt = [];
         events.data.forEach(evtCat => {
-          evt = [
-            ...evt,
-            evtCat.map(evt => {
-              return { value: evt.id, label: evt.name };
-            }),
-          ];
+          let evtTemp = evtCat.events.map(ev => {
+            return { value: ev.id, label: ev.name };
+          });
+          evt = [...evt, ...evtTemp];
         });
+        return evt;
       });
     } catch (err) {
-      alert(
-        "Error in fetching data. Please check your network connection"
-      );
+      alert("Error in fetching data. Please check your network connection");
     }
   };
 
@@ -64,9 +61,7 @@ const Form = () => {
         })
       );
     } catch (err) {
-      alert(
-        "Error in fetching data. Please check your network connection"
-      );
+      alert("Error in fetching data. Please check your network connection");
     }
   };
 
@@ -83,12 +78,12 @@ const Form = () => {
       phone: phone,
       year: selYrs,
       name: name,
-      sex: gen,
+      gender: gen,
       city: city,
       college_id: selCol,
     };
     try {
-      let subRes = await fetch(`${REG_URL_PREFIX}/Register`, {
+      let subRes = await fetch(`${REG_URL_PREFIX}/Register/`, {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -111,19 +106,10 @@ const Form = () => {
   }, []);
 
   return (
-    <form
-      className="form"
-      onSubmit={handleSubmit}
-      key={`form-${submitCount}`}
-    >
+    <form className="form" onSubmit={handleSubmit} key={`form-${submitCount}`}>
       <div className="form-inputs-container">
         <div className="form-inputs" id="inputs-left">
-          <TextInput
-            type="text"
-            field="name"
-            name="name"
-            valueSet={setName}
-          />
+          <TextInput type="text" field="name" name="name" valueSet={setName} />
           <TextInput
             type="email"
             field="email"
@@ -136,11 +122,7 @@ const Form = () => {
             name="phone number"
             valueSet={setPhone}
           />
-          <RadioInput
-            field="gender"
-            name="gender"
-            valueSet={setGen}
-          />
+          <RadioInput field="gender" name="gender" valueSet={setGen} />
         </div>
 
         <div className="form-inputs" id="inputs-right">
@@ -165,12 +147,7 @@ const Form = () => {
             isMulti={false}
             valueSet={setSelYrs}
           />
-          <TextInput
-            type="text"
-            field="city"
-            name="city"
-            valueSet={setCity}
-          />
+          <TextInput type="text" field="city" name="city" valueSet={setCity} />
         </div>
       </div>
 
