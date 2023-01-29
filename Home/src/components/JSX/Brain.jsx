@@ -2,6 +2,7 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  Stars,
   useGLTF,
 } from "@react-three/drei";
 import React, { useState, useEffect } from "react";
@@ -67,6 +68,8 @@ const Brain = props => {
           scale={0.86}
         />
       </group>
+
+      <Stars />
 
       {/* Environmnet */}
       <Environment background>

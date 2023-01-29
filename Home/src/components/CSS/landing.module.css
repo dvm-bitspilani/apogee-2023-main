@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .apogeeLogo {
@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: calc(100vw - 4rem);
@@ -19,7 +19,7 @@ body {
 }
 
 .countDown {
-  position: fixed;
+  position: absolute;
   left: 0;
   padding: 1rem;
   top: 10rem;
@@ -30,7 +30,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: fixed;
+  position: absolute;
   padding-bottom: 4rem;
   padding-left: 3rem;
   left: 0;
