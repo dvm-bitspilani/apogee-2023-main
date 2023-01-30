@@ -1,7 +1,13 @@
+@font-face {
+  font-family: "quartz";
+  src: url(../src/fonts/Quartz.otf) format("opentype");
+}
+
 .numbers {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0.8rem;
 }
 
 .numbers > div {
@@ -9,13 +15,17 @@
   font-size: 1.1rem;
   padding: 0.4rem;
   border-radius: 5px;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-family: "quartz";
+
 }
 
 .time {
   width: 110%;
   color: #54aeff;
   margin-left: -2rem;
-  margin-top: 1rem;
+  margin-top: -2rem;
 }
 
 .card-flip {

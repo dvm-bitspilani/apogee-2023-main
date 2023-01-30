@@ -44,6 +44,15 @@ function Countdown() {
         days * 24 * 60 -
         hrs * 60
     );
+    if (hrs < 10) {
+      setHrs(prevHrs => "0"+prevHrs)
+    }
+    if (mins < 10) {
+      setMins(prevMins => "0"+prevMins)
+    }
+    if (days < 10) {
+      setDays(prevDays => "0"+prevDays)
+    }
 
     document.getElementById("days").style.animation =
       prevDay != days ? "card-flip 0.6s" : "none";
