@@ -45,13 +45,13 @@ function Countdown() {
         hrs * 60
     );
     if (hrs < 10) {
-      setHrs(prevHrs => "0"+prevHrs)
+      setHrs(prevHrs => "0" + prevHrs);
     }
     if (mins < 10) {
-      setMins(prevMins => "0"+prevMins)
+      setMins(prevMins => "0" + prevMins);
     }
     if (days < 10) {
-      setDays(prevDays => "0"+prevDays)
+      setDays(prevDays => "0" + prevDays);
     }
 
     document.getElementById("days").style.animation =

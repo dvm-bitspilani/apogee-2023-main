@@ -17,7 +17,7 @@ const Brain = props => {
 
   const [scale, setScale] = useState(1),
     { height, width } = useWindowDimension(),
-    [target, setTarget] = useState([0, 0.67, 0]),
+    [target, setTarget] = useState([0, 0.6, 0]),
     [position, setPosition] = useState([1, 1, 1]);
 
   useEffect(() => {
@@ -26,10 +26,7 @@ const Brain = props => {
       setPosition([2, 2, 2]);
     }
 
-    if (width < 500) {
-      setScale(0.8);
-      setTarget([0, 0.6, 0]);
-    }
+    if (width < 500) setScale(0.8);
 
     if (width < 400) {
       setScale(0.7);

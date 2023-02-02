@@ -8,7 +8,7 @@ function App() {
       <Landing />
       <Contact />
 
-      <a href="https://bits-dvm.org/" target="_blank" className='footer'>
+      <a href="https://bits-dvm.org/" target="_blank" className="footer">
         Made with{" "}
         <i
           aria-hidden="true"

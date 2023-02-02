@@ -1,65 +1,65 @@
 * {
-    text-align: center;
+  text-align: center;
 }
 .contactCard {
-    background: url('../../assets/contact.png') center no-repeat;
-    background-size: 100% 100%;
-    width: 13%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 2rem;
+  background: url("../../assets/contact.png") center no-repeat;
+  background-size: 100% 100%;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
 }
 
 .wrapper {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .6rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .name {
-    font-size: 1.1rem;
-    font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: 900;
 }
 
 .dept {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .icons {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .icons > * {
-    transform: scale(.8);
-    transform-origin: 50% 50%;
+  transform: scale(0.8);
+  transform-origin: 50% 50%;
 }
 
 .icons > *:hover {
-    animation: shake .3s ease infinite;
+  animation: shake 0.3s ease infinite;
 }
 
 @keyframes shake {
-    0% {
-        rotate: 0deg;
-    }
-    25% {
-        rotate: 5deg;
-    }
-    50% {
-        rotate: 0deg;
-    }
-    75% {
-        rotate: -5deg;
-    }
-    100% {
-        rotate: 0deg;
-    }
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 5deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: -5deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
 }
