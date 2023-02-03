@@ -63,3 +63,109 @@ img {
     rotate: 0deg;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .contactCard {
+    width: 15%;
+    padding: 2.8rem 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .contactCard {
+    width: 18%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contactCard {
+    padding: 2.5rem 1.6rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .dept {
+    font-size: .8rem;
+  }
+
+  .icons > * {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contactCard {
+    width: 21%;
+  }
+
+  .wrapper {
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .name {
+    font-size: .9rem;
+  }
+
+  .dept {
+    font-size: .7rem;
+  }
+
+  .icons > * {
+    transform: scale(0.6);
+  }
+
+  .icons {
+    gap: .8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactCard {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contactCard {
+    padding: 2rem 1.4rem;
+  }
+
+  .name {
+    font-size: .8rem;
+  }
+
+  .dept {
+    font-size: .6rem;
+  }
+
+  .icons > * {
+    transform: scale(0.5);
+  }
+
+  .icons {
+    gap: .4rem;
+  }
+
+  .wrapper {
+    gap: .4rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contactCard {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .contactCard {
+    padding: 1.7rem 1.2rem;
+  }
+
+  .name {
+    font-size: .7rem;
+  }
+}

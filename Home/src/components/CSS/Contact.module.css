@@ -22,3 +22,32 @@
   margin-bottom: 3rem;
   font-family: monospace;
 }
+
+@media screen and (max-width: 800px) {
+  .heading {
+    margin: 2rem 0 2rem 0;
+    font-size: 1.8rem;
+  }
+
+  .cards {
+    gap: 1.2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    gap: 1.2rem 1.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cards {
+    gap: .8rem 1rem;
+  }
+}
