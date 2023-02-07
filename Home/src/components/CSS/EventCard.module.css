@@ -1,0 +1,17 @@
+.card {
+    background: url("../../assets/EventCard.png") center no-repeat;
+    background-size: 100% 100%;
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+    padding: 0.4em;
+}
+
+.info {
+    font-weight: 100;
+    color: #BFDFFF;
+    background-color: #0D1319;
+    padding: 0.4rem;
+    overflow: hidden;
+    margin: 0.2rem;
+}
