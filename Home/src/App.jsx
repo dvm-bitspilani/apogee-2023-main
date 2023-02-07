@@ -4,6 +4,7 @@ import Contact from "./components/JSX/Contact";
 import Events from "./components/JSX/Events";
 
 function App() {
+  
   return (
     <div className="App">
       <Landing />

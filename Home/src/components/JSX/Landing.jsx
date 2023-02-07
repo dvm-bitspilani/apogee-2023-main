@@ -11,6 +11,7 @@ import apogeelogo from "../../assets/apogeelogo.png";
 import Switch from "./Switch";
 
 function Landing() {
+  
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
   );
