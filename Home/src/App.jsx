@@ -6,7 +6,7 @@ import Events from "./components/JSX/Events";
 function App() {
   return (
     <div className="App">
-      <Landing />
+      {/* <Landing /> */}
       <Contact />
       <Events/>
       <a href="https://bits-dvm.org/" target="_blank" className="footer">

@@ -59,10 +59,14 @@
 }
 
 @media screen and (max-width: 850px) {
+  .background {
+    background: url(../src/assets/background-mobile.png) center no-repeat;
+    background-size: 97% 98%;
+  }
+
   .heading {
     font-size: 2rem;
     margin-top: 4.4rem;
-    background: url(../src/assets/background-mobile.png) center no-repeat;
   }
 
   .back {
@@ -93,6 +97,7 @@
   .heading {
     font-size: 1.15rem;
   }
+
   .back {
     top: 11.3%;
     width: 13vw;
