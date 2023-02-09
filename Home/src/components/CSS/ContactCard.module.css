@@ -4,11 +4,12 @@
 .contactCard {
   background: url("../../assets/contact.png") center no-repeat;
   background-size: 100% 100%;
-  width: 13%;
+  width: 12%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem 2rem;
+  scale: .9;
 }
 
 .wrapper {
@@ -66,14 +67,13 @@ img {
 
 @media screen and (max-width: 1200px) {
   .contactCard {
-    width: 15%;
     padding: 2.8rem 1.6rem;
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 950px) {
   .contactCard {
-    width: 18%;
+    width: 20%;
   }
 }
 
@@ -96,10 +96,6 @@ img {
 }
 
 @media screen and (max-width: 800px) {
-  .contactCard {
-    width: 21%;
-  }
-
   .wrapper {
     gap: .5rem;
   }
@@ -154,17 +150,15 @@ img {
     gap: .4rem;
   }
 }
+
 @media screen and (max-width: 500px) {
   .contactCard {
     width: 32%;
+    padding: 1.7rem 1.2rem;
   }
 }
 
 @media screen and (max-width: 400px){
-  .contactCard {
-    padding: 1.7rem 1.2rem;
-  }
-
   .name {
     font-size: .7rem;
   }

@@ -36,7 +36,7 @@
   width: 90%;
   margin-inline: auto;
   display: flex;
-  height: 44rem;
+  height: 95vh;
   overflow: hidden;
 }
 .info {
@@ -83,4 +83,45 @@
   font-family: "Monospace";
   margin-block-end: 2rem;
   font-size: 1.1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+    height: 100vh;
+    margin-bottom: 2rem;
+  }
+  .image{
+    display: none;
+  }
+  .info{
+    display: none;
+    width: 100%;
+    padding: 0;
+    background: url("../../assets/eventMobile.png") center no-repeat;
+    background-size: 100% 100%;
+  }
+  .eventDetails{
+    width: 85%;
+    margin-inline: 3rem;
+    padding-bottom: 4rem;
+  }
+  .text{
+    margin-top: 0.5rem;
+  }
+  .eventName{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .details{
+    font-size: 1rem;
+  }
+  .text{
+    font-size: 0.9rem;
+  }
+  .list{
+    width: 90%;
+    margin-left: 0;
+    margin-inline: auto;
+  }
 }
