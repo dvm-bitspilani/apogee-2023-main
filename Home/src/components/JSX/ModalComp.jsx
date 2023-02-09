@@ -19,7 +19,7 @@ export default function ModalComp() {
     document.addEventListener("keyup", evt => {
       evt.preventDefault();
       if (evt.key === "Escape") {
-        closeModal();
+        modal.setDisplayModal(false);
       }
     });
   }, []);
