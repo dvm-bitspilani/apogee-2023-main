@@ -20,7 +20,7 @@
   width: 90vw;
   margin: auto;
   margin-bottom: 3rem;
-  font-family: monospace;
+  font-family: "Monospace";
 }
 
 @media screen and (max-width: 800px) {
@@ -48,6 +48,6 @@
 
 @media screen and (max-width: 400px) {
   .cards {
-    gap: .8rem 1rem;
+    gap: 0.8rem 1rem;
   }
 }

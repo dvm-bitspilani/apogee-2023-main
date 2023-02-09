@@ -2,14 +2,18 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
-  Stars,
   useGLTF,
 } from "@react-three/drei";
-import React, { useState, useEffect } from "react";
 import { useLoader } from "@react-three/fiber";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { BackSide, TextureLoader } from "three";
 import { degToRad } from "three/src/math/MathUtils";
+import { ModalContext } from "../../App";
+import Modal from "../../enums/Modal";
 import useWindowDimension from "../../hooks/useWindowDimensions";
+import BrainPopUp from "./BrainPopUp";
+
+export const SpinContext = createContext();
 
 const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb"),
@@ -18,7 +22,23 @@ const Brain = props => {
   const [scale, setScale] = useState(1),
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
-    [position, setPosition] = useState([1, 1, 1]);
+    [position, setPosition] = useState([1, 1, 1]),
+    [isSpinning, setSpin] = useState(true);
+
+  const modal = useContext(ModalContext);
+  const modalValue = modal.modalOpen.getValue().toLowerCase();
+
+  const context = {
+    isSpinning: isSpinning,
+    stopSpin: () => setSpin(false),
+    startSpin: () => setSpin(true),
+  };
+
+  useEffect(() => {
+    if (modalValue === "null") {
+      context.startSpin();
+    }
+  }, [modal.modalOpen]);
 
   useEffect(() => {
     if (width < 850) {
@@ -40,33 +60,57 @@ const Brain = props => {
       <PerspectiveCamera makeDefault position={position} />
 
       {/* Orbit Controls */}
-      <OrbitControls
-        autoRotate
-        autoRotateSpeed={1}
-        rotateSpeed={0.1}
-        target={target}
-        maxPolarAngle={degToRad(85)}
-        maxDistance={1.6}
-        minDistance={1}
-        enablePan={false}
-      />
+      {isSpinning && !modal.displayModal ? (
+        <OrbitControls
+          autoRotate
+          autoRotateSpeed={1}
+          rotateSpeed={0.1}
+          target={target}
+          maxPolarAngle={degToRad(85)}
+          maxDistance={1.6}
+          minDistance={1}
+          enablePan={false}
+        />
+      ) : (
+        <></>
+      )}
 
       <group scale={scale} {...props} dispose={null}>
         <mesh
-          geometry={nodes.Brain_Model001.geometry}
+          geometry={nodes.Brain_Model001_1.geometry}
           material={materials["Material.001"]}
           rotation={[Math.PI / 2, 0, 0]}
         />
         <mesh
           geometry={nodes.Brain_Model.geometry}
           material={materials["Material.002"]}
-          position={[0, 0.1, 0]}
+          position={[0, 0.45, -0.1]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.86}
         />
+        <mesh
+          geometry={nodes.Brain_Model001.geometry}
+          material={materials["Material.003"]}
+          rotation={[Math.PI / 2, 0, 0]}
+          position={[0, 0.45, -0.15]}
+        />
+        <mesh>
+          <SpinContext.Provider value={context}>
+            <BrainPopUp
+              modal={Modal.Contact}
+              position={[0.5, 0.5, 0]}
+              rotation={[0, Math.PI / 2, 0]}
+              idx={0}
+            />
+            <BrainPopUp
+              modal={Modal.Event}
+              position={[-0.42, 0.8, 0.2]}
+              rotation={[0, Math.PI / 2, 0]}
+              idx={1}
+            />
+          </SpinContext.Provider>
+        </mesh>
       </group>
-
-      <Stars />
 
       {/* Environmnet */}
       <Environment background>

@@ -1,0 +1,12 @@
+.brainPopupCircle-cont,
+.brainPopupCircle-cont * {
+  background-color: transparent;
+  overflow: visible !important;
+}
+
+.brainPopupCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #bbbbbb;
+}

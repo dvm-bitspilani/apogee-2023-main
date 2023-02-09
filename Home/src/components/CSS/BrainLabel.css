@@ -1,0 +1,70 @@
+.brainLabel {
+  width: min-content;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-24px, calc(-100% - 25px));
+  animation: slidein 800ms ease;
+}
+
+.labelLine1 {
+  width: 100px;
+  height: 2px;
+  background-color: #bbbbbb;
+  transform-origin: 100% 50%;
+  transform: rotate(-45deg);
+}
+
+.labelLine2 {
+  width: 200px;
+  height: 2px;
+  background-color: #bbbbbb;
+}
+
+.labelBox-cont {
+  padding: 2px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+  background-color: #83c4fd;
+}
+
+.labelBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 25px;
+  background-color: black;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+}
+
+.labelHeader {
+  font-size: 1.2rem;
+  color: #51aeff;
+  margin-bottom: 10px;
+}
+
+.labelCont {
+  font-family: "Monospace";
+  width: max-content;
+}
+
+@keyframes slidein {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 200%, 0 200%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 200%, 0 200%);
+  }
+}

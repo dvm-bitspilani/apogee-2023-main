@@ -1,11 +1,9 @@
-import "../CSS/Timer.css";
 import React, { useEffect, useState } from "react";
+import "../CSS/Timer.css";
 
 function Countdown() {
   const [current_time, setCurrentTime] = useState(new Date().getTime()),
-    [APOGEE, setAPOGEE] = useState(
-      new Date("March 30, 2023 23:59:59").getTime()
-    );
+    APOGEE = new Date("March 30, 2023 23:59:59").getTime();
 
   const [prevDay, setPrevDay] = useState(null),
     [prevHr, setPrevHr] = useState(null),
@@ -18,7 +16,7 @@ function Countdown() {
     setInterval(() => {
       setCurrentTime(new Date().getTime());
     }, 1000);
-  });
+  }, []);
 
   useEffect(() => {
     setInterval(() => {
@@ -36,7 +34,7 @@ function Countdown() {
 
   useEffect(() => {
     setHrs(Math.floor((APOGEE - current_time) / (1000 * 60 * 60)) - days * 24);
-  });
+  }, [current_time]);
 
   useEffect(() => {
     setMins(
@@ -64,7 +62,7 @@ function Countdown() {
     setPrevDay(days);
     setPrevHr(hrs);
     setPrevMin(mins);
-  });
+  }, [current_time]);
 
   return (
     <div>

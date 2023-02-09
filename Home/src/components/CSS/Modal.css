@@ -1,0 +1,20 @@
+.modalParent {
+  position: absolute;
+  top: 0;
+  background-color: #30303014;
+  backdrop-filter: blur(9px);
+  transform-origin: 50% 50%;
+  animation: popin 500ms ease;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@keyframes popin {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

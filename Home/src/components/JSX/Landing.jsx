@@ -1,14 +1,14 @@
+import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useState } from "react";
+import apogeelogo from "../../assets/apogeelogo.png";
+import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import Button from "./Button";
 import Countdown from "./Countdown";
-import styles from "../CSS/landing.module.css";
-import { Canvas } from "@react-three/fiber";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
-import YtIcon from "./YtIcon";
-import apogeelogo from "../../assets/apogeelogo.png";
 import Switch from "./Switch";
+import YtIcon from "./YtIcon";
 
 function Landing() {
   const [matches, setMatches] = useState(
