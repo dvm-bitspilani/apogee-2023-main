@@ -1,81 +1,84 @@
 .backBtn {
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
 }
 
 .backBtn > svg {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
 }
 
 .cont {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 70%;
-    color: #B2DBFF;
-    font-size: 1.1rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+  color: #b2dbff;
+  font-size: 1.1rem;
 }
 
-/* .arr {
-    transform: translateX(0);
-} */
-
-.backBtnInside{
-    opacity: 0.6;
-    transition: opacity .3s ease-in-out;
+.backBtnInside {
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .backBtn:hover .backBtnInside {
-    opacity: 1;
+  opacity: 1;
 }
 
 .backBtn:hover .arr {
-    transform: translateX(-2px);
-    transition: transform .3s ease-in-out;
+  transform: translateX(-2px);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1500px) {
+  .cont {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
 }
 
 @media screen and (max-width: 1300px) {
-    .cont {
-        font-size: 1rem;
-    }
+  .cont {
+    font-size: 1rem;
+  }
 }
 
-@media screen and (max-width: 1000px) {
-    .cont {
-        font-size: .8rem;
-    }
+@media screen and (max-width: 1100px) {
+  .cont {
+    font-size: 0.8rem;
+  }
 
-    .arr {
-        height: .8rem;
-    }
+  .arr {
+    height: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .cont {
-        font-size: .6rem;
-    }
+  .cont {
+    font-size: 0.6rem;
+  }
 
-    .arr {
-        height: .6rem;
-    }
+  .arr {
+    height: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .cont {
-        font-size: .5rem;
-    }
+  .cont {
+    font-size: 0.5rem;
+  }
 
-    .arr {
-        height: .5rem;
-    }
+  .arr {
+    height: 0.5rem;
+  }
 }

@@ -4,17 +4,13 @@ import "../CSS/BackBtn.css";
 export default function BackBtn() {
   return (
     <a href="https://apogee-2023-main.vercel.app/" className="backBtn">
-      <svg
-        viewBox="0 0 126 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 126 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M10.3178 52.7247L10.466 52.8834H10.6832H124.69H125.19V52.3834V19.0588V18.877L125.073 18.7376L112.247 3.43661L112.097 3.25781H111.864H9.48491H9.29893L9.15816 3.37935L4.99161 6.97667L4.81836 7.12625V7.35513V46.6405V46.8377L4.95298 46.9818L10.3178 52.7247Z"
           stroke="#1A93FF"
         />
         <path
-        className="backBtnInside"
+          className="backBtnInside"
           d="M122.417 50.1104H11.6897L7.59055 45.763V8.39505L10.3298 6.03H110.803L122.417 19.8849V50.1104Z"
           fill="#132330"
           stroke="#4DACFF"
@@ -32,10 +28,20 @@ export default function BackBtn() {
         />
       </svg>
       <div className="cont">
-      <svg className="arr" width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.72535 0.793765C7.3604 0.402078 6.77202 0.402078 6.40707 0.793765L0.217852 7.43645C-0.0726172 7.7482 -0.0726172 8.2518 0.217852 8.56355L6.40707 15.2062C6.77202 15.5979 7.3604 15.5979 7.72535 15.2062C8.0903 14.8145 8.0903 14.1831 7.72535 13.7914L2.33306 7.996L7.7328 2.20064C8.0903 1.81695 8.0903 1.17746 7.72535 0.793765Z" fill="#B2DBFF"/>
-</svg>
-<span className="backText">Back</span>
+        <svg
+          className="arr"
+          width="8"
+          height="16"
+          viewBox="0 0 8 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.72535 0.793765C7.3604 0.402078 6.77202 0.402078 6.40707 0.793765L0.217852 7.43645C-0.0726172 7.7482 -0.0726172 8.2518 0.217852 8.56355L6.40707 15.2062C6.77202 15.5979 7.3604 15.5979 7.72535 15.2062C8.0903 14.8145 8.0903 14.1831 7.72535 13.7914L2.33306 7.996L7.7328 2.20064C8.0903 1.81695 8.0903 1.17746 7.72535 0.793765Z"
+            fill="#B2DBFF"
+          />
+        </svg>
+        <span className="backText">Back</span>
       </div>
     </a>
   );

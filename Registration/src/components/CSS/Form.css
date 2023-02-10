@@ -8,7 +8,6 @@
 
 .form-inputs-container {
   width: 100%;
-  /* padding: 1rem 0; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -23,7 +22,7 @@
 .btn-container {
   display: flex;
   justify-content: center;
-  margin: 5% 0 1% 0;
+  margin: 1rem;
 }
 
 @media screen and (min-width: 1650px) {
