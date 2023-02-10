@@ -65,7 +65,7 @@ function Countdown() {
   }, [current_time]);
 
   return (
-    <div>
+    <div className="countdown">
       <div className="time">
         <div className="numbers">
           <div id="days">{days}</div>
