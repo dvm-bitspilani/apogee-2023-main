@@ -17,7 +17,7 @@ import ringSideLine from "../../assets/ring_side_line.svg";
 const Rings = props => {
   return (
     <>
-      <div className="rings-cont abs-left">
+      <div className="rings-cont abs-left side-rings">
         <img
           className="rings abs-ring ring-glow"
           src={ringSideOut}
@@ -45,11 +45,6 @@ const Rings = props => {
         <img
           className="ring-line"
           src={ringSideLine}
-          style={{
-            top: "50%",
-            left: "105%",
-            transform: "translateY(-50%)",
-          }}
         />
       </div>
       <div className="rings-cont abs-center">
@@ -203,7 +198,7 @@ const Rings = props => {
           }}
         />
       </div>
-      <div className="rings-cont abs-right">
+      <div className="rings-cont abs-right side-rings">
         <img
           className="rings abs-ring ring-glow"
           src={ringSideOut}
@@ -231,11 +226,6 @@ const Rings = props => {
         <img
           className="ring-line"
           src={ringSideLine}
-          style={{
-            top: "50%",
-            right: "105%",
-            transform: "translateY(-50%)",
-          }}
         />
       </div>
     </>
