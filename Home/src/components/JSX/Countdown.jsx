@@ -5,12 +5,12 @@ function Countdown() {
   const [current_time, setCurrentTime] = useState(new Date().getTime()),
     APOGEE = new Date("March 30, 2023 23:59:59").getTime();
 
-  const [prevDay, setPrevDay] = useState(null),
-    [prevHr, setPrevHr] = useState(null),
-    [prevMin, setPrevMin] = useState(null),
-    [days, setDays] = useState(null),
-    [mins, setMins] = useState(null),
-    [hrs, setHrs] = useState(null);
+  const [prevDay, setPrevDay] = useState(),
+    [prevHr, setPrevHr] = useState(),
+    [prevMin, setPrevMin] = useState(),
+    [days, setDays] = useState(),
+    [mins, setMins] = useState(),
+    [hrs, setHrs] = useState();
 
   useEffect(() => {
     setInterval(() => {

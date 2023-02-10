@@ -11,7 +11,6 @@ import Switch from "./Switch";
 import YtIcon from "./YtIcon";
 
 function Landing() {
-  
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
   );

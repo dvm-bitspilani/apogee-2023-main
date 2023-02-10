@@ -86,40 +86,40 @@
 }
 
 @media screen and (max-width: 600px) {
-  .container{
+  .container {
     height: 100vh;
     margin-bottom: 2rem;
   }
-  .image{
+  .image {
     display: none;
   }
-  .info{
+  .info {
     display: none;
     width: 100%;
     padding: 0;
     background: url("../../assets/eventMobile.png") center no-repeat;
     background-size: 100% 100%;
   }
-  .eventDetails{
+  .eventDetails {
     width: 85%;
     margin-inline: 3rem;
     padding-bottom: 4rem;
   }
-  .text{
+  .text {
     margin-top: 0.5rem;
   }
-  .eventName{
+  .eventName {
     font-size: 1.3rem;
     text-align: center;
     margin-top: 2rem;
   }
-  .details{
+  .details {
     font-size: 1rem;
   }
-  .text{
+  .text {
     font-size: 0.9rem;
   }
-  .list{
+  .list {
     width: 90%;
     margin-left: 0;
     margin-inline: auto;
