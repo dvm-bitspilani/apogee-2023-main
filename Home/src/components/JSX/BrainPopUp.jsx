@@ -8,7 +8,9 @@ export default function BrainPopUp(props) {
   const modal = useContext(ModalContext);
   const spin = useContext(SpinContext);
   const elemRef = useRef();
-  const elemInterval = useRef(null);
+  const elemInterval = useRef(
+    document.getElementsByClassName("brainPopupCircle-cont")[props.idx]
+  );
 
   const elemIntervalFn = () => {
     if (elemRef.current.style.zIndex >= 8383310) {
@@ -38,7 +40,6 @@ export default function BrainPopUp(props) {
     elemRef.current = document.getElementsByClassName("brainPopupCircle-cont")[
       props.idx
     ];
-    clearInterval(elemInterval);
   }, []);
 
   useEffect(() => {
