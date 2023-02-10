@@ -9,7 +9,7 @@
 .background {
   position: relative;
   width: 98vw;
-  min-height: 97vh;
+  height: 97vh;
   background: url(../src/assets/background.png) center no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -19,7 +19,16 @@
   z-index: 20;
 }
 
-.heading, .backBtn {
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.heading,
+.backBtn {
   font-family: "sui";
   font-weight: lighter;
   color: rgba(153, 204, 255, 0.9);
@@ -27,7 +36,6 @@
 
 .heading {
   font-size: 2.8rem;
-  margin-top: 1.4rem;
 }
 
 .form-container {
@@ -36,14 +44,26 @@
 
 .back {
   width: 8vw;
-  position: absolute;
-  left: 13%;
-  top: 11%;
+  /* position: absolute;
+  left: 10%;
+  top: 10%; */
 }
 
 @media screen and (min-width: 1550px) {
   .heading {
     margin-top: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .back {
+    scale: .9;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .back {
+    scale: .8;
   }
 }
 
@@ -53,8 +73,7 @@
   }
 
   .back {
-    left: 9%;
-    top: 13%;
+    scale: .75;
   }
 }
 
@@ -62,23 +81,22 @@
   .background {
     background: url(../src/assets/background-mobile.png) center no-repeat;
     background-size: 97% 98%;
+    gap: 2rem;
+    justify-content: center;
   }
 
   .heading {
-    font-size: 2rem;
-    margin-top: 4.4rem;
+    font-size: 2.4rem;
   }
 
   .back {
-    left: 11%;
-    top: 10%;
-    width: 10vw;
+    width: 12vw;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .back {
-    left: 8%;
+  .heading {
+    font-size: 2rem;
   }
 }
 
@@ -88,7 +106,7 @@
   }
 
   .back {
-    top: 11.8%;
+    scale: .65;
     width: 12vw;
   }
 }
@@ -99,7 +117,6 @@
   }
 
   .back {
-    top: 11.3%;
     width: 13vw;
   }
 }

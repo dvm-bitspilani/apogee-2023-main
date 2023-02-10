@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3rem 2rem;
-  scale: .9;
+  scale: 0.9;
 }
 
 .wrapper {
@@ -87,7 +87,7 @@ img {
   }
 
   .dept {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .icons > * {
@@ -97,17 +97,17 @@ img {
 
 @media screen and (max-width: 800px) {
   .wrapper {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 }
 
 @media screen and (max-width: 700px) {
   .name {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .dept {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 
   .icons > * {
@@ -115,7 +115,7 @@ img {
   }
 
   .icons {
-    gap: .8rem;
+    gap: 0.8rem;
   }
 }
 
@@ -131,11 +131,11 @@ img {
   }
 
   .name {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .dept {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   .icons > * {
@@ -143,11 +143,11 @@ img {
   }
 
   .icons {
-    gap: .4rem;
+    gap: 0.4rem;
   }
 
   .wrapper {
-    gap: .4rem;
+    gap: 0.4rem;
   }
 }
 
@@ -158,8 +158,8 @@ img {
   }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
   .name {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }

@@ -8,10 +8,13 @@ function App() {
     <div className="registration-app">
       <Rings />
       <div className="background">
+        <div className="header" style={{ display: "flex" }}>
           <div className="back">
             <BackBtn />
           </div>
           <div className="heading">REGISTRATION</div>
+          <div className="back"></div>
+        </div>
         <div className="form-container">
           <Form />
         </div>
