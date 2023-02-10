@@ -7,6 +7,7 @@ function Events() {
   const [eventsArr, setEventsArr] = useState([]);
   const [dispEvent, setDispEvent] = useState(0);
   const [mainEvent, setMainEvent] = useState([]);
+
   let info = useRef(null);
   let list = useRef(null);
   let container = useRef(null);
@@ -24,7 +25,9 @@ function Events() {
   useEffect(() => {
     getEvents();
   }, []);
+
   const EVENT_URL = "https://bits-apogee.org/registrations/events/";
+
   const getEvents = async () => {
     try {
       let res = await fetch(EVENT_URL, { method: "GET" });
@@ -46,14 +49,17 @@ function Events() {
       alert("NETWORK ERROR!");
     }
   };
+
   function changeEvent(e) {
     setDispEvent(e.target.innerText[0] - 1);
+
     if (matches) {
       list.style.display = "none";
       info.style.display = "block";
       container.style.height = "auto";
     }
   }
+
   function showList() {
     if (matches) {
       list.style.display = "block";

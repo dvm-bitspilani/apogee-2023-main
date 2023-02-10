@@ -1,6 +1,6 @@
 .modalParent {
-  position: absolute;
   top: 0;
+  position: absolute;
   background-color: #30303014;
   backdrop-filter: blur(9px);
   transform-origin: 50% 50%;

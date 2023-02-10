@@ -1,7 +1,6 @@
 #canvas-wrapper {
   height: 100vh !important;
   width: 100vw !important;
-  /* position: absolute !important; */
   top: 0 !important;
   left: 0 !important;
   display: block !important;
@@ -9,10 +8,15 @@
 
 .footer {
   text-decoration: none;
+  text-align: center;
+  width: 100vw;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 0.6rem;
   font-family: "Monospace";
   color: #cce7ff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .ptr {

@@ -17,16 +17,16 @@ function App() {
 
   const context = {
     modalOpen: modalOpen,
-    updateModal: function (isOpen) {
-      setModalOpen(isOpen);
-    },
+    updateModal: isOpen => setModalOpen(isOpen),
+
     displayModal: displayModal,
     setDisplayModal: setDisplayModal,
+
     labels: labels,
-    setLabels: (label, isVis) => {
+    setLabels: (label, isVisible) => {
       setLabels(currLabel => ({
         ...currLabel,
-        [label]: isVis,
+        [label]: isVisible,
       }));
     },
   };
@@ -35,18 +35,16 @@ function App() {
     <div className="App">
       <ModalContext.Provider value={context}>
         <Landing />
+
         {displayModal ? <ModalComp /> : <></>}
         {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
         {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
       </ModalContext.Provider>
+
       <a href="https://bits-dvm.org/" target="_blank" className="footer">
-        Made with{" "}
-        <i
-          aria-hidden="true"
-          style={{ margin: "0", cursor: "pointer", color: "red" }}
-          className="fa fa-heart"
-        ></i>{" "}
-        by DVM
+        {`Made with `}
+        <i className="fa fa-heart" style={{ color: "red" }} />
+        {` by DVM`}
       </a>
     </div>
   );

@@ -1,36 +1,39 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ModalContext } from "../../App";
-import Modal from "../../enums/Modal";
 import "../CSS/Modal.css";
 import Contact from "./Contact";
 import Events from "./Events";
 
 export default function ModalComp() {
-  const modal = useContext(ModalContext);
-  const modalValue = modal.modalOpen.getValue().toLowerCase();
-  const [closing, setClose] = useState(false);
-  let child;
+  const mContext = useContext(ModalContext);
+  const modalValue = mContext.modalOpen.getValue().toLowerCase();
+
+  const [closing, setClosing] = useState(false),
+    [child, setChild] = useState(null);
 
   function close() {
-    setClose(true);
-    setTimeout(() => {
-      modal.setDisplayModal(false);
-    }, 500);
-  }
-
-  if (modalValue === "contact") {
-    child = <Contact />;
-  } else if (modalValue === "event") {
-    child = <Events />;
+    setClosing(true);
+    setTimeout(() => mContext.setDisplayModal(false), 500);
   }
 
   useEffect(() => {
     document.addEventListener("keyup", evt => {
       evt.preventDefault();
-      if (evt.key === "Escape") {
-        close();
-      }
+      evt.key === "Escape" && close();
     });
+
+    switch (modalValue) {
+      case "contact":
+        setChild(<Contact />);
+        break;
+
+      case "event":
+        setChild(<Events />);
+        break;
+
+      default:
+        break;
+    }
   }, []);
 
   return (

@@ -35,9 +35,7 @@ const Brain = props => {
   };
 
   useEffect(() => {
-    if (modalValue === "null") {
-      context.startSpin();
-    }
+    modalValue === "null" && context.startSpin();
   }, [modal.modalOpen]);
 
   useEffect(() => {
@@ -66,13 +64,14 @@ const Brain = props => {
           autoRotateSpeed={1}
           rotateSpeed={0.1}
           target={target}
-          maxPolarAngle={degToRad(85)}
-          maxDistance={1.6}
-          minDistance={1}
+          maxPolarAngle={degToRad(75)}
+          maxDistance={1.8}
+          minDistance={1.6}
           enablePan={false}
         />
       )}
 
+      {/* Brain Model */}
       <group scale={scale} {...props} dispose={null}>
         <mesh
           geometry={nodes.Brain_Model001_1.geometry}
@@ -92,19 +91,21 @@ const Brain = props => {
           rotation={[Math.PI / 2, 0, 0]}
           position={[0, 0.45, -0.15]}
         />
+
+        {/* Brain Popups */}
         <mesh>
           <SpinContext.Provider value={context}>
             <BrainPopUp
               modal={Modal.Contact}
               position={[0.5, 0.5, 0]}
               rotation={[0, Math.PI / 2, 0]}
-              idx={0}
+              index={0}
             />
             <BrainPopUp
               modal={Modal.Event}
               position={[-0.42, 0.8, 0.2]}
               rotation={[0, Math.PI / 2, 0]}
-              idx={1}
+              index={1}
             />
           </SpinContext.Provider>
         </mesh>

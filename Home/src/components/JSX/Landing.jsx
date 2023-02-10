@@ -5,20 +5,36 @@ import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import Button from "./Button";
 import Countdown from "./Countdown";
+
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
-import Switch from "./Switch";
 import YtIcon from "./YtIcon";
+
+const ICONS = [
+  [<FbIcon />, "https://www.facebook.com/bitsapogee/"],
+  [<InstaIcon />, "https://instagram.com/bitsapogee"],
+  [<YtIcon />, "https://www.youtube.com/@OasisBITS"],
+];
 
 function Landing() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
   );
 
+  const [links, setLinks] = useState([]);
+
   useEffect(() => {
     window
       .matchMedia("(min-width: 450px)")
       .addEventListener("change", e => setMatches(e.matches));
+
+    setLinks(
+      ICONS.map((e, i) => (
+        <a key={i} href={e[1]} rel="noreferrer" target="_blank">
+          {e[0]}
+        </a>
+      ))
+    );
   }, []);
 
   return (
@@ -29,7 +45,6 @@ function Landing() {
 
       <div className={styles.navbar}>
         <img src={apogeelogo} className={styles.apogeeLogo} />
-        {/* <Switch/> */}
         {matches && <Button />}
       </div>
 
@@ -38,31 +53,7 @@ function Landing() {
         <Countdown />
       </div>
 
-      <div className={styles.heroFoot}>
-        <a
-          href="https://www.facebook.com/bitsapogee/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <FbIcon />
-        </a>
-
-        <a
-          href="https://instagram.com/bitsapogee"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <InstaIcon />
-        </a>
-
-        <a
-          href="https://www.youtube.com/@OasisBITS"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <YtIcon />
-        </a>
-      </div>
+      <div className={styles.heroFoot}>{links}</div>
     </div>
   );
 }

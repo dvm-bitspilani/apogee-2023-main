@@ -4,78 +4,71 @@ import { ModalContext } from "../../App";
 import "../CSS/BrainPopup.css";
 import { SpinContext } from "./Brain";
 
-export default function BrainPopUp(props) {
-  const modal = useContext(ModalContext);
-  const spin = useContext(SpinContext);
-  const elemRef = useRef();
-  const elemInterval = useRef(null);
+export default function BrainPopUp({ modal, position, rotation, index }) {
+  const sContext = useContext(SpinContext),
+    mContext = useContext(ModalContext);
 
-  const elemIntervalFn = () => {
-    if (elemRef.current.style.zIndex >= 8383310) {
-      const elem = elemRef.current.querySelector(".brainPopupCircle");
-      const elemClass = elem.classList;
-      if (elemClass.contains("noclick")) elem.classList.remove("noclick");
+  const circleRef = useRef(),
+    intervalRef = useRef(null);
 
-      const elemRect = elem.getBoundingClientRect();
-      modal.updateModal(props.modal);
-      modal.setLabels(props.modal.getValue().toLowerCase(), true);
+  const elementIntervalFxn = () => {
+    if (circleRef.current.style.zIndex >= 8383310) {
+      const circle = circleRef.current.querySelector(".brainPopupCircle");
 
-      props.modal.setLoc(
-        (elemRect.left + elemRect.right) / 2,
-        (elemRect.top + elemRect.bottom) / 2
+      circle?.classList.contains("noclick") &&
+        circle?.classList.remove("noclick");
+
+      mContext.updateModal(modal);
+      mContext.setLabels(modal.getValue().toLowerCase(), true);
+
+      const circleGBCR = circle?.getBoundingClientRect();
+      modal.setLoc(
+        (circleGBCR.left + circleGBCR.right) / 2,
+        (circleGBCR.top + circleGBCR.bottom) / 2
       );
     } else {
-      modal.setLabels(props.modal.getValue().toLowerCase(), false);
-      const elem = elemRef.current.querySelector(".brainPopupCircle");
-      const elemClass = elem.classList;
-      if (!elemClass.contains("noclick")) elem.classList.add("noclick");
+      mContext.setLabels(modal.getValue().toLowerCase(), false);
+
+      const circle = circleRef.current.querySelector(".brainPopupCircle");
+      !circle?.classList.contains("noclick") &&
+        circle?.classList.add("noclick");
     }
   };
 
   useEffect(() => {
-    elemRef.current = document.getElementsByClassName("brainPopupCircle-cont")[
-      props.idx
-    ];
+    circleRef.current = document.getElementsByClassName(
+      "brainPopupCircle-cont"
+    )[index];
   }, []);
 
   useEffect(() => {
-    if (modal.displayModal) {
-      console.log("CLEAR");
-      clearInterval(elemInterval.current);
-    } else {
-      console.log("SET");
-      elemInterval.current = setInterval(elemIntervalFn, 50);
-    }
-  }, [modal.displayModal]);
+    mContext.displayModal
+      ? clearInterval(intervalRef.current)
+      : (intervalRef.current = setInterval(elementIntervalFxn, 50));
+  }, [mContext.displayModal]);
 
   return (
     <Html
+      transform
       occlude="blending"
       wrapperClass="brainPopupCircle-cont"
-      position={props.position}
-      transform
+      position={position}
       distanceFactor={0.5}
-      rotation-x={props.rotation[0]}
-      rotation-y={props.rotation[1]}
-      rotation-z={props.rotation[2]}
-      onOcclude={() => {
-        console.log("OCCLUDE");
-      }}
+      rotation-x={rotation[0]}
+      rotation-y={rotation[1]}
+      rotation-z={rotation[2]}
+      onOcclude={() => console.log("OCCLUDE")}
     >
       <div
         className="brainPopupCircle ptr"
+        onMouseEnter={() => sContext.stopSpin()}
+        onMouseLeave={() => sContext.startSpin()}
         onClick={() => {
-          modal.updateModal(props.modal);
-          modal.setLabels(props.modal.getValue().toLowerCase(), false);
-          modal.setDisplayModal(true);
+          mContext.updateModal(modal);
+          mContext.setDisplayModal(true);
+          mContext.setLabels(modal.getValue().toLowerCase(), false);
         }}
-        onMouseEnter={() => {
-          spin.stopSpin();
-        }}
-        onMouseLeave={() => {
-          spin.startSpin();
-        }}
-      ></div>
+      />
     </Html>
   );
 }
