@@ -14,12 +14,12 @@ export default function BrainPopUp(props) {
     if (elemRef.current.style.zIndex >= 8383310) {
       const elem = elemRef.current.querySelector(".brainPopupCircle");
       const elemClass = elem.classList;
-      if (elemClass.contains("noclick")) {
-        elem.classList.remove("noclick");
-      }
+      if (elemClass.contains("noclick")) elem.classList.remove("noclick");
+
       const elemRect = elem.getBoundingClientRect();
       modal.updateModal(props.modal);
       modal.setLabels(props.modal.getValue().toLowerCase(), true);
+
       props.modal.setLoc(
         (elemRect.left + elemRect.right) / 2,
         (elemRect.top + elemRect.bottom) / 2
@@ -28,9 +28,7 @@ export default function BrainPopUp(props) {
       modal.setLabels(props.modal.getValue().toLowerCase(), false);
       const elem = elemRef.current.querySelector(".brainPopupCircle");
       const elemClass = elem.classList;
-      if (!elemClass.contains("noclick")) {
-        elem.classList.add("noclick");
-      }
+      if (!elemClass.contains("noclick")) elem.classList.add("noclick");
     }
   };
 

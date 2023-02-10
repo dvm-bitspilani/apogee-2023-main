@@ -42,10 +42,7 @@ const Rings = props => {
             "--tro": "50% 50%",
           }}
         />
-        <img
-          className="ring-line"
-          src={ringSideLine}
-        />
+        <img className="ring-line" src={ringSideLine} />
       </div>
       <div className="rings-cont abs-center">
         <img
@@ -223,10 +220,7 @@ const Rings = props => {
             "--tro": "50% 50%",
           }}
         />
-        <img
-          className="ring-line"
-          src={ringSideLine}
-        />
+        <img className="ring-line" src={ringSideLine} />
       </div>
     </>
   );

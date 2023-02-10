@@ -13,7 +13,6 @@ const SelectInput = props => {
         props.valueSet(value.value);
       }
     }
-    console.log("CHANING");
   }, [value]);
 
   const colourStyles = {

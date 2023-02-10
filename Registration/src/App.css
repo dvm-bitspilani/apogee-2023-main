@@ -57,13 +57,13 @@
 
 @media screen and (max-width: 1300px) {
   .back {
-    scale: .9;
+    scale: 0.9;
   }
 }
 
 @media screen and (max-width: 1100px) {
   .back {
-    scale: .8;
+    scale: 0.8;
   }
 }
 
@@ -73,7 +73,7 @@
   }
 
   .back {
-    scale: .75;
+    scale: 0.75;
   }
 }
 
@@ -106,7 +106,7 @@
   }
 
   .back {
-    scale: .65;
+    scale: 0.65;
     width: 12vw;
   }
 }

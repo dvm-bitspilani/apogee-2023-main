@@ -76,11 +76,11 @@
   }
 
   .side-rings {
-    transform: translateY(-50%) scale(.9);
+    transform: translateY(-50%) scale(0.9);
   }
 
   .ring-line {
-    transform: translateY(-50%) scale(.9);
+    transform: translateY(-50%) scale(0.9);
   }
 }
 
@@ -129,11 +129,11 @@
   }
 
   .abs-left {
-    transform: translateX(-50%) scale(.7);
+    transform: translateX(-50%) scale(0.7);
   }
 
   .abs-right {
-    transform: translateX(-50%) scale(.7) rotate(180deg);
+    transform: translateX(-50%) scale(0.7) rotate(180deg);
   }
 }
 
@@ -142,10 +142,10 @@
     transform: translate(-50%, -50%) scale(0.35);
   }
   .abs-left {
-    transform: translateX(-50%) scale(.7);
+    transform: translateX(-50%) scale(0.7);
   }
 
   .abs-right {
-    transform: translateX(-50%) scale(.7) rotate(180deg);
+    transform: translateX(-50%) scale(0.7) rotate(180deg);
   }
 }
