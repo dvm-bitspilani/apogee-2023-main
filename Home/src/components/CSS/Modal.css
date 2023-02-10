@@ -10,6 +10,10 @@
   overflow-y: scroll;
 }
 
+.modalParent.close {
+  animation: popin 500ms ease reverse;
+}
+
 @keyframes popin {
   0% {
     transform: scale(0);
