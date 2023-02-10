@@ -1,8 +1,4 @@
-export default class Modal {
-  static Event = new Modal("event");
-  static Contact = new Modal("contact");
-  static None = new Modal("null");
-
+export class Box {
   constructor(name) {
     this.name = name;
     this.loc = [0, 0];
@@ -19,4 +15,10 @@ export default class Modal {
   getValue() {
     return this.name;
   }
+}
+
+export default class Modal {
+  static Event = new Box("event");
+  static Contact = new Box("contact");
+  static None = new Box("null");
 }

@@ -23,15 +23,15 @@ const Brain = props => {
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
     [position, setPosition] = useState([1, 1, 1]),
-    [isSpinning, setSpin] = useState(true);
+    [isSpinning, setSpinning] = useState(true);
 
   const modal = useContext(ModalContext);
   const modalValue = modal.modalOpen.getValue().toLowerCase();
 
   const context = {
     isSpinning: isSpinning,
-    stopSpin: () => setSpin(false),
-    startSpin: () => setSpin(true),
+    stopSpin: () => setSpinning(false),
+    startSpin: () => setSpinning(true),
   };
 
   useEffect(() => {

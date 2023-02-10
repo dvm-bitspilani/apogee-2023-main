@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../CSS/Contact.module.css";
 import ContactCard from "./ContactCard";
 

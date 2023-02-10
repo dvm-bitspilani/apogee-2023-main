@@ -124,17 +124,15 @@ function Events() {
           }}
         >
           <div className={styles.carousel}>
-            {eventsArr.map((event, idx) => {
-              return (
-                <EventCard
-                  changeEvent={changeEvent}
-                  key={idx}
-                  index={idx}
-                  eventImg={event.img}
-                  eventName={event.name}
-                />
-              );
-            })}
+            {eventsArr.map((e, i) => (
+              <EventCard
+                key={i + 1}
+                event={changeEvent}
+                index={i + 1}
+                img={e.img}
+                name={e.name}
+              />
+            ))}
           </div>
         </div>
       </div>

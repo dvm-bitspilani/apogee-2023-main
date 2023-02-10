@@ -54,9 +54,7 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
       wrapperClass="brainPopupCircle-cont"
       position={position}
       distanceFactor={0.5}
-      rotation-x={rotation[0]}
-      rotation-y={rotation[1]}
-      rotation-z={rotation[2]}
+      rotation={rotation}
       onOcclude={() => console.log("OCCLUDE")}
     >
       <div

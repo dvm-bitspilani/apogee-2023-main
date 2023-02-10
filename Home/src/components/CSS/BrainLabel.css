@@ -4,60 +4,52 @@
   align-items: center;
   position: absolute;
   pointer-events: none;
-  transform: translate(-24px, calc(-100% - 25px));
+  transform: translate(-2.5rem, calc(-100%));
   animation: slidein 800ms ease;
 }
 
 .labelLine1 {
-  width: 100px;
-  height: 2px;
-  background-color: #bbbbbb;
   transform-origin: 100% 50%;
   transform: rotate(-45deg);
 }
 
+.labelLine1,
 .labelLine2 {
-  width: 200px;
-  height: 2px;
-  background-color: #bbbbbb;
+  min-width: 150px;
+  height: 4px;
+  background-color: #6ca2cf;
 }
 
-.labelBox-cont {
-  padding: 2px;
+.labelBox-cont,
+.labelBox {
+  min-width: 200px;
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
     0 100%
   );
+  padding: 4px;
   background-color: #83c4fd;
 }
 
 .labelBox {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   align-items: flex-start;
-  padding: 10px 25px;
+  padding: 1rem 1.5rem;
   background-color: black;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    0 100%
-  );
 }
 
 .labelHeader {
   font-size: 1.2rem;
   color: #51aeff;
-  margin-bottom: 10px;
 }
 
 .labelCont {
   font-family: "Monospace";
-  width: max-content;
 }
 
 @keyframes slidein {
