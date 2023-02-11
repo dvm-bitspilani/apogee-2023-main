@@ -1,6 +1,6 @@
 @font-face {
   font-family: "quartz";
-  src: url(../src/fonts/Quartz.ttf) format("truetype");
+  src: url(../../fonts/Quartz.ttf) format("truetype");
 }
 
 .numbers {
