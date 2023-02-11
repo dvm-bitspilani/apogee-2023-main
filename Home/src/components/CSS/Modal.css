@@ -7,7 +7,7 @@
   animation: popin 500ms ease;
   max-height: 100vh;
   height: 100vh;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .modalParent.close {
