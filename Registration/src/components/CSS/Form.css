@@ -66,9 +66,25 @@
   }
 }
 
+@media screen and (max-width: 1300px) {
+  .btn-container {
+    scale: .9;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .btn-container {
+    scale: .8;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .form-inputs {
     width: 70%;
+  }
+
+  .btn-container {
+    scale: .7;
   }
 }
 
@@ -85,5 +101,6 @@
 
   .btn-container {
     margin: 8% 0 15% 0;
+    scale: .6;
   }
 }

@@ -1,5 +1,6 @@
 .button {
   width: 13vw;
+  width: 190px;
 }
 
 .btn {
@@ -26,7 +27,7 @@
   letter-spacing: 1px;
   font-style: normal;
   font-weight: 700;
-  font-size: var(--inputFont);
+  font-size: 17px;
   color: #b3dbff;
   opacity: 0.95;
 }
@@ -38,52 +39,4 @@
 
 .btn:hover .btn-inside {
   opacity: 0.8;
-}
-
-@media screen and (max-width: 1300px) {
-  .button {
-    width: 14vw;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .button {
-    width: 15vw;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .button {
-    width: 17vw;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .button {
-    width: 19vw;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .button {
-    width: 25vw;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .button {
-    width: 30vw;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .button {
-    width: 35vw;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .button {
-    width: 40vw;
-  }
 }

@@ -119,6 +119,10 @@ div:has(> .react-select__control):focus-within {
   text-transform: none;
 }
 
+.radio-overlay {
+  margin: 0 !important;
+}
+
 .active,
 .radio-button:hover {
   background: #51718d !important;
