@@ -74,14 +74,14 @@ function Events() {
 
   return (
     <div>
-      <div
+      {/* <div
         className={styles.heading}
         onClick={evt => {
           evt.stopPropagation();
         }}
       >
         EVENTS
-      </div>
+      </div> */}
       <div ref={el => (container = el)} className={styles.container}>
         <div
           ref={el => (info = el)}
