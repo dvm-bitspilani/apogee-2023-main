@@ -37,18 +37,14 @@ function App() {
 
   let time=0,a=per*time/100;
   const onLoad = () => {
-    var now = new Date().getTime();
-    var page_load_time = now - performance.timing.navigationStart;
-    console.log("User-perceived page loading time: " + page_load_time);
     var width = 100, // width of a progress bar in percentage
     perfData = window.performance.timing, // The PerformanceTiming interface
-    EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
-    time = parseInt((EstimatedTime/1000)%60); //Converting EstimatedTime from miliseconds to seconds.
-    console.log([page_load_time]/1000)
+    EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
+    time = parseInt((EstimatedTime/1000)%60); //Converting EstimatedTime from miliseconds to seconds.\
     const int = setInterval(() => {
       a+=1
       setPer(Math.floor(a/time*100))
-      console.log(a/time*100);
+      console.log(perfData);
       console.log(per)
       if(a/time*100 > 100) {clearInterval(int); setLoaded(true)}
     }, 100)
