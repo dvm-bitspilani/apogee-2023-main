@@ -38,8 +38,8 @@ function App() {
   let time=0,a=per*time/100;
   const onLoad = () => {
     var width = 100, // width of a progress bar in percentage
-    perfData = window.performance.timing, // The PerformanceTiming interface
-    EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
+    perfData = window.performance.getEntriesByType("resource")[0], // The PerformanceTiming interface
+    EstimatedTime = Math.abs(perfData.responseEnd - perfData.responseStart)*1000, // Calculated Estimated Time of Page Load which returns negative value.
     time = parseInt((EstimatedTime/1000)%60); //Converting EstimatedTime from miliseconds to seconds.\
     const int = setInterval(() => {
       a+=1
