@@ -12,7 +12,7 @@ export default function BrainLabel({ modal }) {
     >
       <div className="labelLine1" />
       <div className="labelLine2" />
-      <div className="labelBox-cont">
+      <div className="labelBox-cont ptr">
         <div
           className="labelBox"
           onClick={() => {
@@ -22,8 +22,10 @@ export default function BrainLabel({ modal }) {
           }}
         >
           <div className="labelHeader">{modalValue}</div>
-          <h2>{modalValue}</h2>
-          <h3>Click the dot to view</h3>
+          <div className="labelCont">{`<h2>${modalValue}</h2>`}</div>
+          <div className="labelCont">
+            {`<div class="secCont">Click to view</div>`}
+          </div>
         </div>
       </div>
     </div>
