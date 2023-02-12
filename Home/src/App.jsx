@@ -38,14 +38,18 @@ function App() {
   let time=0,a=per*time/100;
   const onLoad = () => {
     var width = 100, // width of a progress bar in percentage
-    perfData = window.performance.getEntriesByType("resource")[0], // The PerformanceTiming interface
-    EstimatedTime = Math.abs(perfData.responseEnd - perfData.responseStart)*1000, // Calculated Estimated Time of Page Load which returns negative value.
-    time = parseInt((EstimatedTime/1000)%60); //Converting EstimatedTime from miliseconds to seconds.\
+    perfData = window.performance.getEntriesByType("resource"); // The PerformanceTiming interface
+    let end = 0;
+    for(let i=0; i<perfData.length; i++) {
+      end = Math.max(end, perfData[i].responseEnd)
+    }
+    let EstimatedTime = end, // Calculated Estimated Time of Page Load which returns negative value.
+    time = EstimatedTime; //Converting EstimatedTime from miliseconds to seconds.\
     const int = setInterval(() => {
-      a+=1
+      a+=100
       setPer(Math.floor(a/time*100))
       console.log(perfData);
-      console.log(per)
+      console.log(EstimatedTime)
       if(a/time*100 > 100) {clearInterval(int); setLoaded(true)}
     }, 100)
   }
