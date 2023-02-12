@@ -60,7 +60,7 @@ const Brain = props => {
       {/* Orbit Controls */}
       {isSpinning && !modal.displayModal && (
         <OrbitControls
-          // autoRotate
+          autoRotate
           autoRotateSpeed={1}
           rotateSpeed={0.1}
           target={target}
