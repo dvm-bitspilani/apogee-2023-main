@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
 import "./App.css";
 import BrainLabel from "./components/JSX/BrainLabel";
+import Events from "./components/JSX/Events";
 import Landing from "./components/JSX/Landing";
 import ModalComp from "./components/JSX/ModalComp";
 import Modal from "./enums/Modal";
@@ -31,15 +32,42 @@ function App() {
     },
   };
 
+  const [loaded, setLoaded] = useState(false);
+  const [per, setPer] = useState(0);
+
+  let time=0,a=per*time/100;
+  const onLoad = () => {
+    var now = new Date().getTime();
+    var page_load_time = now - performance.timing.navigationStart;
+    console.log("User-perceived page loading time: " + page_load_time);
+    var width = 100, // width of a progress bar in percentage
+    perfData = window.performance.timing, // The PerformanceTiming interface
+    EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
+    time = parseInt((EstimatedTime/1000)%60); //Converting EstimatedTime from miliseconds to seconds.
+    console.log([page_load_time]/1000)
+    const int = setInterval(() => {
+      a+=1
+      setPer(Math.floor(a/time*100))
+      console.log(a/time*100);
+      console.log(per)
+      if(a/time*100 > 100) {clearInterval(int); setLoaded(true)}
+    }, 100)
+  }
+
+  useEffect(() => {
+    onLoad();
+  }, []);
+
   return (
     <div className="App">
-      <ModalContext.Provider value={context}>
+      {!loaded ? (<div style={{width: '100vw', height: '100vh'}}>{`Loading... ${per}%`}</div>) :
+      (<ModalContext.Provider value={context}>
         <Landing />
-
         {displayModal ? <ModalComp /> : <></>}
         {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
         {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
-      </ModalContext.Provider>
+      </ModalContext.Provider>)
+}
 
     </div>
   );
