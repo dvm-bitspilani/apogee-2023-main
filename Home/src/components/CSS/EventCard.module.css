@@ -6,6 +6,7 @@
   overflow: hidden;
   position: relative;
   padding: 0.4em;
+  cursor: pointer;
 }
 
 .info {
@@ -15,4 +16,7 @@
   padding: 0.4rem;
   overflow: hidden;
   margin: 0.2rem;
+}
+.eventImage{
+    
 }

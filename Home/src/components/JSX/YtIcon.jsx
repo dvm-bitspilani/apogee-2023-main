@@ -3,8 +3,8 @@ import React from "react";
 function YtIcon() {
   return (
     <svg
-      width="34"
-      height="34"
+      width="80"
+      height="36"
       viewBox="0 0 45 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

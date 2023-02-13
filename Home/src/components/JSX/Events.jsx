@@ -13,12 +13,12 @@ function Events() {
   let container = useRef(null);
 
   const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 600px)").matches
+    window.matchMedia("(max-width: 650px)").matches
   );
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 600px)")
+      .matchMedia("(max-width: 650px)")
       .addEventListener("change", e => setMatches(e.matches));
   });
 
@@ -50,8 +50,8 @@ function Events() {
     }
   };
 
-  function changeEvent(e) {
-    setDispEvent(e.target.innerText[0] - 1);
+  function changeEvent(e) {    
+    setDispEvent(e.target.parentElement.childNodes[1].innerText[0] - 1);
 
     if (matches) {
       list.style.display = "none";
