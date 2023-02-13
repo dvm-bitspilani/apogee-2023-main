@@ -5,7 +5,7 @@ import '../CSS/Loader.css'
 export default function Loader(props) {
 
     document.querySelectorAll('.bar').forEach((bar, idx) => {
-        if(idx <= (props.percent)/5) {
+        if(idx <= (props.percent)/5 + 1) {
             bar.style.backgroundColor = '#83C4FD';
             idx++;
         }
@@ -15,6 +15,7 @@ export default function Loader(props) {
     useEffect(() => {
         if(props.percent >= 100) {
             document.querySelector('.loader').style.zIndex = -1000;
+            document.querySelector('.loader').style.display = 'none';
         }
         else {
             document.querySelector('.loader').style.zIndex = 100000000000000;

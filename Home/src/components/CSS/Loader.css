@@ -4,7 +4,9 @@
     position: relative;
     background-color: black;
     --width: 15px;
-    --padding: 3px
+    --padding: 3px;
+    --gap: 3px;
+    --border: 3px;
 }
 
 .loaderWrapper {
@@ -12,16 +14,18 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: calc(19*3px + 2*var(--padding) + 20*var(--width));
+    width: calc(19*var(--gap) + 2*var(--padding) + 20*var(--width) + 2*var(--border));
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: .5rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
 }
 
 .progressBar {
-    width: 100%;
-    border: 3px solid #83C4FD;
+    width: calc(100% - 2*var(--border) - 2*var(--padding));
+    border: var(--border) solid #83C4FD;
     height: 30px;
     padding: var(--padding);
     display: flex;
@@ -30,8 +34,47 @@
 }
 
 .bar {
-    /* background-color: #83C4FD; */
     background: none;
     height: 100%;
     width: var(--width);
+}
+
+@media screen and (max-width: 700px) {
+    .loader {
+        --width: 12px;
+    }
+
+    .loaderWrapper {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .loader {
+        --width: 10px;
+        --gap: 2px;
+        --padding: 2px
+    }
+
+    .loaderWrapper {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .loader {
+        --width: 8px;
+        --gap: 1.5px;
+        --padding: 1.5px;
+        --border: 2px;
+    }
+
+    .loaderWrapper {
+        font-size: 1rem;
+        gap: .3rem;
+    }
+
+    .progressBar {
+        height: 25px;
+    }
 }
