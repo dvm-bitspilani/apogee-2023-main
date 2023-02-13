@@ -54,11 +54,11 @@ function Landing() {
       </div>
 
       <div className={styles.heroFoot}>{links}</div>
-      <a href="https://bits-dvm.org/" target="_blank" className="footer">
+      {/* <a href="https://bits-dvm.org/" target="_blank" className="footer">
         {`Made with `}
         <i className="fa fa-heart" style={{ color: "red" }} />
         {` by DVM`}
-      </a>
+      </a> */}
     </div>
   );
 }
