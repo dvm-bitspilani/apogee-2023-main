@@ -19,6 +19,14 @@
   left: 0;
 }
 
+.heading {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 2.4rem;
+  color: #51aeff;
+  font-weight: 500;
+}
+
 .ptr {
   cursor: pointer;
 }
@@ -26,4 +34,17 @@
 .noclick {
   pointer-events: none;
   cursor: default;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width:450px) {
+  #canvas-wrapper {
+    top: -70px !important;
+  }
+  .heading{
+    font-size: 1.4rem ;
+  }
 }

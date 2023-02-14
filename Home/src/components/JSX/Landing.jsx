@@ -8,6 +8,7 @@ import Countdown from "./Countdown";
 
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
+import Switch from "./Switch";
 import YtIcon from "./YtIcon";
 
 const ICONS = [
@@ -16,7 +17,7 @@ const ICONS = [
   [<YtIcon />, "https://www.youtube.com/@OasisBITS"],
 ];
 
-function Landing() {
+function Landing(props) {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
   );
@@ -37,6 +38,11 @@ function Landing() {
     );
   }, []);
 
+  let contact = document.getElementById('contactUs')
+  function scroll() {
+    contact.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <div className={styles.wrapper}>
       <Canvas onContextMenu={e => e.preventDefault()} id="canvas-wrapper">
@@ -45,6 +51,7 @@ function Landing() {
 
       <div className={styles.navbar}>
         <img src={apogeelogo} className={styles.apogeeLogo} />
+        {matches && <Switch scroll={props.scroll} />}
         {matches && <Button />}
       </div>
 
@@ -54,11 +61,9 @@ function Landing() {
       </div>
 
       <div className={styles.heroFoot}>{links}</div>
-      {/* <a href="https://bits-dvm.org/" target="_blank" className="footer">
-        {`Made with `}
-        <i className="fa fa-heart" style={{ color: "red" }} />
-        {` by DVM`}
-      </a> */}
+      {props.allowScroll && <div className="footer scroll" onClick={scroll}>
+        <i className="fa fa-arrow-down" />
+      </div>}
     </div>
   );
 }

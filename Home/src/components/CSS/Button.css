@@ -83,13 +83,13 @@
 @media screen and (max-width: 450px) {
   .button {
     width: 60vw;
-    margin-left: 6rem;
+    margin-left: 9rem;
   }
 }
 
 @media screen and (max-width: 300px) {
   .button {
     width: 60vw;
-    margin-left: 4 rem;
+    margin-left: 9rem;
   }
 }

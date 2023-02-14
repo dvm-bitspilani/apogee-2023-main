@@ -34,7 +34,7 @@
 
 .labels {
   margin-top: 1rem;
-  margin-left: 1rem;
+  margin-left: 1.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,9 +87,19 @@
     width: 90%;
   }
   .numbers > div {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
   .labels {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    width: 70%;
+    margin-inline: auto;
   }
+  .numbers{
+    margin-left: 1.9rem;
+  }
+  .countdown{
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+
 }

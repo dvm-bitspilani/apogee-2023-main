@@ -1,6 +1,9 @@
 body {
   overflow-x: hidden;
 }
+.wrapper{
+  position: relative;
+}
 
 .apogeeLogo {
   width: 20rem;
@@ -53,10 +56,14 @@ body {
   .apogeeLogo {
     width: 15rem;
   }
+  .heroFoot{
+    bottom: 3rem;
+    left: -2rem;
+  }
 
   .countDown {
     right: 0;
-    bottom: 0;
+    bottom: 3rem;
     top: auto !important;
   }
 

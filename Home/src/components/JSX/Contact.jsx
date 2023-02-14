@@ -76,7 +76,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className={styles.contact}>
+    <div id="contactUs" className={styles.contact}>
       <h1 className={styles.heading}>CONTACT US</h1>
       <div className={styles.cards}>{cards}</div>
     </div>
