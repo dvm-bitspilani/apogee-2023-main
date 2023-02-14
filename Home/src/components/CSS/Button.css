@@ -37,7 +37,7 @@
 
 .btn-inside {
   transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  opacity: 0.4;
 }
 
 .btn:hover .btn-inside {

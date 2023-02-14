@@ -38,7 +38,7 @@ function Landing(props) {
     );
   }, []);
 
-  let contact = document.getElementById('contactUs')
+  let contact = document.getElementById("contactUs");
   function scroll() {
     contact.scrollIntoView({ behavior: "smooth" });
   }
@@ -61,9 +61,11 @@ function Landing(props) {
       </div>
 
       <div className={styles.heroFoot}>{links}</div>
-      {props.allowScroll && <div className="footer scroll" onClick={scroll}>
-        <i className="fa fa-arrow-down" />
-      </div>}
+      {props.allowScroll && (
+        <div className="footer scroll" onClick={scroll}>
+          <i className="fa fa-arrow-down" />
+        </div>
+      )}
     </div>
   );
 }

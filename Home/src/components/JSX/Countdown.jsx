@@ -2,55 +2,49 @@ import React, { useEffect, useState } from "react";
 import "../CSS/Timer.css";
 
 function Countdown() {
-  const [current_time, setCurrentTime] = useState(new Date().getTime()),
-    APOGEE = new Date("March 30, 2023 23:59:59").getTime();
+  const APOGEE = new Date("March 30, 2023 23:59:59").getTime(),
+    [curr, setCurr] = useState(new Date().getTime());
 
-  const [prevDay, setPrevDay] = useState(),
-    [prevHr, setPrevHr] = useState(),
-    [prevMin, setPrevMin] = useState(),
-    [days, setDays] = useState(),
-    [mins, setMins] = useState(),
-    [hrs, setHrs] = useState();
+  const [prevDay, setPrevDay] = useState(0),
+    [days, setDays] = useState(0);
+
+  const [hrs, setHrs] = useState(
+      Math.floor((APOGEE - curr) / (1000 * 60 * 60)) - days * 24
+    ),
+    [prevHr, setPrevHr] = useState(
+      Math.floor((APOGEE - curr) / (1000 * 60 * 60)) - days * 24
+    );
+
+  const [prevMin, setPrevMin] = useState(
+      Math.floor((APOGEE - curr) / (1000 * 60)) - days * 24 * 60 - hrs * 60
+    ),
+    [mins, setMins] = useState(
+      Math.floor((APOGEE - curr) / (1000 * 60)) - days * 24 * 60 - hrs * 60
+    );
 
   useEffect(() => {
     setInterval(() => {
-      setCurrentTime(new Date().getTime());
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    setInterval(() => {
-      // updating number of days left
-      setDays(Math.floor((APOGEE - current_time) / (1000 * 60 * 60 * 24)));
-
-      // when timer is completed (APOGEE arrives)
       if (days < 0) {
         setDays("00");
         setHrs("00");
         setMins("00");
+      } else {
+        setCurr(new Date().getTime());
+        setDays(Math.floor((APOGEE - curr) / (1000 * 60 * 60 * 24)));
       }
     }, 1000);
   }, []);
 
   useEffect(() => {
-    setHrs(Math.floor((APOGEE - current_time) / (1000 * 60 * 60)) - days * 24);
-  }, [current_time]);
+    setHrs(Math.floor((APOGEE - curr) / (1000 * 60 * 60)) - days * 24);
 
-  useEffect(() => {
     setMins(
-      Math.floor((APOGEE - current_time) / (1000 * 60)) -
-        days * 24 * 60 -
-        hrs * 60
+      Math.floor((APOGEE - curr) / (1000 * 60)) - days * 24 * 60 - hrs * 60
     );
-    if (hrs < 10) {
-      setHrs(prevHrs => "0" + prevHrs);
-    }
-    if (mins < 10) {
-      setMins(prevMins => "0" + prevMins);
-    }
-    if (days < 10) {
-      setDays(prevDays => "0" + prevDays);
-    }
+
+    hrs < 10 && setHrs(prevHrs => "0" + prevHrs);
+    mins < 10 && setMins(prevMins => "0" + prevMins);
+    days < 10 && setDays(prevDays => "0" + prevDays);
 
     document.getElementById("days").style.animation =
       prevDay != days ? "card-flip 0.6s" : "none";
@@ -62,24 +56,27 @@ function Countdown() {
     setPrevDay(days);
     setPrevHr(hrs);
     setPrevMin(mins);
-  }, [current_time]);
+  }, [curr]);
 
   return (
     <div className="countdown">
-      <div className="time">
-        <div className="numbers">
-          <div id="days">{days}</div>
-          <span>:</span>
-          <div id="hours">{hrs}</div>
-          <span>:</span>
-          <div id="min">{mins}</div>
-        </div>
+      <div className="label" id="days">
+        <div className="numbers">{days}</div>
+        <div className="labels">DAYS</div>
+      </div>
 
-        <div className="labels">
-          <div className="label-1">DAYS</div>
-          <div className="label-2">HOURS</div>
-          <div className="label-3">MINUTES</div>
-        </div>
+      <span>:</span>
+
+      <div className="label" id="hours">
+        <div className="numbers">{hrs}</div>
+        <div className="labels">HOURS</div>
+      </div>
+
+      <span>:</span>
+
+      <div className="label" id="min">
+        <div className="numbers">{mins}</div>
+        <div className="labels">MINUTES</div>
       </div>
     </div>
   );

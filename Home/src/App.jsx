@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
 import BrainLabel from "./components/JSX/BrainLabel";
 import Contact from "./components/JSX/Contact";
@@ -20,7 +20,7 @@ function App() {
     window
       .matchMedia("(min-width: 450px)")
       .addEventListener("change", e => setMatches(e.matches));
-  }, [])
+  }, []);
 
   const [labels, setLabels] = useState({
     event: false,
@@ -45,61 +45,57 @@ function App() {
 
   const [loaded, setLoaded] = useState(false);
   const [per, setPer] = useState(0);
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(false);
 
   const onLoad = () => {
-    let time = window.performance.getEntries("navigation")[0].loadEventEnd + 2000;
-    let a = per * time / 100;
+    let time =
+      window.performance.getEntries("navigation")[0].loadEventEnd + 1000;
+    let a = (per * time) / 100;
     const int = setInterval(() => {
-      a += 100
-      setPer(Math.floor(a / time * 100))
-      if (a / time * 100 >= 100) { clearInterval(int); setLoaded(true) }
-    }, 100)
-  }
-
-  function changeScroll() {
-    setScroll(prevScroll => !prevScroll)
-  }
+      a += 100;
+      setPer(Math.floor((a / time) * 100));
+      if ((a / time) * 100 >= 100) {
+        clearInterval(int);
+        setLoaded(true);
+      }
+    }, 100);
+  };
 
   useEffect(() => {
     onLoad();
-    const app = document.querySelector('.App');
+    const app = document.querySelector(".App");
     if (!loaded) {
-      app.style.maxHeight = '100vh';
-      app.style.overflow = 'hidden';
+      app.style.maxHeight = "100vh";
+      app.style.overflow = "hidden";
+    } else {
+      app.style.minHeight = "100vh";
+      app.style.overflow = "none";
     }
-    else {
-      app.style.minHeight = '100vh';
-      app.style.overflowY = 'auto';
-    }
-  }, [loaded]);
-
+  }, []);
 
   return (
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
-        <Landing scroll={changeScroll} allowScroll={scroll} />
+        <Landing allowScroll={scroll} />
         {displayModal ? <ModalComp /> : <></>}
         {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
         {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
-        {scroll &&
-          <Contact />
-        }
-        {!matches &&
+        {scroll && <Contact />}
+        {!matches && (
           <>
             <div
-        className="heading"
-        onClick={evt => {
-          evt.stopPropagation();
-        }}
-      >
-        EVENTS
-      </div>
+              className="heading"
+              onClick={evt => {
+                evt.stopPropagation();
+              }}
+            >
+              EVENTS
+            </div>
             <Events />
             <Contact />
           </>
-        }
+        )}
       </ModalContext.Provider>
     </div>
   );

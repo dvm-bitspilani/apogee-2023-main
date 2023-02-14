@@ -50,7 +50,7 @@ function Events() {
     }
   };
 
-  function changeEvent(e) {    
+  function changeEvent(e) {
     setDispEvent(e.target.parentElement.childNodes[1].innerText[0] - 1);
 
     if (matches) {

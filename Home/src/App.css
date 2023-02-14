@@ -40,11 +40,11 @@
   display: none;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   #canvas-wrapper {
     top: -70px !important;
   }
-  .heading{
-    font-size: 1.4rem ;
+  .heading {
+    font-size: 1.4rem;
   }
 }

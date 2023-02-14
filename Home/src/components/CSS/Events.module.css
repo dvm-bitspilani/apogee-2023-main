@@ -128,23 +128,22 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .info{
+  .info {
     padding-right: 0;
   }
-  .text{
+  .text {
     font-size: 1rem;
   }
-
 }
 
-@media (max-width: 1000px){
-  .text{
+@media (max-width: 1000px) {
+  .text {
     margin-block-end: 1rem;
   }
-  .image{
+  .image {
     display: none;
   }
-  .eventDetails{
+  .eventDetails {
     width: 90%;
   }
 }
