@@ -42,7 +42,7 @@ function Landing(props) {
   const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={props.loaded ? {display: 'block'} : {display: 'none'}}>
       <Canvas onContextMenu={e => e.preventDefault()} id="canvas-wrapper">
         <Brain />
       </Canvas>

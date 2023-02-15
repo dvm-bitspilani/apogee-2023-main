@@ -44,17 +44,18 @@ function App() {
   };
 
   const [loaded, setLoaded] = useState(false);
-  const [per, setPer] = useState(0);
+  let [per, setPer] = useState(0);
   const [scroll, setScroll] = useState(false);
 
   const onLoad = () => {
-    let time =
-      window.performance.getEntries("navigation")[0].loadEventEnd + 1000;
+    let estTime = window.performance.getEntries("navigation")[0].loadEventEnd;
+    let time = estTime + 2000;
     let a = (per * time) / 100;
     const int = setInterval(() => {
       a += 100;
-      setPer(Math.floor((a / time) * 100));
-      if ((a / time) * 100 >= 100) {
+      per = Math.floor((a / time) * 100);
+      setPer(per);
+      if (per >= 100) {
         clearInterval(int);
         setLoaded(true);
       }
@@ -77,7 +78,7 @@ function App() {
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
-        <Landing allowScroll={scroll} />
+        <Landing allowScroll={scroll} loaded={loaded} />
         {displayModal ? <ModalComp /> : <></>}
         {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
         {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}

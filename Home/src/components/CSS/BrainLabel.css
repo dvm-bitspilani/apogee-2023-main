@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  transform: translate(-34px, calc(-100% - 63px));
+  transform: translate(-38px, calc(-100% - 69px));
   animation: slidein 800ms ease;
 }
 
@@ -52,6 +52,48 @@
   text-align: left;
   width: max-content;
   font-size: 0.8rem;
+  color: transparent;
+}
+
+.labelCont span {
+  position: relative;
+}
+
+.state-1,
+.state-2,
+.state-3 {
+  color: transparent;
+}
+
+.state-4 {
+  color: white;
+}
+
+.state-1::after,
+.state-2::after,
+.state-3::after,
+.state-4::after {
+  content: "";
+  position: absolute;
+  color: white;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0.85rem;
+  transform: translate(-50%, -50%);
+}
+
+.state-2::after {
+  width: 1px;
+}
+
+.state-3::after {
+  width: 100%;
+}
+
+.state-4::after {
+  width: 0;
 }
 
 @keyframes slidein {
