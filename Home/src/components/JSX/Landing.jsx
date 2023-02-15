@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useState } from "react";
-import apogeelogo from "../../assets/apogeelogo.png";
+import apogeelogo from "../../assets/apogeelogo.svg";
 import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import Button from "./Button";
@@ -39,9 +39,7 @@ function Landing(props) {
   }, []);
 
   let contact = document.getElementById("contactUs");
-  function scroll() {
-    contact.scrollIntoView({ behavior: "smooth" });
-  }
+  const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div className={styles.wrapper}>

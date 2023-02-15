@@ -19,7 +19,7 @@ const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb"),
     colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
-  const [scale, setScale] = useState(1),
+  const [scale, setScale] = useState(0.9),
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
     [position, setPosition] = useState([1, 1, 1]),
