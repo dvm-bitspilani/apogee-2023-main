@@ -36,7 +36,7 @@ export default function LandingElements(props) {
 
     setLinks(
       ICONS.map((e, i) => (
-        <a key={i} href={e[1]} rel="noreferrer" target="_blank">
+        <a key={i} href={e[1]} style={i == 2 ? { transform: "translateX(2px) scale(1.2)" } : {}} rel="noreferrer" target="_blank">
           {e[0]}
         </a>
       ))
