@@ -11,8 +11,8 @@ body {
 }
 
 .navbar {
-  position: absolute;
   top: 0;
+  position: absolute;
   left: 0;
   width: calc(100vw - 4rem);
   padding: 2rem;
@@ -24,8 +24,8 @@ body {
 
 .countDown {
   position: absolute;
-  left: 0;
   padding: 1rem;
+  left: 0;
   top: 7rem;
   scale: 0.8;
 }
@@ -35,7 +35,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   position: absolute;
-
+  gap: 1rem;
   left: 0;
   margin: 0 0 3rem 3rem;
   bottom: 0;
@@ -43,15 +43,16 @@ body {
 }
 
 .heroFoot svg {
-  width: 1.8rem;
+  width: 30px;
   cursor: pointer;
-  margin-top: -7rem;
-  margin-inline: 0.6rem;
 }
 
 .heroFoot svg:hover path {
   fill: #54aeff;
-  filter: drop-shadow(0px 0px 50px #54aeff);
+}
+
+.heroFoot svg:hover {
+  filter: drop-shadow(0px 0px 2px #54aeff);
 }
 
 @media (max-width: 1200px) {
