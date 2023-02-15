@@ -56,6 +56,44 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .numbers {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .label {
+    padding: .6rem .4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .countdown {
+    margin-left: 4rem;
+    width: 90%;
+  }
+
+  .numbers {
+    font-size: 0.9rem;
+  }
+
+  .labels {
+    font-size: 0.8rem;
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  .numbers {
+    margin-left: 1.9rem;
+  }
+
+  .countdown {
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+}
+
 @media (max-width: 450px) {
   .countdown {
     margin-left: 4rem;

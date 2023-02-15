@@ -17,12 +17,24 @@
   background: #1e4952;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1000px) {
   .switchContainer {
-    padding: 0.4rem;
+    font-size: .9rem;
   }
 
   .switch {
-    padding: 0.8rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .switchContainer {
+    padding: 0.4rem;
+    font-size: .7rem;
+    margin-top: 1rem;
+  }
+
+  .switch {
+    padding: 0.5rem;
   }
 }

@@ -68,6 +68,14 @@
   }
 }
 
+@media (max-width: 800px) {
+  .button {
+    position: absolute;
+    right: 10%;
+    bottom: -61vh;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .button {
     width: 25vw;
