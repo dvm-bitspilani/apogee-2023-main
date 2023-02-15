@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useState } from "react";
 import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
-import LandingComp from "./LandingComp";
+import LandingElements from "./LandingElements";
 
 
 function Landing(props) {
@@ -16,7 +16,7 @@ function Landing(props) {
         <Brain />
       </Canvas>
 
-      <LandingComp scroll={props.scroll} allowScroll={props.allowScroll} />
+      <LandingElements scroll={props.scroll} allowScroll={props.allowScroll} />
     </div>
   );
 }

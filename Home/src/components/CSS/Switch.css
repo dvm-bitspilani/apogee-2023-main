@@ -1,9 +1,12 @@
 .switchContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: rgba(0, 60, 72, 0.6);
   border-radius: 10rem;
   display: flex;
   padding: 6px;
-  margin-top: -1rem;
 }
 
 .switch {
@@ -19,7 +22,7 @@
 
 @media (max-width: 1000px) {
   .switchContainer {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .switch {
@@ -30,8 +33,10 @@
 @media (max-width: 800px) {
   .switchContainer {
     padding: 0.4rem;
-    font-size: .7rem;
+    font-size: 0.7rem;
     margin-top: 1rem;
+    position: static;
+    transform: none;
   }
 
   .switch {

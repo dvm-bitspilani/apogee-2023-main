@@ -10,10 +10,20 @@ body {
   width: 20rem;
 }
 
-.navbar {
+.landingWrapper {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.landingElem {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.navbar {
+  position: relative;
   width: calc(100vw - 4rem);
   padding: 2rem;
   display: flex;
@@ -71,13 +81,17 @@ body {
 
   .countDown {
     top: 5rem;
-    padding: .8rem;
+    padding: 0.8rem;
   }
 }
 
 @media (max-width: 800px) {
+  .navbar {
+    gap: 0.5rem;
+  }
+
   .apogeeLogo {
-    width: 15rem;
+    width: 20rem;
   }
 
   .heroFoot {
@@ -86,9 +100,12 @@ body {
   }
 
   .countDown {
-    right: 0;
-    bottom: 3rem;
+    width: 35vw;
+    padding: 0;
+    right: 1rem;
+    bottom: 1rem;
     top: auto !important;
+    left: auto !important;
   }
 
   .heroFoot {
@@ -100,6 +117,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .countDown {
+    right: 2rem;
+  }
+}
+
 @media (max-width: 430px) {
   .apogeeLogo {
     width: 15rem;
@@ -108,12 +131,6 @@ body {
   .heroFoot {
     bottom: 3rem;
     left: -2rem;
-  }
-
-  .countDown {
-    right: 0;
-    bottom: 3rem;
-    top: auto !important;
   }
 
   .heroFoot {

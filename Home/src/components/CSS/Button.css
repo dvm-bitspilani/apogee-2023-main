@@ -72,7 +72,7 @@
   .button {
     position: absolute;
     right: 10%;
-    bottom: -61vh;
+    bottom: 15%;
   }
 }
 
@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 450px) {
   .button {
-    width: 60vw;
+    width: 35vw;
     margin-left: 9rem;
   }
 }
