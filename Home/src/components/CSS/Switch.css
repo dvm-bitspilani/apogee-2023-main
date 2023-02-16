@@ -1,8 +1,8 @@
 .switchContainer {
   position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(0, -50%);
+  top: 100vh;
+  right: 2rem;
+  transform: translate(0, calc(-100% - 25px));
   background: rgba(0, 60, 72, 0.6);
   border-radius: 10rem;
   display: flex;

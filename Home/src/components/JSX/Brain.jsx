@@ -24,7 +24,7 @@ const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb"),
     colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
-  const [scale, setScale] = useState(0.9),
+  const [scale, setScale] = useState(1),
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
     [position, setPosition] = useState([1, 1, 1]),
@@ -112,7 +112,7 @@ const Brain = props => {
               <BrainPopUp
                 modal={Modal.Event}
                 position={[-0.42, 0.8, 0.2]}
-                rotation={[0, Math.PI / 2, 0]}
+                rotation={[0, Math.PI / 2, (-1 * Math.PI) / 2]}
                 index={1}
               />
             </SpinContext.Provider>
@@ -137,9 +137,12 @@ const Brain = props => {
       {BRAIN_CHILDREN}
       <Scroll html>
         <LandingElements />
-        <Events />
-        <Contact />
-        <div style={{ height: "10px" }} />
+        <div
+          style={{ backgroundColor: "#30303014", backdropFilter: "blur(9px)" }}
+        >
+          <Events />
+          <Contact />
+        </div>
       </Scroll>
     </ScrollControls>
   ) : (

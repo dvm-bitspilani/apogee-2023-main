@@ -17,7 +17,7 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
         "brainPopupCircle-cont"
       )[index];
     }
-    if (circleRef.current.style.zIndex >= 8383310) {
+    if (circleRef.current.style.zIndex >= 8383210) {
       const circle = circleRef.current.querySelector(".brainPopupCircle");
 
       circle?.classList.contains("noclick") &&
