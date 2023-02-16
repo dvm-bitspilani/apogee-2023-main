@@ -20,6 +20,7 @@
     margin-block: 1rem;
 }
 
+
 .about {
     width: 60%;
     background: url("../../assets/aboutRight.png") center no-repeat;
@@ -82,5 +83,40 @@
 @media screen and (max-width:450px) {
     .heading {
         font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .container{
+        flex-direction: column-reverse;
+        height: auto;
+        width: 95%;
+    }
+    .about{
+        background: url("../../assets/aboutMobile.png") center no-repeat;
+        background-size: 100% 100%;
+        width: 95%;
+        padding-right: 0;
+        padding-left: 1rem;
+        padding-bottom: 7rem;
+    }
+    .videos{
+        width: 90%;
+        margin-top: 3rem;
+        margin-left: 1rem;
+    }
+    .videoDesc{
+        padding-left: 2.4rem;
+    }
+    .heading{
+        margin-left: 0rem;
+        text-align: center;
+        font-size: 1.7rem;
+        margin-top: 5rem;
+    }
+    .text{
+        padding-left: 2.5rem;
+        font-size: 1rem;
+        padding-right: 3rem;
+        line-height: 1.5rem;
     }
 }

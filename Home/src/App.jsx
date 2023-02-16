@@ -104,6 +104,7 @@ function App() {
               EVENTS
             </div>
             <Events />
+            <About/>
             <Contact />
           </>
         }
