@@ -76,7 +76,11 @@ export default function Contact() {
   }, []);
 
   return (
-    <div id="contactUs" className={styles.contact}>
+    <div
+      id="contactUs"
+      className={styles.contact}
+      style={{ paddingBottom: "10px" }}
+    >
       <h1 className={styles.heading}>CONTACT US</h1>
       <div className={styles.cards}>{cards}</div>
     </div>

@@ -22,7 +22,7 @@ export default function BrainLabel({ modal }) {
         });
         setTimeout(() => {
           setTextStates(newTextState);
-        }, Math.random() * 50 + 50);
+        }, Math.random() * 20 + 20);
       }
     } else {
       setTimeout(() => {

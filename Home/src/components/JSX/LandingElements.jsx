@@ -1,6 +1,4 @@
-import styles from "../CSS/landing.module.css";
 import React, { useEffect, useState } from "react";
-import apogeelogo from "../../assets/apogeeLogo.svg";
 import styles from "../CSS/landing.module.css";
 import Button from "./Button";
 import Countdown from "./Countdown";
@@ -44,7 +42,7 @@ export default function LandingElements(props) {
   return (
     <div className={styles.landingElem}>
       <div className={styles.navbar}>
-        <img src={apogeelogo} className={styles.apogeeLogo} />
+        <img src="/apogeeLogo.svg" className={styles.apogeeLogo} />
         {matchesTab && <Button />}
       </div>
 

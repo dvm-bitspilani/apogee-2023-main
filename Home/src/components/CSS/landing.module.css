@@ -14,12 +14,18 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  pointer-events: none;
 }
 
 .landingElem {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  pointer-events: none;
+}
+
+.landingElem * {
+  pointer-events: all;
 }
 
 .navbar {

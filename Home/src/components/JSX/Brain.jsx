@@ -65,7 +65,7 @@ const Brain = props => {
       {/* Orbit Controls */}
       {isSpinning && !modal.displayModal && (
         <OrbitControls
-          autoRotate={!modal.is2D}
+          autoRotate
           autoRotateSpeed={1}
           rotateSpeed={0.1}
           target={target}
@@ -73,6 +73,8 @@ const Brain = props => {
           maxDistance={1.8}
           minDistance={1.6}
           enablePan={false}
+          enableRotate={!modal.is2D}
+          enableZoom={!modal.is2D}
         />
       )}
 
@@ -131,14 +133,13 @@ const Brain = props => {
   );
 
   return modal.is2D ? (
-    <ScrollControls pages={3}>
+    <ScrollControls pages={3} damping={0.5}>
       {BRAIN_CHILDREN}
       <Scroll html>
-        <div style={{ minHeight: "300vh" }}>
-          <LandingElements />
-          <Events />
-          <Contact />
-        </div>
+        <LandingElements />
+        <Events />
+        <Contact />
+        <div style={{ height: "10px" }} />
       </Scroll>
     </ScrollControls>
   ) : (
