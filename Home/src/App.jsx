@@ -27,6 +27,8 @@ function App() {
   const [labels, setLabels] = useState({
     event: false,
     contact: true,
+    speaker: false,
+    about: false,
   });
   const [is2D, set2D] = useState(false);
 
@@ -52,8 +54,8 @@ function App() {
   let [per, setPer] = useState(0);
   const [scroll, setScroll] = useState(false);
 
-  function changeScroll(){
-    setScroll(prevScroll => !prevScroll)
+  function changeScroll() {
+    setScroll(prevScroll => !prevScroll);
   }
 
   const onLoad = () => {
@@ -93,6 +95,8 @@ function App() {
             {displayModal ? <ModalComp /> : <></>}
             {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
             {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
+            {labels.about ? <BrainLabel modal={Modal.About} /> : <></>}
+            {labels.speaker ? <BrainLabel modal={Modal.Speaker} /> : <></>}
           </>
         ) : (
           <></>

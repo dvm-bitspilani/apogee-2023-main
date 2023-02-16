@@ -5,13 +5,14 @@ import "../CSS/BrainLabel.css";
 export default function BrainLabel({ modal }) {
   const mContext = useContext(ModalContext);
   const modalValue = modal.getValue().toUpperCase();
+  const LENGTH = 22;
 
   const isMounted = useRef(false);
-  const [textStates, setTextStates] = useState(Array(12).fill(0));
+  const [textStates, setTextStates] = useState(Array(LENGTH).fill(0));
 
   useEffect(() => {
     if (isMounted.current) {
-      if (textStates !== Array(13).fill(4)) {
+      if (textStates !== Array(LENGTH).fill(4)) {
         const newTextState = textStates.map(val => {
           if (val === 1) {
             return Math.random() > 0.75 ? 2 : 1;
@@ -22,13 +23,13 @@ export default function BrainLabel({ modal }) {
         });
         setTimeout(() => {
           setTextStates(newTextState);
-        }, Math.random() * 20 + 20);
+        }, Math.random() * 20 + 30);
       }
     } else {
       setTimeout(() => {
         isMounted.current = true;
-        setTextStates(Array(13).fill(1));
-      }, 800);
+        setTextStates(Array(LENGTH).fill(1));
+      }, 750);
     }
   }, [textStates]);
 
@@ -54,7 +55,7 @@ export default function BrainLabel({ modal }) {
           <div className="labelCont">
             {textStates.map((elem, idx) => (
               <span className={`state-${elem}`} key={idx}>
-                {"Click to view"[idx]}
+                {`\\print Click to view`[idx]}
               </span>
             ))}
           </div>

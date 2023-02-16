@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ModalContext } from "../../App";
 import "../CSS/Modal.css";
+import About from "./About";
 import Contact from "./Contact";
 import Events from "./Events";
+import Speakers from "./Speakers";
 
 export default function ModalComp() {
   const mContext = useContext(ModalContext);
@@ -29,6 +31,14 @@ export default function ModalComp() {
 
       case "event":
         setChild(<Events />);
+        break;
+
+      case "speaker":
+        setChild(<Speakers />);
+        break;
+
+      case "about":
+        setChild(<About />);
         break;
 
       default:

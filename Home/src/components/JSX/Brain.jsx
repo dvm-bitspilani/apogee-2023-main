@@ -117,6 +117,18 @@ const Brain = props => {
                 rotation={[0, Math.PI / 2, (-1 * Math.PI) / 2]}
                 index={1}
               />
+              <BrainPopUp
+                modal={Modal.About}
+                position={[-0.1, 0.6, 0.64]}
+                rotation={[0, 0, 0]}
+                index={2}
+              />
+              <BrainPopUp
+                modal={Modal.Speaker}
+                position={[-0.2, 0.7, -0.59]}
+                rotation={[0, Math.PI / 6, 0]}
+                index={3}
+              />
             </SpinContext.Provider>
           </mesh>
         ) : (

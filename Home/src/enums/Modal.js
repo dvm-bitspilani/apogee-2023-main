@@ -20,5 +20,7 @@ export class Box {
 export default class Modal {
   static Event = new Box("event");
   static Contact = new Box("contact");
+  static Speaker = new Box("speaker");
+  static About = new Box("about");
   static None = new Box("null");
 }
