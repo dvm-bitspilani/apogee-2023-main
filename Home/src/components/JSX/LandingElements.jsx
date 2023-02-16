@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import apogeelogo from "../../assets/apogeelogo.svg";
 import styles from "../CSS/landing.module.css";
+import React, { useEffect, useState } from "react";
+import apogeeLogo from "/apogeeLogo.svg";
 import Button from "./Button";
 import Countdown from "./Countdown";
 
@@ -53,7 +53,7 @@ export default function LandingElements(props) {
     <div className={styles.landingWrapper}>
       <div className={styles.landingElem}>
         <div className={styles.navbar}>
-          <img src={apogeelogo} className={styles.apogeeLogo} />
+          <img src={apogeeLogo} className={styles.apogeeLogo} />
           {matchesPhone && <Switch scroll={props.scroll} />}
           {matchesTab && <Button />}
         </div>
