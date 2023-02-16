@@ -29,11 +29,12 @@
   font-family: "Monospace";
   letter-spacing: 1px;
   font-style: normal;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
   color: #b3dbff;
   opacity: 0.95;
 }
+
 
 .btn-inside {
   transition: opacity 0.3s ease-in-out;
