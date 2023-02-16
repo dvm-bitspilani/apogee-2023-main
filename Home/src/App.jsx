@@ -50,11 +50,6 @@ function App() {
 
   const [loaded, setLoaded] = useState(false);
   let [per, setPer] = useState(0);
-  const [scroll, setScroll] = useState(false);
-
-  function changeScroll(){
-    setScroll(prevScroll => !prevScroll)
-  }
 
   const onLoad = () => {
     let estTime = window.performance.getEntries("navigation")[0].loadEventEnd;
@@ -81,13 +76,22 @@ function App() {
       app.style.minHeight = "100vh";
       app.style.overflow = "none";
     }
+    if(!matches){
+      app.style.overflow = "unset";
+    }
   }, []);
 
   return (
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
-        <Landing allowScroll={scroll} loaded={loaded} />
+        <Landing loaded={loaded} />
+        {!matches && 
+         <>
+          <About/>
+          <Events/>
+          <Contact/>
+         </>}
         {!is2D ? (
           <>
             {displayModal ? <ModalComp /> : <></>}
