@@ -64,7 +64,9 @@ export default function Speakers(props) {
     <div className="speakers" style={props.loaded ? { display: "block" } : { display: "none" }}>
         <div className="heading">SPEAKERS</div>
         {matches && 
-      <div className="carouselWrapper">
+      <div className="carouselWrapper" onClick={evt => {
+        evt.stopPropagation();
+      }}>
         <Slider {...settings}>
           <SpeakerCard />
           <SpeakerCard />

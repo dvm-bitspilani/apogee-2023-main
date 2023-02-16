@@ -9,14 +9,14 @@ function About(props) {
       }}>
         <div className={styles.videoContainer}>
           <div className={styles.video}>
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/VGvwFZaREM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/VGvwFZaREM0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             {/* hello */}
           </div>
           <div className={styles.videoDesc}>Theme Reveal</div>
         </div>
         <div className={styles.videoContainer}>
           <div className={styles.video}>
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/VGvwFZaREM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/VGvwFZaREM0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             {/* hello */}
           </div>
           <div className={styles.videoDesc}>Theme Reveal</div>
