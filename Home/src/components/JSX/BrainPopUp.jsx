@@ -12,6 +12,11 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
     intervalRef = useRef(null);
 
   const elementIntervalFxn = () => {
+    if (circleRef.current === undefined) {
+      circleRef.current = document.getElementsByClassName(
+        "brainPopupCircle-cont"
+      )[index];
+    }
     if (circleRef.current.style.zIndex >= 8383310) {
       const circle = circleRef.current.querySelector(".brainPopupCircle");
 
@@ -36,9 +41,9 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
   };
 
   useEffect(() => {
-    circleRef.current = document.getElementsByClassName(
-      "brainPopupCircle-cont"
-    )[index];
+    return () => {
+      clearInterval(intervalRef.current);
+    };
   }, []);
 
   useEffect(() => {

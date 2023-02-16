@@ -2,23 +2,28 @@ import React, { useContext, useRef } from "react";
 import { ModalContext } from "../../App";
 import "../CSS/Switch.css";
 
-function Switch(props) {
+const Switch = props => {
   const switch1 = useRef(null);
   const switch2 = useRef(null);
   const modalContext = useContext(ModalContext);
 
-  const toggleActive = () => {
-    switch2.current.classList.toggle("active");
-    switch1.current.classList.toggle("active");
+  const toggleActive1 = () => {
+    switch2.current.classList.remove("active");
+    switch1.current.classList.add("active");
+  };
+
+  const toggleActive2 = () => {
+    switch1.current.classList.remove("active");
+    switch2.current.classList.add("active");
   };
 
   return (
     <div className="switchContainer" onClick={props.scroll}>
       <div
         ref={switch1}
-        className="switch"
+        className={`switch ${modalContext.is2D && "active"}`}
         onClick={() => {
-          toggleActive();
+          toggleActive1();
           modalContext.set2D(true);
         }}
       >
@@ -27,9 +32,9 @@ function Switch(props) {
 
       <div
         ref={switch2}
-        className="switch active"
+        className={`switch ${!modalContext.is2D && "active"}`}
         onClick={() => {
-          toggleActive();
+          toggleActive2();
           modalContext.set2D(false);
         }}
       >
@@ -37,6 +42,6 @@ function Switch(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Switch;

@@ -28,7 +28,7 @@ export default function BrainLabel({ modal }) {
       setTimeout(() => {
         isMounted.current = true;
         setTextStates(Array(13).fill(1));
-      }, 900);
+      }, 800);
     }
   }, [textStates]);
 

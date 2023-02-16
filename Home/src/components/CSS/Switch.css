@@ -1,12 +1,13 @@
 .switchContainer {
   position: absolute;
-  top: 50%;
+  top: 5%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
   background: rgba(0, 60, 72, 0.6);
   border-radius: 10rem;
   display: flex;
   padding: 6px;
+  z-index: 10000000000;
 }
 
 .switch {

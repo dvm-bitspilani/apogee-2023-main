@@ -7,7 +7,6 @@ import Countdown from "./Countdown";
 
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
-import Switch from "./Switch";
 import YtIcon from "./YtIcon";
 
 const ICONS = [
@@ -21,20 +20,12 @@ export default function LandingElements(props) {
     window.matchMedia("(min-width: 800px)").matches
   );
 
-  const [matchesPhone, setMatchesPhone] = useState(
-    window.matchMedia("(min-width: 500px)").matches
-  );
-
   const [links, setLinks] = useState([]);
 
   useEffect(() => {
     window
       .matchMedia("(min-width: 800px)")
       .addEventListener("change", e => setMatchesTab(e.matchesTab));
-    window
-      .matchMedia("(min-width: 500px)")
-      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
-
     setLinks(
       ICONS.map((e, i) => (
         <a
@@ -51,27 +42,24 @@ export default function LandingElements(props) {
   }, []);
 
   return (
-    <div className={styles.landingWrapper}>
-      {/* <div className={styles.landingElem}> */}
-        <div className={styles.navbar}>
-          <img src={apogeeLogo} className={styles.apogeeLogo} />
-          {matchesPhone && <Switch scroll={props.scroll} />}
-          {matchesTab && <Button />}
+    <div className={styles.landingElem}>
+      <div className={styles.navbar}>
+        <img src={apogeelogo} className={styles.apogeeLogo} />
+        {matchesTab && <Button />}
+      </div>
+
+      <div className={styles.countDown}>
+        <Countdown />
+      </div>
+
+      {!matchesTab && <Button />}
+
+      <div className={styles.heroFoot}>{links}</div>
+      {props.allowScroll && (
+        <div className="footer scroll" onClick={scroll}>
+          <i className="fa fa-arrow-down" />
         </div>
-
-        <div className={styles.countDown}>
-          <Countdown />
-        </div>
-
-        {!matchesTab && <Button />}
-
-        <div className={styles.heroFoot}>{links}</div>
-        {props.allowScroll && (
-          <div className="footer scroll" onClick={props.snap}>
-            <i className="fa fa-arrow-down" />
-          </div>
-        )}
-      {/* </div> */}
+      )}
     </div>
   );
 }

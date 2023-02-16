@@ -14,7 +14,9 @@ import { ModalContext } from "../../App";
 import Modal from "../../enums/Modal";
 import useWindowDimension from "../../hooks/useWindowDimensions";
 import BrainPopUp from "./BrainPopUp";
-import LandingComp from "./LandingComp";
+import Contact from "./Contact";
+import Events from "./Events";
+import LandingElements from "./LandingElements";
 
 export const SpinContext = createContext();
 
@@ -55,15 +57,15 @@ const Brain = props => {
     }
   }, [width]);
 
-  return (
+  const BRAIN_CHILDREN = (
     <>
       {/* Camera */}
       <PerspectiveCamera makeDefault position={position} />
 
       {/* Orbit Controls */}
-      {isSpinning && !modal.displayModal && !modal.is2D && (
+      {isSpinning && !modal.displayModal && (
         <OrbitControls
-          autoRotate
+          autoRotate={!modal.is2D}
           autoRotateSpeed={1}
           rotateSpeed={0.1}
           target={target}
@@ -125,16 +127,22 @@ const Brain = props => {
           <meshBasicMaterial map={colorMap} side={BackSide} />
         </mesh>
       </Environment>
-      {modal.is2D ? (
-        <ScrollControls>
-          <Scroll html>
-            <LandingComp />
-          </Scroll>
-        </ScrollControls>
-      ) : (
-        <></>
-      )}
     </>
+  );
+
+  return modal.is2D ? (
+    <ScrollControls pages={3}>
+      {BRAIN_CHILDREN}
+      <Scroll html>
+        <div style={{ minHeight: "300vh" }}>
+          <LandingElements />
+          <Events />
+          <Contact />
+        </div>
+      </Scroll>
+    </ScrollControls>
+  ) : (
+    <>{BRAIN_CHILDREN}</>
   );
 };
 
