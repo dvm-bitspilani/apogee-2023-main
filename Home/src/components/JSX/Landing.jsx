@@ -6,10 +6,8 @@ import Brain from "./Brain";
 import LandingElements from "./LandingElements";
 import Switch from "./Switch";
 
-import apogeelogo from "../../assets/apogeelogo.svg";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
-import Switch from "./Switch";
 import YtIcon from "./YtIcon";
 
 const ICONS = [

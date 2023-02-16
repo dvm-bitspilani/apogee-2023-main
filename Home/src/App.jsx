@@ -86,7 +86,7 @@ function App() {
   return (
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
-      {/* <ModalContext.Provider value={context}>
+      <ModalContext.Provider value={context}>
         <Landing allowScroll={scroll} loaded={loaded} />
         {!is2D ? (
           <>
@@ -97,8 +97,7 @@ function App() {
         ) : (
           <></>
         )}
-      </ModalContext.Provider> */}
-      <Speakers />
+      </ModalContext.Provider>
     </div>
   );
 }

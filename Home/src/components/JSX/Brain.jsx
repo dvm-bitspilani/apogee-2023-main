@@ -13,10 +13,12 @@ import { degToRad } from "three/src/math/MathUtils";
 import { ModalContext } from "../../App";
 import Modal from "../../enums/Modal";
 import useWindowDimension from "../../hooks/useWindowDimensions";
+import About from "./About";
 import BrainPopUp from "./BrainPopUp";
 import Contact from "./Contact";
 import Events from "./Events";
 import LandingElements from "./LandingElements";
+import Speakers from "./Speakers";
 
 export const SpinContext = createContext();
 
@@ -133,13 +135,15 @@ const Brain = props => {
   );
 
   return modal.is2D ? (
-    <ScrollControls pages={3} damping={0.5}>
+    <ScrollControls pages={5} damping={0.5}>
       {BRAIN_CHILDREN}
       <Scroll html>
         <LandingElements />
         <div
           style={{ backgroundColor: "#30303014", backdropFilter: "blur(9px)" }}
         >
+          <About />
+          <Speakers />
           <Events />
           <Contact />
         </div>
