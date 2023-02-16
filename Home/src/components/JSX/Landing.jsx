@@ -4,7 +4,6 @@ import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import LandingElements from "./LandingElements";
 
-
 function Landing(props) {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches

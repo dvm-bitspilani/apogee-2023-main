@@ -11,11 +11,14 @@ const RadioInput = props => {
 
   useEffect(() => {
     setValue("M");
-    document.querySelector('.radio-button').parentElement.classList.add('radio-overlay')
-    document.querySelector('.radio-overlay').childNodes[3].setAttribute('style', 'display: none !important;')
-    document.querySelector('.radio-overlay').removeAttribute('calssName')
+    document
+      .querySelector(".radio-button")
+      .parentElement.classList.add("radio-overlay");
+    document
+      .querySelector(".radio-overlay")
+      .childNodes[3].setAttribute("style", "display: none !important;");
+    document.querySelector(".radio-overlay").removeAttribute("calssName");
   }, []);
-
 
   return (
     <div className="input">

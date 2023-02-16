@@ -68,13 +68,13 @@
 
 @media screen and (max-width: 1300px) {
   .btn-container {
-    scale: .9;
+    scale: 0.9;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .btn-container {
-    scale: .8;
+    scale: 0.8;
   }
 }
 
@@ -84,7 +84,7 @@
   }
 
   .btn-container {
-    scale: .7;
+    scale: 0.7;
   }
 }
 
@@ -101,6 +101,6 @@
 
   .btn-container {
     margin: 8% 0 15% 0;
-    scale: .6;
+    scale: 0.6;
   }
 }
