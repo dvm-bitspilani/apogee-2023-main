@@ -4,7 +4,9 @@ import styles from "../CSS/About.module.css"
 function About() {
   return (
     <div className={styles.container}>
-      <div className={styles.videos}>
+      <div className={styles.videos} onClick={evt => {
+        evt.stopPropagation();
+      }}>
         <div className={styles.videoContainer}>
           <div className={styles.video}>
             <iframe width="auto" height="auto" src="https://www.youtube.com/embed/VGvwFZaREM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -20,7 +22,9 @@ function About() {
           <div className={styles.videoDesc}>Theme Reveal</div>
         </div>
       </div>
-      <div className={styles.about}>
+      <div className={styles.about} onClick={evt => {
+        evt.stopPropagation();
+      }}>
         <div
           className={styles.heading}
           onClick={evt => {
