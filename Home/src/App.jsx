@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
+import About from "./components/JSX/About";
 import BrainLabel from "./components/JSX/BrainLabel";
 import Contact from "./components/JSX/Contact";
 import Events from "./components/JSX/Events";
@@ -47,6 +48,10 @@ function App() {
   let [per, setPer] = useState(0);
   const [scroll, setScroll] = useState(false);
 
+  function changeScroll(){
+    setScroll(prevScroll => !prevScroll)
+  }
+
   const onLoad = () => {
     let estTime = window.performance.getEntries("navigation")[0].loadEventEnd;
     let time = estTime + 2000;
@@ -78,12 +83,17 @@ function App() {
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
-        <Landing allowScroll={scroll} loaded={loaded} />
+        <Landing allowScroll={scroll} scroll={changeScroll} loaded={loaded} />
         {displayModal ? <ModalComp /> : <></>}
         {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
         {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
-        {scroll && <Contact />}
-        {!matches && (
+        {scroll &&
+          <>
+            <Contact />
+            <About />
+          </>
+        }
+        {!matches &&
           <>
             <div
               className="heading"
@@ -96,7 +106,7 @@ function App() {
             <Events />
             <Contact />
           </>
-        )}
+        }
       </ModalContext.Provider>
     </div>
   );

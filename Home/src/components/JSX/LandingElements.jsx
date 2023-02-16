@@ -51,7 +51,7 @@ export default function LandingElements(props) {
 
   return (
     <div className={styles.landingWrapper}>
-      <div className={styles.landingElem}>
+      {/* <div className={styles.landingElem}> */}
         <div className={styles.navbar}>
           <img src={apogeelogo} className={styles.apogeeLogo} />
           {matchesPhone && <Switch scroll={props.scroll} />}
@@ -66,11 +66,11 @@ export default function LandingElements(props) {
 
         <div className={styles.heroFoot}>{links}</div>
         {props.allowScroll && (
-          <div className="footer scroll" onClick={scroll}>
+          <div className="footer scroll" onClick={props.snap}>
             <i className="fa fa-arrow-down" />
           </div>
         )}
-      </div>
+      {/* </div> */}
     </div>
   );
 }

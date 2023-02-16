@@ -12,7 +12,7 @@ function Landing(props) {
   const [links, setLinks] = useState([]);
 
   let contact = document.getElementById("contactUs");
-  const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
+  const scrollSnap = () => contact.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div
@@ -23,7 +23,7 @@ function Landing(props) {
         <Brain />
       </Canvas>
 
-      <LandingElements scroll={props.scroll} allowScroll={props.allowScroll} />
+      <LandingElements snap={scrollSnap} scroll={props.scroll} allowScroll={props.allowScroll} />
     </div>
   );
 }
