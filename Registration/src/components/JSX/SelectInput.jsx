@@ -17,20 +17,18 @@ const SelectInput = props => {
 
   const colourStyles = {
     control: base => ({ ...base, border: 0, boxShadow: "none" }),
-    option: (styles, { isSelected }) => {
-      return {
-        ...styles,
-        backgroundColor: isSelected ? "#51718d" : "#1b2025",
-        color: "#BFDFFFCC",
-        cursor: "pointer",
-        borderBottom: "2px solid #BFDFFFCC",
+    option: (styles, { isSelected }) => ({
+      ...styles,
+      backgroundColor: isSelected ? "#51718d" : "#1b2025",
+      color: "#BFDFFFCC",
+      cursor: "pointer",
+      borderBottom: "2px solid #BFDFFFCC",
 
-        ":active": {
-          ...styles[":active"],
-          backgroundColor: "",
-        },
-      };
-    },
+      ":active": {
+        ...styles[":active"],
+        backgroundColor: "",
+      },
+    }),
     multiValue: styles => ({
       ...styles,
       backgroundColor: "#BFDFFFCC",
@@ -41,11 +39,12 @@ const SelectInput = props => {
     }),
     multiValueRemove: (styles, { data }) => ({
       ...styles,
-      color: "#1b2025",
+      color: "#BFDFFFCC",
+      backgroundColor: "#1b2025",
       borderRadius: "0",
 
       ":hover": {
-        backgroundColor: "#1b2025",
+        backgroundColor: "#46617B",
         cursor: "pointer",
         color: "#BFDFFFCC",
       },
@@ -56,6 +55,10 @@ const SelectInput = props => {
       color: "#BFDFFFCC",
     }),
     indicatorSeparator: () => {},
+    placeholder: defaultStyles => ({
+      ...defaultStyles,
+      color: "",
+    }),
   };
 
   return (
@@ -69,13 +72,11 @@ const SelectInput = props => {
         name={props.field}
         isMulti={props.isMulti}
         classNamePrefix="react-select"
-        placeholder=""
+        placeholder="select"
         isClearable
         menuPortalTarget={document.body}
         styles={colourStyles}
-        onChange={choice => {
-          setValue(choice);
-        }}
+        onChange={choice => setValue(choice)}
       ></Select>
     </div>
   );

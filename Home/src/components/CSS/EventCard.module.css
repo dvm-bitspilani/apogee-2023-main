@@ -12,8 +12,8 @@
 .info {
   font-weight: 100;
   color: #bfdfff;
-  background-color: #0d1319;
-  padding: 0.4rem;
+  background: url("../../assets/eventName.png") center no-repeat;
+  padding: 0.5rem;
   overflow: hidden;
   margin: 0.2rem;
 }

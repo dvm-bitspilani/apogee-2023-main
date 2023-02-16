@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Monospace";
+    src: url(../../fonts/Monospace.ttf);
+}
+
+.heading {
+    text-align: left;
+    margin: 2rem 0 1rem 2rem;
+    font-size: 2.4rem;
+    color: #51aeff;
+    font-weight: 500;
+}
+
+.container {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    height: 95vh;
+    overflow: hidden;
+    margin-block: 1rem;
+}
+
+.about {
+    width: 60%;
+    background: url("../../assets/aboutRight.png") center no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background: url("../../assets/aboutLeft.png") center no-repeat;
+    background-size: 100% 100%;
+    padding: 2rem;
+    padding-inline: 0.5rem;
+    margin-right: 2rem;
+}
+
+.text {
+    font-family: "Monospace";
+    text-align: left;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #BFDFFF;
+    line-height: 1.7rem;
+    padding-right: 2rem;
+}
+
+.video {
+    background: url("../../assets/aboutCard.png") center no-repeat;
+    overflow: hidden;
+    width: 70%;
+    margin-inline: auto;
+    background-size: 100% 100%;
+    padding-right: 1.4rem;
+    padding-block: 0.7rem;
+    padding-left: 0.4rem;
+}
+
+.videoContainer{
+    margin-bottom: 2.8rem;
+}
+
+.videoDesc{
+    text-align: left;
+    font-size: 1.2rem;
+    padding-left: 3.4rem;
+    margin-top: 1.4rem;
+    color: #BFDFFF;
+    font-weight: 100;
+}
+
+
+@media screen and (max-width:450px) {
+    .heading {
+        font-size: 1.4rem;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
+import About from "./components/JSX/About";
 import BrainLabel from "./components/JSX/BrainLabel";
 import Contact from "./components/JSX/Contact";
 import Events from "./components/JSX/Events";
@@ -49,6 +50,10 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   let [per, setPer] = useState(0);
   const [scroll, setScroll] = useState(false);
+
+  function changeScroll(){
+    setScroll(prevScroll => !prevScroll)
+  }
 
   const onLoad = () => {
     let estTime = window.performance.getEntries("navigation")[0].loadEventEnd;

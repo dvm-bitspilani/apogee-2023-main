@@ -5,7 +5,6 @@ import Form from "./components/JSX/Form.jsx";
 import Rings from "./components/JSX/Rings.jsx";
 
 function App() {
-  
   return (
     <div className="registration-app">
       <Rings />

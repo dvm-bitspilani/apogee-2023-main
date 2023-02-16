@@ -49,6 +49,7 @@ input {
 .react-select__value-container,
 .react-select__indicators {
   height: 100% !important;
+  padding: 0 8px !important;
 }
 
 div:has(> .react-select__control) {

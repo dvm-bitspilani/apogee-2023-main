@@ -1,3 +1,4 @@
+import styles from "../CSS/landing.module.css";
 import React, { useEffect, useState } from "react";
 import apogeelogo from "../../assets/apogeeLogo.svg";
 import styles from "../CSS/landing.module.css";
@@ -36,7 +37,13 @@ export default function LandingElements(props) {
 
     setLinks(
       ICONS.map((e, i) => (
-        <a key={i} href={e[1]} style={i == 2 ? { transform: "translateX(2px) scale(1.2)" } : {}} rel="noreferrer" target="_blank">
+        <a
+          key={i}
+          href={e[1]}
+          style={i == 2 ? { transform: "translateX(2px) scale(1.2)" } : {}}
+          rel="noreferrer"
+          target="_blank"
+        >
           {e[0]}
         </a>
       ))
@@ -45,9 +52,9 @@ export default function LandingElements(props) {
 
   return (
     <div className={styles.landingWrapper}>
-      <div className={styles.landingElem}>
+      {/* <div className={styles.landingElem}> */}
         <div className={styles.navbar}>
-          <img src={apogeelogo} className={styles.apogeeLogo} />
+          <img src={apogeeLogo} className={styles.apogeeLogo} />
           {matchesPhone && <Switch scroll={props.scroll} />}
           {matchesTab && <Button />}
         </div>
@@ -60,11 +67,11 @@ export default function LandingElements(props) {
 
         <div className={styles.heroFoot}>{links}</div>
         {props.allowScroll && (
-          <div className="footer scroll" onClick={scroll}>
+          <div className="footer scroll" onClick={props.snap}>
             <i className="fa fa-arrow-down" />
           </div>
         )}
-      </div>
+      {/* </div> */}
     </div>
   );
 }

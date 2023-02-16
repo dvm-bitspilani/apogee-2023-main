@@ -25,7 +25,7 @@ function Landing(props) {
         <Brain />
       </Canvas>
 
-      <LandingElements scroll={props.scroll} allowScroll={props.allowScroll} />
+      <LandingElements snap={scrollSnap} scroll={props.scroll} allowScroll={props.allowScroll} />
     </div>
   );
 }
