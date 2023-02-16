@@ -23,8 +23,8 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
 
       const circleGBCR = circle?.getBoundingClientRect();
       modal.setLoc(
-        (circleGBCR.left + circleGBCR.right) / 2,
-        (circleGBCR.top + circleGBCR.bottom) / 2
+        (circleGBCR?.left + circleGBCR?.right) / 2,
+        (circleGBCR?.top + circleGBCR?.bottom) / 2
       );
     } else {
       mContext.setLabels(modal.getValue().toLowerCase(), false);
@@ -63,8 +63,8 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
         onMouseLeave={() => sContext.startSpin()}
         onClick={() => {
           mContext.updateModal(modal);
-          mContext.setDisplayModal(true);
           mContext.setLabels(modal.getValue().toLowerCase(), false);
+          mContext.setDisplayModal(true);
         }}
       />
     </Html>

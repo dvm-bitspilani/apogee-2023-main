@@ -26,21 +26,24 @@ function App() {
     event: false,
     contact: true,
   });
+  const [is2D, set2D] = useState(false);
 
   const context = {
-    modalOpen: modalOpen,
-    updateModal: isOpen => setModalOpen(isOpen),
+    modalOpen,
+    updateModal: setModalOpen,
 
-    displayModal: displayModal,
-    setDisplayModal: setDisplayModal,
+    displayModal,
+    setDisplayModal,
 
-    labels: labels,
+    labels,
     setLabels: (label, isVisible) => {
       setLabels(currLabel => ({
         ...currLabel,
         [label]: isVisible,
       }));
     },
+    is2D,
+    set2D,
   };
 
   const [loaded, setLoaded] = useState(false);
@@ -79,23 +82,14 @@ function App() {
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
         <Landing allowScroll={scroll} loaded={loaded} />
-        {displayModal ? <ModalComp /> : <></>}
-        {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
-        {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
-        {scroll && <Contact />}
-        {!matches && (
+        {!is2D ? (
           <>
-            <div
-              className="heading"
-              onClick={evt => {
-                evt.stopPropagation();
-              }}
-            >
-              EVENTS
-            </div>
-            <Events />
-            <Contact />
+            {displayModal ? <ModalComp /> : <></>}
+            {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
+            {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
           </>
+        ) : (
+          <></>
         )}
       </ModalContext.Provider>
     </div>

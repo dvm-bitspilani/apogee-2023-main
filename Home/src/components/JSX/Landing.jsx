@@ -1,9 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ModalContext } from "../../App";
 import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import LandingElements from "./LandingElements";
-
 
 function Landing(props) {
   const [matches, setMatches] = useState(
@@ -14,6 +14,7 @@ function Landing(props) {
 
   let contact = document.getElementById("contactUs");
   const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
+  const modalContext = useContext(ModalContext);
 
   return (
     <div

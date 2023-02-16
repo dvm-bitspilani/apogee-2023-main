@@ -2,6 +2,8 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  Scroll,
+  ScrollControls,
   useGLTF,
 } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
@@ -12,6 +14,7 @@ import { ModalContext } from "../../App";
 import Modal from "../../enums/Modal";
 import useWindowDimension from "../../hooks/useWindowDimensions";
 import BrainPopUp from "./BrainPopUp";
+import LandingComp from "./LandingComp";
 
 export const SpinContext = createContext();
 
@@ -58,7 +61,7 @@ const Brain = props => {
       <PerspectiveCamera makeDefault position={position} />
 
       {/* Orbit Controls */}
-      {isSpinning && !modal.displayModal && (
+      {isSpinning && !modal.displayModal && !modal.is2D && (
         <OrbitControls
           autoRotate
           autoRotateSpeed={1}
@@ -93,22 +96,26 @@ const Brain = props => {
         />
 
         {/* Brain Popups */}
-        <mesh>
-          <SpinContext.Provider value={context}>
-            <BrainPopUp
-              modal={Modal.Contact}
-              position={[0.5, 0.5, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-              index={0}
-            />
-            <BrainPopUp
-              modal={Modal.Event}
-              position={[-0.42, 0.8, 0.2]}
-              rotation={[0, Math.PI / 2, 0]}
-              index={1}
-            />
-          </SpinContext.Provider>
-        </mesh>
+        {!modal.is2D ? (
+          <mesh>
+            <SpinContext.Provider value={context}>
+              <BrainPopUp
+                modal={Modal.Contact}
+                position={[0.5, 0.5, 0]}
+                rotation={[0, Math.PI / 2, 0]}
+                index={0}
+              />
+              <BrainPopUp
+                modal={Modal.Event}
+                position={[-0.42, 0.8, 0.2]}
+                rotation={[0, Math.PI / 2, 0]}
+                index={1}
+              />
+            </SpinContext.Provider>
+          </mesh>
+        ) : (
+          <></>
+        )}
       </group>
 
       {/* Environmnet */}
@@ -118,6 +125,15 @@ const Brain = props => {
           <meshBasicMaterial map={colorMap} side={BackSide} />
         </mesh>
       </Environment>
+      {modal.is2D ? (
+        <ScrollControls>
+          <Scroll html>
+            <LandingComp />
+          </Scroll>
+        </ScrollControls>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

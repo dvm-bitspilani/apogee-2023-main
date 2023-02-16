@@ -1,25 +1,37 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { ModalContext } from "../../App";
 import "../CSS/Switch.css";
 
 function Switch(props) {
-  let switch1 = useRef(null);
-  let switch2 = useRef(null);
+  const switch1 = useRef(null);
+  const switch2 = useRef(null);
+  const modalContext = useContext(ModalContext);
 
   const toggleActive = () => {
-    switch2.classList.toggle("active");
-    switch1.classList.toggle("active");
+    switch2.current.classList.toggle("active");
+    switch1.current.classList.toggle("active");
   };
 
   return (
     <div className="switchContainer" onClick={props.scroll}>
-      <div ref={el => (switch1 = el)} className="switch" onClick={toggleActive}>
+      <div
+        ref={switch1}
+        className="switch"
+        onClick={() => {
+          toggleActive();
+          modalContext.set2D(true);
+        }}
+      >
         2D
       </div>
 
       <div
-        ref={el => (switch2 = el)}
+        ref={switch2}
         className="switch active"
-        onClick={toggleActive}
+        onClick={() => {
+          toggleActive();
+          modalContext.set2D(false);
+        }}
       >
         Explore 3D
       </div>

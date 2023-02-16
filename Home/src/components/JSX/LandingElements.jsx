@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import apogeelogo from "../../assets/apogeelogo.svg";
+import apogeelogo from "../../assets/apogeeLogo.svg";
 import styles from "../CSS/landing.module.css";
 import Button from "./Button";
 import Countdown from "./Countdown";
