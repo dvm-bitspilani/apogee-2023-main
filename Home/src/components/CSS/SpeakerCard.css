@@ -1,0 +1,37 @@
+.speakerCard {
+    background: url(../../assets/speakers.png) center no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.speakerCont {
+    width: 40%;
+    text-align: center;
+    color: #BFDFFF;
+    margin-left: 5%;
+}
+
+.speakerName {
+    font-size: 2.4rem;
+    letter-spacing: 5px;
+    line-height: 3rem;
+}
+
+.speakerPos {
+    margin-top: .5rem;
+}
+
+.speakerImg {
+    width: 40%;
+    height: 65vh;
+    position: relative;
+}
+
+.speakerImg img {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+
+}

@@ -1,0 +1,32 @@
+.speakers {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.carouselWrapper {
+    width: 80vw;
+    min-height: 65vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slick-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.arrow {
+    width: 20px;
+}
+
+.next {
+    transform: rotate(180deg);
+}
+
+.slick-list {
+    width: 65vw;
+}

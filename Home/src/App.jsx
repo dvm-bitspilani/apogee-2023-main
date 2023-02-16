@@ -7,6 +7,7 @@ import Events from "./components/JSX/Events";
 import Landing from "./components/JSX/Landing";
 import Loader from "./components/JSX/Loader";
 import ModalComp from "./components/JSX/ModalComp";
+import Speakers from "./components/JSX/Speakers";
 import Modal from "./enums/Modal";
 
 export const ModalContext = createContext();
@@ -85,7 +86,7 @@ function App() {
   return (
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
-      <ModalContext.Provider value={context}>
+      {/* <ModalContext.Provider value={context}>
         <Landing allowScroll={scroll} loaded={loaded} />
         {!is2D ? (
           <>
@@ -96,7 +97,8 @@ function App() {
         ) : (
           <></>
         )}
-      </ModalContext.Provider>
+      </ModalContext.Provider> */}
+      <Speakers />
     </div>
   );
 }

@@ -6,6 +6,18 @@ import Brain from "./Brain";
 import LandingElements from "./LandingElements";
 import Switch from "./Switch";
 
+import apogeelogo from "../../assets/apogeelogo.svg";
+import FbIcon from "./FbIcon";
+import InstaIcon from "./InstaIcon";
+import Switch from "./Switch";
+import YtIcon from "./YtIcon";
+
+const ICONS = [
+  [<FbIcon />, "https://www.facebook.com/bitsapogee/"],
+  [<InstaIcon />, "https://instagram.com/bitsapogee"],
+  [<YtIcon />, "https://www.youtube.com/@OasisBITS"],
+];
+
 function Landing(props) {
   const [matchesPhone, setMatchesPhone] = useState(
     window.matchMedia("(min-width: 500px)").matches
