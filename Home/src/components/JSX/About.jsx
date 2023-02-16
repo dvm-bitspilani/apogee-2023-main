@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from "../CSS/About.module.css"
 
-function About() {
+function About(props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={props.loaded ? { display: "flex" } : { display: "none" }}>
       <div className={styles.videos} onClick={evt => {
         evt.stopPropagation();
       }}>

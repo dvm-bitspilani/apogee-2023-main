@@ -68,7 +68,7 @@ const DATA = [
   },
 ];
 
-export default function Contact() {
+export default function Contact(props) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function Contact() {
     <div
       id="contactUs"
       className={styles.contact}
-      style={{ paddingBottom: "10px" }}
+      style={props.loaded ? { display: "block", paddingBottom: "10px" } : { display: "none" }}
     >
       <h1 className={styles.heading}>CONTACT US</h1>
       <div className={styles.cards}>{cards}</div>

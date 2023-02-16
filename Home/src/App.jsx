@@ -90,9 +90,10 @@ function App() {
         <Landing loaded={loaded} />
         {!matches && 
          <>
-          <About/>
-          <Events/>
-          <Contact/>
+          <About loaded={loaded} />
+          <Speakers loaded={loaded} />
+          <Events loaded={loaded} />
+          <Contact loaded={loaded} />
          </>}
         {!is2D ? (
           <>

@@ -30,3 +30,34 @@
 .slick-list {
     width: 65vw;
 }
+
+@media (min-width: 800px) {
+    .heading {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .carouselWrapper {
+        width: 85vw;
+    }
+    
+    .slick-list {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .flexWrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 5rem;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .flexWrapper {
+        padding: 2rem 3rem;
+    }
+}
