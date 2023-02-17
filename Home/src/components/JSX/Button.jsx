@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { useEffect } from "react";
+import React from "react";
 import "../CSS/Button.css";
 
 const Button = props => {

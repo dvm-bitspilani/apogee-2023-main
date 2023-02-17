@@ -32,6 +32,7 @@ export default function Speakers(props) {
       </div>
     );
   };
+
   const PrevArrow = ({ onClick }) => {
     return (
       <div className="arrow prev" onClick={onClick}>
@@ -51,7 +52,7 @@ export default function Speakers(props) {
     );
   };
 
-  let settings = {
+  const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,

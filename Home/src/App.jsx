@@ -71,6 +71,7 @@ function App() {
   useEffect(() => {
     onLoad();
     const app = document.querySelector(".App");
+
     if (!loaded) {
       app.style.maxHeight = "100vh";
       app.style.overflow = "hidden";
@@ -78,9 +79,8 @@ function App() {
       app.style.minHeight = "100vh";
       app.style.overflow = "none";
     }
-    if (!matches) {
-      app.style.overflow = "unset";
-    }
+
+    !matches && (app.style.overflow = "unset");
   }, []);
 
   return (
@@ -88,6 +88,7 @@ function App() {
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
         <Landing loaded={loaded} />
+
         {!matches && (
           <>
             <About loaded={loaded} />
@@ -96,6 +97,7 @@ function App() {
             <Contact loaded={loaded} />
           </>
         )}
+        
         {!is2D ? (
           <>
             {displayModal ? <ModalComp /> : <></>}

@@ -60,9 +60,10 @@
   width: 70%;
   margin-inline: auto;
   background-size: 100% 100%;
-  padding-right: 1.4rem;
-  padding-block: 0.9rem;
-  padding-left: 0.4rem;
+  padding: 15px 10px;}
+
+ .video * {
+  border: none !important;
 }
 
 .videoContainer {

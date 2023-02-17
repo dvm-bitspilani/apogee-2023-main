@@ -2,6 +2,7 @@
   font-family: "Monospace";
   src: url(../../fonts/Monospace.ttf);
 }
+
 .button {
   width: 13vw;
 }
@@ -30,7 +31,7 @@
   letter-spacing: 1px;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #b3dbff;
   opacity: 0.95;
 }

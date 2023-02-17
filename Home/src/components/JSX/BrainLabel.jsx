@@ -1,36 +1,31 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
 import { ModalContext } from "../../App";
 import "../CSS/BrainLabel.css";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 export default function BrainLabel({ modal }) {
   const mContext = useContext(ModalContext);
   const modalValue = modal.getValue().toUpperCase();
-  const LENGTH = 22;
+  const text = `<print> Click to view </print>`;
 
   const isMounted = useRef(false);
-  const [textStates, setTextStates] = useState(Array(LENGTH).fill(0));
+  const [textStates, setTextStates] = useState(Array(text.length).fill(0));
 
   useEffect(() => {
     if (isMounted.current) {
-      if (textStates !== Array(LENGTH).fill(4)) {
+      if (textStates !== Array(text.length).fill(4)) {
         const newTextState = textStates.map(val => {
-          if (val === 1) {
-            return Math.random() > 0.75 ? 2 : 1;
-          } else if (val > 1 && val < 4) {
-            return val + 1;
-          }
-          return val;
+          if (val === 1) return Math.random() > 0.75 ? 2 : 1;
+          else if (val > 1 && val < 4) return val + 1;
+          else return val;
         });
-        setTimeout(() => {
-          setTextStates(newTextState);
-        }, Math.random() * 20 + 30);
+
+        setTimeout(() => setTextStates(newTextState), Math.random() * 20 + 15);
       }
-    } else {
+    } else
       setTimeout(() => {
         isMounted.current = true;
-        setTextStates(Array(LENGTH).fill(1));
+        setTextStates(Array(text.length).fill(1));
       }, 750);
-    }
   }, [textStates]);
 
   return (
@@ -50,12 +45,10 @@ export default function BrainLabel({ modal }) {
           }}
         >
           <div className="labelHeader">{modalValue}</div>
-          {/* <div className="labelCont">{`<h2>${modalValue}</h2>`}</div>
-          <div className="labelCont">{`<div>Click to view</div>`}</div> */}
           <div className="labelCont">
             {textStates.map((elem, idx) => (
               <span className={`state-${elem}`} key={idx}>
-                {`\\print Click to view`[idx]}
+                {text[idx]}
               </span>
             ))}
           </div>
