@@ -1,16 +1,15 @@
 import React from "react";
 import "../CSS/SpeakerCard.css";
-import soumya from "../../assets/soumya.png";
 
-export default function SpeakerCard() {
+export default function SpeakerCard(props) {
   return (
     <div className="speakerCard">
       <div className="speakerCont">
-        <div className="speakerName">DR. SOUMYA SWAMINATHAN</div>
-        <div className="speakerPos">CHIEF SCIENTIST, WHO</div>
+        <div className="speakerName">{props.data.name}</div>
+        <div className="speakerPos">{props.data.pos}</div>
       </div>
       <div className="speakerImg">
-        <img src={soumya} alt="" />
+        <img src={props.data.img} alt="" />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ export default function BackBtn() {
         <path
           className="backBtnInside"
           d="M122.417 50.1104H11.6897L7.59055 45.763V8.39505L10.3298 6.03H110.803L122.417 19.8849V50.1104Z"
-          fill="#132330"
+          fill="#4DACFF"
           stroke="#4DACFF"
           strokeWidth="0.84516"
         />

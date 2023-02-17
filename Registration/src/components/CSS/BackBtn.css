@@ -31,12 +31,12 @@
 }
 
 .backBtnInside {
-  opacity: 0.6;
+  opacity: 0.1;
   transition: opacity 0.3s ease-in-out;
 }
 
 .backBtn:hover .backBtnInside {
-  opacity: 1;
+  opacity: .4;
 }
 
 .backBtn:hover .arr {
@@ -88,6 +88,14 @@
 
   .backBtn > svg {
     transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  .backText {
+    font-size: .9rem;
+  }
+
+  .arr {
+    height: 10px;
   }
 }
 

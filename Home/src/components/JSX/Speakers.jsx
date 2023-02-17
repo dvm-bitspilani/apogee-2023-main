@@ -3,7 +3,36 @@ import Slider from "react-slick";
 import "../CSS/Speakers.css";
 import SpeakerCard from "./SpeakerCard";
 
+const DATA = [
+  {
+    img: "/images/soumya.png",
+    name: "DR. SOUMYA SWAMINATHAN",
+    pos: "CHEIF SCIENTIST, WHO",
+    link: ""
+  },
+  {
+    img: "/images/soumya.png",
+    name: "DR. SOUMYA SWAMINATHAN",
+    pos: "CHEIF SCIENTIST, WHO",
+    link: ""
+  },
+  {
+    img: "/images/soumya.png",
+    name: "DR. SOUMYA SWAMINATHAN",
+    pos: "CHEIF SCIENTIST, WHO",
+    link: ""
+  },
+  {
+    img: "/images/soumya.png",
+    name: "DR. SOUMYA SWAMINATHAN",
+    pos: "CHEIF SCIENTIST, WHO",
+    link: ""
+  },
+]
+
 export default function Speakers(props) {
+  const [cards, setCards] = useState([]);
+
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 800px)").matches
   );
@@ -12,7 +41,11 @@ export default function Speakers(props) {
     window
       .matchMedia("(min-width: 800px)")
       .addEventListener("change", e => setMatches(e.matchesPhone));
-  });
+  }, []);
+
+  useEffect(() => {
+    setCards(DATA.map((e, i) => <SpeakerCard data={e} key={i} />));
+  }, []);
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -72,18 +105,14 @@ export default function Speakers(props) {
           }}
         >
           <Slider {...settings}>
-            <SpeakerCard />
-            <SpeakerCard />
-            <SpeakerCard />
+            {cards}
           </Slider>
         </div>
       )}
 
       {!matches && (
         <div className="flexWrapper">
-          <SpeakerCard />
-          <SpeakerCard />
-          <SpeakerCard />
+          {cards}
         </div>
       )}
     </div>

@@ -25,15 +25,12 @@
 
 .speakerImg {
   width: 40%;
-  height: 65vh;
-  position: relative;
+  margin-right: 4px;
+  margin-bottom: 5px;
 }
 
 .speakerImg img {
-  width: 85%;
-  position: absolute;
-  right: 1%;
-  bottom: 1%;
+  width: 100%;
 }
 
 @media (max-width: 1350px) {
@@ -77,10 +74,6 @@
   .speakerImg {
     width: 60%;
   }
-
-  .speakerImg img {
-    width: 90%;
-  }
 }
 
 @media (max-width: 800px) {
@@ -94,8 +87,8 @@
   }
 
   .speakerImg {
-    height: 40vh;
     width: 45%;
+    margin-bottom: .5px;
   }
 
   .speakerName {
@@ -140,6 +133,8 @@
 
   .speakerImg {
     width: 50%;
+    margin-right: 2.5px;
+    margin-bottom: .3px;
   }
 }
 
@@ -154,7 +149,7 @@
   }
 
   .speakerImg {
-    height: 27vh;
+    margin-bottom: 0;
   }
 
   .speakerImg img {
@@ -163,7 +158,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   .speakerName {
     font-size: 0.7rem;
     line-height: 0.9rem;
@@ -172,8 +167,15 @@
   .speakerPos {
     font-size: 0.45rem;
   }
+}
 
-  .speakerImg img {
-    width: 110%;
+@media (max-width: 350px) {
+  .speakerName {
+    font-size: .6rem;
+    line-height: .8rem;
+  }
+
+  .speakerPos {
+    font-size: .35rem;
   }
 }

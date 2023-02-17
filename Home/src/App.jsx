@@ -76,17 +76,18 @@ function App() {
     onLoad();
     const app = document.querySelector(".App");
 
-    if (!loaded) {
-      app.style.maxHeight = "100vh";
-      app.style.overflow = "hidden";
-    } else {
-      app.style.minHeight = "100vh";
-      app.style.overflow = "none";
-    }
     if (!matches) {
       app.style.overflow = "unset";
     }
   }, []);
+
+  useEffect(() => {
+    if (!loaded) {
+      document.body.style.position = "fixed"
+    } else {
+      document.body.style.position = "static"
+    }
+  }, [loaded])
 
   return (
     <div className="App">
