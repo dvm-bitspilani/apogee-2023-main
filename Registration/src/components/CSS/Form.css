@@ -104,3 +104,9 @@
     scale: 0.6;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .form {
+    scale: 0.9;
+  }
+}

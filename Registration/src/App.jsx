@@ -16,6 +16,7 @@ function App() {
           <div className="heading">REGISTRATION</div>
           <div className="back"></div>
         </div>
+
         <div className="form-container">
           <Form />
         </div>

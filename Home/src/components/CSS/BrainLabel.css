@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  transform: translate(-38px, calc(-100% - 69px));
+  transform: translate(-25px, calc(-100% - 32px));
   animation: slidein 800ms ease;
 }
 
@@ -14,7 +14,7 @@
 
 .labelLine1,
 .labelLine2 {
-  min-width: 150px;
+  min-width: 100px;
   height: 3px;
   background-color: #6ca2cf;
 }

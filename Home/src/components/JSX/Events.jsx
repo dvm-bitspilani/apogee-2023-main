@@ -3,7 +3,7 @@ import dummy from "../../assets/dummy.png";
 import styles from "../CSS/Events.module.css";
 import EventCard from "./EventCard";
 
-function Events() {
+function Events(props) {
   const [eventsArr, setEventsArr] = useState([]);
   const [dispEvent, setDispEvent] = useState(0);
   const [mainEvent, setMainEvent] = useState([]);
@@ -42,6 +42,7 @@ function Events() {
           contact: event.contact,
         };
       });
+
       setEventsArr(evtArr);
       setMainEvent(evtArr[0]);
     } catch (e) {
@@ -82,7 +83,11 @@ function Events() {
       >
         EVENTS
       </div> */}
-      <div ref={el => (container = el)} className={styles.container}>
+      <div
+        ref={el => (container = el)}
+        className={styles.container}
+        style={props.loaded ? { display: "block" } : { display: "none" }}
+      >
         <div
           ref={el => (info = el)}
           className={styles.info}

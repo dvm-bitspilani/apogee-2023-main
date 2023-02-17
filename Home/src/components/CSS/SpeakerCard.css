@@ -1,37 +1,179 @@
 .speakerCard {
-    background: url(../../assets/speakers.png) center no-repeat;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background: url(../../assets/speakers.png) center no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .speakerCont {
-    width: 40%;
-    text-align: center;
-    color: #BFDFFF;
-    margin-left: 5%;
+  width: 40%;
+  text-align: center;
+  color: #bfdfff;
+  margin-left: 5%;
 }
 
 .speakerName {
-    font-size: 2.4rem;
-    letter-spacing: 5px;
-    line-height: 3rem;
+  font-size: 2.4rem;
+  letter-spacing: 5px;
+  line-height: 3rem;
 }
 
 .speakerPos {
-    margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .speakerImg {
-    width: 40%;
-    height: 65vh;
-    position: relative;
+  width: 40%;
+  height: 65vh;
+  position: relative;
 }
 
 .speakerImg img {
-    position: absolute;
-    right: 1%;
-    bottom: 1%;
+  width: 85%;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+}
 
+@media (max-width: 1350px) {
+  .speakerName {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .speakerName {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+
+  .speakerImg {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .speakerName {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  .speakerImg {
+    width: 60%;
+  }
+}
+
+@media (max-width: 950px) {
+  .speakerName {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .speakerPos {
+    font-size: 0.8rem;
+  }
+
+  .speakerImg {
+    width: 60%;
+  }
+
+  .speakerImg img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .speakerCard {
+    width: 80%;
+    margin: auto;
+  }
+
+  .speakerCont {
+    width: 45%;
+  }
+
+  .speakerImg {
+    height: 40vh;
+    width: 45%;
+  }
+
+  .speakerName {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    line-height: 1.6rem;
+  }
+
+  .speakerPos {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .speakerCard {
+    width: 100%;
+  }
+
+  .speakerImg img {
+    width: 100%;
+  }
+
+  .speakerName {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+
+  .speakerPos {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .speakerName {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .speakerPos {
+    font-size: 0.5rem;
+  }
+
+  .speakerImg {
+    width: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  .speakerName {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+  }
+
+  .speakerPos {
+    margin-top: 0.3rem;
+  }
+
+  .speakerImg {
+    height: 27vh;
+  }
+
+  .speakerImg img {
+    right: 2%;
+    bottom: 1.1%;
+  }
+}
+
+@media (max-width: 450px) {
+  .speakerName {
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+  }
+
+  .speakerPos {
+    font-size: 0.45rem;
+  }
+
+  .speakerImg img {
+    width: 110%;
+  }
 }

@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "../CSS/Speakers.css";
 import SpeakerCard from "./SpeakerCard";
 
-export default function Speakers() {
+export default function Speakers(props) {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 800px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 800px)")
+      .addEventListener("change", e => setMatches(e.matchesPhone));
+  });
+
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -22,6 +32,7 @@ export default function Speakers() {
       </div>
     );
   };
+
   const PrevArrow = ({ onClick }) => {
     return (
       <div className="arrow prev" onClick={onClick}>
@@ -41,7 +52,7 @@ export default function Speakers() {
     );
   };
 
-  let settings = {
+  const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -51,14 +62,33 @@ export default function Speakers() {
   };
 
   return (
-    <div className="speakers">
-      <div className="carouselWrapper">
-        <Slider {...settings}>
+    <div
+      className="speakers"
+      style={props.loaded ? { display: "block" } : { display: "none" }}
+    >
+      <div className="heading">SPEAKERS</div>
+      {matches && (
+        <div
+          className="carouselWrapper"
+          onClick={evt => {
+            evt.stopPropagation();
+          }}
+        >
+          <Slider {...settings}>
+            <SpeakerCard />
+            <SpeakerCard />
+            <SpeakerCard />
+          </Slider>
+        </div>
+      )}
+
+      {!matches && (
+        <div className="flexWrapper">
           <SpeakerCard />
           <SpeakerCard />
           <SpeakerCard />
-        </Slider>
-      </div>
+        </div>
+      )}
     </div>
   );
 }
