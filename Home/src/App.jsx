@@ -78,7 +78,7 @@ function App() {
       app.style.minHeight = "100vh";
       app.style.overflow = "none";
     }
-    if(!matches){
+    if (!matches) {
       app.style.overflow = "unset";
     }
   }, []);
@@ -88,19 +88,36 @@ function App() {
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
         <Landing loaded={loaded} />
-        {!matches && 
-         <>
-          <About/>
-          <Events/>
-          <Contact/>
-         </>}
+        {!matches && (
+          <>
+            <About />
+            <Events />
+            <Contact />
+          </>
+        )}
         {!is2D ? (
           <>
             {displayModal ? <ModalComp /> : <></>}
-            {labels.event ? <BrainLabel modal={Modal.Event} /> : <></>}
-            {labels.contact ? <BrainLabel modal={Modal.Contact} /> : <></>}
-            {labels.about ? <BrainLabel modal={Modal.About} /> : <></>}
-            {labels.speaker ? <BrainLabel modal={Modal.Speaker} /> : <></>}
+            {!displayModal && labels.event ? (
+              <BrainLabel modal={Modal.Event} />
+            ) : (
+              <></>
+            )}
+            {!displayModal && labels.contact ? (
+              <BrainLabel modal={Modal.Contact} />
+            ) : (
+              <></>
+            )}
+            {!displayModal && labels.about ? (
+              <BrainLabel modal={Modal.About} />
+            ) : (
+              <></>
+            )}
+            {!displayModal && labels.speaker ? (
+              <BrainLabel modal={Modal.Speaker} />
+            ) : (
+              <></>
+            )}
           </>
         ) : (
           <></>

@@ -5,7 +5,8 @@ import "../CSS/BrainLabel.css";
 export default function BrainLabel({ modal }) {
   const mContext = useContext(ModalContext);
   const modalValue = modal.getValue().toUpperCase();
-  const LENGTH = 22;
+  const STR = "<Apogee>Click to view</Apogee>";
+  const LENGTH = STR.length;
 
   const isMounted = useRef(false);
   const [textStates, setTextStates] = useState(Array(LENGTH).fill(0));
@@ -55,7 +56,7 @@ export default function BrainLabel({ modal }) {
           <div className="labelCont">
             {textStates.map((elem, idx) => (
               <span className={`state-${elem}`} key={idx}>
-                {`\\print Click to view`[idx]}
+                {STR[idx]}
               </span>
             ))}
           </div>
