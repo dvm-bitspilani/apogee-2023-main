@@ -92,14 +92,14 @@ function App() {
     <div className="App">
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
-        <Landing loaded={loaded} />
+        <Landing />
 
         {!matches && (
           <>
-            <About loaded={loaded} />
-            <Speakers loaded={loaded} />
-            <Events loaded={loaded} />
-            <Contact loaded={loaded} />
+            <About />
+            <Speakers />
+            <Events />
+            <Contact />
           </>
         )}
 

@@ -62,10 +62,7 @@ export default function Speakers(props) {
   };
 
   return (
-    <div
-      className="speakers"
-      style={props.loaded ? { display: "block" } : { display: "none" }}
-    >
+    <div className="speakers">
       <div className="heading">SPEAKERS</div>
       {matches && (
         <div

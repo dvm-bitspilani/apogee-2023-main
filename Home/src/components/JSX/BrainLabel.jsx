@@ -5,8 +5,8 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 export default function BrainLabel({ modal }) {
   const mContext = useContext(ModalContext);
   const modalValue = modal.getValue().toUpperCase();
-  const STR = "<Apogee>Click to view</Apogee>";
-  const LENGTH = STR.length;
+  const text = "<Apogee>Click to view</Apogee>";
+  const LENGTH = text.length;
 
   const isMounted = useRef(false);
   const [textStates, setTextStates] = useState(Array(text.length).fill(0));
@@ -49,7 +49,7 @@ export default function BrainLabel({ modal }) {
           <div className="labelCont">
             {textStates.map((elem, idx) => (
               <span className={`state-${elem}`} key={idx}>
-                {STR[idx]}
+                {text[idx]}
               </span>
             ))}
           </div>

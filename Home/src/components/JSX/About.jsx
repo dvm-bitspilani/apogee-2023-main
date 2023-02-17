@@ -31,7 +31,6 @@ function About(props) {
   return (
     <div
       className={styles.container}
-      style={props.loaded ? { display: "flex" } : { display: "none" }}
     >
       <div className={styles.videos} onClick={evt => evt.stopPropagation()}>
         {videos}

@@ -32,10 +32,7 @@ function Landing(props) {
   });
 
   return (
-    <div
-      className={styles.wrapper}
-      style={props.loaded ? { display: "block" } : { display: "none" }}
-    >
+    <div className={styles.wrapper}>
       <Canvas id="canvas-wrapper">
         <Brain />
       </Canvas>
