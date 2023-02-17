@@ -1,143 +1,141 @@
 @font-face {
-    font-family: "Monospace";
-    src: url(../../fonts/Monospace.ttf);
+  font-family: "Monospace";
+  src: url(../../fonts/Monospace.ttf);
 }
 
 .heading {
-    text-align: left;
-    margin: 2rem 0 1rem 2rem;
-    font-size: 2.4rem;
-    color: #51aeff;
-    font-weight: 500;
+  text-align: left;
+  margin: 2rem 0 1rem 2rem;
+  font-size: 2.4rem;
+  color: #51aeff;
+  font-weight: 500;
 }
 
 .container {
-    width: 90%;
-    margin-inline: auto;
-    display: flex;
-    overflow: hidden;
-    margin-block: 1rem;
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  overflow: hidden;
+  margin-block: 1rem;
 }
 
-
 .about {
-    width: 60%;
-    background: url("../../assets/aboutRight.png") center no-repeat;
-    background-size: 100% 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    padding-right: 5rem;
-    padding-left: 2rem;
-    padding-top: 3rem;
-    padding-bottom: 6rem;
+  width: 60%;
+  background: url("../../assets/aboutRight.png") center no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-right: 5rem;
+  padding-left: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
 }
 
 .videos {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    background: url("../../assets/aboutLeft.png") center no-repeat;
-    background-size: 100% 100%;
-    padding: 2rem;
-    padding-inline: 0.5rem;
-    margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background: url("../../assets/aboutLeft.png") center no-repeat;
+  background-size: 100% 100%;
+  padding: 2rem;
+  padding-inline: 0.5rem;
+  margin-right: 2rem;
 }
 
 .text {
-    font-family: "Monospace";
-    text-align: left;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    color: #BFDFFF;
-    line-height: 1.7rem;
-    padding-right: 2rem;
+  font-family: "Monospace";
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  color: #bfdfff;
+  line-height: 1.7rem;
+  padding-right: 2rem;
 }
 
 .video {
-    background: url("../../assets/aboutCard.png") center no-repeat;
-    overflow: hidden;
-    width: 70%;
-    margin-inline: auto;
-    background-size: 100% 100%;
-    padding-right: 1.4rem;
-    padding-block: 0.9rem;
-    padding-left: 0.4rem;
+  background: url("../../assets/aboutCard.png") center no-repeat;
+  overflow: hidden;
+  width: 70%;
+  margin-inline: auto;
+  background-size: 100% 100%;
+  padding-right: 1.4rem;
+  padding-block: 0.9rem;
+  padding-left: 0.4rem;
 }
 
-.videoContainer{
-    margin-bottom: 3.4rem;
+.videoContainer {
+  margin-bottom: 3.4rem;
 }
-.videoContainer:first-child{
-    margin-top: 2rem;
-}
-
-.videoDesc{
-    text-align: left;
-    font-size: 1.2rem;
-    padding-left: 3.4rem;
-    margin-top: 1.4rem;
-    color: #BFDFFF;
-    font-weight: 100;
-}
-.video>iframe{
-    width: 19rem;
-    height: 11rem;
+.videoContainer:first-child {
+  margin-top: 2rem;
 }
 
+.videoDesc {
+  text-align: left;
+  font-size: 1.2rem;
+  padding-left: 3.4rem;
+  margin-top: 1.4rem;
+  color: #bfdfff;
+  font-weight: 100;
+}
+.video > iframe {
+  width: 19rem;
+  height: 11rem;
+}
 
-@media screen and (max-width:450px) {
-    .heading {
-        font-size: 1.4rem;
-    }
-    .video>iframe{
-        width: 13rem !important;
-        height: 10rem !important;
-    }
-    .text{
-        margin-left: 0;
-    }
+@media screen and (max-width: 450px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+  .video > iframe {
+    width: 13rem !important;
+    height: 10rem !important;
+  }
+  .text {
+    margin-left: 0;
+  }
 }
 @media screen and (max-width: 1000px) {
-    .container{
-        flex-direction: column-reverse;
-        height: auto;
-        width: 95%;
-    }
-    .about{
-        background: url("../../assets/aboutMobile.png") center no-repeat;
-        background-size: 100% 100%;
-        width: 95%;
-        padding-right: 0;
-        padding-left: 1rem;
-        padding-bottom: 7rem;
-    }
-    .videos{
-        width: 90%;
-        margin-top: 3rem;
-        margin-left: 1rem;
-    }
-    .videoDesc{
-        padding-left: 2.4rem;
-    }
-    .heading{
-        margin-left: 0rem;
-        text-align: center;
-        font-size: 1.7rem;
-        margin-top: 5rem;
-    }
-    .text{
-        padding-left: 2.5rem;
-        font-size: 1rem;
-        padding-right: 3rem;
-        line-height: 1.5rem;
-    }
-    .about{
-        align-items: center;
-    }
-    .video>iframe{
-        width: 36rem;
-        height: 20rem;
-    }
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 95%;
+  }
+  .about {
+    background: url("../../assets/aboutMobile.png") center no-repeat;
+    background-size: 100% 100%;
+    width: 95%;
+    padding-right: 0;
+    padding-left: 1rem;
+    padding-bottom: 7rem;
+  }
+  .videos {
+    width: 90%;
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+  .videoDesc {
+    padding-left: 2.4rem;
+  }
+  .heading {
+    margin-left: 0rem;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 5rem;
+  }
+  .text {
+    padding-left: 2.5rem;
+    font-size: 1rem;
+    padding-right: 3rem;
+    line-height: 1.5rem;
+  }
+  .about {
+    align-items: center;
+  }
+  .video > iframe {
+    width: 36rem;
+    height: 20rem;
+  }
 }

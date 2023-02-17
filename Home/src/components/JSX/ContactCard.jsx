@@ -5,9 +5,12 @@ import MailIcon from "./MailIcon";
 
 export default function ContactCard(props) {
   return (
-    <div className={styles.contactCard} onClick={evt => {
-      evt.stopPropagation();
-    }}>
+    <div
+      className={styles.contactCard}
+      onClick={evt => {
+        evt.stopPropagation();
+      }}
+    >
       <div className={styles.wrapper}>
         <img className={styles.img} src={props.data.img} alt="" />
         <div className={styles.name}>{props.data.name}</div>

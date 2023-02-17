@@ -78,7 +78,7 @@ function App() {
       app.style.minHeight = "100vh";
       app.style.overflow = "none";
     }
-    if(!matches){
+    if (!matches) {
       app.style.overflow = "unset";
     }
   }, []);
@@ -88,13 +88,14 @@ function App() {
       {!loaded ? <Loader percent={per} /> : <></>}
       <ModalContext.Provider value={context}>
         <Landing loaded={loaded} />
-        {!matches && 
-         <>
-          <About loaded={loaded} />
-          <Speakers loaded={loaded} />
-          <Events loaded={loaded} />
-          <Contact loaded={loaded} />
-         </>}
+        {!matches && (
+          <>
+            <About loaded={loaded} />
+            <Speakers loaded={loaded} />
+            <Events loaded={loaded} />
+            <Contact loaded={loaded} />
+          </>
+        )}
         {!is2D ? (
           <>
             {displayModal ? <ModalComp /> : <></>}

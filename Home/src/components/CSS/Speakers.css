@@ -1,63 +1,63 @@
 .speakers {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .carouselWrapper {
-    width: 80vw;
-    min-height: 65vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 80vw;
+  min-height: 65vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slick-slider {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .arrow {
-    width: 20px;
+  width: 20px;
 }
 
 .next {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .slick-list {
-    width: 65vw;
+  width: 65vw;
 }
 
 @media (min-width: 800px) {
-    .heading {
-        display: none;
-    }
+  .heading {
+    display: none;
+  }
 }
 
 @media (max-width: 950px) {
-    .carouselWrapper {
-        width: 85vw;
-    }
-    
-    .slick-list {
-        width: 70vw;
-    }
+  .carouselWrapper {
+    width: 85vw;
+  }
+
+  .slick-list {
+    width: 70vw;
+  }
 }
 
 @media (max-width: 800px) {
-    .flexWrapper {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem 5rem;
-        gap: 2.5rem;
-    }
+  .flexWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    gap: 2.5rem;
+  }
 }
 
 @media (max-width: 550px) {
-    .flexWrapper {
-        padding: 2rem 3rem;
-    }
+  .flexWrapper {
+    padding: 2rem 3rem;
+  }
 }

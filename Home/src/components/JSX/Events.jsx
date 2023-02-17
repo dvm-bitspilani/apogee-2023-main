@@ -82,7 +82,11 @@ function Events(props) {
       >
         EVENTS
       </div> */}
-      <div ref={el => (container = el)} className={styles.container} style={props.loaded ? { display: "block" } : { display: "none" }}>
+      <div
+        ref={el => (container = el)}
+        className={styles.container}
+        style={props.loaded ? { display: "block" } : { display: "none" }}
+      >
         <div
           ref={el => (info = el)}
           className={styles.info}

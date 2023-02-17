@@ -79,7 +79,11 @@ export default function Contact(props) {
     <div
       id="contactUs"
       className={styles.contact}
-      style={props.loaded ? { display: "block", paddingBottom: "10px" } : { display: "none" }}
+      style={
+        props.loaded
+          ? { display: "block", paddingBottom: "10px" }
+          : { display: "none" }
+      }
     >
       <h1 className={styles.heading}>CONTACT US</h1>
       <div className={styles.cards}>{cards}</div>
