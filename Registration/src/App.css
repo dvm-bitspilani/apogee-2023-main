@@ -44,9 +44,6 @@
 
 .back {
   width: 8vw;
-  /* position: absolute;
-  left: 10%;
-  top: 10%; */
 }
 
 @media screen and (min-width: 1550px) {
@@ -115,8 +112,12 @@
   .heading {
     font-size: 1.15rem;
   }
+}
 
-  .back {
-    width: 13vw;
+@media screen and (max-width: 400px) {
+  .header {
+    scale: 0.85;
+    margin-top: 6rem;
+    margin-bottom: -4rem;
   }
 }
