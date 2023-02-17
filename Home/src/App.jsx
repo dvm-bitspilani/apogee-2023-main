@@ -18,19 +18,20 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 450px)").matches
   );
+
   useEffect(() => {
     window
       .matchMedia("(min-width: 450px)")
       .addEventListener("change", e => setMatches(e.matches));
   }, []);
 
-  const [labels, setLabels] = useState({
-    event: false,
-    contact: true,
-    speaker: false,
-    about: false,
-  });
-  const [is2D, set2D] = useState(false);
+  const [is2D, set2D] = useState(false),
+    [labels, setLabels] = useState({
+      event: false,
+      contact: true,
+      speaker: false,
+      about: false,
+    });
 
   const context = {
     modalOpen,
@@ -46,22 +47,25 @@ function App() {
         [label]: isVisible,
       }));
     },
+
     is2D,
     set2D,
   };
 
-  const [loaded, setLoaded] = useState(false);
-  let [per, setPer] = useState(0);
+  const [per, setPer] = useState(0),
+    [loaded, setLoaded] = useState(false);
 
   const onLoad = () => {
-    let estTime = window.performance.getEntries("navigation")[0].loadEventEnd;
-    let time = estTime + 2000;
-    let a = (per * time) / 100;
+    const ET =
+      window.performance.getEntries("navigation")[0].loadEventEnd + 2000;
+    let a = (per * ET) / 100;
+
     const int = setInterval(() => {
       a += 100;
-      per = Math.floor((a / time) * 100);
-      setPer(per);
-      if (per >= 100) {
+      const temp = Math.floor((a / ET) * 100);
+
+      setPer(temp);
+      if (temp >= 100) {
         clearInterval(int);
         setLoaded(true);
       }
@@ -97,7 +101,7 @@ function App() {
             <Contact loaded={loaded} />
           </>
         )}
-        
+
         {!is2D ? (
           <>
             {displayModal ? <ModalComp /> : <></>}

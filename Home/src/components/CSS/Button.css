@@ -67,6 +67,10 @@
   .button {
     width: 19vw;
   }
+
+  .btn span {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 800px) {

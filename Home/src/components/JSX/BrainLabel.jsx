@@ -13,10 +13,10 @@ export default function BrainLabel({ modal }) {
   useEffect(() => {
     if (isMounted.current) {
       if (textStates !== Array(text.length).fill(4)) {
-        const newTextState = textStates.map(val => {
-          if (val === 1) return Math.random() > 0.75 ? 2 : 1;
-          else if (val > 1 && val < 4) return val + 1;
-          else return val;
+        const newTextState = textStates.map(e => {
+          if (e === 1) return Math.random() > 0.75 ? 2 : 1;
+          else if (e > 1 && e < 4) return e + 1;
+          else return e;
         });
 
         setTimeout(() => setTextStates(newTextState), Math.random() * 20 + 15);
@@ -46,9 +46,9 @@ export default function BrainLabel({ modal }) {
         >
           <div className="labelHeader">{modalValue}</div>
           <div className="labelCont">
-            {textStates.map((elem, idx) => (
-              <span className={`state-${elem}`} key={idx}>
-                {text[idx]}
+            {textStates.map((e, i) => (
+              <span className={`state-${e}`} key={i}>
+                {text[i]}
               </span>
             ))}
           </div>

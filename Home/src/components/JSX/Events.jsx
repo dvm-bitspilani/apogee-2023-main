@@ -42,6 +42,7 @@ function Events(props) {
           contact: event.contact,
         };
       });
+
       setEventsArr(evtArr);
       setMainEvent(evtArr[0]);
     } catch (e) {
