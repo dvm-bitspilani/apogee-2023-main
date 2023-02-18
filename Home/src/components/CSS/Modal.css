@@ -3,6 +3,7 @@
   position: absolute;
   background-color: #30303014;
   backdrop-filter: blur(9px);
+  transform-box: fill-box;
   transform-origin: 50% 50%;
   animation: popin 500ms ease;
   max-height: 100vh;

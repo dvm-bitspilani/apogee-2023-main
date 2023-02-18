@@ -51,6 +51,9 @@ export default function ModalComp() {
       key={Math.random()}
       className={`modalParent ${closing ? "close" : ""}`}
       onClick={close}
+      style={{
+        transformOrigin: `${mContext.modalOpen.loc[0]}px ${mContext.modalOpen.loc[1]}px`,
+      }}
     >
       {child}
     </div>
