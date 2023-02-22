@@ -16,7 +16,8 @@
   margin-inline: auto;
   display: flex;
   overflow: hidden;
-  margin-block: 1rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .about {
@@ -51,6 +52,7 @@
   margin-left: 2rem;
   color: #bfdfff;
   line-height: 1.7rem;
+  overflow-y: auto;
   padding-right: 2rem;
 }
 
@@ -60,15 +62,18 @@
   width: 70%;
   margin-inline: auto;
   background-size: 100% 100%;
-  padding: 15px 10px;}
+  padding: 15px 1.4rem;
+  padding-left: 0.3rem;
+}
 
- .video * {
+.video * {
   border: none !important;
 }
 
 .videoContainer {
   margin-bottom: 3.4rem;
 }
+
 .videoContainer:first-child {
   margin-top: 2rem;
 }
@@ -81,7 +86,8 @@
   color: #bfdfff;
   font-weight: 100;
 }
-.video > iframe {
+
+.video>iframe {
   width: 19rem;
   height: 11rem;
 }
@@ -90,20 +96,24 @@
   .heading {
     font-size: 1.4rem;
   }
-  .video > iframe {
+
+  .video>iframe {
     width: 13rem !important;
     height: 10rem !important;
   }
+
   .text {
     margin-left: 0;
   }
 }
+
 @media screen and (max-width: 1000px) {
   .container {
     flex-direction: column-reverse;
     height: auto;
     width: 95%;
   }
+
   .about {
     background: url("../../assets/aboutMobile.png") center no-repeat;
     background-size: 100% 100%;
@@ -112,30 +122,36 @@
     padding-left: 1rem;
     padding-bottom: 7rem;
   }
+
   .videos {
     width: 90%;
     margin-top: 3rem;
     margin-left: 1rem;
   }
+
   .videoDesc {
     padding-left: 2.4rem;
   }
+
   .heading {
     margin-left: 0rem;
     text-align: center;
     font-size: 1.7rem;
     margin-top: 5rem;
   }
+
   .text {
     padding-left: 2.5rem;
     font-size: 1rem;
     padding-right: 3rem;
     line-height: 1.5rem;
   }
+
   .about {
     align-items: center;
   }
-  .video > iframe {
+
+  .video>iframe {
     width: 36rem;
     height: 20rem;
   }

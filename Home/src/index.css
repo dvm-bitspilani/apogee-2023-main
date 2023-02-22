@@ -16,4 +16,5 @@ body {
   -webkit-user-select: none;
   -webkit-user-drag: none;
   z-index: 10000000;
+  /* box-sizing: border-box; */
 }

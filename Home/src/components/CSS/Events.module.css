@@ -36,9 +36,8 @@
   width: 90%;
   margin-inline: auto;
   display: flex;
-  height: 95vh;
+  height: 98vh;
   overflow: hidden;
-  margin-block: 1rem;
 }
 .info {
   width: 70%;
