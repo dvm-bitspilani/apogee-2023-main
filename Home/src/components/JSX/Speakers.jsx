@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useContext } from "react";
 import Slider from "react-slick";
+import { ModalContext } from "../../App";
 import "../CSS/Speakers.css";
 import SpeakerCard from "./SpeakerCard";
 
@@ -31,6 +33,8 @@ const DATA = [
 ];
 
 export default function Speakers(props) {
+  const mContext = useContext(ModalContext);
+  console.log(mContext?.is2D);
   const [cards, setCards] = useState([]);
 
   const [matches, setMatches] = useState(
@@ -96,7 +100,16 @@ export default function Speakers(props) {
 
   return (
     <div className="speakers">
-      <div className="heading">SPEAKERS</div>
+      <div
+        className="heading"
+        style={{
+          display: `${
+            mContext !== undefined && mContext.is2D === false ? "none" : "block"
+          }`,
+        }}
+      >
+        SPEAKERS
+      </div>
       {matches && (
         <div
           className="carouselWrapper"
