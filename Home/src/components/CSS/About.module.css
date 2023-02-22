@@ -137,7 +137,10 @@
     padding-right: 0;
     padding-left: 1rem;
     padding-bottom: 7rem;
+    height: 100vh;
+    overflow-y: scroll;
   }
+
 
   .videos {
     width: 90%;
@@ -161,6 +164,11 @@
     font-size: 1rem;
     padding-right: 3rem;
     line-height: 1.5rem;
+  }
+  .video{
+    margin-left: 0.6rem;
+    margin-inline: none;
+    width: 80%;
   }
 
   .about {

@@ -9,6 +9,7 @@ import Switch from "./Switch";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
+import Hamburger from "./Hamburger";
 
 const ICONS = [
   [<FbIcon />, "https://www.facebook.com/bitsapogee/"],
@@ -20,19 +21,19 @@ function Landing(props) {
   const [matchesPhone, setMatchesPhone] = useState(
     window.matchMedia("(min-width: 500px)").matches
   );
+  useEffect(() => {
+    window
+    .matchMedia("(min-width: 500px)")
+    .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
+  });
 
   let contact = document.getElementById("contactUs");
   const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
   const modalContext = useContext(ModalContext);
 
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 500px)")
-      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
-  });
-
   return (
     <div className={styles.wrapper}>
+    {/* <Hamburger/> */}
       <Canvas id="canvas-wrapper">
         <Brain />
       </Canvas>
