@@ -4,9 +4,12 @@
   min-height: 100vh;
 }
 
+.heading {
+  margin: 4rem 0 1rem 0;
+}
+
 .carouselWrapper {
   width: 80vw;
-  /* min-height: 90vh; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,6 +24,7 @@
 
 .arrow {
   width: 20px;
+  cursor: pointer;
 }
 
 .next {
@@ -31,9 +35,9 @@
   width: 65vw;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   .heading {
-    display: none;
+    display: block !important;
   }
 }
 
