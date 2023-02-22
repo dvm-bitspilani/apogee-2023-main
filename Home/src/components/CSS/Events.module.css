@@ -51,6 +51,19 @@
   padding-top: 3rem;
   padding-bottom: 6rem;
 }
+
+.eventDetails::-webkit-scrollbar,
+.eventDetails::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 13px;
+  border: 10px solid transparent;
+}
+
+.eventDetails::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+  background-color: #83c4fd;
+}
+
 .content {
   display: flex;
   margin-top: 3rem;
@@ -62,6 +75,7 @@
 .eventDetails {
   width: 60%;
   margin-inline: 3rem;
+  overflow: auto;
 }
 .eventName,
 .details,
@@ -133,6 +147,12 @@
   }
   .text {
     font-size: 1rem;
+  }
+  .eventDetails{
+    margin-inline: 2rem;
+  }
+  .image{
+    margin-left: 1rem;
   }
 }
 

@@ -13,14 +13,16 @@ function About(props) {
       VIDEOS.map((e, i) => (
         <div key={i} className={styles.videoContainer}>
           <div className={styles.video}>
-            <iframe
-              width="auto"
-              height="auto"
-              src={e.link}
-              title={e.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+            <div className={styles.iframeContainer}>
+              <iframe
+                width="auto"
+                height="auto"
+                src={e.link}
+                title={e.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className={styles.videoDesc}>{e.title}</div>
         </div>
