@@ -7,6 +7,27 @@ const VIDEOS = [
 ];
 
 function About(props) {
+  const [index, setIndex] = useState(0);
+  const [circles, setCircles] = useState([]);
+
+  useEffect(() => {
+    setCircles(
+      Array(15)
+        .fill(true)
+        .map(e => e)
+    );
+  }, []);
+
+  useEffect(() => {
+    setCircles(
+      Array(15)
+        .fill()
+        .map((e, i) => (i <= index ? true : false))
+    );
+
+    setTimeout(() => setIndex((index + 1) % 15), 300);
+  }, [index]);
+
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     setVideos(
@@ -38,7 +59,13 @@ function About(props) {
 
       <div className={styles.about} onClick={evt => evt.stopPropagation()}>
         <div className={styles.heading} onClick={evt => evt.stopPropagation()}>
-          ABOUT US
+          <span>ABOUT US</span>
+
+          <div className={styles.topAsset}>
+            <img src="/events/left.png" />
+            <img src="/events/middle.png" />
+            <img src="/events/right.png" />
+          </div>
         </div>
 
         <div className={styles.text}>
@@ -55,6 +82,12 @@ function About(props) {
           never heard before, to the college's own literature festival, APOGEE
           challenges the intellect of the participants and piques the minds of
           the audience.
+        </div>
+
+        <div className={styles.bottomAsset}>
+          {circles.map((e, i) => (
+            <img key={i} src={`/events/${e ? "" : "un"}filled.png`} />
+          ))}
         </div>
       </div>
     </div>
