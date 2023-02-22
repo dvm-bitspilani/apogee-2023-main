@@ -83,10 +83,7 @@ function Events(props) {
       >
         EVENTS
       </div> */}
-      <div
-        ref={el => (container = el)}
-        className={styles.container}
-      >
+      <div ref={el => (container = el)} className={styles.container}>
         <div
           ref={el => (info = el)}
           className={styles.info}

@@ -31,9 +31,7 @@ function About(props) {
   }, []);
 
   return (
-    <div
-      className={styles.container}
-    >
+    <div className={styles.container}>
       <div className={styles.videos} onClick={evt => evt.stopPropagation()}>
         {videos}
       </div>

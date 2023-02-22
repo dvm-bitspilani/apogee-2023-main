@@ -8,27 +8,27 @@ const DATA = [
     img: "/images/soumya.png",
     name: "DR. SOUMYA SWAMINATHAN",
     pos: "CHEIF SCIENTIST, WHO",
-    link: ""
+    link: "",
   },
   {
     img: "/images/soumya.png",
     name: "DR. SOUMYA SWAMINATHAN",
     pos: "CHEIF SCIENTIST, WHO",
-    link: ""
+    link: "",
   },
   {
     img: "/images/soumya.png",
     name: "DR. SOUMYA SWAMINATHAN",
     pos: "CHEIF SCIENTIST, WHO",
-    link: ""
+    link: "",
   },
   {
     img: "/images/soumya.png",
     name: "DR. SOUMYA SWAMINATHAN",
     pos: "CHEIF SCIENTIST, WHO",
-    link: ""
+    link: "",
   },
-]
+];
 
 export default function Speakers(props) {
   const [cards, setCards] = useState([]);
@@ -104,17 +104,11 @@ export default function Speakers(props) {
             evt.stopPropagation();
           }}
         >
-          <Slider {...settings}>
-            {cards}
-          </Slider>
+          <Slider {...settings}>{cards}</Slider>
         </div>
       )}
 
-      {!matches && (
-        <div className="flexWrapper">
-          {cards}
-        </div>
-      )}
+      {!matches && <div className="flexWrapper">{cards}</div>}
     </div>
   );
 }

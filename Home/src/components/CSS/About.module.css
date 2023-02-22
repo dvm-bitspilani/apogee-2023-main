@@ -90,7 +90,7 @@
   font-weight: 100;
 }
 
-.video>iframe {
+.video > iframe {
   width: 19rem;
   height: 11rem;
 }
@@ -112,7 +112,7 @@
     font-size: 1.4rem;
   }
 
-  .video>iframe {
+  .video > iframe {
     width: 13rem !important;
     height: 10rem !important;
   }
@@ -166,7 +166,7 @@
     align-items: center;
   }
 
-  .video>iframe {
+  .video > iframe {
     width: 36rem;
     height: 20rem;
   }

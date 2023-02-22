@@ -4,7 +4,6 @@ import "../CSS/Watch.css";
 import Play from "./Play";
 
 export default function Watch(props) {
-
   return (
     <div className="watchComp">
       <div className="hexagon">
@@ -13,10 +12,10 @@ export default function Watch(props) {
       <div className="line"></div>
       <a href={props.link} target="_blank" className="watchWrapper">
         <div className="watch">
-            <div className="watchCont">
-                <Play />
-                Watch
-            </div>
+          <div className="watchCont">
+            <Play />
+            Watch
+          </div>
         </div>
       </a>
     </div>
