@@ -11,12 +11,12 @@ export default function Loader(props) {
   });
 
   useEffect(() => {
+    const loader = document.querySelector(".loader").style;
+
     if (props.percent >= 100) {
-      document.querySelector(".loader").style.zIndex = -1000;
-      document.querySelector(".loader").style.display = "none";
-    } else {
-      document.querySelector(".loader").style.zIndex = 100000000000000;
-    }
+      loader.zIndex = -1000;
+      loader.display = "none";
+    } else loader.zIndex = 10000000000;
   }, []);
 
   return (

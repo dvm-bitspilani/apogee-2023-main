@@ -1,77 +1,95 @@
 .watchComp {
-    position: relative;
+  position: relative;
 }
 
 .hexagon {
-    width: 50px;
-    height: 50px;
-    background-color: #87BFEF;
-    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-    position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #87bfef;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  position: relative;
 }
 
 .hexagon::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 46px;
-    height: 46px;
-    background: black;
-    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 46px;
+  height: 46px;
+  background: black;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 }
 
 .circle {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #87BFEF;
-    clip-path: circle(50%);
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #87bfef;
+  clip-path: circle(50%);
 }
 
 .line {
-    position: absolute;
-    left: 50%;
-    bottom: 48px;
-    transform: translate(-50%, 0);
-    height: 56px;
-    width: 2px;
-    background-color: #87BFEF;
+  position: absolute;
+  left: 50%;
+  bottom: 48px;
+  transform: translate(-50%, 0);
+  height: 56px;
+  width: 2px;
+  background-color: #87bfef;
 }
 
 .watchWrapper {
-    position: absolute;
-    bottom: 102px;
-    left: 7px;
+  position: absolute;
+  bottom: 102px;
+  left: 7px;
 }
 
 .watch {
-    position: relative;
-    height: 45px;
-    width: 90px;
-    background-color: #87BFEF;
-    clip-path: polygon(0 25%, 20% 0, 80% 0, 100% 25%, 100% 75%, 80% 100%, 20% 100%, 0 75%);
+  position: relative;
+  height: 45px;
+  width: 90px;
+  background-color: #87bfef;
+  clip-path: polygon(
+    0 25%,
+    20% 0,
+    80% 0,
+    100% 25%,
+    100% 75%,
+    80% 100%,
+    20% 100%,
+    0 75%
+  );
 }
 
 .watchCont {
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    height: 41px;
-    width: 86px;
-    background-color: black;
-    clip-path: polygon(0 25%, 20% 0, 80% 0, 100% 25%, 100% 75%, 80% 100%, 20% 100%, 0 75%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #87BFEF;
-    font-size: 12px;
-    gap: 3px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  height: 41px;
+  width: 86px;
+  background-color: black;
+  clip-path: polygon(
+    0 25%,
+    20% 0,
+    80% 0,
+    100% 25%,
+    100% 75%,
+    80% 100%,
+    20% 100%,
+    0 75%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #87bfef;
+  font-size: 12px;
+  gap: 3px;
 }
 
 .slick-slider * {
-    overflow: none;
+  overflow: none;
 }

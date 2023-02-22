@@ -4,9 +4,8 @@ import "../CSS/SpeakerCard.css";
 import Watch from "./Watch";
 
 export default function SpeakerCard(props) {
-
   const Dots = () => {
-    return(
+    return (
       <div className="dots">
         <div className="dot"></div>
         <div className="dot"></div>
@@ -17,8 +16,8 @@ export default function SpeakerCard(props) {
         <div className="dot"></div>
         <div className="dot"></div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="speakerCard">
@@ -30,7 +29,9 @@ export default function SpeakerCard(props) {
       <div className="speakerImg">
         <img src={props.data.img} alt="" />
       </div>
-      <div className="speakerLink"><Watch link={props.data.link} /></div>
+      <div className="speakerLink">
+        <Watch link={props.data.link} />
+      </div>
     </div>
   );
 }

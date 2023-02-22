@@ -54,7 +54,7 @@
   width: 5px;
   height: 5px;
   clip-path: circle(50%);
-  background-color: #4DACFF;
+  background-color: #4dacff;
   filter: blur(2px);
 }
 
@@ -75,7 +75,7 @@
   }
 
   .speakerLink {
-    scale: .9;
+    scale: 0.9;
   }
 }
 
@@ -105,7 +105,7 @@
   }
 
   .speakerLink {
-    scale: .8;
+    scale: 0.8;
   }
 }
 
@@ -121,7 +121,7 @@
 
   .speakerImg {
     width: 45%;
-    margin-bottom: .5px;
+    margin-bottom: 0.5px;
   }
 
   .speakerName {
@@ -135,7 +135,7 @@
   }
 
   .speakerLink {
-    scale: .7;
+    scale: 0.7;
     top: 5%;
   }
 }
@@ -161,7 +161,7 @@
 
 @media (max-width: 600px) {
   .speakerLink {
-    scale: .6;
+    scale: 0.6;
     top: 3%;
     right: 3%;
   }
@@ -185,7 +185,7 @@
   .speakerImg {
     width: 50%;
     margin-right: 2.5px;
-    margin-bottom: .3px;
+    margin-bottom: 0.3px;
   }
 }
 
@@ -220,7 +220,7 @@
   }
 
   .speakerLink {
-    scale: .5;
+    scale: 0.5;
     top: 0;
     right: 0;
   }
@@ -228,16 +228,16 @@
 
 @media (max-width: 350px) {
   .speakerName {
-    font-size: .6rem;
-    line-height: .8rem;
+    font-size: 0.6rem;
+    line-height: 0.8rem;
   }
 
   .speakerPos {
-    font-size: .35rem;
+    font-size: 0.35rem;
   }
 
   .speakerLink {
-    scale: .45;
+    scale: 0.45;
     top: -2%;
   }
 }
