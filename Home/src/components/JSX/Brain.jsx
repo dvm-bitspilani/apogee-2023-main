@@ -26,6 +26,15 @@ const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb"),
     colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
+  const [matchesPhone, setMatchesPhone] = useState(
+    window.matchMedia("(min-width: 500px)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 500px)")
+      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
+  });
+
   const [scale, setScale] = useState(1),
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
@@ -75,8 +84,8 @@ const Brain = props => {
           maxDistance={1.8}
           minDistance={1.6}
           enablePan={false}
-          enableRotate={!modal.is2D}
-          enableZoom={!modal.is2D}
+          enableRotate={!modal.is2D && matchesPhone}
+          enableZoom={!modal.is2D && matchesPhone}
         />
       )}
 

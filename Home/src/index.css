@@ -3,6 +3,11 @@
   src: url(../src/fonts/SUIGENER.TTF) format("truetype");
 }
 
+@font-face {
+  font-family: 'Command';
+  src: url(../src/fonts/cmdFont.ttf) format("truetype");
+}
+
 body {
   margin: 0;
   height: 100vh;
