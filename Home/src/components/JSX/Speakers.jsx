@@ -34,21 +34,38 @@ const DATA = [
 
 export default function Speakers(props) {
   const mContext = useContext(ModalContext);
-  console.log(mContext?.is2D);
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(DATA);
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 800px)").matches
   );
 
   useEffect(() => {
-    window
-      .matchMedia("(min-width: 800px)")
-      .addEventListener("change", e => setMatches(e.matchesPhone));
-  }, []);
+    setSpeakers();
+    async function setSpeakers() {
+      window
+        .matchMedia("(min-width: 800px)")
+        .addEventListener("change", e => setMatches(e.matchesPhone));
 
-  useEffect(() => {
-    setCards(DATA.map((e, i) => <SpeakerCard data={e} key={i} />));
+      const SPEAKERS_URL = "https://bits-apogee.org/registrations/events/";
+
+      try {
+        const res = await fetch(SPEAKERS_URL, { method: "GET" });
+        const speakers = await res.json();
+        const speakerData = speakers.data[2];
+
+        setCards(
+          speakerData.events.map(event => ({
+            img: event.image_url,
+            name: event.name,
+            pos: event.details,
+            link: "",
+          }))
+        );
+      } catch (e) {
+        alert("NETWORK ERROR!");
+      }
+    }
   }, []);
 
   const NextArrow = ({ onClick }) => {
@@ -117,11 +134,21 @@ export default function Speakers(props) {
             evt.stopPropagation();
           }}
         >
-          <Slider {...settings}>{cards}</Slider>
+          <Slider {...settings}>
+            {cards.map((e, i) => (
+              <SpeakerCard data={e} key={i} />
+            ))}
+          </Slider>
         </div>
       )}
 
-      {!matches && <div className="flexWrapper">{cards}</div>}
+      {!matches && (
+        <div className="flexWrapper">
+          {cards.map((e, i) => (
+            <SpeakerCard data={e} key={i} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

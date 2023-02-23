@@ -20,6 +20,7 @@
 .carousel {
   overflow-y: scroll;
 }
+
 .carousel::-webkit-scrollbar,
 .carousel::-webkit-scrollbar-thumb {
   width: 10px;
@@ -39,9 +40,10 @@
   height: 98vh;
   overflow: hidden;
 }
+
 .info {
   width: 70%;
-  background: url("../../assets/event.png") center no-repeat;
+  background: url(/backgrounds/events.png) center no-repeat;
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -68,31 +70,37 @@
   display: flex;
   margin-top: 3rem;
 }
+
 .image {
   width: 40%;
   margin-left: 3rem;
 }
+
 .eventDetails {
   width: 60%;
   margin-inline: 3rem;
   overflow: auto;
 }
+
 .eventName,
 .details,
 .text {
   text-align: left;
   color: #a1d0ff;
 }
+
 .eventName {
   font-size: 1.8rem;
   margin-block-end: 2rem;
   font-weight: 400;
 }
+
 .details {
   font-family: "Monospace";
   font-weight: 800;
   font-size: 1.3rem;
 }
+
 .text {
   font-family: "Monospace";
   margin-block-end: 2rem;
@@ -105,9 +113,11 @@
     margin-bottom: 2rem;
     margin-top: 7rem;
   }
+
   .image {
     display: none;
   }
+
   .info {
     display: none;
     width: 100%;
@@ -115,25 +125,31 @@
     background: url("../../assets/eventMobile.png") center no-repeat;
     background-size: 100% 100%;
   }
+
   .eventDetails {
     width: 85%;
     margin-inline: 3rem;
     padding-bottom: 4rem;
   }
+
   .text {
     margin-top: 0.5rem;
   }
+
   .eventName {
     font-size: 1.3rem;
     text-align: center;
     margin-top: 2rem;
   }
+
   .details {
     font-size: 1rem;
   }
+
   .text {
     font-size: 0.9rem;
   }
+
   .list {
     width: 90%;
     margin-left: 0;
@@ -145,13 +161,16 @@
   .info {
     padding-right: 0;
   }
+
   .text {
     font-size: 1rem;
   }
-  .eventDetails{
+
+  .eventDetails {
     margin-inline: 2rem;
   }
-  .image{
+
+  .image {
     margin-left: 1rem;
   }
 }
@@ -160,9 +179,11 @@
   .text {
     margin-block-end: 1rem;
   }
+
   .image {
     display: none;
   }
+
   .eventDetails {
     width: 90%;
   }

@@ -11,10 +11,14 @@
 }
 
 .speakerCont {
+  padding-top: calc(5% + 1rem + var(--barHeight));
   width: 40%;
+  height: 75vh;
   text-align: center;
   color: #bfdfff;
   margin-left: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .speakerName {
@@ -60,9 +64,14 @@
   filter: blur(2px);
 }
 
+.filledDot {
+  background-color: #5ae2fa;
+  clip-path: none;
+}
+
 .speakerBars {
   position: absolute;
-  top: 8%;
+  top: 5%;
   left: 4%;
 }
 
@@ -83,7 +92,7 @@
 .spBar {
   width: var(--barWidth);
   height: var(--barHeight);
-  background-color: #4DACFF;
+  background-color: #4dacff;
   animation: audio 1s ease var(--delay) infinite;
 }
 
@@ -107,7 +116,7 @@
 
 @media (max-width: 1200px) {
   .speakerCard {
-    --barHeight: 15px
+    --barHeight: 15px;
   }
 
   .speakerName {
@@ -140,7 +149,7 @@
     --barWidth: 5px;
     --barHeight: 13px;
   }
-  
+
   .speakerBars {
     top: 10%;
     left: 5%;

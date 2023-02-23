@@ -23,33 +23,29 @@ function Events(props) {
   });
 
   useEffect(() => {
-    getEvents();
-  }, []);
+    setEvents();
+    async function setEvents() {
+      const EVENT_URL = "https://bits-apogee.org/registrations/events/";
 
-  const EVENT_URL = "https://bits-apogee.org/registrations/events/";
-
-  const getEvents = async () => {
-    try {
-      let res = await fetch(EVENT_URL, { method: "GET" });
-      let events = await res.json();
-      let eventData = events.data[0];
-      let evtArr = eventData.events.map(event => {
-        return {
+      try {
+        const res = await fetch(EVENT_URL, { method: "GET" });
+        const events = await res.json();
+        const eventData = events.data[1];
+        const evtArr = eventData.events.map(event => ({
           img: event.img_url,
           name: event.name,
           desc: event.details,
           guidelines: event.rules,
           contact: event.contact,
-        };
-      });
+        }));
 
-      setEventsArr(evtArr);
-      setMainEvent(evtArr[0]);
-    } catch (e) {
-      console.log(e);
-      alert("NETWORK ERROR!");
+        setEventsArr(evtArr);
+        setMainEvent(evtArr[0]);
+      } catch (e) {
+        alert("NETWORK ERROR!");
+      }
     }
-  };
+  }, []);
 
   function changeEvent(e) {
     setDispEvent(e.target.parentElement.childNodes[1].innerText[0] - 1);
@@ -107,13 +103,15 @@ function Events(props) {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi
               </div>
+
               <div className={styles.details}>GUIDELINES</div>
               <div className={styles.text}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </div>
+
               <div className={styles.details}>CONTACT US</div>
-              <div className={styles.text}>Sejal Agarwal - 93580XXXXX</div>
+              <div className={styles.text}>John Doe - 93580XXXXX</div>
             </div>
           </div>
         </div>
