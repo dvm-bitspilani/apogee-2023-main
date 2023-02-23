@@ -5,9 +5,9 @@ import Watch from "./Watch";
 
 export default function SpeakerCard(props) {
   const [index, setIndex] = useState(0);
-  useEffect(() => {
-    setTimeout(() => setIndex((index + 1) % 8), 300);
-  }, [index]);
+  // useEffect(() => {
+  //   setTimeout(() => setIndex((index + 1) % 8), 300);
+  // }, [index]);
 
   const Dots = () => {
     return (

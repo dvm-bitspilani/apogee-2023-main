@@ -28,7 +28,7 @@ function App() {
   const [is2D, set2D] = useState(false),
     [labels, setLabels] = useState({
       event: false,
-      contact: true,
+      contact: false,
       speaker: false,
       about: false,
     });

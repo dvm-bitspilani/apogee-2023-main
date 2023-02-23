@@ -11,7 +11,7 @@
 }
 
 .speakerCont {
-  padding-top: calc(5% + 1rem + var(--barHeight));
+  /* padding-top: calc(5% + 1rem + var(--barHeight)); */
   width: 40%;
   height: 75vh;
   text-align: center;
@@ -19,6 +19,9 @@
   margin-left: 5%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .speakerName {
@@ -29,6 +32,18 @@
 
 .speakerPos {
   margin-top: 0.5rem;
+  max-height: 40%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.speakerPos::-webkit-scrollbar {
+  display: none;
+}
+
+.example {
+  
 }
 
 .speakerImg {
@@ -52,7 +67,6 @@
   width: 50%;
   display: flex;
   justify-content: space-evenly;
-  margin: auto;
   margin-top: 1rem;
 }
 
@@ -64,10 +78,10 @@
   filter: blur(2px);
 }
 
-.filledDot {
+/* .filledDot {
   background-color: #5ae2fa;
   clip-path: none;
-}
+} */
 
 .speakerBars {
   position: absolute;
