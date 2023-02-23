@@ -74,7 +74,7 @@ const Brain = props => {
       <PerspectiveCamera makeDefault position={position} />
 
       {/* Orbit Controls */}
-      {isSpinning && !modal.displayModal && (
+      {isSpinning && !modal.displayModal &&  (
         <OrbitControls
           autoRotate
           autoRotateSpeed={1}

@@ -69,10 +69,10 @@ function About(props) {
         </div>
 
         <div className={styles.text}>
-          BITS Pilani, India is back with the 40th edition of APOGEE(A
+          BITS Pilani, India is back with the 41st edition of APOGEE(A
           Professions Oriented Gathering over Educational Experiences)- the
           institute's annual technical extravaganza, from 7th to 10th April
-          2022, this time as The Encrypted Dimension! A melange of technology,
+          2022, this time as The Hivemind Genesis! A melange of technology,
           innovation and inspiration across space and time of humankind, this
           technical conference will, as always, play host to the brightest minds
           and thinkers in the country and world. From presenting papers and
