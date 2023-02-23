@@ -31,32 +31,31 @@ function App() {
   }, []);
 
   useEffect(() => {
-
     if (!loaded) {
-      document.body.style.position = "fixed"
+      document.body.style.position = "fixed";
     } else {
-      document.body.style.position = "static"
+      document.body.style.position = "static";
     }
-  }, [loaded])
+  }, [loaded]);
 
   return (
     <div className="registration-app">
       {!loaded ? <Loader percent={per} /> : <></>}
       <div className="registration-wrapper">
-      <Rings />
-      <div className="background">
-        <div className="header" style={{ display: "flex" }}>
-          <div className="back">
-            <BackBtn />
+        <Rings />
+        <div className="background">
+          <div className="header" style={{ display: "flex" }}>
+            <div className="back">
+              <BackBtn />
+            </div>
+            <div className="heading">REGISTRATION</div>
+            <div className="back"></div>
           </div>
-          <div className="heading">REGISTRATION</div>
-          <div className="back"></div>
-        </div>
 
-        <div className="form-container">
-          <Form />
+          <div className="form-container">
+            <Form />
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

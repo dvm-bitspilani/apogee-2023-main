@@ -141,7 +141,6 @@
     overflow-y: scroll;
   }
 
-
   .videos {
     width: 90%;
     margin-top: 3rem;
@@ -165,7 +164,7 @@
     padding-right: 3rem;
     line-height: 1.5rem;
   }
-  .video{
+  .video {
     margin-left: 0.6rem;
     margin-inline: none;
     width: 80%;

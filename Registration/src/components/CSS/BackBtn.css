@@ -36,7 +36,7 @@
 }
 
 .backBtn:hover .backBtnInside {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .backBtn:hover .arr {
@@ -91,7 +91,7 @@
   }
 
   .backText {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .arr {

@@ -23,8 +23,8 @@ function Landing(props) {
   );
   useEffect(() => {
     window
-    .matchMedia("(min-width: 500px)")
-    .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
+      .matchMedia("(min-width: 500px)")
+      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
   });
 
   let contact = document.getElementById("contactUs");
@@ -33,7 +33,7 @@ function Landing(props) {
 
   return (
     <div className={styles.wrapper}>
-    {/* <Hamburger/> */}
+      {/* <Hamburger/> */}
       <Canvas id="canvas-wrapper">
         <Brain />
       </Canvas>
