@@ -38,6 +38,7 @@
     margin-top: 1rem;
     position: static;
     transform: none;
+    display: none;
   }
 
   .switch {
