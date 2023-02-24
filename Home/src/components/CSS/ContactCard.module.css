@@ -1,6 +1,7 @@
 * {
   text-align: center;
 }
+
 .contactCard {
   background: url("../../assets/contact.png") center no-repeat;
   background-size: 100% 100%;
@@ -22,7 +23,8 @@
 }
 
 img {
-  width: 100%;
+  width: 110%;
+  margin-top: 1rem;
 }
 
 .name {
@@ -31,7 +33,7 @@ img {
 }
 
 .dept {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .icons {
@@ -52,15 +54,19 @@ img {
   0% {
     rotate: 0deg;
   }
+
   25% {
     rotate: 5deg;
   }
+
   50% {
     rotate: 0deg;
   }
+
   75% {
     rotate: -5deg;
   }
+
   100% {
     rotate: 0deg;
   }
