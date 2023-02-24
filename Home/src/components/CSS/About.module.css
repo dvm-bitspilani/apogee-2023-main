@@ -209,3 +209,9 @@
   align-self: flex-end;
   transform: translateY(1rem);
 }
+
+@media screen and (max-width: 900px) {
+  .bottomAsset {
+    scale: 0.7;
+  }
+}

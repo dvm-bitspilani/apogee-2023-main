@@ -25,7 +25,7 @@ function About(props) {
         .map((e, i) => (i <= index ? true : false))
     );
 
-    setTimeout(() => setIndex((index + 1) % 15), 300);
+    setTimeout(() => setIndex((index + 1) % 15), 600);
   }, [index]);
 
   const [videos, setVideos] = useState([]);
