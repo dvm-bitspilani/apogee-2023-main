@@ -20,6 +20,7 @@ const TextInput = props => {
         onChange={evt => {
           setValue(evt.target.value);
         }}
+        length={props.field === 'phone' ? 10 : 'none'}
       />
     </div>
   );

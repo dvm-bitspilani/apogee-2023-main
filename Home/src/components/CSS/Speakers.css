@@ -1,7 +1,6 @@
 .speakers {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
 }
 
 .heading {
@@ -33,6 +32,12 @@
 
 .slick-list {
   width: 65vw;
+}
+
+@media (min-width: 800px) {
+  .speakers {
+    min-height: 100vh;
+  }
 }
 
 @media (max-width: 800px) {

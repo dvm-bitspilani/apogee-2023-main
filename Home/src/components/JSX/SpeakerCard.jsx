@@ -50,7 +50,7 @@ export default function SpeakerCard(props) {
 
       <div className="speakerCont">
         <div className="speakerName">{props.data.name}</div>
-        <div className="speakerPos">{props.data.pos}</div>
+        {/* <div className="speakerPos">{props.data.pos}</div> */}
         <Dots />
       </div>
 
@@ -58,7 +58,7 @@ export default function SpeakerCard(props) {
         <img src={props.data.img} alt="" />
       </div>
 
-      <div className="speakerLink">
+      <div className="speakerLink" style={{display: 'none'}}>
         <Watch link={props.data.link} />
       </div>
     </div>

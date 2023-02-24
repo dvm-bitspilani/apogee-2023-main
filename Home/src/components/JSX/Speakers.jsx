@@ -8,64 +8,47 @@ import SpeakerCard from "./SpeakerCard";
 const DATA = [
   {
     img: "/images/soumya.png",
-    name: "DR. SOUMYA SWAMINATHAN",
-    pos: "CHEIF SCIENTIST, WHO",
+    name: "Revealing Soon",
+    pos: "",
     link: "",
-  },
-  {
-    img: "/images/soumya.png",
-    name: "DR. SOUMYA SWAMINATHAN",
-    pos: "CHEIF SCIENTIST, WHO",
-    link: "",
-  },
-  {
-    img: "/images/soumya.png",
-    name: "DR. SOUMYA SWAMINATHAN",
-    pos: "CHEIF SCIENTIST, WHO",
-    link: "",
-  },
-  {
-    img: "/images/soumya.png",
-    name: "DR. SOUMYA SWAMINATHAN",
-    pos: "CHEIF SCIENTIST, WHO",
-    link: "",
-  },
+  }
 ];
 
 export default function Speakers(props) {
   const mContext = useContext(ModalContext);
-  const [cards, setCards] = useState(DATA);
+  const [cards, setCards] = useState([]);
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 800px)").matches
   );
 
   useEffect(() => {
-    setSpeakers();
-    async function setSpeakers() {
-      window
-        .matchMedia("(min-width: 800px)")
-        .addEventListener("change", e => setMatches(e.matchesPhone));
+    setCards(DATA);
+    // setSpeakers();
+    // async function setSpeakers() {
+    //   window
+    //     .matchMedia("(min-width: 800px)")
+    //     .addEventListener("change", e => setMatches(e.matchesPhone));
 
-      const SPEAKERS_URL = "https://bits-apogee.org/registrations/events/";
+    //   const SPEAKERS_URL = "https://bits-apogee.org/registrations/events/";
 
-      try {
-        const res = await fetch(SPEAKERS_URL, { method: "GET" });
-        const speakers = await res.json();
-        const speakerData = speakers.data[2];
+    //   try {
+    //     const res = await fetch(SPEAKERS_URL, { method: "GET" });
+    //     const speakers = await res.json();
+    //     const speakerData = speakers.data[2];
 
-        setCards(
-          speakerData.events.map(event => ({
-            img: event.image_url,
-            name: event.name,
-            pos: event.details,
-            link: "",
-          }))
-        );
-      } catch (e) {
-        alert("NETWORK ERROR!");
-      }
-    }
+    //     setCards(
+    //       speakerData.events.map(event => ({
+    //         img: event.image_url,
+    //         name: event.name,
+    //         pos: event.details,
+    //         link: "",
+    //       }))
+    //     );
+    //   } catch (e) {
+    //     alert("NETWORK ERROR!");
+    //   }
+    // }
   }, []);
 
   const NextArrow = ({ onClick }) => {

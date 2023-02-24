@@ -37,10 +37,12 @@ const Form = () => {
       setEvents(() => {
         let evt = [];
         events.data.forEach(evtCat => {
-          let evtTemp = evtCat.events.map(ev => {
-            return { value: ev.id, label: ev.name };
-          });
-          evt = [...evt, ...evtTemp];
+          if (evtCat.category_name !== "Speakers") {
+            let evtTemp = evtCat.events.map(ev => {
+              return { value: ev.id, label: ev.name };
+            });
+            evt = [...evt, ...evtTemp];
+          }
         });
         return evt;
       });

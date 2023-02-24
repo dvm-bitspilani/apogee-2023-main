@@ -2,7 +2,7 @@
   background: url(../../assets/speakers.png) center no-repeat;
   background-size: 100% 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   position: relative;
   margin: 12.5vh 2vw;
@@ -13,7 +13,7 @@
 .speakerCont {
   /* padding-top: calc(5% + 1rem + var(--barHeight)); */
   width: 40%;
-  height: 75vh;
+  /* height: 75vh; */
   text-align: center;
   color: #bfdfff;
   margin-left: 5%;
@@ -21,6 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   gap: 1rem;
 }
 
@@ -40,9 +41,6 @@
 
 .speakerPos::-webkit-scrollbar {
   display: none;
-}
-
-.example {
 }
 
 .speakerImg {
@@ -106,18 +104,18 @@
   width: var(--barWidth);
   height: var(--barHeight);
   background-color: #4dacff;
-  animation: audio 1s ease var(--delay) infinite;
+  animation: audio 1.5s ease var(--delay) infinite;
 }
 
 @keyframes audio {
   0% {
-    height: 0;
+    height: 0.2px;
   }
   50% {
     height: var(--barHeight);
   }
   100% {
-    height: 0;
+    height: 0.2px;
   }
 }
 
@@ -189,7 +187,8 @@
 @media (max-width: 800px) {
   .speakerCard {
     width: 80%;
-    margin: 2.5rem auto;
+    /* margin: 2.5rem auto; */
+    margin: 0 auto;
   }
 
   .speakerCont {
@@ -267,7 +266,7 @@
   .speakerImg {
     width: 50%;
     margin-right: 2.5px;
-    margin-bottom: 0.3px;
+    margin-bottom: 3px;
   }
 }
 
