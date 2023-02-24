@@ -7,7 +7,7 @@ import SpeakerCard from "./SpeakerCard";
 
 const DATA = [
   {
-    img: "/images/soumya.png",
+    img: "/speaker.png",
     name: "Revealing Soon",
     pos: "",
     link: "",
