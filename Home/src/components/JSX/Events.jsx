@@ -27,20 +27,11 @@ function Events(props) {
       try {
         const res = await fetch(EVENT_URL, { method: "GET" });
         const events = await res.json();
-        const eventData = events.data[1];
 
-        const evtArr = eventData.events.map(event => ({
-          img: event.img_url,
-          name: event.name,
-          desc: event.details,
-          guidelines: event.rules,
-          contact: event.contact,
-        }));
-
-        setMainEvent(evtArr[0]);
+        setMainEvent(events.data[0][0]);
 
         setCategories(
-          events.data.map((c, ind) => ({
+          events.data.map(c => ({
             name: c.category_name,
             show: false,
             events: c.events.map((e, i) => (
@@ -83,6 +74,10 @@ function Events(props) {
     }
   }
 
+  useEffect(() => {
+    console.log(mainEvent);
+  }, [mainEvent]);
+
   return (
     <div>
       {/* <div
@@ -113,12 +108,10 @@ function Events(props) {
               </div>
 
               <div className={styles.details}>DETAILS</div>
-              <div className={styles.text}>{mainEvent?.desc ?? "N/A"}</div>
+              <div className={styles.text}>{mainEvent?.about ?? "N/A"}</div>
 
               <div className={styles.details}>GUIDELINES</div>
-              <div className={styles.text}>
-                {mainEvent?.guidelines ?? "N/A"}
-              </div>
+              <div className={styles.text}>{mainEvent?.rules ?? "N/A"}</div>
 
               <div className={styles.details}>CONTACT US</div>
               <div className={styles.text}>

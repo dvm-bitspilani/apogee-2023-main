@@ -15,7 +15,10 @@
   background: url("../../assets/eventName.png") center no-repeat;
   padding: 0.5rem;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 .eventImage {
   width: 100%;
 }
