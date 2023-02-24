@@ -58,7 +58,7 @@ export default function SpeakerCard(props) {
         <img src={props.data.img} alt="" />
       </div>
 
-      <div className="speakerLink" style={{display: 'none'}}>
+      <div className="speakerLink" style={{ display: "none" }}>
         <Watch link={props.data.link} />
       </div>
     </div>

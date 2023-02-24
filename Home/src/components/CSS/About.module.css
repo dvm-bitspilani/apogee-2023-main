@@ -113,10 +113,10 @@
     font-size: 1.4rem;
     flex-direction: column;
   }
-  .heading>span{
+  .heading > span {
     margin-top: -2rem;
   }
-  .topAsset{
+  .topAsset {
     display: none !important;
   }
 

@@ -11,7 +11,7 @@ const DATA = [
     name: "Revealing Soon",
     pos: "",
     link: "",
-  }
+  },
 ];
 
 export default function Speakers(props) {
