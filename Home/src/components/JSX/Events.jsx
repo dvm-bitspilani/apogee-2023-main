@@ -98,20 +98,16 @@ function Events(props) {
               </div>
               <div className={styles.details}>DETAILS</div>
               <div className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi
+              {mainEvent === undefined ? "DEFAULT" : mainEvent.desc}
               </div>
 
               <div className={styles.details}>GUIDELINES</div>
               <div className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {mainEvent === undefined ? "DEFAULT" : mainEvent.guidelines}
               </div>
 
               <div className={styles.details}>CONTACT US</div>
-              <div className={styles.text}>John Doe - 93580XXXXX</div>
+              <div className={styles.text}>{mainEvent === undefined ? "DEFAULT" : mainEvent.contact}</div>
             </div>
           </div>
         </div>
