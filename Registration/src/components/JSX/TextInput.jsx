@@ -20,7 +20,7 @@ const TextInput = props => {
         onChange={evt => {
           setValue(evt.target.value);
         }}
-        length={props.field === 'phone' ? 10 : 'none'}
+        onInput={(e) => {if(props.field === 'phone') e.target.value = e.target.value.slice(0, 10)}}
       />
     </div>
   );
