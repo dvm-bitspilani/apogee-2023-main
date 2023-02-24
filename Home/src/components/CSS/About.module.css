@@ -18,7 +18,7 @@
   margin-inline: auto;
   display: flex;
   overflow: hidden;
-  height: 100vh;
+  height: 93vh;
   overflow: hidden;
 }
 
@@ -113,10 +113,10 @@
     font-size: 1.4rem;
     flex-direction: column;
   }
-  .heading>span{
+  .heading > span {
     margin-top: -2rem;
   }
-  .topAsset{
+  .topAsset {
     display: none !important;
   }
 
@@ -198,6 +198,8 @@
 }
 
 .topAsset img:nth-child(3n + 2) {
+  width: 24px;
+  height: 24px;
   animation: rotate 5s infinite;
 }
 

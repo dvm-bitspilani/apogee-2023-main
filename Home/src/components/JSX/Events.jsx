@@ -4,9 +4,8 @@ import styles from "../CSS/Events.module.css";
 import EventCard from "./EventCard";
 
 function Events(props) {
-  const [eventsArr, setEventsArr] = useState([]);
-  const [dispEvent, setDispEvent] = useState(0);
   const [mainEvent, setMainEvent] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   let info = useRef(null);
   let list = useRef(null);
@@ -20,9 +19,7 @@ function Events(props) {
     window
       .matchMedia("(max-width: 650px)")
       .addEventListener("change", e => setMatches(e.matches));
-  });
 
-  useEffect(() => {
     setEvents();
     async function setEvents() {
       const EVENT_URL = "https://bits-apogee.org/registrations/events/";
@@ -31,6 +28,7 @@ function Events(props) {
         const res = await fetch(EVENT_URL, { method: "GET" });
         const events = await res.json();
         const eventData = events.data[1];
+
         const evtArr = eventData.events.map(event => ({
           img: event.img_url,
           name: event.name,
@@ -39,22 +37,42 @@ function Events(props) {
           contact: event.contact,
         }));
 
-        setEventsArr(evtArr);
         setMainEvent(evtArr[0]);
-      } catch (e) {
-        alert("NETWORK ERROR!");
-      }
+
+        setCategories(
+          events.data.map((c, ind) => ({
+            name: c.category_name,
+            show: false,
+            events: c.events.map((e, i) => (
+              <EventCard
+                key={i + 1}
+                event={() => {
+                  setMainEvent(e);
+
+                  if (matches) {
+                    list.style.display = "none";
+                    info.style.display = "block";
+                    container.style.height = "auto";
+                  }
+                }}
+                index={i + 1}
+                img={e.img}
+                name={e.name}
+              />
+            )),
+          }))
+        );
+      } catch (e) {}
     }
   }, []);
 
-  function changeEvent(e) {
-    setDispEvent(e.target.parentElement.childNodes[1].innerText[0] - 1);
-
-    if (matches) {
-      list.style.display = "none";
-      info.style.display = "block";
-      container.style.height = "auto";
-    }
+  function toggle(index) {
+    setCategories(
+      categories.map((c, i) => ({
+        ...c,
+        show: i === index ? !c.show : c.show,
+      }))
+    );
   }
 
   function showList() {
@@ -64,10 +82,6 @@ function Events(props) {
       container.style.height = "100vh";
     }
   }
-
-  useEffect(() => {
-    setMainEvent(eventsArr[dispEvent]);
-  }, [dispEvent]);
 
   return (
     <div>
@@ -95,44 +109,46 @@ function Events(props) {
 
             <div className={styles.eventDetails}>
               <div className={styles.eventName}>
-                {mainEvent?.name ?? "Event"}
+                {mainEvent?.name ?? "Not Yet Announced"}
               </div>
 
               <div className={styles.details}>DETAILS</div>
-              <div className={styles.text}>
-                {mainEvent?.desc ??
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-              </div>
+              <div className={styles.text}>{mainEvent?.desc ?? "N/A"}</div>
 
               <div className={styles.details}>GUIDELINES</div>
               <div className={styles.text}>
-                {mainEvent?.guidelines ??
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                {mainEvent?.guidelines ?? "N/A"}
               </div>
 
               <div className={styles.details}>CONTACT US</div>
               <div className={styles.text}>
-                {mainEvent?.contact ?? "Mayan Agrawal - +91 9423527868"}
+                {"Mayan Agrawal - +91 9423527868"}
               </div>
             </div>
           </div>
         </div>
-        
+
         <div
           ref={el => (list = el)}
           className={styles.list}
           onClick={evt => evt.stopPropagation()}
         >
           <div className={styles.carousel}>
-            {eventsArr.map((e, i) => (
-              <EventCard
-                key={i + 1}
-                event={changeEvent}
-                index={i + 1}
-                img={e.img}
-                name={e.name}
-              />
-            ))}
+            <div className={styles.dropdown}>
+              {categories.map((c, i) => (
+                <div
+                  key={i}
+                  onClick={() => toggle(i)}
+                  className={styles.dropdownItem}
+                >
+                  <img src="/events/dropdown.png" />
+                  <span>{c.name + " >"}</span>
+                  {c.show ? (
+                    <div className={styles.dropdownEvents}>{c.events}</div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
