@@ -156,13 +156,17 @@ const Brain = props => {
   );
 
   return modal.is2D ? (
-    <ScrollControls pages={5} damping={0.5} distance={1}>
+    <ScrollControls pages={5} damping={0.3} distance={1.1}>
       {BRAIN_CHILDREN}
 
       <Scroll html>
         <LandingElements />
         <div
-          style={{ backgroundColor: "#30303014", backdropFilter: "blur(9px)" }}
+          style={{
+            backgroundColor: "#30303014",
+            backdropFilter: "blur(9px)",
+            marginTop: "50px",
+          }}
         >
           <About />
           <Speakers />
