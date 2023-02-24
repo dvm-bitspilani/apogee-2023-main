@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import styles from "../CSS/About.module.css";
 
 const VIDEOS = [
-  { link: "https://www.youtube.com/embed/Mdhw5tI7HgE", title: "Curtain Raiser" },
+  {
+    link: "https://www.youtube.com/embed/Mdhw5tI7HgE",
+    title: "Curtain Raiser",
+  },
   { link: "https://www.youtube.com/embed/JIhKL_G7SOk", title: "Theme Release" },
 ];
 
