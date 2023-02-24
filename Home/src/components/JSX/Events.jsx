@@ -92,31 +92,36 @@ function Events(props) {
             <div className={styles.image}>
               <img className={styles.eventImage} src={dummy} />
             </div>
+
             <div className={styles.eventDetails}>
               <div className={styles.eventName}>
-                {mainEvent === undefined ? "DEFAULT" : mainEvent.name}
+                {mainEvent?.name ?? "Event"}
               </div>
+
               <div className={styles.details}>DETAILS</div>
               <div className={styles.text}>
-              {mainEvent === undefined ? "DEFAULT" : mainEvent.desc}
+                {mainEvent?.desc ??
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
               </div>
 
               <div className={styles.details}>GUIDELINES</div>
               <div className={styles.text}>
-              {mainEvent === undefined ? "DEFAULT" : mainEvent.guidelines}
+                {mainEvent?.guidelines ??
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
               </div>
 
               <div className={styles.details}>CONTACT US</div>
-              <div className={styles.text}>{mainEvent === undefined ? "DEFAULT" : mainEvent.contact}</div>
+              <div className={styles.text}>
+                {mainEvent?.contact ?? "Mayan Agrawal - +91 9423527868"}
+              </div>
             </div>
           </div>
         </div>
+        
         <div
           ref={el => (list = el)}
           className={styles.list}
-          onClick={evt => {
-            evt.stopPropagation();
-          }}
+          onClick={evt => evt.stopPropagation()}
         >
           <div className={styles.carousel}>
             {eventsArr.map((e, i) => (
