@@ -111,6 +111,13 @@
 @media screen and (max-width: 450px) {
   .heading {
     font-size: 1.4rem;
+    flex-direction: column;
+  }
+  .heading>span{
+    margin-top: -2rem;
+  }
+  .topAsset{
+    display: none !important;
   }
 
   .video > iframe {
