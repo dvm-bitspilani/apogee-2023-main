@@ -178,6 +178,7 @@
     width: 90%;
     margin-top: 3rem;
     margin-left: 1rem;
+    padding: 0.4rem;
   }
 
   .videoDesc {
@@ -198,7 +199,7 @@
     line-height: 1.5rem;
   }
   .video {
-    margin-left: 0.6rem;
+    margin-left: 1.4rem;
     margin-inline: none;
     width: 80%;
   }
