@@ -19,7 +19,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-size: 100%;
+  background-size: 101%;
   position: relative;
   z-index: 2;
 }
@@ -33,4 +33,6 @@
   -webkit-mask-image: url(../../assets/mask.png);
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  mask-size: cover;
+  -webkit-mask-size: cover;
 }
