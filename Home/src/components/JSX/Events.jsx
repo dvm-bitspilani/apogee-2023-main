@@ -5,6 +5,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "../CSS/Events.module.css";
 import stylesH from "../CSS/About.module.css";
 import EventCard from "./EventCard";
+import EventsBox from "./EventsBox";
 
 function Events(props) {
   const { height, width } = useWindowDimensions();
@@ -156,6 +157,7 @@ function Events(props) {
                 {"Mayan Agrawal - +91 9423527868"}
               </div>
             </div>
+            <EventsBox />
           </div>
         </div>
 

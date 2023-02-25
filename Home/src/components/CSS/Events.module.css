@@ -48,6 +48,7 @@
 }
 
 .info {
+  position: relative;
   width: 70%;
   background: url(/backgrounds/events.png) center no-repeat;
   background-size: 100% 100%;
