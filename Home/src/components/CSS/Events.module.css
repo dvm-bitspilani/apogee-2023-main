@@ -39,6 +39,7 @@
   margin-inline: auto;
   display: flex;
   height: 92vh;
+  padding-top: 2rem;
   overflow: hidden;
 }
 

@@ -2,10 +2,11 @@
   background: url("../../assets/EventCard.png") center no-repeat;
   background-size: 100% 100%;
   padding: 1rem;
-  margin: 1rem;
+  margin-block: 1rem;
   overflow: hidden;
   position: relative;
   padding: 0.4em;
+  margin-inline: 0.2rem;
   cursor: pointer;
 }
 
