@@ -63,11 +63,11 @@
   border-radius: 13px;
   border: 10px solid transparent;
 }
+
 .videos {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
 }
-
 
 .text {
   font-family: "Monospace";
@@ -125,7 +125,8 @@
   box-shadow: inset 0 0 0 10px;
   background-color: #83c4fd;
 }
-.text{
+
+.text {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
 }
@@ -135,9 +136,11 @@
     font-size: 1.4rem;
     flex-direction: column;
   }
+
   .heading > span {
     margin-top: -2rem;
   }
+
   .topAsset {
     display: none !important;
   }
@@ -158,7 +161,8 @@
     height: auto;
     width: 95%;
   }
-  .topAsset{
+
+  .topAsset {
     display: none !important;
   }
 
@@ -171,7 +175,7 @@
     padding-bottom: 7rem;
     height: 100vh;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
   }
 
   .videos {
@@ -197,9 +201,10 @@
     line-height: 1.3rem;
     padding-inline: 2rem;
   }
+
   .video {
     margin-left: 0.8rem;
-    margin-inline: none;
+    margin-inline: 0;
     width: 80%;
   }
 
@@ -210,6 +215,28 @@
   .video > iframe {
     width: 100%;
     height: 20rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin-top: -2rem;
+    height: max-content;
+  }
+
+  .videos {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video {
+    margin: 0;
+    margin-inline: 0;
+    width: 90%;
+  }
+
+  .about {
+    height: max-content;
   }
 }
 

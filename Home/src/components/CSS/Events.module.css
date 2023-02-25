@@ -268,3 +268,13 @@
     width: 90%;
   }
 }
+
+@media (max-width: 500px) {
+  .container {
+    margin-top: 0;
+  }
+
+  .carousel {
+    overflow-x: hidden;
+  }
+}

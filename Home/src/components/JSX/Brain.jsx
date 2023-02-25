@@ -56,13 +56,13 @@ const Brain = props => {
 
   useEffect(() => {
     if (width < 850) {
-      setScale(0.87);
+      setScale(0.8);
       setPosition([2, 2, 2]);
     }
 
     if (width < 500) setScale(0.8);
 
-    if (width < 400) {
+    if (width < 500) {
       setScale(0.7);
       setTarget([0, 0.5, 0]);
     }
@@ -77,7 +77,7 @@ const Brain = props => {
       {isSpinning && !modal.displayModal && (
         <OrbitControls
           autoRotate
-          autoRotateSpeed={2}
+          autoRotateSpeed={1.5}
           rotateSpeed={0.1}
           target={target}
           maxPolarAngle={degToRad(75)}

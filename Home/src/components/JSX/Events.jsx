@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import dummy from "../../assets/dummy.png";
 import dropdown from "../../assets/events/dropdown.png";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "../CSS/Events.module.css";
+import stylesH from "../CSS/About.module.css";
 import EventCard from "./EventCard";
 
 function Events(props) {
+  const { height, width } = useWindowDimensions();
   const [mainEvent, setMainEvent] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -162,6 +165,15 @@ function Events(props) {
           onClick={evt => evt.stopPropagation()}
         >
           <div className={styles.carousel}>
+            {width < 500 && (
+              <div
+                style={{ marginTop: "3rem" }}
+                className={stylesH.heading}
+                onClick={evt => evt.stopPropagation()}
+              >
+                <span>EVENTS</span>
+              </div>
+            )}
             <div className={styles.dropdown}>
               {categories.map((c, i) => (
                 <div key={i} className={styles.dropdownItem}>

@@ -49,6 +49,7 @@
 @media screen and (max-width: 500px) {
   .heading {
     font-size: 1.4rem;
+    margin: 1rem 0;
   }
 }
 

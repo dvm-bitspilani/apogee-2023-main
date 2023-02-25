@@ -14,13 +14,9 @@ export default function SpeakerCard(props) {
       <div className="dots">
         {Array(8)
           .fill()
-          .map((e, i) =>
-            i == index ? (
-              <div className="filledDot dot" />
-            ) : (
-              <div className="dot" />
-            )
-          )}
+          .map((e, i) => (
+            <div key={i} className={`${i == index ? "filledDot" : ""} dot`} />
+          ))}
       </div>
     );
   };
