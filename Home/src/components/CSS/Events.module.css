@@ -160,6 +160,8 @@
   padding: 0 1rem;
   font-family: "sui";
   color: #bfdfff;
+  display: block;
+  text-align: left;
 }
 
 .dropdownItem > img {
