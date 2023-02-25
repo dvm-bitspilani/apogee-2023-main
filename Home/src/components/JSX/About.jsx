@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "../CSS/About.module.css";
-// import InstagramEmbed from 'react-instagram-embed';
+import left from "/events/left.png";
+import middle from "/events/middle.png";
+import right from "/events/right.png";
+import filled from "/events/filled.png";
+import unfilled from "/events/unfilled.png";
 
 const VIDEOS = [
   {
@@ -79,9 +83,9 @@ function About(props) {
           <span>ABOUT US</span>
 
           <div className={styles.topAsset}>
-            <img src="/events/left.png" />
-            <img src="/events/middle.png" />
-            <img src="/events/right.png" />
+            <img src={left} alt="<<" />
+            <img src={middle} alt="o" />
+            <img src={right} alt=">>" />
           </div>
         </div>
 
@@ -103,7 +107,7 @@ function About(props) {
 
         <div className={styles.bottomAsset}>
           {circles.map((e, i) => (
-            <img key={i} src={`/events/${e ? "" : "un"}filled.png`} />
+            <img key={i} src={e ? filled : unfilled} alt="🔵" />
           ))}
         </div>
       </div>
