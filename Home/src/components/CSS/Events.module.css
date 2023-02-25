@@ -183,6 +183,10 @@
     display: none;
   }
 
+  .carousel{
+    padding: 0 0.2rem;
+  }
+
   .info {
     display: none;
     width: 100%;
