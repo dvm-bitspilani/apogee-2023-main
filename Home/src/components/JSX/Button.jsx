@@ -4,7 +4,7 @@ import "../CSS/Button.css";
 const Button = props => {
   return (
     <div className="button">
-      <a href="https://apogee-2023-regist.vercel.app/">
+      <a href="https://bits-apogee.org/register/">
         <button type={props.type} className="btn">
           <svg
             viewBox="0 0 300 97"

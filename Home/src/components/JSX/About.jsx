@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "../CSS/About.module.css";
-// import InstagramEmbed from 'react-instagram-embed';
+import left from "../../assets/events/left.png";
+import middle from "../../assets/events/middle.png";
+import right from "../../assets/events/right.png";
+import filled from "../../assets/events/filled.png";
+import unfilled from "../../assets/events/unfilled.png";
 
 const VIDEOS = [
   {
@@ -72,24 +76,24 @@ function About(props) {
           onAfterRender={() => { }}
           onFailure={() => { }}
         /> */}
-        </div>
+      </div>
 
       <div className={styles.about} onClick={evt => evt.stopPropagation()}>
         <div className={styles.heading} onClick={evt => evt.stopPropagation()}>
           <span>ABOUT US</span>
 
           <div className={styles.topAsset}>
-            <img src="/events/left.png" />
-            <img src="/events/middle.png" />
-            <img src="/events/right.png" />
+            <img src={left} alt="<<" />
+            <img src={middle} alt="o" />
+            <img src={right} alt=">>" />
           </div>
         </div>
 
         <div className={styles.text}>
           BITS Pilani, India is back with the 41st edition of APOGEE(A
           Professions Oriented Gathering over Educational Experiences)- the
-          institute's annual technical extravaganza, from 31st March to 3rd April
-          2023, this time as A Hivemind Genesis! A melange of technology,
+          institute's annual technical extravaganza, from 31st March to 3rd
+          April 2023, this time as A Hivemind Genesis! A melange of technology,
           innovation and inspiration across space and time of humankind, this
           technical conference will, as always, play host to the brightest minds
           and thinkers in the country and world. From presenting papers and
@@ -103,7 +107,7 @@ function About(props) {
 
         <div className={styles.bottomAsset}>
           {circles.map((e, i) => (
-            <img key={i} src={`/events/${e ? "" : "un"}filled.png`} />
+            <img key={i} src={e ? filled : unfilled} alt="🔵" />
           ))}
         </div>
       </div>
