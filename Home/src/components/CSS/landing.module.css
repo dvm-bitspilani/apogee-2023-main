@@ -126,7 +126,8 @@ body {
 
 @media (max-width: 600px) {
   .countDown {
-    right: 2rem;
+    right: 3rem;
+    bottom: 4rem;
   }
 }
 
