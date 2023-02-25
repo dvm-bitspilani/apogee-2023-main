@@ -83,6 +83,25 @@ function Events(props) {
     return str?.replace(/(<([^>]+)>)/gi, "");
   }
 
+  const ARROW = (
+    <svg
+      width="15"
+      height="9"
+      viewBox="0 0 15 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13.4238 1.7041L7.42383 7.7041L1.42383 1.7041"
+        stroke="#BFDFFF"
+        strokeWidth="2"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
   return (
     <div>
       {/* <div
@@ -145,13 +164,24 @@ function Events(props) {
           <div className={styles.carousel}>
             <div className={styles.dropdown}>
               {categories.map((c, i) => (
-                <div
-                  key={i}
-                  onClick={() => toggle(i)}
-                  className={styles.dropdownItem}
-                >
-                  <img src={dropdown} />
-                  <span>{c?.name + " >"}</span>
+                <div key={i} className={styles.dropdownItem}>
+                  <img src={dropdown} alt="" />
+                  <span
+                    onClick={e => {
+                      toggle(i);
+                      console.log(e);
+                    }}
+                  >
+                    {c?.name}
+                    <span
+                      className={
+                        c?.show ? styles.arrowBottom : styles.arrowRight
+                      }
+                    >
+                      {ARROW}
+                    </span>
+                  </span>
+
                   {c?.show ? (
                     <div className={styles.dropdownEvents}>{c?.events}</div>
                   ) : null}

@@ -77,7 +77,7 @@ const Brain = props => {
       {isSpinning && !modal.displayModal && (
         <OrbitControls
           autoRotate
-          autoRotateSpeed={1}
+          autoRotateSpeed={2}
           rotateSpeed={0.1}
           target={target}
           maxPolarAngle={degToRad(75)}

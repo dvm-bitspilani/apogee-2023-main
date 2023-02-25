@@ -33,7 +33,7 @@
   box-shadow: inset 0 0 0 10px;
   background-color: #83c4fd;
 }
-.carousel{
+.carousel {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
 }
@@ -69,7 +69,7 @@
   background-color: #83c4fd;
 }
 
-.eventDetails{
+.eventDetails {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
 }
@@ -86,7 +86,7 @@
   background-color: #83c4fd;
 }
 
-.text{
+.text {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
 }
@@ -130,7 +130,7 @@
 .text {
   font-family: "Monospace";
   font-size: 1.1rem;
-  margin-bottom: 1.4rem;
+  margin: 1rem 0;
   max-height: 8rem;
   overflow-y: auto;
 }
@@ -151,12 +151,12 @@
   overflow-x: hidden;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .dropdownItem > span {
+  cursor: pointer;
   line-height: 60px;
   padding: 0 1rem;
   font-family: "sui";
@@ -172,6 +172,16 @@
   z-index: -1;
 }
 
+.arrowRight svg {
+  margin-left: 5px;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.arrowBottom svg {
+  margin-left: 5px;
+  transform: scale(0.6);
+}
+
 @media screen and (max-width: 650px) {
   .container {
     height: 100vh;
@@ -183,7 +193,7 @@
     display: none;
   }
 
-  .carousel{
+  .carousel {
     padding: 0 0.2rem;
   }
 

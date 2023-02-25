@@ -90,19 +90,9 @@ function About(props) {
         </div>
 
         <div className={styles.text}>
-          BITS Pilani, India is back with the 41st edition of APOGEE(A
-          Professions Oriented Gathering over Educational Experiences)- the
-          institute's annual technical extravaganza, from 31st March to 3rd
-          April 2023, this time as A Hivemind Genesis! A melange of technology,
-          innovation and inspiration across space and time of humankind, this
-          technical conference will, as always, play host to the brightest minds
-          and thinkers in the country and world. From presenting papers and
-          projects at the oldest-of-its-kind events in the country, developing
-          amazing solutions to real-life cases and problems, exhibitions of the
-          best contraptions that man has made, guest lectures that tell stories
-          never heard before, to the college's own literature festival, APOGEE
-          challenges the intellect of the participants and piques the minds of
-          the audience.
+          {
+            "BITS Pilani, India is back with the 41st edition of APOGEE (A Professions Oriented Gathering over Educational Experiences) - the institute's annual technical extravaganza, from 31st March to 3rd April 2023, this time as A Hivemind Genesis! A melange of technology, innovation and inspiration across space and time of humankind, this technical conference will, as always, play host to the brightest minds and thinkers in the country and world. From presenting papers and projects at the oldest-of-its-kind events in the country, developing amazing solutions to real-life cases and problems, exhibitions of the best contraptions that man has made, guest lectures that tell stories never heard before, to the college's own literature festival, APOGEE challenges the intellect of the participants and piques the minds of the audience."
+          }
         </div>
 
         <div className={styles.bottomAsset}>
