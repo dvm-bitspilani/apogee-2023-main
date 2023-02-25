@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import dummy from "../../assets/dummy.png";
+import dropdown from "/events/dropdown.png";
 import styles from "../CSS/Events.module.css";
 import EventCard from "./EventCard";
 
@@ -149,7 +150,7 @@ function Events(props) {
                   onClick={() => toggle(i)}
                   className={styles.dropdownItem}
                 >
-                  <img src="/events/dropdown.png" />
+                  <img src={dropdown} />
                   <span>{c?.name + " >"}</span>
                   {c?.show ? (
                     <div className={styles.dropdownEvents}>{c?.events}</div>

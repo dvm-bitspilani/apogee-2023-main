@@ -72,7 +72,7 @@ function About(props) {
           onAfterRender={() => { }}
           onFailure={() => { }}
         /> */}
-        </div>
+      </div>
 
       <div className={styles.about} onClick={evt => evt.stopPropagation()}>
         <div className={styles.heading} onClick={evt => evt.stopPropagation()}>
@@ -88,8 +88,8 @@ function About(props) {
         <div className={styles.text}>
           BITS Pilani, India is back with the 41st edition of APOGEE(A
           Professions Oriented Gathering over Educational Experiences)- the
-          institute's annual technical extravaganza, from 31st March to 3rd April
-          2023, this time as A Hivemind Genesis! A melange of technology,
+          institute's annual technical extravaganza, from 31st March to 3rd
+          April 2023, this time as A Hivemind Genesis! A melange of technology,
           innovation and inspiration across space and time of humankind, this
           technical conference will, as always, play host to the brightest minds
           and thinkers in the country and world. From presenting papers and
