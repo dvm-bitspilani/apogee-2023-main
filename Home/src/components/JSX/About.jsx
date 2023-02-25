@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "../CSS/About.module.css";
-import left from "/events/left.png";
-import middle from "/events/middle.png";
-import right from "/events/right.png";
-import filled from "/events/filled.png";
-import unfilled from "/events/unfilled.png";
+import left from "../../assets/events/left.png";
+import middle from "../../assets/events/middle.png";
+import right from "../../assets/events/right.png";
+import filled from "../../assets/events/filled.png";
+import unfilled from "../../assets/events/unfilled.png";
 
 const VIDEOS = [
   {

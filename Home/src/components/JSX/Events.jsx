@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import dummy from "../../assets/dummy.png";
-import dropdown from "/events/dropdown.png";
+import dropdown from "../../assets/events/dropdown.png";
 import styles from "../CSS/Events.module.css";
 import EventCard from "./EventCard";
 
