@@ -27,40 +27,33 @@ function Events(props) {
       try {
         const res = await fetch(EVENT_URL, { method: "GET" });
         const events = await res.json();
-        const eventData = events.data[1];
 
-        const evtArr = eventData.events.map(event => ({
-          img: event.img_url,
-          name: event.name,
-          desc: event.details,
-          guidelines: event.rules,
-          contact: event.contact,
-        }));
-
-        setMainEvent(evtArr[0]);
+        setMainEvent(events.data[0].events[0]);
 
         setCategories(
-          events.data.map((c, ind) => ({
-            name: c.category_name,
-            show: false,
-            events: c.events.map((e, i) => (
-              <EventCard
-                key={i + 1}
-                event={() => {
-                  setMainEvent(e);
+          events.data
+            .filter(c => c.category_name != "Speakers")
+            .map(c => ({
+              name: c?.category_name,
+              show: false,
+              events: c?.events.map((e, i) => (
+                <EventCard
+                  key={i + 1}
+                  event={() => {
+                    setMainEvent(e);
 
-                  if (matches) {
-                    list.style.display = "none";
-                    info.style.display = "block";
-                    container.style.height = "auto";
-                  }
-                }}
-                index={i + 1}
-                img={e.img}
-                name={e.name}
-              />
-            )),
-          }))
+                    if (matches) {
+                      list.style.display = "none";
+                      info.style.display = "block";
+                      container.style.height = "auto";
+                    }
+                  }}
+                  index={i + 1}
+                  img={e.image_url}
+                  name={e.name}
+                />
+              )),
+            }))
         );
       } catch (e) {}
     }
@@ -70,7 +63,7 @@ function Events(props) {
     setCategories(
       categories.map((c, i) => ({
         ...c,
-        show: i === index ? !c.show : c.show,
+        show: i === index ? !c?.show : c?.show,
       }))
     );
   }
@@ -81,6 +74,12 @@ function Events(props) {
       info.style.display = "none";
       container.style.height = "100vh";
     }
+  }
+
+  function removeTags(str) {
+    if (str === null || str === "") return null;
+    else str = str?.toString();
+    return str?.replace(/(<([^>]+)>)/gi, "");
   }
 
   return (
@@ -104,20 +103,29 @@ function Events(props) {
         >
           <div className={styles.content}>
             <div className={styles.image}>
-              <img className={styles.eventImage} src={dummy} />
+              <img
+                className={styles.eventImage}
+                src={
+                  mainEvent?.image_url !== "NA"
+                    ? `https://bits-apogee.org${mainEvent?.image_url}`
+                    : dummy
+                }
+              />
             </div>
 
             <div className={styles.eventDetails}>
               <div className={styles.eventName}>
-                {mainEvent?.name ?? "Not Yet Announced"}
+                {removeTags(mainEvent?.name) ?? "Not Yet Announced"}
               </div>
 
               <div className={styles.details}>DETAILS</div>
-              <div className={styles.text}>{mainEvent?.desc ?? "N/A"}</div>
+              <div className={styles.text}>
+                {removeTags(mainEvent?.about) ?? "N/A"}
+              </div>
 
               <div className={styles.details}>GUIDELINES</div>
               <div className={styles.text}>
-                {mainEvent?.guidelines ?? "N/A"}
+                {removeTags(mainEvent?.rules) ?? "N/A"}
               </div>
 
               <div className={styles.details}>CONTACT US</div>
@@ -142,9 +150,9 @@ function Events(props) {
                   className={styles.dropdownItem}
                 >
                   <img src="/events/dropdown.png" />
-                  <span>{c.name + " >"}</span>
-                  {c.show ? (
-                    <div className={styles.dropdownEvents}>{c.events}</div>
+                  <span>{c?.name + " >"}</span>
+                  {c?.show ? (
+                    <div className={styles.dropdownEvents}>{c?.events}</div>
                   ) : null}
                 </div>
               ))}

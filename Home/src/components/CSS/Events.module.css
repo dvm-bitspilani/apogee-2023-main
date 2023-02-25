@@ -19,6 +19,7 @@
 
 .carousel {
   overflow-y: scroll;
+  padding: 0 1rem;
 }
 
 .carousel::-webkit-scrollbar,
@@ -38,6 +39,7 @@
   margin-inline: auto;
   display: flex;
   height: 92vh;
+  padding-top: 2rem;
   overflow: hidden;
 }
 
@@ -113,8 +115,8 @@
 
 .text {
   font-family: "Monospace";
-  margin-block-end: 2rem;
   font-size: 1.1rem;
+  margin-bottom: 1.4rem;
   max-height: 8rem;
   overflow-y: auto;
 }
@@ -122,22 +124,27 @@
 .dropdown {
   display: flex;
   justify-content: center;
+  gap: 5px;
   align-items: flex-end;
   flex-direction: column;
-  gap: 1rem;
   width: 100%;
+  font-size: 0.85rem !important;
 }
 
 .dropdownItem {
   position: relative;
   width: 100%;
+  overflow-x: hidden;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.dropdownItem span {
+.dropdownItem > span {
   line-height: 60px;
+  padding: 0 1rem;
   font-family: "sui";
   color: #bfdfff;
 }

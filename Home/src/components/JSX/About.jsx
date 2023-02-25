@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "../CSS/About.module.css";
+// import InstagramEmbed from 'react-instagram-embed';
 
 const VIDEOS = [
-  { link: "https://www.youtube.com/embed/Mdhw5tI7HgE", title: "Curtain Raiser" },
+  {
+    link: "https://www.youtube.com/embed/Mdhw5tI7HgE",
+    title: "Curtain Raiser",
+  },
   { link: "https://www.youtube.com/embed/JIhKL_G7SOk", title: "Theme Release" },
 ];
 
@@ -55,7 +59,20 @@ function About(props) {
     <div className={styles.container}>
       <div className={styles.videos} onClick={evt => evt.stopPropagation()}>
         {videos}
-      </div>
+        {/* <InstagramEmbed
+          url='https://www.instagram.com/reel/CowweEEjDp2/?igshid=MDJmNzVkMjY='
+          clientAccessToken='572780784817908|f1feab82a841be1b4aaf80b0b37d4e48'
+          maxWidth={320}
+          hideCaption={false}
+          containerTagName='div'
+          protocol=''
+          injectScript
+          onLoading={() => { }}
+          onSuccess={() => { }}
+          onAfterRender={() => { }}
+          onFailure={() => { }}
+        /> */}
+        </div>
 
       <div className={styles.about} onClick={evt => evt.stopPropagation()}>
         <div className={styles.heading} onClick={evt => evt.stopPropagation()}>
@@ -71,8 +88,8 @@ function About(props) {
         <div className={styles.text}>
           BITS Pilani, India is back with the 41st edition of APOGEE(A
           Professions Oriented Gathering over Educational Experiences)- the
-          institute's annual technical extravaganza, from 7th to 10th April
-          2022, this time as The Hivemind Genesis! A melange of technology,
+          institute's annual technical extravaganza, from 31st March to 3rd April
+          2023, this time as A Hivemind Genesis! A melange of technology,
           innovation and inspiration across space and time of humankind, this
           technical conference will, as always, play host to the brightest minds
           and thinkers in the country and world. From presenting papers and

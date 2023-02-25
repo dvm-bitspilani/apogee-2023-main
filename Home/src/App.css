@@ -52,3 +52,15 @@
     font-size: 1.4rem;
   }
 }
+
+#canvas-wrapper>div>div::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+  background-color: #83c4fd;
+}
+
+#canvas-wrapper>div>div::-webkit-scrollbar,
+#canvas-wrapper>div>div::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 13px;
+  border: 10px solid transparent;
+}
