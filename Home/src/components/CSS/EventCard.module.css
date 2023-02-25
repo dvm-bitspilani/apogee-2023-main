@@ -14,10 +14,11 @@
   font-weight: 100;
   color: #bfdfff;
   background: url("../../assets/eventName.png") center no-repeat;
-  padding: 0.5rem;
+  padding: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  background-size: 95%;
 }
 
 .eventImage {

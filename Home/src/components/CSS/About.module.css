@@ -52,16 +52,20 @@
   overflow-y: auto;
 }
 
-.videos > div > div::-webkit-scrollbar-thumb {
+.videos ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 0 10px;
   background-color: #83c4fd;
 }
 
-.videos > div > div::-webkit-scrollbar,
-.videos > div > div::-webkit-scrollbar-thumb {
+.videos ::-webkit-scrollbar,
+.videos ::-webkit-scrollbar-thumb {
   width: 4px;
   border-radius: 13px;
   border: 10px solid transparent;
+}
+.videos {
+  scrollbar-color: #83c4fd;
+  scrollbar-width: thin;
 }
 
 
@@ -121,6 +125,10 @@
 .text::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 0 10px;
   background-color: #83c4fd;
+}
+.text{
+  scrollbar-color: #83c4fd;
+  scrollbar-width: thin;
 }
 
 @media screen and (max-width: 450px) {

@@ -64,3 +64,8 @@
   border-radius: 13px;
   border: 10px solid transparent;
 }
+
+#canvas-wrapper > div > div{
+  scrollbar-color: #83c4fd;
+  scrollbar-width: thin;
+}
