@@ -137,7 +137,7 @@
 
 .dropdown {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 5px;
   align-items: flex-end;
   flex-direction: column;
@@ -149,10 +149,9 @@
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  align-items: center;
-  justify-content: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left;
 }
 
 .dropdownItem > span {

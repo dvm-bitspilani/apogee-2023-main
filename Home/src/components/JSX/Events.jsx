@@ -166,12 +166,7 @@ function Events(props) {
               {categories.map((c, i) => (
                 <div key={i} className={styles.dropdownItem}>
                   <img src={dropdown} alt="" />
-                  <span
-                    onClick={e => {
-                      toggle(i);
-                      console.log(e);
-                    }}
-                  >
+                  <span onClick={() => toggle(i)}>
                     {c?.name}
                     <span
                       className={
