@@ -49,7 +49,21 @@
   padding: 2rem;
   padding-inline: 0.5rem;
   margin-right: 2rem;
+  overflow-y: auto;
 }
+
+.videos > div > div::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+  background-color: #83c4fd;
+}
+
+.videos > div > div::-webkit-scrollbar,
+.videos > div > div::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 13px;
+  border: 10px solid transparent;
+}
+
 
 .text {
   font-family: "Monospace";
@@ -136,6 +150,9 @@
     flex-direction: column-reverse;
     height: auto;
     width: 95%;
+  }
+  .topAsset{
+    display: none !important;
   }
 
   .about {
