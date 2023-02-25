@@ -275,6 +275,10 @@
     --barHeight: 9px;
     --barWidth: 3px;
   }
+  .speakerCont{
+    gap: 0;
+    margin-top: 3rem;
+  }
 
   .speakerName {
     font-size: 0.8rem;
