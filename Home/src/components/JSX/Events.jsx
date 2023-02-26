@@ -153,10 +153,10 @@ function Events(props) {
                 {removeTags(mainEvent?.rules) ?? "N/A"}
               </div>
 
-              <div className={styles.details}>CONTACT US</div>
+              {/* <div className={styles.details}>CONTACT US</div>
               <div className={styles.text}>
                 {"Mayan Agrawal - +91 9423527868"}
-              </div>
+              </div> */}
             </div>
 
             <Squares />

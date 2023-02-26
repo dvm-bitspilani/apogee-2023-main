@@ -15,7 +15,7 @@ const DATA = [
     dept: "Registrations and Correspondence",
     phone: "tel:+91 9423527868",
     email: "mailto:pcr@bits-apogee.org",
-    img: "/contacts/mayan.svg",
+    img: "/contacts/mayan.png",
   },
   {
     name: "Lalit Adithya",
@@ -57,7 +57,7 @@ const DATA = [
     dept: "President, Students' Union ",
     phone: "tel:+91 8793009454",
     email: "mailto:president@pilani.bits-pilani.ac.in",
-    img: "/contacts/ashirwad.svg",
+    img: "/contacts/ashirwad.png",
   },
   {
     name: "Naman Jalan",
