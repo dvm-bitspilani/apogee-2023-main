@@ -22,7 +22,10 @@ export default function SpeakerCard(props) {
   };
 
   return (
-    <div className="speakerCard">
+    <div className="speakerCard"
+    onClick={evt => {
+      evt.stopPropagation();
+    }}>
       <div className="speakerBars">
         <SpeakerBars id="spBars1" />
         <SpeakerBars id="spBars2" />

@@ -113,9 +113,6 @@ export default function Speakers(props) {
       {matches && (
         <div
           className="carouselWrapper"
-          onClick={evt => {
-            evt.stopPropagation();
-          }}
         >
           <Slider {...settings}>
             {cards.map((e, i) => (
