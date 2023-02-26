@@ -43,6 +43,7 @@
 .videos {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   width: 35%;
   background: url("../../assets/aboutLeft.png") center no-repeat;
   background-size: 100% 100%;

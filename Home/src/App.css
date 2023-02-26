@@ -65,7 +65,7 @@
   border: 10px solid transparent;
 }
 
-#canvas-wrapper > div > div{
+#canvas-wrapper > div > div {
   scrollbar-color: #83c4fd;
   scrollbar-width: thin;
   /* padding-bottom: 2.4rem; */

@@ -6,14 +6,13 @@
   justify-content: space-between;
   position: relative;
   margin: 12.5vh 2vw;
+  min-height: 70vh;
   --barWidth: 7px;
   --barHeight: 17px;
 }
 
 .speakerCont {
-  /* padding-top: calc(5% + 1rem + var(--barHeight)); */
   width: 40%;
-  /* height: 75vh; */
   text-align: center;
   color: #bfdfff;
   margin-left: 5%;
@@ -75,10 +74,10 @@
   filter: blur(2px);
 }
 
-/* .filledDot {
+.filledDot {
   background-color: #5ae2fa;
   clip-path: none;
-} */
+}
 
 .speakerBars {
   position: absolute;
@@ -275,7 +274,7 @@
     --barHeight: 9px;
     --barWidth: 3px;
   }
-  .speakerCont{
+  .speakerCont {
     gap: 0;
     margin-top: 3.3rem;
   }

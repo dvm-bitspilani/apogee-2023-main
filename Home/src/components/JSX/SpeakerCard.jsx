@@ -1,26 +1,10 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
 import "../CSS/SpeakerCard.css";
+import Dots from "./Dots";
+import Squares from "./Squares";
 import Watch from "./Watch";
 
 export default function SpeakerCard(props) {
-  const [index, setIndex] = useState(0);
-  // useEffect(() => {
-  //   setTimeout(() => setIndex((index + 1) % 8), 300);
-  // }, [index]);
-
-  const Dots = () => {
-    return (
-      <div className="dots">
-        {Array(8)
-          .fill()
-          .map((e, i) => (
-            <div key={i} className={`${i == index ? "filledDot" : ""} dot`} />
-          ))}
-      </div>
-    );
-  };
-
   const SpeakerBars = props => {
     return (
       <div className="spBars" id={props.id}>
@@ -57,6 +41,8 @@ export default function SpeakerCard(props) {
       <div className="speakerLink" style={{ display: "none" }}>
         <Watch link={props.data.link} />
       </div>
+
+      <Squares />
     </div>
   );
 }

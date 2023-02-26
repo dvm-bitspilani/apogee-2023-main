@@ -184,6 +184,18 @@
   transform: scale(0.6);
 }
 
+.squares {
+  position: absolute;
+  bottom: 9%;
+  left: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  gap: 5px;
+}
+
 @media screen and (max-width: 650px) {
   .container {
     height: 100vh;

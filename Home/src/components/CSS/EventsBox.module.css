@@ -1,74 +1,74 @@
-
 .box {
-    position: absolute;
-    bottom: 6%;
-    right: 10%;
-    width: 190px;
-    height: 60px;
-    border: 1px solid #83C4FD;
-    display: flex;
+  position: absolute;
+  bottom: 6%;
+  right: 10%;
+  width: 190px;
+  height: 60px;
+  border: 1px solid #83c4fd;
+  display: flex;
 }
 
 .box > * {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .boxLeft {
-    width: 60px;
-    border-right: 1px solid #83C4FD;
-    background: url('../../assets/events/eventsboxL.svg') center no-repeat;
-    background-size: 90%;
+  width: 60px;
+  border-right: 1px solid #83c4fd;
+  background: url("../../assets/events/eventsboxL.svg") center no-repeat;
+  background-size: 90%;
 }
 
 .boxLImg {
-    width: 90%;
+  width: 90%;
 }
 
 .boxRight {
-    width: 129px;
-    height: 100%;background: url('../../assets/events/eventsboxR.svg') center no-repeat;
-    background-size: 90%;
+  width: 129px;
+  height: 100%;
+  background: url("../../assets/events/eventsboxR.svg") center no-repeat;
+  background-size: 90%;
 }
 
 .boxRImg {
-    width: 90%;
+  width: 90%;
 }
 
 .bars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 78%;
-    gap: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 78%;
+  gap: 3px;
 }
 
 .bar {
-    width: 100%;
-    height: 4px;
-    background-color: #6CA2CF;
-    animation: progress var(--duration) ease var(--delay) infinite;
+  width: 100%;
+  height: 4px;
+  background-color: #6ca2cf;
+  animation: progress var(--duration) ease var(--delay) infinite;
 }
 
 @keyframes progress {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 @media (max-width: 800px) {
-    .box {
-        bottom: 5%;
-        right: 6%;
-        scale: .8;
-    }
+  .box {
+    bottom: 5%;
+    right: 6%;
+    scale: 0.8;
+  }
 }
