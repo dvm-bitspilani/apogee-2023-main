@@ -53,11 +53,6 @@ export default function LandingElements(props) {
       {!matchesTab && <Button />}
 
       <div className={styles.heroFoot}>{links}</div>
-      {props.allowScroll && (
-        <div className="footer scroll" onClick={scroll}>
-          <i className="fa fa-arrow-down" />
-        </div>
-      )}
     </div>
   );
 }
