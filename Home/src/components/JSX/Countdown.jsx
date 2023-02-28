@@ -65,7 +65,7 @@ function Countdown() {
     setPrevDay(days);
     setPrevHr(hrs);
     setPrevMin(mins);
-  }, [curr]);
+  }, [curr, mins]);
 
   return (
     <div ref={el => (count = el)} className="countdown">

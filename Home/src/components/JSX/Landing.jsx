@@ -10,6 +10,7 @@ import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
 import Hamburger from "./Hamburger";
+import Navbar from "./Navbar";
 
 const ICONS = [
   [<FbIcon />, "https://www.facebook.com/bitsapogee/"],
@@ -39,6 +40,7 @@ function Landing(props) {
       </Canvas>
 
       {matchesPhone && <Switch scroll={props.scroll} />}
+      {!modalContext.is2D && <Navbar/>}
 
       {!modalContext.is2D ? (
         <div className={styles.landingWrapper}>
