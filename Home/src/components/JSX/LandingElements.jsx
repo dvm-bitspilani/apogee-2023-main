@@ -6,6 +6,7 @@ import Hamburger from "./Hamburger";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
+import useScrollVis from "../../hooks/useScrollVis";
 
 const ICONS = [
   [<FbIcon />, "https://www.facebook.com/bitsapogee/"],
@@ -19,6 +20,7 @@ export default function LandingElements(props) {
   );
 
   const [links, setLinks] = useState([]);
+  const visClass = useScrollVis(props.idx, props.pages, props.scrollDir);
 
   useEffect(() => {
     window
@@ -40,7 +42,7 @@ export default function LandingElements(props) {
   }, []);
 
   return (
-    <div className={styles.landingElem}>
+    <div className={`${styles.landingElem} ${visClass}`}>
       <div className={styles.navbar}>
         <img src="/apogeeLogo.svg" className={styles.apogeeLogo} />
         {matchesTab && <Button />}

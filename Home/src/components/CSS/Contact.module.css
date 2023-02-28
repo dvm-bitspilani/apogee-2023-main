@@ -2,6 +2,16 @@
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
+  transition: transform 500ms ease;
+}
+
+:global(.close) .contact,
+:global(.closed) .contact {
+  transform: translateY(200%);
+}
+
+:global(.open) .contact {
+  transform: translateY(0);
 }
 
 .heading {

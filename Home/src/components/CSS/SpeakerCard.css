@@ -8,6 +8,16 @@
   margin: 12.5vh 2vw;
   --barWidth: 7px;
   --barHeight: 17px;
+  transition: transform 500ms ease;
+}
+
+.close .speakerCard,
+.closed .speakerCard {
+  transform: translateY(200%);
+}
+
+.open .speakerCard {
+  transform: translateY(0);
 }
 
 .speakerCont {

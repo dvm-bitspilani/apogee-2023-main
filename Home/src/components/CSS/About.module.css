@@ -38,6 +38,16 @@
   padding-left: 2rem;
   padding-top: 3rem;
   padding-bottom: 6rem;
+  transition: transform 500ms ease;
+}
+
+:global(.close) > .about,
+:global(.closed) > .about {
+  transform: translateX(200%);
+}
+
+:global(.open) > .about {
+  transform: translateX(0);
 }
 
 .videos {
@@ -51,6 +61,34 @@
   padding-inline: 0.5rem;
   margin-right: 2rem;
   overflow-y: auto;
+  transition: transform 500ms ease;
+}
+
+:global(.close) > .videos,
+:global(.closed) > .videos {
+  transform: translateX(-200%);
+}
+
+:global(.open) > .videos {
+  transform: translateX(0);
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
 }
 
 .videos ::-webkit-scrollbar-thumb {

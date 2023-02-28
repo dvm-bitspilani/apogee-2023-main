@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useScrollVis from "../../hooks/useScrollVis";
 import styles from "../CSS/Contact.module.css";
 import ContactCard from "./ContactCard";
 
@@ -70,6 +71,7 @@ const DATA = [
 
 export default function Contact(props) {
   const [cards, setCards] = useState([]);
+  const visClass = useScrollVis(props.idx, props.pages, props.scrollDir);
 
   useEffect(() => {
     setCards(DATA.map((e, i) => <ContactCard data={e} key={i} />));
@@ -78,7 +80,7 @@ export default function Contact(props) {
   return (
     <div
       id="contactUs"
-      className={styles.contact}
+      className={`${styles.contact} ${visClass}`}
       style={{ paddingBottom: "10px" }}
     >
       <h1 className={styles.heading}>CONTACT US</h1>

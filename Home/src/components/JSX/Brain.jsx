@@ -21,6 +21,7 @@ import LandingElements from "./LandingElements";
 import Speakers from "./Speakers";
 
 export const SpinContext = createContext();
+const NUM_PAGES = 5;
 
 const Brain = props => {
   const { nodes, materials } = useGLTF("/models/brain.glb"),
@@ -39,16 +40,42 @@ const Brain = props => {
     { height, width } = useWindowDimension(),
     [target, setTarget] = useState([0, 0.6, 0]),
     [position, setPosition] = useState([1, 1, 1]),
-    [isSpinning, setSpinning] = useState(true);
+    [isSpinning, setSpinning] = useState(true),
+    [scrollDir, setScrollDir] = useState(0);
 
   const modal = useContext(ModalContext);
   const modalValue = modal.modalOpen.getValue().toLowerCase();
+
+  const stylePos = {
+    position: "fixed",
+    top: 0,
+  };
+
+  const style = {
+    backgroundColor: "#30303014",
+    backdropFilter: "blur(9px)",
+    width: "100vw",
+  };
 
   const context = {
     isSpinning: isSpinning,
     stopSpin: () => setSpinning(false),
     startSpin: () => setSpinning(true),
   };
+
+  function scroller(evt) {
+    const newDir = (-1 * evt.deltaY) / Math.abs(evt.deltaY);
+    if (newDir !== scrollDir) {
+      setScrollDir(newDir);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("wheel", scroller);
+    return () => {
+      window.removeEventListener("wheel", scroller);
+    };
+  }, []);
 
   useEffect(() => {
     modalValue === "null" && context.startSpin();
@@ -156,22 +183,25 @@ const Brain = props => {
   );
 
   return modal.is2D ? (
-    <ScrollControls pages={5} damping={0.3} distance={1.1}>
+    <ScrollControls pages={1} damping={0.3} distance={1.1}>
       {BRAIN_CHILDREN}
-
       <Scroll html>
-        <LandingElements />
-        <div
-          style={{
-            backgroundColor: "#30303014",
-            backdropFilter: "blur(9px)",
-            marginTop: "50px",
-          }}
-        >
-          <About />
-          <Speakers />
-          <Events />
-          <Contact />
+        <div style={{ position: "relative" }}>
+          <div style={{ ...stylePos, zIndex: "100000000000000000" }}>
+            <LandingElements idx={0} pages={NUM_PAGES} scrollDir={scrollDir} />
+          </div>
+          <div style={{ ...style, ...stylePos }}>
+            <About idx={1} pages={NUM_PAGES} scrollDir={scrollDir} />
+          </div>
+          <div style={{ ...style, ...stylePos }}>
+            <Speakers idx={2} pages={NUM_PAGES} scrollDir={scrollDir} />
+          </div>
+          <div style={{ ...style, ...stylePos }}>
+            <Events idx={3} pages={NUM_PAGES} scrollDir={scrollDir} />
+          </div>
+          <div style={{ ...style, ...stylePos }}>
+            <Contact idx={4} pages={NUM_PAGES} scrollDir={scrollDir} />
+          </div>
         </div>
       </Scroll>
     </ScrollControls>

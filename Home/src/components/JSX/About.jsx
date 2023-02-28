@@ -6,6 +6,7 @@ import right from "../../assets/events/right.png";
 import filled from "../../assets/events/filled.png";
 import unfilled from "../../assets/events/unfilled.png";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useScrollVis from "../../hooks/useScrollVis";
 
 const VIDEOS = [
   {
@@ -19,6 +20,8 @@ function About(props) {
   const { height, width } = useWindowDimensions();
   const [index, setIndex] = useState(0);
   const [circles, setCircles] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const visClass = useScrollVis(props.idx, props.pages, props.scrollDir);
 
   useEffect(() => {
     setCircles(
@@ -38,7 +41,6 @@ function About(props) {
     setTimeout(() => setIndex((index + 1) % 15), 600);
   }, [index]);
 
-  const [videos, setVideos] = useState([]);
   useEffect(() => {
     setVideos(
       VIDEOS.map((e, i) => (
@@ -62,7 +64,7 @@ function About(props) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${visClass}`}>
       <div className={styles.videos} onClick={evt => evt.stopPropagation()}>
         {width < 500 && (
           <div

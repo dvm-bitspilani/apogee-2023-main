@@ -7,11 +7,13 @@ import stylesH from "../CSS/About.module.css";
 import EventCard from "./EventCard";
 import EventsBox from "./EventsBox";
 import Squares from "./Squares";
+import useScrollVis from "../../hooks/useScrollVis";
 
 function Events(props) {
   const { height, width } = useWindowDimensions();
   const [mainEvent, setMainEvent] = useState([]);
   const [categories, setCategories] = useState([]);
+  const visClass = useScrollVis(props.idx, props.pages, props.scrollDir);
 
   let info = useRef(null);
   let list = useRef(null);
@@ -108,7 +110,7 @@ function Events(props) {
   );
 
   return (
-    <div>
+    <div className={visClass}>
       {/* <div
         className={styles.heading}
         onClick={evt => {
@@ -117,7 +119,10 @@ function Events(props) {
       >
         EVENTS
       </div> */}
-      <div ref={el => (container = el)} className={styles.container}>
+      <div
+        ref={el => (container = el)}
+        className={`${styles.container} ${visClass}`}
+      >
         <div
           ref={el => (info = el)}
           className={styles.info}

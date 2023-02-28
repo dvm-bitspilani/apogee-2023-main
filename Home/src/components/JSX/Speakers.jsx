@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import Slider from "react-slick";
 import { ModalContext } from "../../App";
+import useScrollVis from "../../hooks/useScrollVis";
 import "../CSS/Speakers.css";
 import SpeakerCard from "./SpeakerCard";
 
@@ -21,6 +22,8 @@ export default function Speakers(props) {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 800px)").matches
   );
+
+  const visClass = useScrollVis(props.idx, props.pages, props.scrollDir);
 
   useEffect(() => {
     setCards(DATA);
@@ -99,7 +102,7 @@ export default function Speakers(props) {
   };
 
   return (
-    <div className="speakers">
+    <div className={`speakers ${visClass}`}>
       <div
         className="heading"
         style={{
@@ -111,9 +114,7 @@ export default function Speakers(props) {
         SPEAKERS
       </div>
       {matches && (
-        <div
-          className="carouselWrapper"
-        >
+        <div className="carouselWrapper">
           <Slider {...settings}>
             {cards.map((e, i) => (
               <SpeakerCard data={e} key={i} />
