@@ -22,7 +22,7 @@ const Squares = () => {
       {Array(8)
         .fill()
         .map((e, i) => (
-          <img src={filled[i] ? sq1 : sq2} />
+          <img key={i} src={filled[i] ? sq1 : sq2} />
         ))}
     </div>
   );

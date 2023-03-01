@@ -4,6 +4,7 @@ body {
 
 .wrapper {
   position: relative;
+  z-index: 100;
 }
 
 .apogeeLogo {
@@ -13,6 +14,7 @@ body {
 .landingWrapper {
   position: absolute;
   left: 0;
+  z-index: 100000000000;
   top: 0;
   pointer-events: none;
   transform-origin: 50% 50%;

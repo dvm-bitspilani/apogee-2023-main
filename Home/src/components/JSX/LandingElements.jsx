@@ -51,6 +51,7 @@ export default function LandingElements(props) {
       <div className={styles.countDown}>
         <Countdown />
       </div>
+      <Hamburger is2D = {props.is2D}/>
 
       {!matchesTab && <Button />}
 
