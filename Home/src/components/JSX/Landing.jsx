@@ -40,7 +40,7 @@ function Landing(props) {
       </Canvas>
 
       {matchesPhone && <Switch scroll={props.scroll} />}
-      {!modalContext.is2D && <Navbar/>}
+      {!modalContext.is2D && <Navbar />}
 
       {!modalContext.is2D ? (
         <div className={styles.landingWrapper}>

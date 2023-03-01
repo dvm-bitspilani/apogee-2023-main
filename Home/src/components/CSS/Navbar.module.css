@@ -1,36 +1,34 @@
 @font-face {
-    font-family: 'Monospace';
-    src: url(../../fonts/Monospace.ttf);
+  font-family: "Monospace";
+  src: url(../../fonts/Monospace.ttf);
 }
 
-.names{
-    
-    display: flex;
-    margin-inline: auto;
-    justify-content: space-between;
-    font-family: 'Monospace';
-    color: #428FD2;
+.names {
+  display: flex;
+  margin-inline: auto;
+  justify-content: space-between;
+  font-family: "Monospace";
+  color: #428fd2;
 }
 
-.container{
-    position: absolute;
-    bottom: 5%;
-    left: 23%;
-    width: 50%;
+.container {
+  position: absolute;
+  bottom: 5%;
+  left: 23%;
+  width: 50%;
 }
 
-img{
-    margin-bottom: 1rem;
-    width: 90%;
+img {
+  margin-bottom: 1rem;
+  width: 90%;
 }
 
 .names > div {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
 @media screen and (max-width: 800px) {
-    .names{
-        display: none;
-    }
+  .names {
+    display: none;
+  }
 }

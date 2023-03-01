@@ -5,12 +5,12 @@
   transition: transform 500ms ease;
 }
 
-:global(.close) .contact,
-:global(.closed) .contact {
+:global(.close).contact,
+:global(.closed).contact {
   transform: translateY(200%);
 }
 
-:global(.open) .contact {
+:global(.open).contact {
   transform: translateY(0);
 }
 

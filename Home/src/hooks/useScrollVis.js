@@ -16,7 +16,7 @@ export default function useScrollVis(idx, pages, scrollDir) {
   const data = useScroll();
   const frame = modal === undefined || modal?.is2D ? useFrame : () => {};
   const OFFSET_TR = 1;
-  const OFFSET = 0.2;
+  const OFFSET = 0.1;
   frame(() => {
     const off = data.offset;
     setVisClass(
@@ -37,6 +37,9 @@ export default function useScrollVis(idx, pages, scrollDir) {
            * ? "closing" */
           "closed"
     );
+    if (data.visible(4.5 / 5, 1) && idx === 3.9) {
+      setVisClass("open");
+    }
   });
 
   return visClass;
