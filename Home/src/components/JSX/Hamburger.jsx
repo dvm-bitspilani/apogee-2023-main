@@ -9,6 +9,15 @@ import Modal from "../../enums/Modal";
 
 function Hamburger({ is2D }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 800px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 800px)")
+      .addEventListener("change", e => setMatches(e.matches));
+  }, []);
   const mContext = useContext(ModalContext);
   let ham = useRef(null)
 
@@ -19,14 +28,14 @@ function Hamburger({ is2D }) {
     }
   }, [isOpen, is2D])
 
-  useEffect(()=>{
+  useEffect(() => {
     document.addEventListener("keyup", evt => {
       evt.preventDefault();
-      if(evt.key === "Escape"){
+      if (evt.key === "Escape") {
         setIsOpen(false)
       }
     });
-  },[])
+  }, [])
 
 
   function changeHam() {
@@ -46,14 +55,18 @@ function Hamburger({ is2D }) {
       ham.style.height = "auto"
       ham.style.zIndex = "10000000000"
       wrapper.style.zIndex = "10000000000"
-      body.style.overflow = "hidden"
+      if(matches){
+        body.style.overflow = "hidden"
+      }
     }
     else {
       ham.style.position = "relative";
       ham.style.zIndex = "100"
       ham.style.height = "2rem"
       wrapper.style.zIndex = "100"
-      body.style.overflow = "unset"
+      if (matches){
+        body.style.overflow = "unset"
+      }
     }
   })
 
