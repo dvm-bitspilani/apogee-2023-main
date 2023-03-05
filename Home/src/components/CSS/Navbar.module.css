@@ -18,9 +18,34 @@
   width: 50%;
 }
 
-img {
-  margin-bottom: 1rem;
-  width: 90%;
+.bar{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  margin-left: 2rem;
+}
+
+.small{
+  height: 10px;
+  width: 0.12rem;
+  border-radius: 12px;
+  background-color: white;
+  margin-inline: 0.4rem;
+}
+
+.mid{
+  height: 15px;
+  width: 0.12rem;
+  border-radius: 12px;
+  background-color: white;
+  margin-inline: 0.4rem;
+}
+.big{
+  height: 20px;
+  width: 0.12rem;
+  border-radius: 12px;
+  background-color: white;
+  margin-inline: 0.4rem;
 }
 
 .names > div {
