@@ -1,14 +1,81 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../CSS/Navbar.module.css";
 import { ModalContext } from "../../App";
 import Modal from "../../enums/Modal";
-import dummy from "../../assets/navbarDummy.png";
 
 function Navbar() {
   const mContext = useContext(ModalContext);
+  const [bar, setBar] = useState(null)
+  const [index, setIndex] = useState(0);
+  
+  useEffect(()=>{
+    setTimeout(() => setIndex(index => ((index + 1) % 46)), 400)
+    // console.log(index);
+  }, [index])
+  useEffect(() => {
+    setBar(Array.from(document.getElementById('bar').children))
+  }, [])
+  useEffect(() => {
+    if (bar != null) {
+      bar.forEach((e, i) => {
+        if (i == index) {
+          e.classList.toggle('blue')
+        }
+      });
+
+    }
+
+  }, [bar, index])
   return (
     <div className={styles.container}>
-      <div className={styles.bar}>{/* <img src={dummy}/> */}</div>
+      <div id='bar' className={styles.bar}>
+        <div className={styles.big}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.big}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.big}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.mid}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.small}></div>
+        <div className={styles.big}></div>
+      </div>
       <div className={styles.names}>
         <div
           onClick={() => {

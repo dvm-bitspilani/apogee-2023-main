@@ -33,7 +33,7 @@ function Landing(props) {
   const modalContext = useContext(ModalContext);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="wrapper">
       {/* <Hamburger/> */}
       <Canvas id="canvas-wrapper">
         <Brain />
