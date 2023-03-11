@@ -183,7 +183,7 @@ const Brain = props => {
   );
 
   return modal.is2D ? (
-    <ScrollControls pages={1} damping={0.1} distance={1.1}>
+    <ScrollControls pages={1} damping={0.1} distance={5}>
       {BRAIN_CHILDREN}
       <Scroll html>
         <div style={{ position: "relative" }}>
