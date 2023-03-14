@@ -34,7 +34,7 @@ const DATA = [
   },
   {
     name: "Poorvansh Kavta ",
-    dept: "Publicity and Online Partnerships ",
+    dept: "Publicity and Partnerships ",
     phone: "tel:+91 9602731678",
     email: "mailto:collaborations@bits-apogee.org",
     img: "/contacts/poorvansh.svg",
