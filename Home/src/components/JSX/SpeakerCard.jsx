@@ -35,7 +35,7 @@ export default function SpeakerCard(props) {
 
       <div className="speakerCont">
         <div className="speakerName">{props.data.name}</div>
-        {/* <div className="speakerPos">{props.data.pos}</div> */}
+        <div className="speakerPos">{props.data.pos}</div>
         <Dots />
       </div>
 

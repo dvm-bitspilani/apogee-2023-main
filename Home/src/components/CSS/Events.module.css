@@ -123,6 +123,10 @@
   margin-left: 3rem;
 }
 
+.eventImage {
+  width: 90%;
+}
+
 .eventDetails {
   width: 60%;
   margin-inline: 3rem;
@@ -267,6 +271,11 @@
     width: 90%;
     margin-left: 0;
     margin-inline: auto;
+  }
+
+  .squares {
+    width: 6px;
+    height: 6px;
   }
 }
 

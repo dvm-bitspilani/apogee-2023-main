@@ -8,9 +8,9 @@ import SpeakerCard from "./SpeakerCard";
 
 const DATA = [
   {
-    img: "/speaker.png",
-    name: "Revealing Soon, Stay Tuned!",
-    pos: "",
+    img: "speakers/sainath.png",
+    name: "P Sainath",
+    pos: "Indian Social Journalist. Rural Affairs Editor of the Hindu. Recipient of the prestigious Ramon Magsaysay Award.",
     link: "",
   },
 ];
