@@ -272,11 +272,6 @@
     margin-left: 0;
     margin-inline: auto;
   }
-
-  .squares {
-    width: 6px;
-    height: 6px;
-  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -308,6 +303,18 @@
 
   .eventDetails {
     width: 90%;
+  }
+
+  .squares img {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .squares img {
+    width: 6px;
+    height: 6px;
   }
 }
 

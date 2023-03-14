@@ -13,6 +13,12 @@ const DATA = [
     pos: "Indian Social Journalist. Rural Affairs Editor of the Hindu. Recipient of the prestigious Ramon Magsaysay Award.",
     link: "",
   },
+  {
+    img: "speakers/vijayraghavan.png",
+    name: "K Vijayraghavan",
+    pos: "Former Director of the National Centre for Biological Sciences. Member of the Scientific Advisory Council of the Prime Minister of India.",
+    link: "",
+  },
 ];
 
 export default function Speakers(props) {
