@@ -25,6 +25,11 @@
   margin: 1rem;
 }
 
+.price {
+  padding: 0 4rem;
+  color: #4DACFF;
+}
+
 @media screen and (min-width: 1650px) {
   .btn-container {
     margin: 4% 0 2% 0;
@@ -38,6 +43,10 @@
 
   .form-inputs-container {
     justify-content: space-between;
+  }
+
+  .price {
+    padding: 0;
   }
 }
 
@@ -64,6 +73,11 @@
   .btn-container {
     margin: 6% 0 8% 0;
   }
+
+  .price {
+    padding: 0 20%;
+    font-size: .9rem;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -86,11 +100,20 @@
   .btn-container {
     scale: 0.7;
   }
+
+  .price {
+    padding: 0 15%;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .form-inputs {
     width: 80%;
+  }
+
+  .price {
+    padding: 0 10%;
+    font-size: .8rem;
   }
 }
 
@@ -102,6 +125,11 @@
   .btn-container {
     margin: 8% 0 15% 0;
     scale: 0.6;
+  }
+
+  .price {
+    padding: 0 5%;
+    font-size: .7rem;
   }
 }
 
