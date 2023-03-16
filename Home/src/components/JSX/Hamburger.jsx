@@ -94,6 +94,7 @@ function Hamburger({ is2D }) {
               <div className={styles.list}>
                 <div> <a href="https://bits-apogee.org/campusambassador2023/" target={"_blank"}>Campus Ambassador</a></div>
                 <div> <a href="https://bits-apogee.org/registrations/login/" target={"_blank"}>Login</a></div>
+                <div> <a href="https://docs.google.com/document/d/1oIcxEiQFrEwEmvVvSGN5GWKgeIcy7lClFFljpNxRC-g/edit" target={"_blank"}>Events Rulebook</a></div>
               </div>
               <div className={styles.socialContainer}>
                 <div className={styles.heading}>SOCIALS</div>
