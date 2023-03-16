@@ -62,7 +62,7 @@ export default function Speakers(props) {
 
   const NextArrow = ({ onClick }) => {
     return (
-      <div className="arrow next" onClick={onClick}>
+      <div className="arrow next" onClick={evt => {evt.stopPropagation(); onClick()}}>
         <svg
           width="15"
           height="30"
@@ -81,7 +81,7 @@ export default function Speakers(props) {
 
   const PrevArrow = ({ onClick }) => {
     return (
-      <div className="arrow prev" onClick={onClick}>
+      <div className="arrow prev" onClick={evt => {evt.stopPropagation(); onClick()}}>
         <svg
           width="15"
           height="30"
