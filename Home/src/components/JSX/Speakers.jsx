@@ -19,6 +19,18 @@ const DATA = [
     pos: "Former Director of the National Centre for Biological Sciences. Member of the Scientific Advisory Council of the Prime Minister of India.",
     link: "",
   },
+  {
+    img: "speakers/ramesh.png",
+    name: "RB Ramesh",
+    pos: "Indian Chess Grandmaster. Won the 2002 British Championship and the 2007 Commonwealth Championship. Taught over 8 grand masters.",
+    link: "",
+  },
+  {
+    img: "speakers/dibakar.png",
+    name: "Dibakar Banerjee",
+    pos: "Indian film director, screenwriter, producer. Won National Film Awards for Khosla Ka Ghosla (2006) Oye Lucky! Lucky Oye! (2008) Shanghai (2012), Bombay Talkies (2013), Detective Byomkesh Bakshy!",
+    link: "",
+  },
 ];
 
 export default function Speakers(props) {
