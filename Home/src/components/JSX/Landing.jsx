@@ -5,7 +5,7 @@ import styles from "../CSS/landing.module.css";
 import Brain from "./Brain";
 import LandingElements from "./LandingElements";
 import Switch from "./Switch";
-import PhoneBg from "../../assets/brain.mp4"
+import PhoneBg from "../../assets/brain.mp4";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
@@ -35,18 +35,27 @@ function Landing(props) {
   return (
     <div className={styles.wrapper} id="wrapper">
       {/* <Hamburger/> */}
-      {matchesPhone && <Canvas id="canvas-wrapper">
-        <Brain />
-      </Canvas>}
-      {!matchesPhone && <div className={styles.phoneBg}>
-        <video className={styles.video} autoPlay loop muted playbackRate={0.3} >
-        <source src={PhoneBg} type='video/mp4'/>
-        </video>
-      </div>}
+      {matchesPhone && (
+        <Canvas id="canvas-wrapper">
+          <Brain />
+        </Canvas>
+      )}
+      {!matchesPhone && (
+        <div className={styles.phoneBg}>
+          <video
+            className={styles.video}
+            autoPlay
+            loop
+            muted
+            playbackRate={0.3}
+          >
+            <source src={PhoneBg} type="video/mp4" />
+          </video>
+        </div>
+      )}
       {/* <Canvas id="canvas-wrapper">
         <Brain />
       </Canvas> */}
-
 
       {matchesPhone && <Switch scroll={props.scroll} />}
       {!modalContext.is2D && <Navbar />}

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Command';
+  font-family: "Command";
   src: url(../../fonts/cmdFont.woff);
 }
 .ham {
@@ -8,9 +8,8 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
-
 }
-.wrapper{
+.wrapper {
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -92,58 +91,61 @@
   width: fit-content;
 }
 
-.list a:hover, .socials a:hover {
+.list a:hover,
+.socials a:hover {
   color: black;
   background-color: #d9d9d9;
 }
 
-.list div:hover > a{
+.list div:hover > a {
   color: black;
   background-color: #d9d9d9;
 }
 
-.list a, .socials a{
+.list a,
+.socials a {
   text-decoration: none;
   color: white;
 }
 
-.cross{
+.cross {
   cursor: pointer;
   padding-block: 1rem;
 }
-.hamIcon{
+.hamIcon {
   position: absolute;
   right: 3%;
   padding-block: 1rem;
   cursor: pointer;
 }
 
-.hamIcon1, .hamIcon2, .hamIcon3{
- background-color: #1A93FF;
- border-radius: 12px;
- height: 4px;
+.hamIcon1,
+.hamIcon2,
+.hamIcon3 {
+  background-color: #1a93ff;
+  border-radius: 12px;
+  height: 4px;
 }
-.hamIcon1{
+.hamIcon1 {
   width: 14px;
 }
-.hamIcon2{
+.hamIcon2 {
   width: 28px;
   margin-block: 0.4rem;
 }
-.hamIcon3{
+.hamIcon3 {
   width: 14px;
   margin-left: 14px;
 }
 
-@media (max-width:800px) {
-  .socialContainer{
+@media (max-width: 800px) {
+  .socialContainer {
     display: none;
   }
-  .container{
+  .container {
     width: 90%;
   }
-  .content{
+  .content {
     font-size: 1.2rem;
   }
 }
-

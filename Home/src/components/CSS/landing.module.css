@@ -20,14 +20,14 @@ body {
   transform-origin: 50% 50%;
 }
 
-.phoneBg{
+.phoneBg {
   position: relative;
   height: 100vh;
   margin-top: 0rem;
   width: 100vw;
 }
 
-.video{
+.video {
   width: 100vw;
   height: 100vh;
   margin-top: -4rem;

@@ -18,14 +18,14 @@
   width: 50%;
 }
 
-.bar{
+.bar {
   display: flex;
   align-items: baseline;
   margin-bottom: 0.6rem;
   margin-left: 2rem;
 }
 
-.small{
+.small {
   height: 10px;
   width: 0.12rem;
   border-radius: 12px;
@@ -33,14 +33,14 @@
   margin-inline: 0.4rem;
 }
 
-.mid{
+.mid {
   height: 15px;
   width: 0.12rem;
   border-radius: 12px;
   background-color: white;
   margin-inline: 0.4rem;
 }
-.big{
+.big {
   height: 20px;
   width: 0.12rem;
   border-radius: 12px;
