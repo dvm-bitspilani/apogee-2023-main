@@ -20,9 +20,10 @@
 
 .bar {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
   margin-bottom: 0.6rem;
-  margin-left: 2rem;
+  width: 100%;
 }
 
 .small {
