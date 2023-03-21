@@ -12,13 +12,15 @@ function Hamburger({ is2D }) {
     window.matchMedia("(max-width: 600px)").matches
   );
 
+
+  let ham = useRef(null);
+  const mContext = useContext(ModalContext);
+
   useEffect(() => {
     window
       .matchMedia("(max-width: 600px)")
       .addEventListener("change", e => setMatches(e.matches));
   }, []);
-  const mContext = useContext(ModalContext);
-  let ham = useRef(null);
 
   useEffect(() => {
     if (is2D != undefined) {
@@ -30,9 +32,7 @@ function Hamburger({ is2D }) {
   useEffect(() => {
     document.addEventListener("keyup", evt => {
       evt.preventDefault();
-      if (evt.key === "Escape") {
-        setIsOpen(false);
-      }
+      if (evt.key === "Escape") setIsOpen(false);
     });
   }, []);
 
@@ -52,17 +52,11 @@ function Hamburger({ is2D }) {
       ham.style.height = "auto";
       ham.style.zIndex = "10000000000";
       wrapper.style.zIndex = "10000000000";
-      // if(matches){
-      //   body.style.overflowY = "hidden"
-      // }
     } else {
       ham.style.position = "relative";
       ham.style.zIndex = "100";
       ham.style.height = "2rem";
       wrapper.style.zIndex = "100";
-      // if (matches){
-      //   body.style.overflowY = "unset"
-      // }
     }
   });
 
@@ -86,7 +80,7 @@ function Hamburger({ is2D }) {
             <div className={styles.content}>
               <div>Bits Apogee [Version 2023]</div>
               <div>(c) BITS Pilani. All rights reserved. </div>
-              <div>C:\Users\dvm&gt;C_</div>
+              <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>}
               <div className={styles.flexContainer}>
                 <div className={styles.list}>
                   <div>

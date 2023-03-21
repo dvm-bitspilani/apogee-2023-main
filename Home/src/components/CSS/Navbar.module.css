@@ -9,6 +9,7 @@
   justify-content: space-between;
   font-family: "Monospace";
   color: #428fd2;
+  padding: 0 40px;
 }
 
 .container {
@@ -23,30 +24,27 @@
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 0.6rem;
-  width: 100%;
+  padding: 0 140px;
 }
 
 .small {
   height: 10px;
-  width: 0.12rem;
-  border-radius: 12px;
+  width: 0.5px;
   background-color: white;
-  margin-inline: 0.4rem;
 }
 
 .mid {
   height: 15px;
-  width: 0.12rem;
+  width: 0.5px;
   border-radius: 12px;
   background-color: white;
-  margin-inline: 0.4rem;
 }
+
 .big {
   height: 20px;
-  width: 0.12rem;
+  width: 0.5px;
   border-radius: 12px;
   background-color: white;
-  margin-inline: 0.4rem;
 }
 
 .names > div {
