@@ -83,14 +83,12 @@ const Brain = props => {
 
   useEffect(() => {
     if (width < 850) {
-      setScale(0.8);
+      setScale(0.7);
       setPosition([2, 2, 2]);
     }
 
-    if (width < 500) setScale(0.8);
-
     if (width < 500) {
-      setScale(0.7);
+      setScale(0.6);
       setTarget([0, 0.5, 0]);
     }
   }, [width]);

@@ -1,40 +1,40 @@
 .armageddonCard {
-    margin: 0 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cardImage {
-    position: relative;
-    display: flex;
-    height: 60vh;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: flex;
+  height: 60vh;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cardImage img {
-    width: 100%;
-    height: 100%;
-    margin-top: 1rem;
-    object-fit: cover;
-    border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .btn {
-    position: absolute;
-    bottom: 0;
-    scale: .8;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  bottom: 0;
+  scale: 0.8;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
-    .armageddonCard {
-        margin: 0 .7rem;
-    }
-    .btn {
-        scale: .7;
-    }
+  .armageddonCard {
+    margin: 0 0.7rem;
+  }
+  .btn {
+    scale: 0.7;
+  }
 }

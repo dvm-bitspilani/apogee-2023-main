@@ -9,7 +9,6 @@ import PhoneBg from "../../assets/brain.mp4";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
-import Hamburger from "./Hamburger";
 import Navbar from "./Navbar";
 
 const ICONS = [
@@ -22,40 +21,49 @@ function Landing(props) {
   const [matchesPhone, setMatchesPhone] = useState(
     window.matchMedia("(min-width: 500px)").matches
   );
+
+  const videoRef = useRef(null);
+  const modalContext = useContext(ModalContext);
+
+  let contact = document.getElementById("contactUs");
+  const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.playbackRate = 0.3;
+    }
+  }, [videoRef]);
+
   useEffect(() => {
     window
       .matchMedia("(min-width: 500px)")
       .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
   });
 
-  let contact = document.getElementById("contactUs");
-  const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
-  const modalContext = useContext(ModalContext);
-
   return (
     <div className={styles.wrapper} id="wrapper">
-      {/* <Hamburger/> */}
       {matchesPhone && (
         <Canvas id="canvas-wrapper">
           <Brain />
         </Canvas>
       )}
+
       {!matchesPhone && (
         <div className={styles.phoneBg}>
           <video
-            className={styles.video}
-            autoPlay
             loop
             muted
-            playbackRate={0.3}
+            autoPlay
+            playsInline
+            preload="auto"
+            ref={videoRef}
+            className={styles.video}
           >
             <source src={PhoneBg} type="video/mp4" />
           </video>
         </div>
       )}
-      {/* <Canvas id="canvas-wrapper">
-        <Brain />
-      </Canvas> */}
 
       {matchesPhone && <Switch scroll={props.scroll} />}
       {!modalContext.is2D && <Navbar />}

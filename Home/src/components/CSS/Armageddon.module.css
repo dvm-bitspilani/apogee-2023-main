@@ -1,73 +1,73 @@
 .armageddonWrapper {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .armageddon {
-    width: 98vw;
-    height: 97vh;
-    background: url(/backgrounds/background.png) center no-repeat;
-    background-size: 100% 100%;
+  width: 98vw;
+  height: 97vh;
+  background: url(/backgrounds/background.png) center no-repeat;
+  background-size: 100% 100%;
 }
 
 .heading {
-    font-weight: lighter;
-    color: rgba(153, 204, 255, 0.9);
-    font-size: 2.8rem;
-    margin-top: 3rem;
+  font-weight: lighter;
+  color: rgba(153, 204, 255, 0.9);
+  font-size: 2.8rem;
+  margin-top: 3rem;
 }
 
 .carousel {
-    width: 80%;
-    margin: auto;
-    margin-top: 4%;
+  width: 80%;
+  margin: auto;
+  margin-top: 4%;
 }
 
 .slick-slider {
-    width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-    .carousel {
-        width: 90vw;
-    }
+  .carousel {
+    width: 90vw;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-    .heading {
-        font-size: 2.4rem;
-    }
+  .heading {
+    font-size: 2.4rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
-    .heading {
-        font-size: 2rem;
-    }
+  .heading {
+    font-size: 2rem;
+  }
 
-    .carousel {
-        margin-top: 6%;
-    }
+  .carousel {
+    margin-top: 6%;
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .heading {
-        font-size: 1.6rem;
-    }
+  .heading {
+    font-size: 1.6rem;
+  }
 
-    .carousel {
-        margin-top: 10%;
-    }
+  .carousel {
+    margin-top: 10%;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .heading {
-        margin-top: 5rem;
-    }
+  .heading {
+    margin-top: 5rem;
+  }
 
-    .carousel {
-        margin-top: 15%;
-    }
+  .carousel {
+    margin-top: 15%;
+  }
 }

@@ -1,8 +1,6 @@
-import React from 'react'
-import '../CSS/Sponsors.css'
+import React from "react";
+import "../CSS/Sponsors.css";
 
 export default function Sponsors() {
-  return (
-    <div className=''></div>
-  )
+  return <div className=""></div>;
 }

@@ -104,7 +104,7 @@ export default function Armageddon() {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: matchesPhone ? 1 : (matches ? 2 : 3),
+    slidesToShow: matchesPhone ? 1 : matches ? 2 : 3,
     slidesToScroll: 1,
     // centerMode: true,
     nextArrow: <NextArrow />,

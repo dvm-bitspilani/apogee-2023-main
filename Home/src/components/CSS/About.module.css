@@ -292,7 +292,7 @@
 .topAsset img:nth-child(3n + 2) {
   width: 24px;
   height: 24px;
-  animation: rotate 5s infinite;
+  animation: rotate 5s linear infinite;
 }
 
 @keyframes rotate {

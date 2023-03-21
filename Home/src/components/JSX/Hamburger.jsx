@@ -13,9 +13,17 @@ function Hamburger({ is2D }) {
     window.matchMedia("(max-width: 600px)").matches
   );
 
-
   let ham = useRef(null);
   const mContext = useContext(ModalContext);
+  const [blink, setBlink] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlink(prevBlink => !prevBlink);
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     window
@@ -68,21 +76,26 @@ function Hamburger({ is2D }) {
         <div className={styles.hamIcon2}></div>
         <div className={styles.hamIcon3}></div>
       </div>
+
       {isOpen && (
         <div className={styles.wrapper}>
           <div className={styles.container}>
             <div className={styles.navBar}>
               <Directory />
+
               <div className={styles.cross} onClick={changeHam}>
                 <div className={styles.crossLeft}></div>
                 <div className={styles.crossRight}></div>
               </div>
             </div>
+
             <div className={styles.content}>
               <div>Bits Apogee [Version 2023]</div>
               <div>(c) BITS Pilani. All rights reserved. </div>
-              {/* <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>} */}
-              <div>C:\Users\dvm&gt;</div> {<div>_</div>}
+              <div style={{ display: "flex" }}>
+                <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>}
+              </div>
+
               <div className={styles.flexContainer}>
                 <div className={styles.list}>
                   <div>
@@ -114,13 +127,12 @@ function Hamburger({ is2D }) {
                   </div>
                   <div>
                     {" "}
-                    <Link to='/armageddon'>
-                      Armageddon
-                    </Link>
+                    <Link to="/armageddon">Armageddon</Link>
                   </div>
                 </div>
                 <div className={styles.socialContainer}>
                   <div className={styles.heading}>SOCIALS</div>
+
                   <div className={styles.socials}>
                     <div>
                       <a
@@ -131,6 +143,7 @@ function Hamburger({ is2D }) {
                         INSTAGRAM
                       </a>
                     </div>
+
                     <div>
                       <a
                         href="https://www.facebook.com/bitsapogee/"
@@ -140,6 +153,7 @@ function Hamburger({ is2D }) {
                         FACEBOOK
                       </a>
                     </div>
+
                     <div>
                       <a
                         href="https://www.youtube.com/@OasisBITS"
