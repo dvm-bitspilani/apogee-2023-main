@@ -8,26 +8,26 @@ body {
 }
 
 .apogeeLogo {
-  width: 20rem;
+  width: 15rem;
 }
 
 .landingWrapper {
   position: absolute;
   left: 0;
-  z-index: 100000000000;
   top: 0;
+  z-index: 100000000000;
   pointer-events: none;
   transform-origin: 50% 50%;
 }
 
-.phoneBg{
+.phoneBg {
   position: relative;
   height: 100vh;
   margin-top: 0rem;
   width: 100vw;
 }
 
-.video{
+.video {
   width: 100vw;
   height: 100vh;
   margin-top: -4rem;
@@ -57,7 +57,7 @@ body {
 
 .navbar {
   position: relative;
-  width: calc(100vw - 4rem);
+  width: calc(100vw - 4rem - 50px);
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -86,7 +86,7 @@ body {
 }
 
 .heroFoot svg {
-  width: 30px;
+  width: 25px;
   cursor: pointer;
 }
 

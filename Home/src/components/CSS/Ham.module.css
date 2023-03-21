@@ -1,16 +1,17 @@
 @font-face {
-  font-family: 'Command';
+  font-family: "Command";
   src: url(../../fonts/cmdFont.woff);
 }
+
 .ham {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   z-index: 100;
-
 }
-.wrapper{
+
+.wrapper {
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -19,6 +20,7 @@
   align-items: center;
   z-index: 10000000000000;
 }
+
 .container {
   width: 70%;
   position: relative;
@@ -41,6 +43,7 @@
   background-color: white;
   transform: rotate(45deg);
 }
+
 .crossRight {
   height: 2px;
   width: 36px;
@@ -48,6 +51,7 @@
   background-color: white;
   transform: translateY(-2px) rotate(-45deg);
 }
+
 .content {
   font-family: "Command";
   font-size: 1.4rem;
@@ -55,11 +59,13 @@
   padding-inline: 1.2rem;
   padding-block: 1.2rem;
 }
+
 .content div {
   text-align: left;
   line-height: 1.6rem;
   font-weight: 400;
 }
+
 .list {
   display: flex;
   flex-direction: column;
@@ -81,6 +87,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+
 .heading {
   font-size: 1.8rem;
   cursor: default !important;
@@ -92,58 +99,70 @@
   width: fit-content;
 }
 
-.list a:hover, .socials a:hover {
+.list a:hover,
+.socials a:hover {
   color: black;
   background-color: #d9d9d9;
 }
 
-.list div:hover > a{
+.list div:hover > a {
   color: black;
   background-color: #d9d9d9;
 }
 
-.list a, .socials a{
+.list a,
+.socials a {
   text-decoration: none;
   color: white;
 }
 
-.cross{
+.cross {
   cursor: pointer;
   padding-block: 1rem;
 }
-.hamIcon{
+
+.hamIcon {
+  scale: 0.85;
   position: absolute;
-  right: 3%;
+  top: -90px;
+  right: 0;
   padding-block: 1rem;
+  z-index: 101;
   cursor: pointer;
 }
 
-.hamIcon1, .hamIcon2, .hamIcon3{
- background-color: #1A93FF;
- border-radius: 12px;
- height: 4px;
+.hamIcon1,
+.hamIcon2,
+.hamIcon3 {
+  background-color: #1a93ff;
+  border-radius: 12px;
+  height: 4px;
 }
-.hamIcon1{
+
+.hamIcon1 {
   width: 14px;
 }
-.hamIcon2{
+
+.hamIcon2 {
   width: 28px;
   margin-block: 0.4rem;
 }
-.hamIcon3{
+
+.hamIcon3 {
   width: 14px;
   margin-left: 14px;
 }
 
-@media (max-width:800px) {
-  .socialContainer{
+@media (max-width: 800px) {
+  .socialContainer {
     display: none;
   }
-  .container{
+
+  .container {
     width: 90%;
   }
-  .content{
+
+  .content {
     font-size: 1.2rem;
   }
 }
-

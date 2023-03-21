@@ -5,77 +5,76 @@ import Modal from "../../enums/Modal";
 
 function Navbar() {
   const mContext = useContext(ModalContext);
-  const [bar, setBar] = useState(null)
+  const [bar, setBar] = useState(null);
   const [index, setIndex] = useState(0);
-  
-  useEffect(()=>{
-    setTimeout(() => setIndex(index => ((index + 1) % 46)), 400)
-    // console.log(index);
-  }, [index])
+
   useEffect(() => {
-    setBar(Array.from(document.getElementById('bar').children))
-  }, [])
+    setTimeout(() => setIndex(index => (index + 1) % 46), 400);
+  }, [index]);
+
+  useEffect(() => {
+    setBar(Array.from(document.getElementById("bar").children));
+  }, []);
+
   useEffect(() => {
     if (bar != null) {
       bar.forEach((e, i) => {
-        if (i == index) {
-          e.classList.toggle('blue')
-        }
+        if (i == index) e.classList.toggle("blue");
       });
-
     }
+  }, [bar, index]);
 
-  }, [bar, index])
   return (
     <div className={styles.container}>
-      <div id='bar' className={styles.bar}>
-        <div className={styles.big}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.big}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.big}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.mid}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.small}></div>
-        <div className={styles.big}></div>
+      <div id="bar" className={styles.bar}>
+        <div className={styles.big} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.big} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.big} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.mid} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.small} />
+        <div className={styles.big} />
       </div>
+
       <div className={styles.names}>
         <div
           onClick={() => {
@@ -86,6 +85,7 @@ function Navbar() {
         >
           ABOUT US
         </div>
+
         <div
           onClick={() => {
             mContext.updateModal(Modal.Event);
@@ -95,6 +95,7 @@ function Navbar() {
         >
           EVENTS
         </div>
+
         <div
           onClick={() => {
             mContext.updateModal(Modal.Speaker);
@@ -104,6 +105,7 @@ function Navbar() {
         >
           SPEAKERS
         </div>
+
         <div
           onClick={() => {
             mContext.updateModal(Modal.Contact);

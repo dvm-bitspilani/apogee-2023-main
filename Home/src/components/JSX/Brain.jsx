@@ -36,9 +36,9 @@ const Brain = props => {
       .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
   });
 
-  const [scale, setScale] = useState(1),
+  const [scale, setScale] = useState(0.9),
     { height, width } = useWindowDimension(),
-    [target, setTarget] = useState([0, 0.6, 0]),
+    [target, setTarget] = useState([0, 0.5, 0]),
     [position, setPosition] = useState([1, 1, 1]),
     [isSpinning, setSpinning] = useState(true),
     [scrollDir, setScrollDir] = useState(0);
@@ -108,8 +108,8 @@ const Brain = props => {
           rotateSpeed={0.1}
           target={target}
           maxPolarAngle={degToRad(75)}
-          maxDistance={1.8}
-          minDistance={1.6}
+          maxDistance={1.7}
+          minDistance={1.2}
           enablePan={false}
           enableRotate={!modal.is2D && matchesPhone}
           enableZoom={!modal.is2D && matchesPhone}

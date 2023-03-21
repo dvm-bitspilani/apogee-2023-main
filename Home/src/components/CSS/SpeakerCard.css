@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'Generis';
+  font-family: "Generis";
   src: url(../../fonts/generis.ttf);
 }
 
@@ -50,7 +50,7 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  font-family: 'Generis';
+  font-family: "Generis";
   font-weight: 100;
 }
 
@@ -292,8 +292,7 @@
 }
 
 @media (max-width: 450px) {
-
-  .spBars{
+  .spBars {
     display: none;
   }
 
@@ -317,9 +316,9 @@
     line-height: 0.6rem;
   }
 
-  .speakerCont{
+  .speakerCont {
     width: 52%;
-    margin-left: 0.5rem
+    margin-left: 0.5rem;
   }
 
   .speakerImg {
