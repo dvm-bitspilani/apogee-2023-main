@@ -81,7 +81,8 @@ function Hamburger({ is2D }) {
             <div className={styles.content}>
               <div>Bits Apogee [Version 2023]</div>
               <div>(c) BITS Pilani. All rights reserved. </div>
-              <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>}
+              {/* <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>} */}
+              <div>C:\Users\dvm&gt;</div> {<div>_</div>}
               <div className={styles.flexContainer}>
                 <div className={styles.list}>
                   <div>
@@ -110,6 +111,12 @@ function Hamburger({ is2D }) {
                     >
                       Events Rulebook
                     </a>
+                  </div>
+                  <div>
+                    {" "}
+                    <Link to='/armageddon'>
+                      Armageddon
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.socialContainer}>
