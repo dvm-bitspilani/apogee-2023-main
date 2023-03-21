@@ -20,6 +20,20 @@ body {
   transform-origin: 50% 50%;
 }
 
+.phoneBg{
+  position: relative;
+  height: 100vh;
+  margin-top: 0rem;
+  width: 100vw;
+}
+
+.video{
+  width: 100vw;
+  height: 100vh;
+  margin-top: -4rem;
+  object-fit: cover;
+}
+
 .landingElem {
   width: 100%;
   min-height: 100vh;

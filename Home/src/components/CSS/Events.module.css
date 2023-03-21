@@ -326,4 +326,7 @@
   .carousel {
     overflow-x: hidden;
   }
+  .squares{
+    left: 20%
+  }
 }

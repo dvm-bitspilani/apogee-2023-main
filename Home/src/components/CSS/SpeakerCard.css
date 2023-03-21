@@ -11,6 +11,11 @@
   transition: transform 500ms ease;
 }
 
+@font-face {
+  font-family: 'Generis';
+  src: url(../../fonts/generis.ttf);
+}
+
 .close .speakerCard,
 .closed .speakerCard {
   transform: translateY(200%);
@@ -45,6 +50,8 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: 'Generis';
+  font-weight: 100;
 }
 
 .speakerPos::-webkit-scrollbar {
@@ -285,13 +292,18 @@
 }
 
 @media (max-width: 450px) {
+
+  .spBars{
+    display: none;
+  }
+
   .speakerCard {
     --barHeight: 9px;
     --barWidth: 3px;
   }
   .speakerCont {
     gap: 0;
-    margin-top: 3.3rem;
+    margin-top: 1rem;
   }
 
   .speakerName {
@@ -301,6 +313,13 @@
 
   .speakerPos {
     margin-top: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 0.6rem;
+  }
+
+  .speakerCont{
+    width: 52%;
+    margin-left: 0.5rem
   }
 
   .speakerImg {
@@ -342,7 +361,7 @@
   }
 
   .speakerPos {
-    font-size: 0.35rem;
+    font-size: 0.45rem;
   }
 
   .speakerLink {
