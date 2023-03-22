@@ -8,27 +8,27 @@ const DATA = [
   {
     title: "Fifa",
     img: "armag/fifa.png",
-    link: "",
+    link: "https://forms.gle/ct94X4cKQpWhSwHr5",
   },
   {
     title: "CS Go",
     img: "armag/csgo.png",
-    link: "",
+    link: "https://forms.gle/69TVE1yhhv29CzrU6",
   },
   {
     title: "Valorant",
     img: "armag/valorant.png",
-    link: "",
+    link: "https://forms.gle/dMuUHSQZg6dQd4LZ8",
   },
   {
     title: "Tekken",
     img: "armag/tekken.png",
-    link: "",
+    link: "https://forms.gle/eWgWk558sJPq31p5A",
   },
   {
     title: "WWE",
     img: "armag/wwe.png",
-    link: "",
+    link: "https://forms.gle/BvsaLJjfskGwj3LY8",
   },
 ];
 

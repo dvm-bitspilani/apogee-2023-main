@@ -8,6 +8,11 @@
   src: url(../src/fonts/cmdFont.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Monospace";
+  src: url(../../fonts/Monospace.ttf) format("truetype");
+}
+
 body {
   margin: 0;
   height: 100vh;

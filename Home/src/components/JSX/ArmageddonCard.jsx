@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../../../Registration/src/components/JSX/Button";
+import Button from "../JSX/Button";
 import styles from "../CSS/ArmageddonCard.module.css";
 
 export default function ArmageddonCard(props) {
@@ -9,7 +9,7 @@ export default function ArmageddonCard(props) {
       <div className={styles.cardImage}>
         <img src={props.data.img} alt="" />
         <div className={styles.btn}>
-          <Button />
+          <Button link={props.data.link} />
         </div>
       </div>
     </div>
