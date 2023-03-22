@@ -74,7 +74,7 @@
   line-height: 2rem;
 }
 
-.list > div:hover {
+.list > a:hover {
   color: black;
   background-color: #d9d9d9;
 }
