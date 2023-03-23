@@ -1,0 +1,105 @@
+body {
+  background: #000 url("../../assets/sponsorBg.jpg") repeat 50%;
+  background-size: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  font-family: "Sui";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  letter-spacing: 0.02em;
+  color: #51aeff;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.heading {
+  font-family: "Sui";
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-inline: 2rem;
+  color: rgb(209, 209, 209);
+}
+
+.card {
+  color: #fff;
+  font-family: "Sui";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-inline: auto;
+}
+
+.cardTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.brandImage {
+  width: 15rem;
+  margin-block: 2rem;
+  margin-inline: auto;
+}
+
+.brandImage>img {
+  width: 100%;
+}
+
+.container {
+  padding-bottom: 5rem;
+}
+
+.brandName {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.brand {
+  transition: all 0.3s ease;
+}
+
+.brand:hover {
+  scale: 1.2;
+}
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    margin-inline: 1rem;
+  }
+
+  .brandImage {
+    width: 10rem;
+  }
+
+  .brandName {
+    font-weight: 500;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}

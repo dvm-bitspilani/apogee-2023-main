@@ -129,6 +129,10 @@ function Hamburger({ is2D }) {
                     {" "}
                     <Link to="/armageddon">Armageddon</Link> (For Bitsians)
                   </div>
+                  <div>
+                    {" "}
+                    <Link to="/sponsors">Sponsors</Link>
+                  </div>
                 </div>
                 <div className={styles.socialContainer}>
                   <div className={styles.heading}>SOCIALS</div>
