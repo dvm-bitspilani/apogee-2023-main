@@ -85,7 +85,7 @@ function Hamburger({ is2D }) {
       ham.style.zIndex = "100";
       switchContainer.style.zIndex = "1000000000"
       ham.style.height = "2rem";
-      // wrapper.style.zIndex = "100";
+      wrapper.style.zIndex = "100";
     }
   },[isOpen]);
 

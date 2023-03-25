@@ -142,7 +142,7 @@
   scale: 0.85;
   position: absolute;
   top: -90px;
-  right: 0;
+  right: 30px;
   padding-block: 1rem;
   z-index: 101;
   cursor: pointer;
