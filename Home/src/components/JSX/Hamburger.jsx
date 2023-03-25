@@ -14,6 +14,7 @@ function Hamburger({ is2D }) {
   );
 
   let ham = useRef(null);
+  let hamIcon = useRef(null);
   const mContext = useContext(ModalContext);
   const [blink, setBlink] = useState(true);
   const [animDone, setAnimDone] = useState(false);
@@ -69,6 +70,7 @@ function Hamburger({ is2D }) {
   useEffect(() => {
     const wrapper = document.getElementById("wrapper");
     const switchContainer = document.getElementsByClassName("switchContainer")[0];
+   
     // const body = document.getElementsByTagName("body")[0];
     if (isOpen) {
       ham.style.position = "fixed";
@@ -89,9 +91,17 @@ function Hamburger({ is2D }) {
     }
   },[isOpen]);
 
+  useEffect(()=>{
+    if (is2D == false) {
+      hamIcon.style.right = "70px"
+    } else {
+      hamIcon.style.right = "-45px"
+    }
+  })
+
   return (
     <div id="ham" ref={el => (ham = el)} className={styles.ham}>
-      <div className={styles.hamIcon} onClick={changeHam}>
+      <div ref={el => hamIcon = el} className={styles.hamIcon} onClick={changeHam}>
         <div className={styles.hamIcon1}></div>
         <div className={styles.hamIcon2}></div>
         <div className={styles.hamIcon3}></div>
@@ -151,12 +161,13 @@ function Hamburger({ is2D }) {
                   </div>
                   <div>
                     {/* {" "} */}
-                    {/* <Link to="/armageddon">Armageddon</Link> (For Bitsians) */}
-                    <a href="/armageddon">Armageddon</a> (For Bitsians)
+                    {is2D == undefined ? <Link to="/armageddon">Armageddon  (For Bitsians) </Link>:
+                    <a href="/armageddon">Armageddon (For Bitsians)</a> }
                   </div>
                   <div>
                     {/* {" "} */}
-                    <a href="/sponsors">Sponsors</a>
+                    {is2D == undefined ? <Link to="/sponsors">Sponsors</Link> :
+                    <a href="/sponsors">Sponsors</a>}
                   </div>
                 </div>
                 <div className={styles.socialContainer}>
