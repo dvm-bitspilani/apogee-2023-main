@@ -31,7 +31,7 @@
 }
 
 .ptr {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
 }
 
 .noclick {

@@ -48,7 +48,7 @@
 }
 
 .names > div {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
 }
 
 @media screen and (max-width: 800px) {

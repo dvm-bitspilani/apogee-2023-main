@@ -11,7 +11,7 @@
 }
 
 .switch {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   color: #1a93ff;
   padding: 10px 18px;
 }

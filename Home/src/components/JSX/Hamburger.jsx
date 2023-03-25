@@ -6,6 +6,7 @@ import styles from "../CSS/Ham.module.css";
 import Directory from "./Directory";
 import Modal from "../../enums/Modal";
 import { Link } from "react-router-dom";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 function Hamburger({ is2D }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,8 @@ function Hamburger({ is2D }) {
 
   let ham = useRef(null);
   const mContext = useContext(ModalContext);
+  const { height, width } = useWindowDimensions();
+
   const [blink, setBlink] = useState(true);
   const [animDone, setAnimDone] = useState(false);
   const [cmdLen, setCmdLen] = useState(0);
@@ -67,27 +70,30 @@ function Hamburger({ is2D }) {
   }
 
   useEffect(() => {
-    const wrapper = document.getElementById("wrapper");
-    const switchContainer = document.getElementsByClassName("switchContainer")[0];
-    // const body = document.getElementsByTagName("body")[0];
+    const ham = document.querySelector("#ham");
+    const wrapper = document.querySelector("#wrapper");
+    const switchContainer = document.querySelector(".switchContainer");
+
     if (isOpen) {
       ham.style.position = "fixed";
-      ham.style.top = "0";
-      ham.style.bottom = "0";
-      ham.style.left = "0";
-      ham.style.right = "0";
+      ham.style.top = 0;
+      ham.style.bottom = 0;
+      ham.style.left = 0;
+      ham.style.right = 0;
       ham.style.height = "auto";
-      switchContainer.style.zIndex = "10000"
-      ham.style.zIndex = "10000000000";
-      wrapper.style.zIndex = "10000000000";
+      ham.style.zIndex = 10000000000;
+
+      width > 800 && (switchContainer.style.zIndex = 10000);
+      wrapper.style.zIndex = 10000000000;
     } else {
       ham.style.position = "relative";
-      ham.style.zIndex = "100";
-      switchContainer.style.zIndex = "1000000000"
       ham.style.height = "2rem";
-      wrapper.style.zIndex = "100";
+      ham.style.zIndex = 100;
+
+      width > 800 && (switchContainer.style.zIndex = 10000000000);
+      wrapper.style.zIndex = 100;
     }
-  },[isOpen]);
+  }, [isOpen]);
 
   return (
     <div id="ham" ref={el => (ham = el)} className={styles.ham}>

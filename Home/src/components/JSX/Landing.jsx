@@ -28,12 +28,10 @@ function Landing(props) {
   let contact = document.getElementById("contactUs");
   const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      videoRef.current.playbackRate = 0.3;
-    }
-  }, [videoRef]);
+  useEffect(
+    () => videoRef.current && (videoRef.current.playbackRate = 0.12),
+    [videoRef]
+  );
 
   useEffect(() => {
     window
@@ -62,6 +60,7 @@ function Landing(props) {
           >
             <source src={PhoneBg} type="video/mp4" />
           </video>
+          <div className={styles.empty} />
         </div>
       )}
 

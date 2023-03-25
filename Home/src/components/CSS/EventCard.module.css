@@ -6,7 +6,7 @@
   position: relative;
   padding: 0.4em;
   margin-inline: 0.2rem;
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   padding-top: 0.4rem;
 }
 

@@ -180,7 +180,7 @@
 }
 
 .dropdownItem > span {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   line-height: 60px;
   padding: 0 1rem;
   font-family: "sui";

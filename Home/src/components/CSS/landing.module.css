@@ -25,15 +25,24 @@ body {
 .phoneBg {
   position: relative;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   margin-top: 0rem;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .video {
-  width: 100vw;
-  height: 100vh;
-  margin-top: -4rem;
+  height: 80vh;
   object-fit: cover;
+}
+
+.empty {
+  height: 20vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom, black, #080f17, #080f17);
 }
 
 .landingElem {
@@ -89,7 +98,7 @@ body {
 
 .heroFoot svg {
   width: 25px;
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
 }
 
 .heroFoot svg:hover path {

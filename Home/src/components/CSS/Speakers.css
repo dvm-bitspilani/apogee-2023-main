@@ -33,7 +33,7 @@
 
 .arrow {
   width: 20px;
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
 }
 
 .next {

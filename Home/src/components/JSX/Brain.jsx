@@ -7,12 +7,22 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import gsap from "gsap";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { BackSide, TextureLoader } from "three";
 import { degToRad } from "three/src/math/MathUtils";
+
 import { ModalContext } from "../../App";
 import Modal from "../../enums/Modal";
 import useWindowDimension from "../../hooks/useWindowDimensions";
+
 import About from "./About";
 import BrainPopUp from "./BrainPopUp";
 import Contact from "./Contact";
@@ -21,34 +31,30 @@ import LandingElements from "./LandingElements";
 import Speakers from "./Speakers";
 
 export const SpinContext = createContext();
-const NUM_PAGES = 5;
+const PAGES = 5;
 
 const Brain = props => {
-  const { nodes, materials } = useGLTF("/models/brain.glb"),
-    colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
+  const brainRef = useRef();
+  const modal = useContext(ModalContext);
+
+  const { nodes, materials } = useGLTF("/models/brain.glb");
+  const colorMap = useLoader(TextureLoader, "/backgrounds/landing.png");
 
   const [matchesPhone, setMatchesPhone] = useState(
     window.matchMedia("(min-width: 500px)").matches
   );
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 500px)")
-      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
-  });
 
-  const [scale, setScale] = useState(0.9),
-    { height, width } = useWindowDimension(),
-    [target, setTarget] = useState([0, 0.5, 0]),
-    [position, setPosition] = useState([1, 1, 1]),
-    [isSpinning, setSpinning] = useState(true),
-    [scrollDir, setScrollDir] = useState(0);
-
-  const modal = useContext(ModalContext);
+  const [scale, setScale] = useState(0.9);
+  const { height, width } = useWindowDimension();
+  const [target, setTarget] = useState([0, 0.5, 0]);
+  const [position, setPosition] = useState([1, 1, 1]);
+  const [isSpinning, setSpinning] = useState(true);
+  const [scrollDir, setScrollDir] = useState(0);
   const modalValue = modal.modalOpen.getValue().toLowerCase();
 
   const stylePos = {
-    position: "fixed",
     top: 0,
+    position: "fixed",
   };
 
   const style = {
@@ -63,18 +69,20 @@ const Brain = props => {
     startSpin: () => setSpinning(true),
   };
 
-  function scroller(evt) {
+  const scroller = evt => {
     const newDir = (-1 * evt.deltaY) / Math.abs(evt.deltaY);
-    if (newDir !== scrollDir) {
-      setScrollDir(newDir);
-    }
-  }
+    if (newDir !== scrollDir) setScrollDir(newDir);
+  };
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 500px)")
+      .addEventListener("change", e => setMatchesPhone(e.matchesPhone));
+  });
 
   useEffect(() => {
     window.addEventListener("wheel", scroller);
-    return () => {
-      window.removeEventListener("wheel", scroller);
-    };
+    return () => window.removeEventListener("wheel", scroller);
   }, []);
 
   useEffect(() => {
@@ -115,7 +123,7 @@ const Brain = props => {
       )}
 
       {/* Brain Model */}
-      <group scale={scale} {...props} dispose={null}>
+      <group ref={brainRef} scale={scale} {...props} dispose={null}>
         <mesh
           geometry={nodes.Brain_Model001_1.geometry}
           material={materials["Material.001"]}
@@ -183,22 +191,23 @@ const Brain = props => {
   return modal.is2D ? (
     <ScrollControls pages={1} damping={0.1} distance={5}>
       {BRAIN_CHILDREN}
+
       <Scroll html>
         <div style={{ position: "relative" }}>
           <div style={{ ...stylePos, zIndex: "100000000000000000" }}>
-            <LandingElements idx={0} pages={NUM_PAGES} scrollDir={scrollDir} />
+            <LandingElements idx={0} pages={PAGES} scrollDir={scrollDir} />
           </div>
           <div style={{ ...style, ...stylePos }}>
-            <About idx={1} pages={NUM_PAGES} scrollDir={scrollDir} />
-            <Speakers idx={2} pages={NUM_PAGES} scrollDir={scrollDir} />
-            <Events idx={3} pages={NUM_PAGES} scrollDir={scrollDir} />
-            <Contact idx={3.9} pages={NUM_PAGES} scrollDir={scrollDir} />
+            <About idx={1} pages={PAGES} scrollDir={scrollDir} />
+            <Speakers idx={2} pages={PAGES} scrollDir={scrollDir} />
+            <Events idx={3} pages={PAGES} scrollDir={scrollDir} />
+            <Contact idx={3.9} pages={PAGES} scrollDir={scrollDir} />
           </div>
         </div>
       </Scroll>
     </ScrollControls>
   ) : (
-    <>{BRAIN_CHILDREN}</>
+    BRAIN_CHILDREN
   );
 };
 

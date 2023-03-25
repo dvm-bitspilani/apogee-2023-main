@@ -87,7 +87,7 @@
 }
 
 .list > div {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   width: fit-content;
   line-height: 2rem;
 }
@@ -112,7 +112,7 @@
 }
 
 .socials > div {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   width: fit-content;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .cross {
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
   padding-block: 1rem;
 }
 
@@ -145,7 +145,7 @@
   right: 30px;
   padding-block: 1rem;
   z-index: 101;
-  cursor: pointer;
+  cursor: url(/pointer.svg), pointer !important;
 }
 
 .hamIcon1,
