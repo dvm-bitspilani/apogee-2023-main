@@ -121,8 +121,8 @@ export const sponsors = [
   },
   {
     Partner: ">Offical Social Media Partner",
-    PartnerName: "https://bereal-app.typeform.com/BitsPilani",
-    Link: "BeReal",
+    PartnerName: "BeReal",
+    Link: "https://bereal-app.typeform.com/BitsPilani",
     Logo: "../logos/WhatsApp Image 2023-03-22 at 4.08.32 PM.jpeg",
   },
   {
@@ -133,8 +133,8 @@ export const sponsors = [
   },
   {
     Partner: "Offical Travel Partner",
-    PartnerName: "https://www.easemytrip.com/",
-    Link: "EaseMyTrip",
+    PartnerName: "EaseMyTrip",
+    Link: "https://www.easemytrip.com/",
     Logo: "../logos/White Logo.png",
   },
 ];

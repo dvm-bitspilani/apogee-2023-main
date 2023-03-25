@@ -34,6 +34,7 @@ function Hamburger({ is2D }) {
   }, []);
 
   useEffect(() => {
+    console.log(is2D);
     if (is2D != undefined) {
       mContext.setDisplayModal(isOpen);
       mContext.updateModal(Modal.None);
@@ -67,7 +68,8 @@ function Hamburger({ is2D }) {
 
   useEffect(() => {
     const wrapper = document.getElementById("wrapper");
-    const body = document.getElementsByTagName("body")[0];
+    const switchContainer = document.getElementsByClassName("switchContainer")[0];
+    // const body = document.getElementsByTagName("body")[0];
     if (isOpen) {
       ham.style.position = "fixed";
       ham.style.top = "0";
@@ -75,15 +77,17 @@ function Hamburger({ is2D }) {
       ham.style.left = "0";
       ham.style.right = "0";
       ham.style.height = "auto";
+      switchContainer.style.zIndex = "10000"
       ham.style.zIndex = "10000000000";
       wrapper.style.zIndex = "10000000000";
     } else {
       ham.style.position = "relative";
       ham.style.zIndex = "100";
+      switchContainer.style.zIndex = "1000000000"
       ham.style.height = "2rem";
-      wrapper.style.zIndex = "100";
+      // wrapper.style.zIndex = "100";
     }
-  });
+  },[isOpen]);
 
   return (
     <div id="ham" ref={el => (ham = el)} className={styles.ham}>
@@ -146,12 +150,13 @@ function Hamburger({ is2D }) {
                     </a>
                   </div>
                   <div>
-                    {" "}
-                    <Link to="/armageddon">Armageddon</Link> (For Bitsians)
+                    {/* {" "} */}
+                    {/* <Link to="/armageddon">Armageddon</Link> (For Bitsians) */}
+                    <a href="/armageddon">Armageddon</a> (For Bitsians)
                   </div>
                   <div>
-                    {" "}
-                    <Link to="/sponsors">Sponsors</Link>
+                    {/* {" "} */}
+                    <a href="/sponsors">Sponsors</a>
                   </div>
                 </div>
                 <div className={styles.socialContainer}>
