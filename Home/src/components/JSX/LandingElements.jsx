@@ -45,7 +45,7 @@ export default function LandingElements(props) {
     <div className={`${styles.landingElem} ${visClass}`}>
       <div className={styles.navbar} style={{ pointerEvents: "none" }}>
         <img src="/apogeeLogo.svg" className={styles.apogeeLogo} />
-        {matchesTab && <Button link='https://bits-apogee.org/register/' />}
+        {matchesTab && <Button link="https://bits-apogee.org/register/" />}
       </div>
 
       <Hamburger is2D={props.is2D} />
@@ -53,7 +53,7 @@ export default function LandingElements(props) {
         <Countdown />
       </div>
 
-      {!matchesTab && <Button link='https://bits-apogee.org/register/' />}
+      {!matchesTab && <Button link="https://bits-apogee.org/register/" />}
       <div className={styles.heroFoot}>{links}</div>
     </div>
   );
