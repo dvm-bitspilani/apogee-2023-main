@@ -1,0 +1,96 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+}
+
+svg {
+    fill: currentColor;
+}
+
+.prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 25px;
+}
+
+.mouse {
+    height: 32px;
+    width: 20px;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    margin: 0 25px;
+    position: relative;
+}
+
+.mouse::after {
+    content: '';
+    top: 5px;
+    width: 2px;
+    height: 5px;
+    background: #fff;
+    left: 50%;
+    margin-left: -1px;
+    position: absolute;
+}
+
+.svg-scroll {
+    color: #fff;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+
+}
+.svg-scroll path {
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+.svg-scroll path:first-child {
+    animation-name: scrollAnimationBig;
+}
+
+.svg-scroll path:last-child {
+    animation-name: scrollAnimationSmall;
+}
+
+@keyframes scrollAnimationSmall {
+    0% {
+        transform: translateY(-15px);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    75% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollAnimationBig {
+    0% {
+        transform: translateY(-25px);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {}
+}
