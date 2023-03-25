@@ -27,7 +27,7 @@
 
 .price {
   padding: 0 4rem;
-  color: #4DACFF;
+  color: #4dacff;
 }
 
 @media screen and (min-width: 1650px) {
@@ -76,7 +76,7 @@
 
   .price {
     padding: 0 20%;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -113,7 +113,7 @@
 
   .price {
     padding: 0 10%;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -129,7 +129,7 @@
 
   .price {
     padding: 0 5%;
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
 

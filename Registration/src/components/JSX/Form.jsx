@@ -153,7 +153,10 @@ const Form = () => {
         </div>
       </div>
 
-      <div className="price">"Pricing 1000/- per person &middot; Includes: Access to all events apart from concerts &middot; Accommodation for all days"</div>
+      <div className="price">
+        "Pricing 1000/- per person &middot; Includes: Access to all events apart
+        from concerts &middot; Accommodation for all days"
+      </div>
 
       <div className="btn-container">
         <Button type="submit" />
