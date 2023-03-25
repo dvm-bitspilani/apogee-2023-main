@@ -19,6 +19,7 @@ body {
   background-color: #000000;
   color: white;
   font-family: "sui";
+  cursor: url(../src/assets/cursor.svg), auto !important;
 }
 
 * {

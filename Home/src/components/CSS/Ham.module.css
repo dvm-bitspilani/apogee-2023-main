@@ -27,6 +27,23 @@
   z-index: 10000000000000;
 }
 
+.cmd {
+  width: auto;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.promptFinal {
+  animation: show 0s 1350ms linear both;
+}
+
 .navBar {
   background-color: #2b2b2b;
   display: flex;
@@ -55,6 +72,7 @@
   background-color: #0c0c0c;
   padding-inline: 1.2rem;
   padding-block: 1.2rem;
+  animation: show 0s 100ms linear both;
 }
 
 .content div {
@@ -81,9 +99,10 @@
 
 .flexContainer {
   display: flex;
-  margin-top: 2rem;
+  margin: 2rem 0;
   justify-content: space-between;
   align-items: flex-end;
+  animation: show 0s 1250ms linear both;
 }
 
 .heading {

@@ -16,6 +16,8 @@ function Hamburger({ is2D }) {
   let ham = useRef(null);
   const mContext = useContext(ModalContext);
   const [blink, setBlink] = useState(true);
+  const [animDone, setAnimDone] = useState(false);
+  const [cmdLen, setCmdLen] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,6 +46,20 @@ function Hamburger({ is2D }) {
       if (evt.key === "Escape") setIsOpen(false);
     });
   }, []);
+
+  useEffect(() => {
+    setAnimDone(false);
+    setCmdLen(0);
+    setTimeout(() => {
+      setAnimDone(true);
+    }, 1400);
+    setTimeout(() => {
+      setCmdLen(1);
+    }, 500);
+    setTimeout(() => {
+      setCmdLen(2);
+    }, 1000);
+  }, [isOpen]);
 
   function changeHam() {
     setIsOpen(prevIsOpen => !prevIsOpen);
@@ -93,7 +109,11 @@ function Hamburger({ is2D }) {
               <div>Bits Apogee [Version 2023]</div>
               <div>(c) BITS Pilani. All rights reserved. </div>
               <div style={{ display: "flex" }}>
-                <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>}
+                <div>
+                  C:\Users\dvm&gt;{" "}
+                  <span className={styles.cmd}>{"ls".slice(0, cmdLen)}</span>
+                </div>
+                {!animDone && blink && <div>_</div>}
               </div>
 
               <div className={styles.flexContainer}>
@@ -169,6 +189,9 @@ function Hamburger({ is2D }) {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div style={{ display: "flex" }} className={styles.promptFinal}>
+                <div>C:\Users\dvm&gt;</div> {blink && <div>_</div>}
               </div>
             </div>
           </div>
