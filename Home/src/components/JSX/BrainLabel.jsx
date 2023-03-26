@@ -2,18 +2,19 @@ import { ModalContext } from "../../App";
 import "../CSS/BrainLabel.css";
 import React, { useContext, useEffect, useRef, useState } from "react";
 
+const text = "<Apogee>Click to view</Apogee>";
+const LENGTH = text.length;
+
 export default function BrainLabel({ modal }) {
   const mContext = useContext(ModalContext);
   const modalValue = modal.getValue().toUpperCase();
-  const text = "<Apogee>Click to view</Apogee>";
-  const LENGTH = text.length;
 
   const isMounted = useRef(false);
-  const [textStates, setTextStates] = useState(Array(text.length).fill(0));
+  const [textStates, setTextStates] = useState(Array(LENGTH).fill(0));
 
   useEffect(() => {
     if (isMounted.current) {
-      if (textStates !== Array(text.length).fill(4)) {
+      if (textStates !== Array(LENGTH).fill(4)) {
         const newTextState = textStates.map(e => {
           if (e === 1) return Math.random() > 0.75 ? 2 : 1;
           else if (e > 1 && e < 4) return e + 1;
@@ -22,20 +23,25 @@ export default function BrainLabel({ modal }) {
 
         setTimeout(() => setTextStates(newTextState), Math.random() * 20 + 15);
       }
-    } else
+    } else {
       setTimeout(() => {
         isMounted.current = true;
-        setTextStates(Array(text.length).fill(1));
+        setTextStates(Array(LENGTH).fill(1));
       }, 750);
+    }
   }, [textStates]);
 
   return (
     <div
       className="brainLabel"
-      style={{ left: modal.loc[0], top: modal.loc[1] }}
+      style={{
+        left: isNaN(modal.loc[0]) ? 0 : modal.loc[0],
+        top: isNaN(modal.loc[1]) ? 0 : modal.loc[1],
+      }}
     >
       <div className="labelLine1" />
       <div className="labelLine2" />
+
       <div className="labelBox-cont ptr">
         <div
           className="labelBox"

@@ -136,8 +136,8 @@ function Events(props) {
               <img
                 className={styles.eventImage}
                 src={
-                  mainEvent?.image_url !== "NA"
-                    ? `https://bits-apogee.org${mainEvent?.image_url}`
+                  mainEvent?.image_url && mainEvent?.image_url !== "NA"
+                    ? `https://bits-apogee.org/${mainEvent?.image_url}`
                     : dummy
                 }
               />

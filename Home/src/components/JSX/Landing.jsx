@@ -1,11 +1,13 @@
 import { Canvas } from "@react-three/fiber";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { ModalContext } from "../../App";
+
+import PhoneBg from "../../assets/brain.mp4";
 import styles from "../CSS/landing.module.css";
+
 import Brain from "./Brain";
 import LandingElements from "./LandingElements";
 import Switch from "./Switch";
-import PhoneBg from "../../assets/brain.mp4";
 import FbIcon from "./FbIcon";
 import InstaIcon from "./InstaIcon";
 import YtIcon from "./YtIcon";
@@ -29,10 +31,9 @@ function Landing(props) {
   let contact = document.getElementById("contactUs");
   const scroll = () => contact.scrollIntoView({ behavior: "smooth" });
 
-  useEffect(
-    () => videoRef.current && (videoRef.current.playbackRate = 0.12),
-    [videoRef]
-  );
+  useEffect(() => {
+    videoRef.current && (videoRef.current.playbackRate = 0.12);
+  }, [videoRef]);
 
   useEffect(() => {
     window
