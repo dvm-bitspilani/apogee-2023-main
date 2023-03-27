@@ -52,6 +52,7 @@
 }
 
 @media screen and (max-width: 800px) {
+  .bar,
   .names {
     display: none;
   }

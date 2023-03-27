@@ -182,4 +182,14 @@
   .content {
     font-size: 1.2rem;
   }
+  
+  .hamIcon {
+    right: 3rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .hamIcon {
+    right: 1rem !important;
+  }
 }

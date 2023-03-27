@@ -16,7 +16,7 @@ const ICONS = [
 
 export default function LandingElements(props) {
   const [matchesTab, setMatchesTab] = useState(
-    window.matchMedia("(min-width: 800px)").matches
+    window.matchMedia("(min-width: 799px)").matches
   );
 
   const [links, setLinks] = useState([]);
@@ -24,7 +24,7 @@ export default function LandingElements(props) {
 
   useEffect(() => {
     window
-      .matchMedia("(min-width: 800px)")
+      .matchMedia("(min-width: 799px)")
       .addEventListener("change", e => setMatchesTab(e.matchesTab));
     setLinks(
       ICONS.map((e, i) => (

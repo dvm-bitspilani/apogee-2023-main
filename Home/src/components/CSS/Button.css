@@ -1,6 +1,6 @@
 .button {
   scale: 0.85;
-  width: 13vw;
+  width: 10vw;
 }
 
 .btn {
@@ -41,9 +41,9 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1500px) {
   .button {
-    width: 14vw;
+    width: 13vw;
   }
 }
 
@@ -69,7 +69,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 799px) {
   .button {
     position: absolute;
     right: 10%;
@@ -86,19 +86,19 @@
 @media screen and (max-width: 550px) {
   .button {
     width: 30vw;
+    scale: 0.95;
   }
 }
 
 @media screen and (max-width: 450px) {
   .button {
     width: 35vw;
-    margin-left: 9rem;
+    margin: 4rem 0 0 9rem;
   }
 }
 
 @media screen and (max-width: 300px) {
   .button {
     width: 60vw;
-    margin-left: 9rem;
   }
 }

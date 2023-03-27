@@ -29,9 +29,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 0rem;
+  margin-bottom: 1rem;
   width: 100vw;
   overflow-x: hidden;
+  background: #000 url("../../assets/sponsorBg.jpg") repeat 50%;
 }
 
 .video {
@@ -40,9 +41,15 @@ body {
 }
 
 .empty {
-  height: 20vh;
+  height: calc(20vh + 1rem);
   width: 100vw;
-  background-image: linear-gradient(to bottom, black, #080f17, #080f17);
+  background-image: linear-gradient(
+    to bottom,
+    black,
+    #080f17,
+    #080f17,
+    transparent
+  );
 }
 
 .landingElem {
@@ -122,10 +129,6 @@ body {
   .apogeeLogo {
     width: 16rem;
   }
-
-  .countDown {
-    top: 5rem;
-  }
 }
 
 @media (max-width: 900px) {
@@ -134,7 +137,6 @@ body {
   }
 
   .countDown {
-    top: 5rem;
     padding: 0.8rem;
   }
 }
@@ -156,8 +158,8 @@ body {
   .countDown {
     width: 35vw;
     padding: 0;
-    right: 1rem;
-    bottom: 1rem;
+    right: 1rem !important;
+    bottom: 1rem !important;
     top: auto !important;
     left: auto !important;
   }
@@ -166,8 +168,21 @@ body {
     padding-left: 0;
   }
 
+}
+
+@media (max-width: 799px) {
   .navbar {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 750px) {
+  .heroFoot, .countDown{
+    scale: 1.2;
+  }
+
+  .heroFoot{
+    left: 1rem;
   }
 }
 
@@ -175,6 +190,11 @@ body {
   .countDown {
     right: 3rem;
     bottom: 4rem;
+  }
+  
+  .heroFoot {
+    bottom: 3rem;
+    left: 0;
   }
 }
 
@@ -185,7 +205,7 @@ body {
 
   .heroFoot {
     bottom: 3rem;
-    left: -2rem;
+    left: -1rem;
   }
 
   .heroFoot {

@@ -22,6 +22,7 @@ function Sponsors() {
   return (
     <div className={SponzCSS.container}>
       <div onClick={navigateBack} className="backBtn"></div>
+
       <div>
         <div className={SponzCSS.title}>SPONSORS</div>
         {cards}

@@ -31,6 +31,26 @@
   margin: auto;
   margin-bottom: 1rem;
   font-family: "Monospace";
+  height: calc(100vh - 5.5rem);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+  background-color: #83c4fd;
+}
+
+.cards::-webkit-scrollbar,
+.cards::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 13px;
+  border: 10px solid transparent;
+}
+
+.cards {
+  scrollbar-color: #83c4fd;
+  scrollbar-width: thin;
 }
 
 @media screen and (max-width: 1200px) {
