@@ -158,16 +158,14 @@ function Hamburger({ is2D }) {
                     </a>
                   </div>
                   <div>
-                    {/* {" "} */}
-                    {is2D == undefined ? (
+                     {is2D == undefined ? (
                       <Link to="/armageddon">Armageddon (For Bitsians) </Link>
                     ) : (
                       <a href="/armageddon">Armageddon (For Bitsians)</a>
                     )}
                   </div>
                   <div>
-                    {/* {" "} */}
-                    {is2D == undefined ? (
+                     {is2D == undefined ? (
                       <Link to="/sponsors">Sponsors</Link>
                     ) : (
                       <a href="/sponsors">Sponsors</a>
