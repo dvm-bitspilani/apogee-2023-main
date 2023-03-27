@@ -76,19 +76,6 @@ function About(props) {
         )}
 
         {videos}
-        {/* <InstagramEmbed
-          url='https://www.instagram.com/reel/CowweEEjDp2/?igshid=MDJmNzVkMjY='
-          clientAccessToken='572780784817908|f1feab82a841be1b4aaf80b0b37d4e48'
-          maxWidth={320}
-          hideCaption={false}
-          containerTagName='div'
-          protocol=''
-          injectScript
-          onLoading={() => { }}
-          onSuccess={() => { }}
-          onAfterRender={() => { }}
-          onFailure={() => { }}
-        /> */}
       </div>
 
       <div className={styles.about} onClick={evt => evt.stopPropagation()}>

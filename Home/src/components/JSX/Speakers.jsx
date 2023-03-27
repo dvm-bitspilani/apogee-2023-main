@@ -51,31 +51,6 @@ export default function Speakers(props) {
 
   useEffect(() => {
     setCards(DATA);
-    // setSpeakers();
-    // async function setSpeakers() {
-    //   window
-    //     .matchMedia("(min-width: 800px)")
-    //     .addEventListener("change", e => setMatches(e.matchesPhone));
-
-    //   const SPEAKERS_URL = "https://bits-apogee.org/registrations/events/";
-
-    //   try {
-    //     const res = await fetch(SPEAKERS_URL, { method: "GET" });
-    //     const speakers = await res.json();
-    //     const speakerData = speakers.data[2];
-
-    //     setCards(
-    //       speakerData.events.map(event => ({
-    //         img: event.image_url,
-    //         name: event.name,
-    //         pos: event.details,
-    //         link: "",
-    //       }))
-    //     );
-    //   } catch (e) {
-    //     alert("NETWORK ERROR!");
-    //   }
-    // }
   }, []);
 
   const NextArrow = ({ onClick }) => {

@@ -7,7 +7,7 @@ function EventCard({ event, index, img, name }) {
     <div className={styles.card} onClick={event} data-key={index}>
       <img
         className={styles.eventImage}
-        src={img !== "NA" ? `https://bits-apogee.org${img}` : dummy}
+        src={img && img !== "NA" ? `https://bits-apogee.org/${img}` : dummy}
       />
       <div className={styles.info}>{`${index}. ${name}`}</div>
     </div>
