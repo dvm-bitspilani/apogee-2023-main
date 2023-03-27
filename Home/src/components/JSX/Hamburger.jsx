@@ -122,7 +122,7 @@ function Hamburger({ is2D }) {
               <div>(c) BITS Pilani. All rights reserved. </div>
               <div style={{ display: "flex" }}>
                 <div>
-                  C:\Users\dvm&gt;{" "}
+                  C:\Users\dvm&gt;
                   <span className={styles.cmd}>{"ls".slice(0, cmdLen)}</span>
                 </div>
                 {!animDone && blink && <div>_</div>}
@@ -131,7 +131,6 @@ function Hamburger({ is2D }) {
               <div className={styles.flexContainer}>
                 <div className={styles.list}>
                   <div>
-                    {" "}
                     <a
                       href="https://bits-apogee.org/campusambassador2023/"
                       target={"_blank"}
@@ -140,7 +139,6 @@ function Hamburger({ is2D }) {
                     </a>
                   </div>
                   <div>
-                    {" "}
                     <a
                       href="https://bits-apogee.org/registrations/login/"
                       target={"_blank"}
@@ -149,7 +147,6 @@ function Hamburger({ is2D }) {
                     </a>
                   </div>
                   <div>
-                    {" "}
                     <a
                       href="https://docs.google.com/document/d/1oIcxEiQFrEwEmvVvSGN5GWKgeIcy7lClFFljpNxRC-g/edit"
                       target={"_blank"}
@@ -158,14 +155,14 @@ function Hamburger({ is2D }) {
                     </a>
                   </div>
                   <div>
-                     {is2D == undefined ? (
+                    {is2D == undefined ? (
                       <Link to="/armageddon">Armageddon (For Bitsians) </Link>
                     ) : (
                       <a href="/armageddon">Armageddon (For Bitsians)</a>
                     )}
                   </div>
                   <div>
-                     {is2D == undefined ? (
+                    {is2D == undefined ? (
                       <Link to="/sponsors">Sponsors</Link>
                     ) : (
                       <a href="/sponsors">Sponsors</a>
@@ -181,7 +178,6 @@ function Hamburger({ is2D }) {
                         href="https://instagram.com/bitsapogee"
                         target={"_blank"}
                       >
-                        {" "}
                         INSTAGRAM
                       </a>
                     </div>
@@ -191,7 +187,6 @@ function Hamburger({ is2D }) {
                         href="https://www.facebook.com/bitsapogee/"
                         target={"_blank"}
                       >
-                        {" "}
                         FACEBOOK
                       </a>
                     </div>
@@ -201,7 +196,6 @@ function Hamburger({ is2D }) {
                         href="https://www.youtube.com/@OasisBITS"
                         target={"_blank"}
                       >
-                        {" "}
                         YOUTUBE
                       </a>
                     </div>
