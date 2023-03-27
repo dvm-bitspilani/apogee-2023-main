@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
 import "./index.css";
 import Sponsors from "./components/JSX/Sponsors";
 import Armageddon from "./components/JSX/Armageddon";
@@ -20,7 +24,6 @@ const router = createBrowserRouter([
     element: <Sponsors />,
   },
 ]);
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>

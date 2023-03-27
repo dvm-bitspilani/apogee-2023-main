@@ -7,7 +7,7 @@ specifiers:
   "@types/react-dom": ^18.0.9
   "@types/three": ^0.148.0
   "@vitejs/plugin-react": ^3.0.0
-  gsap: ^3.11.4
+  gsap: ^3.11.5
   jquery: ^3.6.3
   prettier: 2.8.2
   react: ^18.2.0
@@ -22,7 +22,7 @@ dependencies:
   "@react-three/drei": 9.52.3_ujgrnjqg6qzyiwznfocw5cghpm
   "@react-three/fiber": 8.10.0_4tzez3c2xpzuefjrvhpyy55bva
   "@types/three": 0.148.0
-  gsap: 3.11.4
+  gsap: 3.11.5
   jquery: 3.6.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1235,10 +1235,10 @@ packages:
       }
     dev: false
 
-  /gsap/3.11.4:
+  /gsap/3.11.5:
     resolution:
       {
-        integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==,
+        integrity: sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==,
       }
     dev: false
 
