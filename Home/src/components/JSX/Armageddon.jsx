@@ -3,6 +3,8 @@ import styles from "../CSS/Armageddon.module.css";
 import Slider from "react-slick";
 import ArmageddonCard from "./ArmageddonCard";
 import { useState, useEffect } from "react";
+import BackBtn from "./BackBtn";
+
 
 const DATA = [
   {
@@ -114,7 +116,14 @@ export default function Armageddon() {
   return (
     <div className={styles.armageddonWrapper}>
       <div className={styles.armageddon}>
-        <h1 className={styles.heading}>ARMAGEDDON</h1>
+        <div className={styles.header}>
+          <div className={styles.back}>
+            <BackBtn />
+          </div>
+          <h1 className={styles.heading}>ARMAGEDDON</h1>
+          <div className={styles.back}></div>
+        </div>
+
         <div className={styles.carousel}>
           <Slider {...settings}>
             {cards.map((e, i) => (

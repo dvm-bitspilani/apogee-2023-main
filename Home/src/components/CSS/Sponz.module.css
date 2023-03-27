@@ -16,11 +16,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   letter-spacing: 0.02em;
   color: #51aeff;
-  margin-inline: auto;
+  /* margin-inline: auto; */
   width: fit-content;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.back {
+  width: 8vw;
 }
 
 .heading {
@@ -101,5 +113,35 @@ body {
 
   .title {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .back {
+    scale: 0.9;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .back {
+    scale: 0.8;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .back {
+    scale: 0.75;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .back {
+    width: 12vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .back {
+    display: none;
   }
 }

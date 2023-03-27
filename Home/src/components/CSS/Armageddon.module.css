@@ -13,11 +13,24 @@
   background-size: 100% 100%;
 }
 
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.back {
+  width: 8vw;
+}
+
 .heading {
   font-weight: lighter;
   color: rgba(153, 204, 255, 0.9);
   font-size: 2.8rem;
-  margin-top: 3rem;
+  margin: 0;
+  /* margin-top: 3rem; */
 }
 
 .carousel {
@@ -63,11 +76,41 @@
 }
 
 @media screen and (max-width: 500px) {
-  .heading {
+  /* .heading {
     margin-top: 5rem;
-  }
+  } */
 
   .carousel {
     margin-top: 15%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .back {
+    scale: 0.9;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .back {
+    scale: 0.8;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .back {
+    scale: 0.75;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .back {
+    width: 12vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .back {
+    display: none;
   }
 }

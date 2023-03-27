@@ -2,12 +2,9 @@ import React from "react";
 import SponsCard from "./SponsCard";
 import SponzCSS from "../CSS/Sponz.module.css";
 import { sponsors } from "../../SponsorList";
-import { useNavigate } from "react-router-dom";
+import BackBtn from "./BackBtn";
 
 function Sponsors() {
-  const navigate = useNavigate();
-  const navigateBack = () => navigate("/");
-
   const cards = sponsors.map(sponsor => {
     return (
       <SponsCard
@@ -21,12 +18,14 @@ function Sponsors() {
 
   return (
     <div className={SponzCSS.container}>
-      <div onClick={navigateBack} className="backBtn"></div>
-
-      <div>
+      <div className={SponzCSS.header}>
+        <div className={SponzCSS.back}>
+          <BackBtn />
+        </div>
         <div className={SponzCSS.title}>SPONSORS</div>
-        {cards}
+        <div className={SponzCSS.back}></div>
       </div>
+      {cards}
     </div>
   );
 }
