@@ -68,7 +68,7 @@ body {
 
 .navbar {
   position: relative;
-  width: calc(100vw - 4rem - 100px);
+  width: calc(100vw - 4rem - 50px);
   padding: 2rem;
   display: flex;
   justify-content: space-between;

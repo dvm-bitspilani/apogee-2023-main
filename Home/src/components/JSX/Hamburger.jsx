@@ -14,6 +14,7 @@ function Hamburger({ is2D }) {
     window.matchMedia("(max-width: 600px)").matches
   );
 
+  let ham = useRef(null);
   let hamIcon = useRef(null);
   const mContext = useContext(ModalContext);
   const { height, width } = useWindowDimensions();
@@ -23,7 +24,10 @@ function Hamburger({ is2D }) {
   const [cmdLen, setCmdLen] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => setBlink(prevBlink => !prevBlink), 500);
+    const interval = setInterval(() => {
+      setBlink(prevBlink => !prevBlink);
+    }, 500);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -34,6 +38,7 @@ function Hamburger({ is2D }) {
   }, []);
 
   useEffect(() => {
+    console.log(is2D);
     if (is2D != undefined) {
       mContext.setDisplayModal(isOpen);
       mContext.updateModal(Modal.None);
@@ -50,9 +55,15 @@ function Hamburger({ is2D }) {
   useEffect(() => {
     setAnimDone(false);
     setCmdLen(0);
-
-    setTimeout(() => setAnimDone(true), 1400);
-    for (let i = 1; i <= 2; i++) setTimeout(() => setCmdLen(i), 500 * i);
+    setTimeout(() => {
+      setAnimDone(true);
+    }, 1400);
+    setTimeout(() => {
+      setCmdLen(1);
+    }, 500);
+    setTimeout(() => {
+      setCmdLen(2);
+    }, 1000);
   }, [isOpen]);
 
   function changeHam() {
@@ -85,21 +96,17 @@ function Hamburger({ is2D }) {
     }
   }, [isOpen]);
 
-  useEffect(() => {
+  useEffect(()=>{
     if (is2D == false) {
-      hamIcon.style.right = "70px";
+      hamIcon.style.right = "70px"
     } else {
-      hamIcon.style.right = "-30px";
+      hamIcon.style.right = "-45px"
     }
-  });
+  })
 
   return (
-    <div id="ham" className={styles.ham}>
-      <div
-        ref={el => (hamIcon = el)}
-        className={styles.hamIcon}
-        onClick={changeHam}
-      >
+    <div id="ham" ref={el => (ham = el)} className={styles.ham}>
+      <div ref={el => hamIcon = el} className={styles.hamIcon} onClick={changeHam}>
         <div className={styles.hamIcon1}></div>
         <div className={styles.hamIcon2}></div>
         <div className={styles.hamIcon3}></div>
@@ -159,19 +166,13 @@ function Hamburger({ is2D }) {
                   </div>
                   <div>
                     {/* {" "} */}
-                    {is2D == undefined ? (
-                      <Link to="/armageddon">Armageddon (For Bitsians) </Link>
-                    ) : (
-                      <a href="/armageddon">Armageddon (For Bitsians)</a>
-                    )}
+                    {is2D == undefined ? <Link to="/armageddon">Armageddon  (For Bitsians) </Link>:
+                    <a href="/armageddon">Armageddon (For Bitsians)</a> }
                   </div>
                   <div>
                     {/* {" "} */}
-                    {is2D == undefined ? (
-                      <Link to="/sponsors">Sponsors</Link>
-                    ) : (
-                      <a href="/sponsors">Sponsors</a>
-                    )}
+                    {is2D == undefined ? <Link to="/sponsors">Sponsors</Link> :
+                    <a href="/sponsors">Sponsors</a>}
                   </div>
                 </div>
                 <div className={styles.socialContainer}>

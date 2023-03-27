@@ -60,7 +60,7 @@ export default function BrainPopUp({ modal, position, rotation, index }) {
       position={position}
       distanceFactor={0.5}
       rotation={rotation}
-      onOcclude={() => {}}
+      onOcclude={() => console.log("OCCLUDE")}
     >
       <div
         className="brainPopupCircle ptr"
