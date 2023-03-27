@@ -16,12 +16,12 @@ const Route = () => {
           errorElement: <Error />,
         },
         {
-          path: "/armageddon",
+          path: "/armageddon/",
           element: <Armageddon />,
           errorElement: <Error />,
         },
         {
-          path: "/sponsors",
+          path: "/sponsors/",
           element: <Sponsors />,
           errorElement: <Error />,
         },
