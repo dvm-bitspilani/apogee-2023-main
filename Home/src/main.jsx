@@ -7,7 +7,7 @@ import Sponsors from "./components/JSX/Sponsors";
 import Armageddon from "./components/JSX/Armageddon";
 import Error from "./components/JSX/Error";
 
-const router = createBrowserRouter([
+const ROUTER = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -27,6 +27,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={ROUTER} />
   </React.StrictMode>
 );
