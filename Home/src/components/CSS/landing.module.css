@@ -167,7 +167,6 @@ body {
   .heroFoot {
     padding-left: 0;
   }
-
 }
 
 @media (max-width: 799px) {
@@ -177,11 +176,12 @@ body {
 }
 
 @media (max-width: 950px) and (min-width: 750px) {
-  .heroFoot, .countDown{
+  .heroFoot,
+  .countDown {
     scale: 1.2;
   }
 
-  .heroFoot{
+  .heroFoot {
     left: 1rem;
   }
 }
@@ -191,7 +191,7 @@ body {
     right: 3rem;
     bottom: 4rem;
   }
-  
+
   .heroFoot {
     bottom: 3rem;
     left: 0;
