@@ -37,6 +37,12 @@ const DATA = [
     pos: "This Entrepreneurship Conclave meet the Co-founder and CEO of Inshorts. Awarded Entreprenuer of the Year 2022.",
     link: "",
   },
+  {
+    img: "speakers/saraswat.png",
+    name: "V.K. Saraswat",
+    pos: "Former Director General of DRDO. Served as the Chief Scientific Advisor to the Indian Prime Minister. Padma Shree and Padma Bhushan Recipient.",
+    link: "",
+  },
 ];
 
 export default function Speakers(props) {
