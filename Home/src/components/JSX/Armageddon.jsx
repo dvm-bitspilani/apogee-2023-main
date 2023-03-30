@@ -5,7 +5,6 @@ import ArmageddonCard from "./ArmageddonCard";
 import { useState, useEffect } from "react";
 import BackBtn from "./BackBtn";
 
-
 const DATA = [
   {
     title: "Fifa",

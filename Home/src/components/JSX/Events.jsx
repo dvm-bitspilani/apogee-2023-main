@@ -35,7 +35,7 @@ function Events(props) {
       try {
         const res = await fetch(EVENT_URL, { method: "GET" });
         const events = await res.json();
-        
+
         setMainEvent(events.data[1].events[0]);
 
         setCategories(
