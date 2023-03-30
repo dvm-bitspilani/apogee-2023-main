@@ -71,7 +71,7 @@
 
 .speakerLink {
   position: absolute;
-  top: 7%;
+  top: 4%;
   right: 5%;
 }
 
@@ -208,8 +208,7 @@
 @media (max-width: 800px) {
   .speakerCard {
     width: 80%;
-    /* margin: 2.5rem auto; */
-    margin: 0 auto;
+    margin: 1rem auto;
   }
 
   .speakerCont {

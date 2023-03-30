@@ -11,13 +11,13 @@ const DATA = [
     img: "speakers/sainath.png",
     name: "P Sainath",
     pos: "Indian Social Journalist. Rural Affairs Editor of the Hindu. Recipient of the prestigious Ramon Magsaysay Award.",
-    link: "",
+    link: "https://drive.google.com/file/d/1yV6hA_I121tl2ZQEruA0Xc1cGYf8Rds3/view",
   },
   {
     img: "speakers/vijayraghavan.png",
     name: "K Vijayraghavan",
     pos: "Former Director of the National Centre for Biological Sciences. Member of the Scientific Advisory Council of the Prime Minister of India.",
-    link: "",
+    link: "https://drive.google.com/file/d/1rY5Wt3XVvaosLOouYdcReAeDeMTSOOgX/view?usp=share_link",
   },
   {
     img: "speakers/ramesh.png",
@@ -29,7 +29,7 @@ const DATA = [
     img: "speakers/dibakar.png",
     name: "Dibakar Banerjee",
     pos: "Indian film director, screenwriter, producer. Won National Film Awards for Khosla Ka Ghosla (2006) Oye Lucky! Lucky Oye! (2008) Shanghai (2012), Bombay Talkies (2013), Detective Byomkesh Bakshy!",
-    link: "",
+    link: "https://drive.google.com/file/d/1fF056S4C7Ja2enOlXYERqMxUpPj-xiNF/view",
   },
   {
     img: "speakers/azhar.png",
