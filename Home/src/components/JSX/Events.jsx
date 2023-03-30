@@ -35,8 +35,8 @@ function Events(props) {
       try {
         const res = await fetch(EVENT_URL, { method: "GET" });
         const events = await res.json();
-
-        setMainEvent(events.data[0].events[0]);
+        
+        setMainEvent(events.data[1].events[0]);
 
         setCategories(
           events.data
@@ -111,14 +111,6 @@ function Events(props) {
 
   return (
     <div className={visClass}>
-      {/* <div
-        className={styles.heading}
-        onClick={evt => {
-          evt.stopPropagation();
-        }}
-      >
-        EVENTS
-      </div> */}
       <div
         ref={el => (container = el)}
         className={`${styles.container} ${visClass}`}
