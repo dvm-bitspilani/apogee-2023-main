@@ -3,8 +3,8 @@ import "../CSS/Button.css";
 
 const Button = props => {
   return (
-    <div className="button">
-      <a href={props.link}>
+    <div className="button" onClick={() => alert('Registrations Closed!')}>
+      <a>
         <button type={props.type} className="btn">
           <svg
             viewBox="0 0 300 97"

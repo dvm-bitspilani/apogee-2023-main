@@ -4,7 +4,7 @@ import "../CSS/Timer.css";
 function Countdown() {
   let count = useRef(null);
 
-  const APOGEE = new Date("March 30, 2023 23:59:59").getTime(),
+  const APOGEE = new Date("March 31, 2023 18:59:59").getTime(),
     [curr, setCurr] = useState(new Date().getTime());
 
   const [prevDay, setPrevDay] = useState(0),
