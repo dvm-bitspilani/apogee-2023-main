@@ -45,7 +45,7 @@ export default function LandingElements(props) {
     <div className={`${styles.landingElem} ${visClass}`}>
       <div className={styles.navbar} style={{ pointerEvents: "none" }}>
         <img src="/apogeeLogo.svg" className={styles.apogeeLogo} />
-        {matchesTab && <Button  />}
+        {matchesTab && <Button onclick={() => alert('Registrations Closed!')} />}
       </div>
 
       <Hamburger is2D={props.is2D} />
