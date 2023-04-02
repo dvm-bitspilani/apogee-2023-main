@@ -168,6 +168,13 @@ function Hamburger({ is2D }) {
                       <a href="/sponsors">Sponsors</a>
                     )}
                   </div>
+                  <div>
+                    {is2D == undefined ? (
+                      <Link to="/mediapartners">Media Partners</Link>
+                    ) : (
+                      <a href="/mediapartners">Media Partners</a>
+                    )}
+                  </div>
                 </div>
                 <div className={styles.socialContainer}>
                   <div className={styles.heading}>SOCIALS</div>
