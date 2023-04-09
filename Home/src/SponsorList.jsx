@@ -163,9 +163,9 @@ export const sponsors = [
   },
   {
     Partner: "",
-    PartnerName: "GranOn",
-    Link: "",
-    Logo: "",
+    PartnerName: "GrabOn",
+    Link: "https://www.grabon.in/",
+    Logo: "../logos/GrabOn.png",
   },
   {
     Partner: "Official Hosting Partner",
