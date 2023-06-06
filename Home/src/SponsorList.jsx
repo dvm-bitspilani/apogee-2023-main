@@ -3,7 +3,7 @@ export const sponsors = [
     Partner: "Associate Title Sponsor",
     PartnerName: "TATA Motors",
     Link: "https://www.tatamotors.com/",
-    Logo: "",
+    Logo: "../logos/tata.png",
   },
   {
     Partner: "Offical Powered by Sponsor",

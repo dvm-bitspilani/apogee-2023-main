@@ -179,7 +179,7 @@ function Hamburger({ is2D }) {
                     {/* {is2D == undefined ? (
                       <Link to="/mediapartners">Media Partners</Link>
                     ) : ( */}
-                      <a href="https://bits-apogee.org/developers">Developers</a>
+                    <a href="https://bits-apogee.org/developers">Developers</a>
                     {/* )} */}
                   </div>
                 </div>
