@@ -26,11 +26,11 @@ const DATA = [
     img: "/contacts/lalit.svg",
   },
   {
-    name: "Sahil Shah",
+    name: "Hitansh Tanna",
     dept: "Sponsorship and Marketing",
-    phone: "tel:+91 9321943954",
-    email: "mailto:sponsorship@bits-apogee.org",
-    img: "/contacts/sahil.svg",
+    phone: "tel:+91 9082764126",
+    email: "mailto:hitansh@bits-apogee.org",
+    img: "/contacts/hitansh.png",
   },
   {
     name: "Poorvansh Kavta ",
